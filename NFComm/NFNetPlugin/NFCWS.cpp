@@ -243,7 +243,7 @@ void NFCWS::OnMessageHandler(websocketpp::connection_hdl hd, NFWebSockConf::mess
 				 {
 					 mRecvCB(hd,xHead.GetMsgID(), pObject->GetBuff()+ NFIMsgHead::NF_Head::NF_HEAD_LENGTH, len-6);
 				 }
-				 pObject->RemoveBuff(0, nMsgBodyLength + NFIMsgHead::NF_Head::NF_HEAD_LENGTH);
+				 pObject->RemoveBuff(0, len);
 	             //break;
 	         }
 	         else if (0 == nMsgBodyLength)
