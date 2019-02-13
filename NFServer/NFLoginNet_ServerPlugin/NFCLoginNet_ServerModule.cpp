@@ -35,7 +35,7 @@ bool NFCLoginNet_ServerModule::Init()
 	m_pElementModule = pPluginManager->FindModule<NFIElementModule>();
 	m_pNetClientModule = pPluginManager->FindModule<NFINetClientModule>();
 	m_pLoginToMasterModule = pPluginManager->FindModule<NFILoginToMasterModule>();
-
+	m_pWebSocketModule = pPluginManager->FindModule<NFIWebsocketModule>();
 	return true;
 }
 
@@ -53,6 +53,8 @@ bool NFCLoginNet_ServerModule::AfterInit()
 {
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_STS_HEART_BEAT, this, &NFCLoginNet_ServerModule::OnHeartBeat);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_LOGIN, this, &NFCLoginNet_ServerModule::OnLoginProcess);
+	m_pWebSocketModule->AddReceiveCallBack(NFMsg::EGMI_REQ_LOGIN, this, &NFCLoginNet_ServerModule::OnWSLoginProcess);
+
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_LOGOUT, this, &NFCLoginNet_ServerModule::OnLogOut);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_CONNECT_WORLD, this, &NFCLoginNet_ServerModule::OnSelectWorldProcess);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_WORLD_LIST, this, &NFCLoginNet_ServerModule::OnViewWorldProcess);
@@ -77,7 +79,8 @@ bool NFCLoginNet_ServerModule::AfterInit()
 				const int nMaxConnect = m_pElementModule->GetPropertyInt32(strId, NFrame::Server::MaxOnline());
 				const int nCpus = m_pElementModule->GetPropertyInt32(strId, NFrame::Server::CpuCount());
 
-				int nRet = m_pNetModule->Initialization(nMaxConnect, nPort, nCpus);
+				//int nRet = m_pNetModule->Initialization(nMaxConnect, nPort, nCpus);
+				int nRet = m_pWebSocketModule->Initialization(nMaxConnect, nPort, nCpus);
 				if (nRet < 0)
 				{
 					std::ostringstream strLog;
@@ -95,6 +98,7 @@ bool NFCLoginNet_ServerModule::AfterInit()
 
 int NFCLoginNet_ServerModule::OnSelectWorldResultsProcess(const int nWorldID, const NFGUID xSenderID, const int nLoginID, const std::string& strAccount, const std::string& strWorldIP, const int nWorldPort, const std::string& strWorldKey)
 {
+	m_pLogModule->LogInfo("This is a client, end to print Server Info-----OnSelectWorldResultsProcess----------------");
 	NF_SHARE_PTR<NFSOCK> xFD = mxClientIdent.GetElement(xSenderID);
 	if (xFD)
 	{
@@ -138,6 +142,34 @@ void NFCLoginNet_ServerModule::OnClientDisconnect(const NFSOCK nAddress)
 		mxClientIdent.RemoveElement(xIdent);
 	}
 }
+
+void NFCLoginNet_ServerModule::OnWSLoginProcess(websocketpp::connection_hdl hdl, const int nMsgID, const char* msg, const int nLen)
+{
+	NFGUID nPlayerID;
+	NFMsg::ReqAccountLogin xMsg;
+	if (!m_pNetModule->ReceivePB(nMsgID, msg, nLen, xMsg, nPlayerID))
+	{
+		return;
+	}
+
+	/*NetObject* pNetObject = m_pWebSocketModule->GetNet()->GetNetObject(hdl);*/
+	//if (pNetObject)
+	//{
+	//	if (pNetObject->GetConnectKeyState() == 0)
+	//	{
+
+			//pNetObject->SetConnectKeyState(1);
+			//pNetObject->SetAccount(xMsg.account());
+
+			NFMsg::AckEventResult xData;
+			xData.set_event_code(NFMsg::EGEC_ACCOUNT_SUCCESS);
+			m_pWebSocketModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_LOGIN, xData,hdl);
+
+			m_pLogModule->LogNormal(NFILogModule::NLL_INFO_NORMAL, NFGUID(0, 1), "Login successed :", xMsg.account().c_str());
+	//	}
+	//}
+}
+
 
 void NFCLoginNet_ServerModule::OnLoginProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen)
 {

@@ -37,12 +37,14 @@ bool NFCProxyServerNet_ServerModule::Init()
 	m_pElementModule = pPluginManager->FindModule<NFIElementModule>();
 	m_pProxyToWorldModule = pPluginManager->FindModule<NFIProxyServerToWorldModule>();
 	m_pSecurityModule = pPluginManager->FindModule<NFISecurityModule>();
-
+	m_pNetModule = pPluginManager->FindModule<NFINetModule>();
+	m_pWebSocketModule = pPluginManager->FindModule<NFIWebsocketModule>();
     return true;
 }
 
 bool NFCProxyServerNet_ServerModule::AfterInit()
 {
+	m_pWebSocketModule->AddReceiveCallBack(NFMsg::EGMI_REQ_CONNECT_KEY,this, &NFCProxyServerNet_ServerModule::OnWebSocketReciveTest);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_CONNECT_KEY, this, &NFCProxyServerNet_ServerModule::OnConnectKeyProcess);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_WORLD_LIST, this, &NFCProxyServerNet_ServerModule::OnReqServerListProcess);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_SELECT_SERVER, this, &NFCProxyServerNet_ServerModule::OnSelectServerProcess);
@@ -73,7 +75,9 @@ bool NFCProxyServerNet_ServerModule::AfterInit()
                 //const std::string& strName = m_pElementModule->GetPropertyString(strId, NFrame::Server::Name());
                 //const std::string& strIP = m_pElementModule->GetPropertyString(strId, NFrame::Server::IP());
 
-                int nRet = m_pNetModule->Initialization(nMaxConnect, nPort, nCpus);
+                //int nRet = m_pNetModule->Initialization(nMaxConnect, nPort, nCpus);
+				//TODO
+				int nRet = m_pWebSocketModule->Initialization(nMaxConnect, nPort, nCpus);
                 if (nRet < 0)
                 {
                     std::ostringstream strLog;
@@ -156,6 +160,7 @@ void NFCProxyServerNet_ServerModule::OnOtherMessage(const NFSOCK nSockIndex, con
 
 void NFCProxyServerNet_ServerModule::OnConnectKeyProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen)
 {
+	m_pLogModule->LogInfo("This is a client, end to print Server Info-----OnSelectWorldResultsProces1111s----------------");
     NFGUID nPlayerID;
     NFMsg::ReqAccountLogin xMsg;
     if (!m_pNetModule->ReceivePB( nMsgID, msg, nLen, xMsg, nPlayerID))
@@ -255,6 +260,7 @@ void NFCProxyServerNet_ServerModule::OnClientDisconnect(const NFSOCK nAddress)
 
 void NFCProxyServerNet_ServerModule::OnSelectServerProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen)
 {
+	m_pLogModule->LogInfo("This is a client, end to print Server Info-----OnSelectWorldResult3333sProcess----------------");
 	NetObject* pNetObject = m_pNetModule->GetNet()->GetNetObject(nSockIndex);
 	if (!pNetObject)
 	{
@@ -330,6 +336,7 @@ void NFCProxyServerNet_ServerModule::OnSelectServerProcess(const NFSOCK nSockInd
 
 void NFCProxyServerNet_ServerModule::OnReqServerListProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen)
 {
+	m_pLogModule->LogInfo("This is a client, end to print Server Info-----OnSelectWorldResultsProces4444s----------------");
 	NetObject* pNetObject = m_pNetModule->GetNet()->GetNetObject(nSockIndex);
 	if (!pNetObject)
 	{
@@ -461,6 +468,7 @@ void NFCProxyServerNet_ServerModule::OnClientConnected(const NFSOCK nAddress)
 
 void NFCProxyServerNet_ServerModule::OnReqRoleListProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen)
 {
+	m_pLogModule->LogInfo("This is a client, end to print Server Info-----OnSelectWorldResultsProc555555ess----------------");
 	NetObject* pNetObject = m_pNetModule->GetNet()->GetNetObject(nSockIndex);
 	if (!pNetObject)
 	{
@@ -510,6 +518,7 @@ void NFCProxyServerNet_ServerModule::OnReqRoleListProcess(const NFSOCK nSockInde
 
 void NFCProxyServerNet_ServerModule::OnReqCreateRoleProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen)
 {
+	m_pLogModule->LogInfo("This is a client, end to print Server Info-----OnSelectWorldR555555555556666666esultsProcess----------------");
 	NetObject* pNetObject = m_pNetModule->GetNet()->GetNetObject(nSockIndex);
 	if (!pNetObject)
 	{
@@ -522,6 +531,7 @@ void NFCProxyServerNet_ServerModule::OnReqCreateRoleProcess(const NFSOCK nSockIn
 		//decode failed
 		return;
 	}
+	m_pLogModule->LogInfo("This is a client, end to print Server Info-----OnSelectWorldR77777esultsProcess----------------");
 
     NFGUID nPlayerID;//no value
     NFMsg::ReqCreateRole xData;
@@ -529,7 +539,7 @@ void NFCProxyServerNet_ServerModule::OnReqCreateRoleProcess(const NFSOCK nSockIn
     {
         return;
     }
-
+	m_pLogModule->LogInfo("This is a client, end to print Server Info-----OnSelectWorldR788888esultsProcess----------------");
     NF_SHARE_PTR<ConnectData> pServerData = m_pNetClientModule->GetServerNetInfo(xData.game_id());
     if (pServerData && ConnectDataState::NORMAL == pServerData->eState)
     {
@@ -551,7 +561,7 @@ void NFCProxyServerNet_ServerModule::OnReqCreateRoleProcess(const NFSOCK nSockIn
             {
                 return;
             }
-
+			m_pLogModule->LogInfo("This is a client, end to print Server Info-----OnSelectWorldR9999999esultsProcess----------------");
 			m_pNetClientModule->SendByServerIDWithOutHead(pNetObject->GetGameID(), nMsgID, strMsg);
         }
     }
@@ -654,6 +664,42 @@ void NFCProxyServerNet_ServerModule::OnReqEnterGameServer(const NFSOCK nSockInde
 			m_pNetClientModule->SendByServerIDWithOutHead(pNetObject->GetGameID(), NFMsg::EGameMsgID::EGMI_REQ_ENTER_GAME, strMsg);
         }
     }
+}
+
+string UTF8ToGBK(const char* strUTF8)
+{
+	int len = MultiByteToWideChar(CP_UTF8, 0, strUTF8, -1, NULL, 0);
+	wchar_t* wszGBK = new wchar_t[len + 1];
+	memset(wszGBK, 0, len * 2 + 2);
+	MultiByteToWideChar(CP_UTF8, 0, strUTF8, -1, wszGBK, len);
+	len = WideCharToMultiByte(CP_ACP, 0, wszGBK, -1, NULL, 0, NULL, NULL);
+	char* szGBK = new char[len + 1];
+	memset(szGBK, 0, len + 1);
+	WideCharToMultiByte(CP_ACP, 0, wszGBK, -1, szGBK, len, NULL, NULL);
+	string strTemp(szGBK);
+	if (wszGBK) delete[] wszGBK;
+	if (szGBK) delete[] szGBK;
+	return strTemp;
+}
+void NFCProxyServerNet_ServerModule::OnWebSocketReciveTest(websocketpp::connection_hdl hdl, const int nMsgID, const char * strPayload, const int nLen)
+{
+	m_pLogModule->LogInfo("This is a client, OnWebSocketReciveTest----------------");
+	m_pLogModule->LogInfo(strPayload);
+	m_pLogModule->LogInfo("This is a client, end to print OnWebSocketReciveTest Info-----OnSelectWorldResultsProces1111s----------------");
+	NFGUID nPlayerID;
+	NFMsg::TeammemberInfo xMsg;
+	if (!m_pNetModule->ReceivePB(nMsgID, strPayload, nLen, xMsg, nPlayerID))
+	{
+		return;
+	}
+
+	auto t = xMsg.name();
+
+
+	auto m = xMsg.Utf8DebugString();
+	
+	m_pWebSocketModule->SendMsgToClient(nMsgID,strPayload, (const uint32_t)nLen, hdl, NF_WS_MSG_DATA_TYPE::BINARY);
+	
 }
 
 int NFCProxyServerNet_ServerModule::EnterGameSuccessEvent(const NFGUID xClientID, const NFGUID xPlayerID)

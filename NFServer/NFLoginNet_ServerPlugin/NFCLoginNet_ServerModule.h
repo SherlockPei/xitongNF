@@ -35,6 +35,7 @@
 #include "NFComm/NFPluginModule/NFIElementModule.h"
 #include "NFComm/NFPluginModule/NFIClassModule.h"
 #include "NFComm/NFPluginModule/NFILoginToMasterModule.h"
+#include "NFComm/NFPluginModule/NFIWebsocketModule.h"
 
 class NFCLoginNet_ServerModule
     : public NFILoginNet_ServerModule
@@ -66,6 +67,7 @@ protected:
     void OnClientConnected(const NFSOCK nAddress);
 
     void OnLoginProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
+	void OnWSLoginProcess(websocketpp::connection_hdl, const int nMsgID, const char* msg, const int nLen);
     void OnSelectWorldProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
     void OnViewWorldProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
 
@@ -84,6 +86,7 @@ private:
 
 	NFINetModule* m_pNetModule;
 	NFINetClientModule* m_pNetClientModule;
+	NFIWebsocketModule * m_pWebSocketModule;
     NFIClassModule* m_pClassModule;
     NFIElementModule* m_pElementModule;
     NFIKernelModule* m_pKernelModule;

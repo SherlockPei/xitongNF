@@ -22,6 +22,7 @@
 #include "NFCNetClientModule.h"
 #include "NFCHttpClientModule.h"
 #include "NFCHttpServerModule.h"
+#include "NFCWebsocketModule.h"
 #include "NFComm/NFPluginModule/NFIPluginManager.h"
 
 #ifdef NF_DYNAMIC_PLUGIN
@@ -55,6 +56,7 @@ const std::string NFNetPlugin::GetPluginName()
 void NFNetPlugin::Install()
 {
     REGISTER_MODULE(pPluginManager, NFINetModule, NFCNetModule)
+	REGISTER_MODULE(pPluginManager, NFIWebsocketModule, NFCWebsocketModule)
     REGISTER_MODULE(pPluginManager, NFINetClientModule, NFCNetClientModule)
 	REGISTER_MODULE(pPluginManager, NFIHttpServerModule, NFCHttpServerModule)
 	REGISTER_MODULE(pPluginManager, NFIHttpClientModule, NFCHttpClientModule)

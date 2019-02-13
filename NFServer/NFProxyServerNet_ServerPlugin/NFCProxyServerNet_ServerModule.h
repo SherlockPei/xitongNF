@@ -37,6 +37,7 @@
 #include "NFComm/NFPluginModule/NFIProxyServerToGameModule.h"
 #include "NFComm/NFPluginModule/NFINetClientModule.h"
 #include "NFComm/NFPluginModule/NFISecurityModule.h"
+#include "NFComm/NFPluginModule/NFIWebsocketModule.h"
 
 class NFCProxyServerNet_ServerModule : public NFIProxyServerNet_ServerModule
 {
@@ -72,6 +73,9 @@ protected:
     void OnReqDelRoleProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
     void OnReqEnterGameServer(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
 
+
+	void OnWebSocketReciveTest(websocketpp::connection_hdl, const int nMsgID, const char *, const int nLen);
+
     //////////////////////////////////////////////////////////////////////////
 
 	void OnOtherMessage(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
@@ -85,6 +89,7 @@ protected:
     NFIElementModule* m_pElementModule;
     NFIClassModule* m_pClassModule;
 	NFINetModule* m_pNetModule;
+	NFIWebsocketModule * m_pWebSocketModule;
 	NFISecurityModule* m_pSecurityModule;
 	NFIProxyServerToWorldModule* m_pProxyToWorldModule;
 };
