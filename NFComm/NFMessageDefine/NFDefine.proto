@@ -377,14 +377,14 @@ enum ESkillType
 
 enum EItemType
 {
-    EIT_EQUIP   			= 0; //the equipment which can add props
-	EIT_GEM   				= 1; //the gem ca be embed to the equipment
+    EIT_EQUIP   			= 0;  //The equipment which can add props
+	EIT_GEM   				= 1;  //The gem ca be embed to the equipment
 	EIT_ITEM   				= 2; //expendable items for player, such as a medicine that cures
 	EIT_CARD   				= 3; //special items that can call a hero or others
 	EIT_TOKEN	   			= 4; //special items can do what you want to do
 }
 
-//the sub items type of EIT_EQUIP
+ //The sub items type of EIT_EQUIP
 enum EGameEquipSubType
 {
 	EQUIPTYPE_WEAPON            = 0;    //
@@ -395,7 +395,7 @@ enum EGameEquipSubType
 	EQUIPTYPE_BOOT              = 5;   	//
 };
 
-//the sub items type of EIT_GEM
+ //The sub items type of EIT_GEM
 enum EGameGemSubType
 {
 	EGGSTYPE_GEM_ATK           	= 0;    //
@@ -409,7 +409,7 @@ enum EGameGemSubType
 	
 };
 
-//the sub items type of EIT_ITEM
+ //The sub items type of EIT_ITEM
 enum EGameItemSubType
 {
 	EGIT_ITEM_WATER				= 0; 	//
@@ -423,7 +423,7 @@ enum EGameItemSubType
 	EGIT_ITEM_MEMORY_POS		= 8;	//
 };
 
-//the sub items type of EIT_CARD
+ //The sub items type of EIT_CARD
 enum EGameCardSubType
 {
 	EGCST_UNKNOW				= 0;//
@@ -432,7 +432,7 @@ enum EGameCardSubType
 	EGCST_INTELLIGENCE			= 3;//
 };
 
-//the sub items type of EIT_TOKEN
+ //The sub items type of EIT_TOKEN
 enum EGameTokenSubType
 {
 	EGTST_TOKEN_REBORN					= 0; 	//

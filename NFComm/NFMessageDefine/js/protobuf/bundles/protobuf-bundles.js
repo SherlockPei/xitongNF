@@ -1452,7 +1452,7 @@ $root.NFMsg = (function() {
          * Properties of a PropertyInt.
          * @memberof NFMsg
          * @interface IPropertyInt
-         * @property {string|null} [property_name] PropertyInt property_name
+         * @property {Uint8Array|null} [property_name] PropertyInt property_name
          * @property {number|Long|null} [data] PropertyInt data
          */
 
@@ -1473,11 +1473,11 @@ $root.NFMsg = (function() {
 
         /**
          * PropertyInt property_name.
-         * @member {string} property_name
+         * @member {Uint8Array} property_name
          * @memberof NFMsg.PropertyInt
          * @instance
          */
-        PropertyInt.prototype.property_name = "";
+        PropertyInt.prototype.property_name = $util.newBuffer([]);
 
         /**
          * PropertyInt data.
@@ -1512,7 +1512,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.property_name != null && message.hasOwnProperty("property_name"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.property_name);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.property_name);
             if (message.data != null && message.hasOwnProperty("data"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int64(message.data);
             return writer;
@@ -1550,7 +1550,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.property_name = reader.string();
+                    message.property_name = reader.bytes();
                     break;
                 case 2:
                     message.data = reader.int64();
@@ -1591,8 +1591,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.property_name != null && message.hasOwnProperty("property_name"))
-                if (!$util.isString(message.property_name))
-                    return "property_name: string expected";
+                if (!(message.property_name && typeof message.property_name.length === "number" || $util.isString(message.property_name)))
+                    return "property_name: buffer expected";
             if (message.data != null && message.hasOwnProperty("data"))
                 if (!$util.isInteger(message.data) && !(message.data && $util.isInteger(message.data.low) && $util.isInteger(message.data.high)))
                     return "data: integer|Long expected";
@@ -1608,7 +1608,7 @@ $root.NFMsg = (function() {
          * Properties of a PropertyFloat.
          * @memberof NFMsg
          * @interface IPropertyFloat
-         * @property {string|null} [property_name] PropertyFloat property_name
+         * @property {Uint8Array|null} [property_name] PropertyFloat property_name
          * @property {number|null} [data] PropertyFloat data
          */
 
@@ -1629,11 +1629,11 @@ $root.NFMsg = (function() {
 
         /**
          * PropertyFloat property_name.
-         * @member {string} property_name
+         * @member {Uint8Array} property_name
          * @memberof NFMsg.PropertyFloat
          * @instance
          */
-        PropertyFloat.prototype.property_name = "";
+        PropertyFloat.prototype.property_name = $util.newBuffer([]);
 
         /**
          * PropertyFloat data.
@@ -1668,7 +1668,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.property_name != null && message.hasOwnProperty("property_name"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.property_name);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.property_name);
             if (message.data != null && message.hasOwnProperty("data"))
                 writer.uint32(/* id 2, wireType 5 =*/21).float(message.data);
             return writer;
@@ -1706,7 +1706,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.property_name = reader.string();
+                    message.property_name = reader.bytes();
                     break;
                 case 2:
                     message.data = reader.float();
@@ -1747,8 +1747,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.property_name != null && message.hasOwnProperty("property_name"))
-                if (!$util.isString(message.property_name))
-                    return "property_name: string expected";
+                if (!(message.property_name && typeof message.property_name.length === "number" || $util.isString(message.property_name)))
+                    return "property_name: buffer expected";
             if (message.data != null && message.hasOwnProperty("data"))
                 if (typeof message.data !== "number")
                     return "data: number expected";
@@ -1764,8 +1764,8 @@ $root.NFMsg = (function() {
          * Properties of a PropertyString.
          * @memberof NFMsg
          * @interface IPropertyString
-         * @property {string|null} [property_name] PropertyString property_name
-         * @property {string|null} [data] PropertyString data
+         * @property {Uint8Array|null} [property_name] PropertyString property_name
+         * @property {Uint8Array|null} [data] PropertyString data
          */
 
         /**
@@ -1785,19 +1785,19 @@ $root.NFMsg = (function() {
 
         /**
          * PropertyString property_name.
-         * @member {string} property_name
+         * @member {Uint8Array} property_name
          * @memberof NFMsg.PropertyString
          * @instance
          */
-        PropertyString.prototype.property_name = "";
+        PropertyString.prototype.property_name = $util.newBuffer([]);
 
         /**
          * PropertyString data.
-         * @member {string} data
+         * @member {Uint8Array} data
          * @memberof NFMsg.PropertyString
          * @instance
          */
-        PropertyString.prototype.data = "";
+        PropertyString.prototype.data = $util.newBuffer([]);
 
         /**
          * Creates a new PropertyString instance using the specified properties.
@@ -1824,9 +1824,9 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.property_name != null && message.hasOwnProperty("property_name"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.property_name);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.property_name);
             if (message.data != null && message.hasOwnProperty("data"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.data);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.data);
             return writer;
         };
 
@@ -1862,10 +1862,10 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.property_name = reader.string();
+                    message.property_name = reader.bytes();
                     break;
                 case 2:
-                    message.data = reader.string();
+                    message.data = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -1903,11 +1903,11 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.property_name != null && message.hasOwnProperty("property_name"))
-                if (!$util.isString(message.property_name))
-                    return "property_name: string expected";
+                if (!(message.property_name && typeof message.property_name.length === "number" || $util.isString(message.property_name)))
+                    return "property_name: buffer expected";
             if (message.data != null && message.hasOwnProperty("data"))
-                if (!$util.isString(message.data))
-                    return "data: string expected";
+                if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
+                    return "data: buffer expected";
             return null;
         };
 
@@ -1920,7 +1920,7 @@ $root.NFMsg = (function() {
          * Properties of a PropertyObject.
          * @memberof NFMsg
          * @interface IPropertyObject
-         * @property {string|null} [property_name] PropertyObject property_name
+         * @property {Uint8Array|null} [property_name] PropertyObject property_name
          * @property {NFMsg.IIdent|null} [data] PropertyObject data
          */
 
@@ -1941,11 +1941,11 @@ $root.NFMsg = (function() {
 
         /**
          * PropertyObject property_name.
-         * @member {string} property_name
+         * @member {Uint8Array} property_name
          * @memberof NFMsg.PropertyObject
          * @instance
          */
-        PropertyObject.prototype.property_name = "";
+        PropertyObject.prototype.property_name = $util.newBuffer([]);
 
         /**
          * PropertyObject data.
@@ -1980,7 +1980,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.property_name != null && message.hasOwnProperty("property_name"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.property_name);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.property_name);
             if (message.data != null && message.hasOwnProperty("data"))
                 $root.NFMsg.Ident.encode(message.data, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             return writer;
@@ -2018,7 +2018,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.property_name = reader.string();
+                    message.property_name = reader.bytes();
                     break;
                 case 2:
                     message.data = $root.NFMsg.Ident.decode(reader, reader.uint32());
@@ -2059,8 +2059,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.property_name != null && message.hasOwnProperty("property_name"))
-                if (!$util.isString(message.property_name))
-                    return "property_name: string expected";
+                if (!(message.property_name && typeof message.property_name.length === "number" || $util.isString(message.property_name)))
+                    return "property_name: buffer expected";
             if (message.data != null && message.hasOwnProperty("data")) {
                 var error = $root.NFMsg.Ident.verify(message.data);
                 if (error)
@@ -2078,7 +2078,7 @@ $root.NFMsg = (function() {
          * Properties of a PropertyVector2.
          * @memberof NFMsg
          * @interface IPropertyVector2
-         * @property {string|null} [property_name] PropertyVector2 property_name
+         * @property {Uint8Array|null} [property_name] PropertyVector2 property_name
          * @property {NFMsg.IVector2|null} [data] PropertyVector2 data
          */
 
@@ -2099,11 +2099,11 @@ $root.NFMsg = (function() {
 
         /**
          * PropertyVector2 property_name.
-         * @member {string} property_name
+         * @member {Uint8Array} property_name
          * @memberof NFMsg.PropertyVector2
          * @instance
          */
-        PropertyVector2.prototype.property_name = "";
+        PropertyVector2.prototype.property_name = $util.newBuffer([]);
 
         /**
          * PropertyVector2 data.
@@ -2138,7 +2138,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.property_name != null && message.hasOwnProperty("property_name"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.property_name);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.property_name);
             if (message.data != null && message.hasOwnProperty("data"))
                 $root.NFMsg.Vector2.encode(message.data, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             return writer;
@@ -2176,7 +2176,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.property_name = reader.string();
+                    message.property_name = reader.bytes();
                     break;
                 case 2:
                     message.data = $root.NFMsg.Vector2.decode(reader, reader.uint32());
@@ -2217,8 +2217,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.property_name != null && message.hasOwnProperty("property_name"))
-                if (!$util.isString(message.property_name))
-                    return "property_name: string expected";
+                if (!(message.property_name && typeof message.property_name.length === "number" || $util.isString(message.property_name)))
+                    return "property_name: buffer expected";
             if (message.data != null && message.hasOwnProperty("data")) {
                 var error = $root.NFMsg.Vector2.verify(message.data);
                 if (error)
@@ -2236,7 +2236,7 @@ $root.NFMsg = (function() {
          * Properties of a PropertyVector3.
          * @memberof NFMsg
          * @interface IPropertyVector3
-         * @property {string|null} [property_name] PropertyVector3 property_name
+         * @property {Uint8Array|null} [property_name] PropertyVector3 property_name
          * @property {NFMsg.IVector3|null} [data] PropertyVector3 data
          */
 
@@ -2257,11 +2257,11 @@ $root.NFMsg = (function() {
 
         /**
          * PropertyVector3 property_name.
-         * @member {string} property_name
+         * @member {Uint8Array} property_name
          * @memberof NFMsg.PropertyVector3
          * @instance
          */
-        PropertyVector3.prototype.property_name = "";
+        PropertyVector3.prototype.property_name = $util.newBuffer([]);
 
         /**
          * PropertyVector3 data.
@@ -2296,7 +2296,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.property_name != null && message.hasOwnProperty("property_name"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.property_name);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.property_name);
             if (message.data != null && message.hasOwnProperty("data"))
                 $root.NFMsg.Vector3.encode(message.data, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             return writer;
@@ -2334,7 +2334,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.property_name = reader.string();
+                    message.property_name = reader.bytes();
                     break;
                 case 2:
                     message.data = $root.NFMsg.Vector3.decode(reader, reader.uint32());
@@ -2375,8 +2375,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.property_name != null && message.hasOwnProperty("property_name"))
-                if (!$util.isString(message.property_name))
-                    return "property_name: string expected";
+                if (!(message.property_name && typeof message.property_name.length === "number" || $util.isString(message.property_name)))
+                    return "property_name: buffer expected";
             if (message.data != null && message.hasOwnProperty("data")) {
                 var error = $root.NFMsg.Vector3.verify(message.data);
                 if (error)
@@ -2742,7 +2742,7 @@ $root.NFMsg = (function() {
          * @interface IRecordString
          * @property {number|null} [row] RecordString row
          * @property {number|null} [col] RecordString col
-         * @property {string|null} [data] RecordString data
+         * @property {Uint8Array|null} [data] RecordString data
          */
 
         /**
@@ -2778,11 +2778,11 @@ $root.NFMsg = (function() {
 
         /**
          * RecordString data.
-         * @member {string} data
+         * @member {Uint8Array} data
          * @memberof NFMsg.RecordString
          * @instance
          */
-        RecordString.prototype.data = "";
+        RecordString.prototype.data = $util.newBuffer([]);
 
         /**
          * Creates a new RecordString instance using the specified properties.
@@ -2813,7 +2813,7 @@ $root.NFMsg = (function() {
             if (message.col != null && message.hasOwnProperty("col"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.col);
             if (message.data != null && message.hasOwnProperty("data"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.data);
+                writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.data);
             return writer;
         };
 
@@ -2855,7 +2855,7 @@ $root.NFMsg = (function() {
                     message.col = reader.int32();
                     break;
                 case 3:
-                    message.data = reader.string();
+                    message.data = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -2899,8 +2899,8 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.col))
                     return "col: integer expected";
             if (message.data != null && message.hasOwnProperty("data"))
-                if (!$util.isString(message.data))
-                    return "data: string expected";
+                if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
+                    return "data: buffer expected";
             return null;
         };
 
@@ -3739,7 +3739,7 @@ $root.NFMsg = (function() {
          * Properties of an ObjectRecordBase.
          * @memberof NFMsg
          * @interface IObjectRecordBase
-         * @property {string|null} [record_name] ObjectRecordBase record_name
+         * @property {Uint8Array|null} [record_name] ObjectRecordBase record_name
          * @property {Array.<NFMsg.IRecordAddRowStruct>|null} [row_struct] ObjectRecordBase row_struct
          */
 
@@ -3761,11 +3761,11 @@ $root.NFMsg = (function() {
 
         /**
          * ObjectRecordBase record_name.
-         * @member {string} record_name
+         * @member {Uint8Array} record_name
          * @memberof NFMsg.ObjectRecordBase
          * @instance
          */
-        ObjectRecordBase.prototype.record_name = "";
+        ObjectRecordBase.prototype.record_name = $util.newBuffer([]);
 
         /**
          * ObjectRecordBase row_struct.
@@ -3800,7 +3800,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.record_name);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.record_name);
             if (message.row_struct != null && message.row_struct.length)
                 for (var i = 0; i < message.row_struct.length; ++i)
                     $root.NFMsg.RecordAddRowStruct.encode(message.row_struct[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
@@ -3839,7 +3839,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.record_name = reader.string();
+                    message.record_name = reader.bytes();
                     break;
                 case 2:
                     if (!(message.row_struct && message.row_struct.length))
@@ -3882,8 +3882,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!$util.isString(message.record_name))
-                    return "record_name: string expected";
+                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
+                    return "record_name: buffer expected";
             if (message.row_struct != null && message.hasOwnProperty("row_struct")) {
                 if (!Array.isArray(message.row_struct))
                     return "row_struct: array expected";
@@ -4914,7 +4914,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IObjectRecordInt
          * @property {NFMsg.IIdent|null} [player_id] ObjectRecordInt player_id
-         * @property {string|null} [record_name] ObjectRecordInt record_name
+         * @property {Uint8Array|null} [record_name] ObjectRecordInt record_name
          * @property {Array.<NFMsg.IRecordInt>|null} [property_list] ObjectRecordInt property_list
          */
 
@@ -4944,11 +4944,11 @@ $root.NFMsg = (function() {
 
         /**
          * ObjectRecordInt record_name.
-         * @member {string} record_name
+         * @member {Uint8Array} record_name
          * @memberof NFMsg.ObjectRecordInt
          * @instance
          */
-        ObjectRecordInt.prototype.record_name = "";
+        ObjectRecordInt.prototype.record_name = $util.newBuffer([]);
 
         /**
          * ObjectRecordInt property_list.
@@ -4985,7 +4985,7 @@ $root.NFMsg = (function() {
             if (message.player_id != null && message.hasOwnProperty("player_id"))
                 $root.NFMsg.Ident.encode(message.player_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.record_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.record_name);
             if (message.property_list != null && message.property_list.length)
                 for (var i = 0; i < message.property_list.length; ++i)
                     $root.NFMsg.RecordInt.encode(message.property_list[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
@@ -5027,7 +5027,7 @@ $root.NFMsg = (function() {
                     message.player_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.record_name = reader.string();
+                    message.record_name = reader.bytes();
                     break;
                 case 3:
                     if (!(message.property_list && message.property_list.length))
@@ -5075,8 +5075,8 @@ $root.NFMsg = (function() {
                     return "player_id." + error;
             }
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!$util.isString(message.record_name))
-                    return "record_name: string expected";
+                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
+                    return "record_name: buffer expected";
             if (message.property_list != null && message.hasOwnProperty("property_list")) {
                 if (!Array.isArray(message.property_list))
                     return "property_list: array expected";
@@ -5099,7 +5099,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IObjectRecordFloat
          * @property {NFMsg.IIdent|null} [player_id] ObjectRecordFloat player_id
-         * @property {string|null} [record_name] ObjectRecordFloat record_name
+         * @property {Uint8Array|null} [record_name] ObjectRecordFloat record_name
          * @property {Array.<NFMsg.IRecordFloat>|null} [property_list] ObjectRecordFloat property_list
          */
 
@@ -5129,11 +5129,11 @@ $root.NFMsg = (function() {
 
         /**
          * ObjectRecordFloat record_name.
-         * @member {string} record_name
+         * @member {Uint8Array} record_name
          * @memberof NFMsg.ObjectRecordFloat
          * @instance
          */
-        ObjectRecordFloat.prototype.record_name = "";
+        ObjectRecordFloat.prototype.record_name = $util.newBuffer([]);
 
         /**
          * ObjectRecordFloat property_list.
@@ -5170,7 +5170,7 @@ $root.NFMsg = (function() {
             if (message.player_id != null && message.hasOwnProperty("player_id"))
                 $root.NFMsg.Ident.encode(message.player_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.record_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.record_name);
             if (message.property_list != null && message.property_list.length)
                 for (var i = 0; i < message.property_list.length; ++i)
                     $root.NFMsg.RecordFloat.encode(message.property_list[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
@@ -5212,7 +5212,7 @@ $root.NFMsg = (function() {
                     message.player_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.record_name = reader.string();
+                    message.record_name = reader.bytes();
                     break;
                 case 3:
                     if (!(message.property_list && message.property_list.length))
@@ -5260,8 +5260,8 @@ $root.NFMsg = (function() {
                     return "player_id." + error;
             }
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!$util.isString(message.record_name))
-                    return "record_name: string expected";
+                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
+                    return "record_name: buffer expected";
             if (message.property_list != null && message.hasOwnProperty("property_list")) {
                 if (!Array.isArray(message.property_list))
                     return "property_list: array expected";
@@ -5284,7 +5284,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IObjectRecordString
          * @property {NFMsg.IIdent|null} [player_id] ObjectRecordString player_id
-         * @property {string|null} [record_name] ObjectRecordString record_name
+         * @property {Uint8Array|null} [record_name] ObjectRecordString record_name
          * @property {Array.<NFMsg.IRecordString>|null} [property_list] ObjectRecordString property_list
          */
 
@@ -5314,11 +5314,11 @@ $root.NFMsg = (function() {
 
         /**
          * ObjectRecordString record_name.
-         * @member {string} record_name
+         * @member {Uint8Array} record_name
          * @memberof NFMsg.ObjectRecordString
          * @instance
          */
-        ObjectRecordString.prototype.record_name = "";
+        ObjectRecordString.prototype.record_name = $util.newBuffer([]);
 
         /**
          * ObjectRecordString property_list.
@@ -5355,7 +5355,7 @@ $root.NFMsg = (function() {
             if (message.player_id != null && message.hasOwnProperty("player_id"))
                 $root.NFMsg.Ident.encode(message.player_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.record_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.record_name);
             if (message.property_list != null && message.property_list.length)
                 for (var i = 0; i < message.property_list.length; ++i)
                     $root.NFMsg.RecordString.encode(message.property_list[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
@@ -5397,7 +5397,7 @@ $root.NFMsg = (function() {
                     message.player_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.record_name = reader.string();
+                    message.record_name = reader.bytes();
                     break;
                 case 3:
                     if (!(message.property_list && message.property_list.length))
@@ -5445,8 +5445,8 @@ $root.NFMsg = (function() {
                     return "player_id." + error;
             }
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!$util.isString(message.record_name))
-                    return "record_name: string expected";
+                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
+                    return "record_name: buffer expected";
             if (message.property_list != null && message.hasOwnProperty("property_list")) {
                 if (!Array.isArray(message.property_list))
                     return "property_list: array expected";
@@ -5469,7 +5469,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IObjectRecordObject
          * @property {NFMsg.IIdent|null} [player_id] ObjectRecordObject player_id
-         * @property {string|null} [record_name] ObjectRecordObject record_name
+         * @property {Uint8Array|null} [record_name] ObjectRecordObject record_name
          * @property {Array.<NFMsg.IRecordObject>|null} [property_list] ObjectRecordObject property_list
          */
 
@@ -5499,11 +5499,11 @@ $root.NFMsg = (function() {
 
         /**
          * ObjectRecordObject record_name.
-         * @member {string} record_name
+         * @member {Uint8Array} record_name
          * @memberof NFMsg.ObjectRecordObject
          * @instance
          */
-        ObjectRecordObject.prototype.record_name = "";
+        ObjectRecordObject.prototype.record_name = $util.newBuffer([]);
 
         /**
          * ObjectRecordObject property_list.
@@ -5540,7 +5540,7 @@ $root.NFMsg = (function() {
             if (message.player_id != null && message.hasOwnProperty("player_id"))
                 $root.NFMsg.Ident.encode(message.player_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.record_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.record_name);
             if (message.property_list != null && message.property_list.length)
                 for (var i = 0; i < message.property_list.length; ++i)
                     $root.NFMsg.RecordObject.encode(message.property_list[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
@@ -5582,7 +5582,7 @@ $root.NFMsg = (function() {
                     message.player_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.record_name = reader.string();
+                    message.record_name = reader.bytes();
                     break;
                 case 3:
                     if (!(message.property_list && message.property_list.length))
@@ -5630,8 +5630,8 @@ $root.NFMsg = (function() {
                     return "player_id." + error;
             }
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!$util.isString(message.record_name))
-                    return "record_name: string expected";
+                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
+                    return "record_name: buffer expected";
             if (message.property_list != null && message.hasOwnProperty("property_list")) {
                 if (!Array.isArray(message.property_list))
                     return "property_list: array expected";
@@ -5654,7 +5654,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IObjectRecordVector2
          * @property {NFMsg.IIdent|null} [player_id] ObjectRecordVector2 player_id
-         * @property {string|null} [record_name] ObjectRecordVector2 record_name
+         * @property {Uint8Array|null} [record_name] ObjectRecordVector2 record_name
          * @property {Array.<NFMsg.IRecordVector2>|null} [property_list] ObjectRecordVector2 property_list
          */
 
@@ -5684,11 +5684,11 @@ $root.NFMsg = (function() {
 
         /**
          * ObjectRecordVector2 record_name.
-         * @member {string} record_name
+         * @member {Uint8Array} record_name
          * @memberof NFMsg.ObjectRecordVector2
          * @instance
          */
-        ObjectRecordVector2.prototype.record_name = "";
+        ObjectRecordVector2.prototype.record_name = $util.newBuffer([]);
 
         /**
          * ObjectRecordVector2 property_list.
@@ -5725,7 +5725,7 @@ $root.NFMsg = (function() {
             if (message.player_id != null && message.hasOwnProperty("player_id"))
                 $root.NFMsg.Ident.encode(message.player_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.record_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.record_name);
             if (message.property_list != null && message.property_list.length)
                 for (var i = 0; i < message.property_list.length; ++i)
                     $root.NFMsg.RecordVector2.encode(message.property_list[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
@@ -5767,7 +5767,7 @@ $root.NFMsg = (function() {
                     message.player_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.record_name = reader.string();
+                    message.record_name = reader.bytes();
                     break;
                 case 3:
                     if (!(message.property_list && message.property_list.length))
@@ -5815,8 +5815,8 @@ $root.NFMsg = (function() {
                     return "player_id." + error;
             }
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!$util.isString(message.record_name))
-                    return "record_name: string expected";
+                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
+                    return "record_name: buffer expected";
             if (message.property_list != null && message.hasOwnProperty("property_list")) {
                 if (!Array.isArray(message.property_list))
                     return "property_list: array expected";
@@ -5839,7 +5839,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IObjectRecordVector3
          * @property {NFMsg.IIdent|null} [player_id] ObjectRecordVector3 player_id
-         * @property {string|null} [record_name] ObjectRecordVector3 record_name
+         * @property {Uint8Array|null} [record_name] ObjectRecordVector3 record_name
          * @property {Array.<NFMsg.IRecordVector3>|null} [property_list] ObjectRecordVector3 property_list
          */
 
@@ -5869,11 +5869,11 @@ $root.NFMsg = (function() {
 
         /**
          * ObjectRecordVector3 record_name.
-         * @member {string} record_name
+         * @member {Uint8Array} record_name
          * @memberof NFMsg.ObjectRecordVector3
          * @instance
          */
-        ObjectRecordVector3.prototype.record_name = "";
+        ObjectRecordVector3.prototype.record_name = $util.newBuffer([]);
 
         /**
          * ObjectRecordVector3 property_list.
@@ -5910,7 +5910,7 @@ $root.NFMsg = (function() {
             if (message.player_id != null && message.hasOwnProperty("player_id"))
                 $root.NFMsg.Ident.encode(message.player_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.record_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.record_name);
             if (message.property_list != null && message.property_list.length)
                 for (var i = 0; i < message.property_list.length; ++i)
                     $root.NFMsg.RecordVector3.encode(message.property_list[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
@@ -5952,7 +5952,7 @@ $root.NFMsg = (function() {
                     message.player_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.record_name = reader.string();
+                    message.record_name = reader.bytes();
                     break;
                 case 3:
                     if (!(message.property_list && message.property_list.length))
@@ -6000,8 +6000,8 @@ $root.NFMsg = (function() {
                     return "player_id." + error;
             }
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!$util.isString(message.record_name))
-                    return "record_name: string expected";
+                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
+                    return "record_name: buffer expected";
             if (message.property_list != null && message.hasOwnProperty("property_list")) {
                 if (!Array.isArray(message.property_list))
                     return "property_list: array expected";
@@ -6024,8 +6024,8 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IObjectRecordSwap
          * @property {NFMsg.IIdent|null} [player_id] ObjectRecordSwap player_id
-         * @property {string|null} [origin_record_name] ObjectRecordSwap origin_record_name
-         * @property {string|null} [target_record_name] ObjectRecordSwap target_record_name
+         * @property {Uint8Array|null} [origin_record_name] ObjectRecordSwap origin_record_name
+         * @property {Uint8Array|null} [target_record_name] ObjectRecordSwap target_record_name
          * @property {number|null} [row_origin] ObjectRecordSwap row_origin
          * @property {number|null} [row_target] ObjectRecordSwap row_target
          */
@@ -6055,19 +6055,19 @@ $root.NFMsg = (function() {
 
         /**
          * ObjectRecordSwap origin_record_name.
-         * @member {string} origin_record_name
+         * @member {Uint8Array} origin_record_name
          * @memberof NFMsg.ObjectRecordSwap
          * @instance
          */
-        ObjectRecordSwap.prototype.origin_record_name = "";
+        ObjectRecordSwap.prototype.origin_record_name = $util.newBuffer([]);
 
         /**
          * ObjectRecordSwap target_record_name.
-         * @member {string} target_record_name
+         * @member {Uint8Array} target_record_name
          * @memberof NFMsg.ObjectRecordSwap
          * @instance
          */
-        ObjectRecordSwap.prototype.target_record_name = "";
+        ObjectRecordSwap.prototype.target_record_name = $util.newBuffer([]);
 
         /**
          * ObjectRecordSwap row_origin.
@@ -6112,9 +6112,9 @@ $root.NFMsg = (function() {
             if (message.player_id != null && message.hasOwnProperty("player_id"))
                 $root.NFMsg.Ident.encode(message.player_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.origin_record_name != null && message.hasOwnProperty("origin_record_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.origin_record_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.origin_record_name);
             if (message.target_record_name != null && message.hasOwnProperty("target_record_name"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.target_record_name);
+                writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.target_record_name);
             if (message.row_origin != null && message.hasOwnProperty("row_origin"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.row_origin);
             if (message.row_target != null && message.hasOwnProperty("row_target"))
@@ -6157,10 +6157,10 @@ $root.NFMsg = (function() {
                     message.player_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.origin_record_name = reader.string();
+                    message.origin_record_name = reader.bytes();
                     break;
                 case 3:
-                    message.target_record_name = reader.string();
+                    message.target_record_name = reader.bytes();
                     break;
                 case 4:
                     message.row_origin = reader.int32();
@@ -6209,11 +6209,11 @@ $root.NFMsg = (function() {
                     return "player_id." + error;
             }
             if (message.origin_record_name != null && message.hasOwnProperty("origin_record_name"))
-                if (!$util.isString(message.origin_record_name))
-                    return "origin_record_name: string expected";
+                if (!(message.origin_record_name && typeof message.origin_record_name.length === "number" || $util.isString(message.origin_record_name)))
+                    return "origin_record_name: buffer expected";
             if (message.target_record_name != null && message.hasOwnProperty("target_record_name"))
-                if (!$util.isString(message.target_record_name))
-                    return "target_record_name: string expected";
+                if (!(message.target_record_name && typeof message.target_record_name.length === "number" || $util.isString(message.target_record_name)))
+                    return "target_record_name: buffer expected";
             if (message.row_origin != null && message.hasOwnProperty("row_origin"))
                 if (!$util.isInteger(message.row_origin))
                     return "row_origin: integer expected";
@@ -6233,7 +6233,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IObjectRecordAddRow
          * @property {NFMsg.IIdent|null} [player_id] ObjectRecordAddRow player_id
-         * @property {string|null} [record_name] ObjectRecordAddRow record_name
+         * @property {Uint8Array|null} [record_name] ObjectRecordAddRow record_name
          * @property {Array.<NFMsg.IRecordAddRowStruct>|null} [row_data] ObjectRecordAddRow row_data
          */
 
@@ -6263,11 +6263,11 @@ $root.NFMsg = (function() {
 
         /**
          * ObjectRecordAddRow record_name.
-         * @member {string} record_name
+         * @member {Uint8Array} record_name
          * @memberof NFMsg.ObjectRecordAddRow
          * @instance
          */
-        ObjectRecordAddRow.prototype.record_name = "";
+        ObjectRecordAddRow.prototype.record_name = $util.newBuffer([]);
 
         /**
          * ObjectRecordAddRow row_data.
@@ -6304,7 +6304,7 @@ $root.NFMsg = (function() {
             if (message.player_id != null && message.hasOwnProperty("player_id"))
                 $root.NFMsg.Ident.encode(message.player_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.record_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.record_name);
             if (message.row_data != null && message.row_data.length)
                 for (var i = 0; i < message.row_data.length; ++i)
                     $root.NFMsg.RecordAddRowStruct.encode(message.row_data[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
@@ -6346,7 +6346,7 @@ $root.NFMsg = (function() {
                     message.player_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.record_name = reader.string();
+                    message.record_name = reader.bytes();
                     break;
                 case 3:
                     if (!(message.row_data && message.row_data.length))
@@ -6394,8 +6394,8 @@ $root.NFMsg = (function() {
                     return "player_id." + error;
             }
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!$util.isString(message.record_name))
-                    return "record_name: string expected";
+                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
+                    return "record_name: buffer expected";
             if (message.row_data != null && message.hasOwnProperty("row_data")) {
                 if (!Array.isArray(message.row_data))
                     return "row_data: array expected";
@@ -6418,7 +6418,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IObjectRecordRemove
          * @property {NFMsg.IIdent|null} [player_id] ObjectRecordRemove player_id
-         * @property {string|null} [record_name] ObjectRecordRemove record_name
+         * @property {Uint8Array|null} [record_name] ObjectRecordRemove record_name
          * @property {Array.<number>|null} [remove_row] ObjectRecordRemove remove_row
          */
 
@@ -6448,11 +6448,11 @@ $root.NFMsg = (function() {
 
         /**
          * ObjectRecordRemove record_name.
-         * @member {string} record_name
+         * @member {Uint8Array} record_name
          * @memberof NFMsg.ObjectRecordRemove
          * @instance
          */
-        ObjectRecordRemove.prototype.record_name = "";
+        ObjectRecordRemove.prototype.record_name = $util.newBuffer([]);
 
         /**
          * ObjectRecordRemove remove_row.
@@ -6489,7 +6489,7 @@ $root.NFMsg = (function() {
             if (message.player_id != null && message.hasOwnProperty("player_id"))
                 $root.NFMsg.Ident.encode(message.player_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.record_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.record_name);
             if (message.remove_row != null && message.remove_row.length) {
                 writer.uint32(/* id 3, wireType 2 =*/26).fork();
                 for (var i = 0; i < message.remove_row.length; ++i)
@@ -6534,7 +6534,7 @@ $root.NFMsg = (function() {
                     message.player_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.record_name = reader.string();
+                    message.record_name = reader.bytes();
                     break;
                 case 3:
                     if (!(message.remove_row && message.remove_row.length))
@@ -6587,8 +6587,8 @@ $root.NFMsg = (function() {
                     return "player_id." + error;
             }
             if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!$util.isString(message.record_name))
-                    return "record_name: string expected";
+                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
+                    return "record_name: buffer expected";
             if (message.remove_row != null && message.hasOwnProperty("remove_row")) {
                 if (!Array.isArray(message.remove_row))
                     return "remove_row: array expected";
@@ -7583,10 +7583,10 @@ $root.NFMsg = (function() {
          * @interface IReqCommand
          * @property {NFMsg.IIdent|null} [control_id] ReqCommand control_id
          * @property {NFMsg.ReqCommand.EGameCommandType|null} [command_id] ReqCommand command_id
-         * @property {string|null} [command_str_value] ReqCommand command_str_value
+         * @property {Uint8Array|null} [command_str_value] ReqCommand command_str_value
          * @property {number|Long|null} [command_value_int] ReqCommand command_value_int
          * @property {number|null} [command_value_float] ReqCommand command_value_float
-         * @property {string|null} [command_value_str] ReqCommand command_value_str
+         * @property {Uint8Array|null} [command_value_str] ReqCommand command_value_str
          * @property {NFMsg.IIdent|null} [command_value_object] ReqCommand command_value_object
          * @property {number|null} [row] ReqCommand row
          * @property {number|null} [col] ReqCommand col
@@ -7625,11 +7625,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqCommand command_str_value.
-         * @member {string} command_str_value
+         * @member {Uint8Array} command_str_value
          * @memberof NFMsg.ReqCommand
          * @instance
          */
-        ReqCommand.prototype.command_str_value = "";
+        ReqCommand.prototype.command_str_value = $util.newBuffer([]);
 
         /**
          * ReqCommand command_value_int.
@@ -7649,11 +7649,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqCommand command_value_str.
-         * @member {string} command_value_str
+         * @member {Uint8Array} command_value_str
          * @memberof NFMsg.ReqCommand
          * @instance
          */
-        ReqCommand.prototype.command_value_str = "";
+        ReqCommand.prototype.command_value_str = $util.newBuffer([]);
 
         /**
          * ReqCommand command_value_object.
@@ -7708,13 +7708,13 @@ $root.NFMsg = (function() {
             if (message.command_id != null && message.hasOwnProperty("command_id"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.command_id);
             if (message.command_str_value != null && message.hasOwnProperty("command_str_value"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.command_str_value);
+                writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.command_str_value);
             if (message.command_value_int != null && message.hasOwnProperty("command_value_int"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int64(message.command_value_int);
             if (message.command_value_float != null && message.hasOwnProperty("command_value_float"))
                 writer.uint32(/* id 5, wireType 1 =*/41).double(message.command_value_float);
             if (message.command_value_str != null && message.hasOwnProperty("command_value_str"))
-                writer.uint32(/* id 6, wireType 2 =*/50).string(message.command_value_str);
+                writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.command_value_str);
             if (message.command_value_object != null && message.hasOwnProperty("command_value_object"))
                 $root.NFMsg.Ident.encode(message.command_value_object, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
             if (message.row != null && message.hasOwnProperty("row"))
@@ -7762,7 +7762,7 @@ $root.NFMsg = (function() {
                     message.command_id = reader.int32();
                     break;
                 case 3:
-                    message.command_str_value = reader.string();
+                    message.command_str_value = reader.bytes();
                     break;
                 case 4:
                     message.command_value_int = reader.int64();
@@ -7771,7 +7771,7 @@ $root.NFMsg = (function() {
                     message.command_value_float = reader.double();
                     break;
                 case 6:
-                    message.command_value_str = reader.string();
+                    message.command_value_str = reader.bytes();
                     break;
                 case 7:
                     message.command_value_object = $root.NFMsg.Ident.decode(reader, reader.uint32());
@@ -7833,8 +7833,8 @@ $root.NFMsg = (function() {
                     break;
                 }
             if (message.command_str_value != null && message.hasOwnProperty("command_str_value"))
-                if (!$util.isString(message.command_str_value))
-                    return "command_str_value: string expected";
+                if (!(message.command_str_value && typeof message.command_str_value.length === "number" || $util.isString(message.command_str_value)))
+                    return "command_str_value: buffer expected";
             if (message.command_value_int != null && message.hasOwnProperty("command_value_int"))
                 if (!$util.isInteger(message.command_value_int) && !(message.command_value_int && $util.isInteger(message.command_value_int.low) && $util.isInteger(message.command_value_int.high)))
                     return "command_value_int: integer|Long expected";
@@ -7842,8 +7842,8 @@ $root.NFMsg = (function() {
                 if (typeof message.command_value_float !== "number")
                     return "command_value_float: number expected";
             if (message.command_value_str != null && message.hasOwnProperty("command_value_str"))
-                if (!$util.isString(message.command_value_str))
-                    return "command_value_str: string expected";
+                if (!(message.command_value_str && typeof message.command_value_str.length === "number" || $util.isString(message.command_value_str)))
+                    return "command_value_str: buffer expected";
             if (message.command_value_object != null && message.hasOwnProperty("command_value_object")) {
                 var error = $root.NFMsg.Ident.verify(message.command_value_object);
                 if (error)
@@ -9619,7 +9619,7 @@ $root.NFMsg = (function() {
          * @property {number|null} [level] GridGuildBaseInfo level
          * @property {number|null} [count] GridGuildBaseInfo count
          * @property {number|null} [resource] GridGuildBaseInfo resource
-         * @property {string|null} [icon] GridGuildBaseInfo icon
+         * @property {Uint8Array|null} [icon] GridGuildBaseInfo icon
          */
 
         /**
@@ -9671,11 +9671,11 @@ $root.NFMsg = (function() {
 
         /**
          * GridGuildBaseInfo icon.
-         * @member {string} icon
+         * @member {Uint8Array} icon
          * @memberof NFMsg.GridGuildBaseInfo
          * @instance
          */
-        GridGuildBaseInfo.prototype.icon = "";
+        GridGuildBaseInfo.prototype.icon = $util.newBuffer([]);
 
         /**
          * Creates a new GridGuildBaseInfo instance using the specified properties.
@@ -9710,7 +9710,7 @@ $root.NFMsg = (function() {
             if (message.resource != null && message.hasOwnProperty("resource"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.resource);
             if (message.icon != null && message.hasOwnProperty("icon"))
-                writer.uint32(/* id 5, wireType 2 =*/42).string(message.icon);
+                writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.icon);
             return writer;
         };
 
@@ -9758,7 +9758,7 @@ $root.NFMsg = (function() {
                     message.resource = reader.int32();
                     break;
                 case 5:
-                    message.icon = reader.string();
+                    message.icon = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -9810,8 +9810,8 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.resource))
                     return "resource: integer expected";
             if (message.icon != null && message.hasOwnProperty("icon"))
-                if (!$util.isString(message.icon))
-                    return "icon: string expected";
+                if (!(message.icon && typeof message.icon.length === "number" || $util.isString(message.icon)))
+                    return "icon: buffer expected";
             return null;
         };
 
@@ -9824,7 +9824,7 @@ $root.NFMsg = (function() {
          * Properties of a ReqBigMapGridInfo.
          * @memberof NFMsg
          * @interface IReqBigMapGridInfo
-         * @property {Array.<string>|null} [map_title_id] ReqBigMapGridInfo map_title_id
+         * @property {Array.<Uint8Array>|null} [map_title_id] ReqBigMapGridInfo map_title_id
          */
 
         /**
@@ -9845,7 +9845,7 @@ $root.NFMsg = (function() {
 
         /**
          * ReqBigMapGridInfo map_title_id.
-         * @member {Array.<string>} map_title_id
+         * @member {Array.<Uint8Array>} map_title_id
          * @memberof NFMsg.ReqBigMapGridInfo
          * @instance
          */
@@ -9877,7 +9877,7 @@ $root.NFMsg = (function() {
                 writer = $Writer.create();
             if (message.map_title_id != null && message.map_title_id.length)
                 for (var i = 0; i < message.map_title_id.length; ++i)
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.map_title_id[i]);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.map_title_id[i]);
             return writer;
         };
 
@@ -9915,7 +9915,7 @@ $root.NFMsg = (function() {
                 case 1:
                     if (!(message.map_title_id && message.map_title_id.length))
                         message.map_title_id = [];
-                    message.map_title_id.push(reader.string());
+                    message.map_title_id.push(reader.bytes());
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -9956,8 +9956,8 @@ $root.NFMsg = (function() {
                 if (!Array.isArray(message.map_title_id))
                     return "map_title_id: array expected";
                 for (var i = 0; i < message.map_title_id.length; ++i)
-                    if (!$util.isString(message.map_title_id[i]))
-                        return "map_title_id: string[] expected";
+                    if (!(message.map_title_id[i] && typeof message.map_title_id[i].length === "number" || $util.isString(message.map_title_id[i])))
+                        return "map_title_id: buffer[] expected";
             }
             return null;
         };
@@ -9971,7 +9971,7 @@ $root.NFMsg = (function() {
          * Properties of a BigMapGridBaseInfo.
          * @memberof NFMsg
          * @interface IBigMapGridBaseInfo
-         * @property {string|null} [id] BigMapGridBaseInfo id
+         * @property {Uint8Array|null} [id] BigMapGridBaseInfo id
          * @property {NFMsg.IGridGuildBaseInfo|null} [guild_info] BigMapGridBaseInfo guild_info
          * @property {number|null} [kingwar_time] BigMapGridBaseInfo kingwar_time
          * @property {NFMsg.IIdent|null} [kingwarrer] BigMapGridBaseInfo kingwarrer
@@ -9996,11 +9996,11 @@ $root.NFMsg = (function() {
 
         /**
          * BigMapGridBaseInfo id.
-         * @member {string} id
+         * @member {Uint8Array} id
          * @memberof NFMsg.BigMapGridBaseInfo
          * @instance
          */
-        BigMapGridBaseInfo.prototype.id = "";
+        BigMapGridBaseInfo.prototype.id = $util.newBuffer([]);
 
         /**
          * BigMapGridBaseInfo guild_info.
@@ -10067,7 +10067,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.id != null && message.hasOwnProperty("id"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.id);
             if (message.guild_info != null && message.hasOwnProperty("guild_info"))
                 $root.NFMsg.GridGuildBaseInfo.encode(message.guild_info, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             if (message.kingwar_time != null && message.hasOwnProperty("kingwar_time"))
@@ -10113,7 +10113,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.id = reader.string();
+                    message.id = reader.bytes();
                     break;
                 case 2:
                     message.guild_info = $root.NFMsg.GridGuildBaseInfo.decode(reader, reader.uint32());
@@ -10166,8 +10166,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.id != null && message.hasOwnProperty("id"))
-                if (!$util.isString(message.id))
-                    return "id: string expected";
+                if (!(message.id && typeof message.id.length === "number" || $util.isString(message.id)))
+                    return "id: buffer expected";
             if (message.guild_info != null && message.hasOwnProperty("guild_info")) {
                 var error = $root.NFMsg.GridGuildBaseInfo.verify(message.guild_info);
                 if (error)
@@ -10202,8 +10202,8 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IBigMapLeaveMsg
          * @property {NFMsg.IIdent|null} [owner] BigMapLeaveMsg owner
-         * @property {string|null} [owner_name] BigMapLeaveMsg owner_name
-         * @property {string|null} [msg_data] BigMapLeaveMsg msg_data
+         * @property {Uint8Array|null} [owner_name] BigMapLeaveMsg owner_name
+         * @property {Uint8Array|null} [msg_data] BigMapLeaveMsg msg_data
          * @property {number|null} [msg_time] BigMapLeaveMsg msg_time
          * @property {number|null} [owner_level] BigMapLeaveMsg owner_level
          */
@@ -10233,19 +10233,19 @@ $root.NFMsg = (function() {
 
         /**
          * BigMapLeaveMsg owner_name.
-         * @member {string} owner_name
+         * @member {Uint8Array} owner_name
          * @memberof NFMsg.BigMapLeaveMsg
          * @instance
          */
-        BigMapLeaveMsg.prototype.owner_name = "";
+        BigMapLeaveMsg.prototype.owner_name = $util.newBuffer([]);
 
         /**
          * BigMapLeaveMsg msg_data.
-         * @member {string} msg_data
+         * @member {Uint8Array} msg_data
          * @memberof NFMsg.BigMapLeaveMsg
          * @instance
          */
-        BigMapLeaveMsg.prototype.msg_data = "";
+        BigMapLeaveMsg.prototype.msg_data = $util.newBuffer([]);
 
         /**
          * BigMapLeaveMsg msg_time.
@@ -10290,9 +10290,9 @@ $root.NFMsg = (function() {
             if (message.owner != null && message.hasOwnProperty("owner"))
                 $root.NFMsg.Ident.encode(message.owner, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.owner_name != null && message.hasOwnProperty("owner_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.owner_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.owner_name);
             if (message.msg_data != null && message.hasOwnProperty("msg_data"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.msg_data);
+                writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.msg_data);
             if (message.msg_time != null && message.hasOwnProperty("msg_time"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.msg_time);
             if (message.owner_level != null && message.hasOwnProperty("owner_level"))
@@ -10335,10 +10335,10 @@ $root.NFMsg = (function() {
                     message.owner = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.owner_name = reader.string();
+                    message.owner_name = reader.bytes();
                     break;
                 case 3:
-                    message.msg_data = reader.string();
+                    message.msg_data = reader.bytes();
                     break;
                 case 4:
                     message.msg_time = reader.int32();
@@ -10387,11 +10387,11 @@ $root.NFMsg = (function() {
                     return "owner." + error;
             }
             if (message.owner_name != null && message.hasOwnProperty("owner_name"))
-                if (!$util.isString(message.owner_name))
-                    return "owner_name: string expected";
+                if (!(message.owner_name && typeof message.owner_name.length === "number" || $util.isString(message.owner_name)))
+                    return "owner_name: buffer expected";
             if (message.msg_data != null && message.hasOwnProperty("msg_data"))
-                if (!$util.isString(message.msg_data))
-                    return "msg_data: string expected";
+                if (!(message.msg_data && typeof message.msg_data.length === "number" || $util.isString(message.msg_data)))
+                    return "msg_data: buffer expected";
             if (message.msg_time != null && message.hasOwnProperty("msg_time"))
                 if (!$util.isInteger(message.msg_time))
                     return "msg_time: integer expected";
@@ -11248,7 +11248,7 @@ $root.NFMsg = (function() {
          * Properties of a ReqHoldMapGrid.
          * @memberof NFMsg
          * @interface IReqHoldMapGrid
-         * @property {string|null} [map_title_id] ReqHoldMapGrid map_title_id
+         * @property {Uint8Array|null} [map_title_id] ReqHoldMapGrid map_title_id
          * @property {NFMsg.IIdent|null} [guild_id] ReqHoldMapGrid guild_id
          */
 
@@ -11269,11 +11269,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqHoldMapGrid map_title_id.
-         * @member {string} map_title_id
+         * @member {Uint8Array} map_title_id
          * @memberof NFMsg.ReqHoldMapGrid
          * @instance
          */
-        ReqHoldMapGrid.prototype.map_title_id = "";
+        ReqHoldMapGrid.prototype.map_title_id = $util.newBuffer([]);
 
         /**
          * ReqHoldMapGrid guild_id.
@@ -11308,7 +11308,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.map_title_id != null && message.hasOwnProperty("map_title_id"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.map_title_id);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.map_title_id);
             if (message.guild_id != null && message.hasOwnProperty("guild_id"))
                 $root.NFMsg.Ident.encode(message.guild_id, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             return writer;
@@ -11346,7 +11346,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.map_title_id = reader.string();
+                    message.map_title_id = reader.bytes();
                     break;
                 case 2:
                     message.guild_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
@@ -11387,8 +11387,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.map_title_id != null && message.hasOwnProperty("map_title_id"))
-                if (!$util.isString(message.map_title_id))
-                    return "map_title_id: string expected";
+                if (!(message.map_title_id && typeof message.map_title_id.length === "number" || $util.isString(message.map_title_id)))
+                    return "map_title_id: buffer expected";
             if (message.guild_id != null && message.hasOwnProperty("guild_id")) {
                 var error = $root.NFMsg.Ident.verify(message.guild_id);
                 if (error)
@@ -11528,7 +11528,7 @@ $root.NFMsg = (function() {
          * Properties of a ReqLeaveMapMsg.
          * @memberof NFMsg
          * @interface IReqLeaveMapMsg
-         * @property {string|null} [map_title_id] ReqLeaveMapMsg map_title_id
+         * @property {Uint8Array|null} [map_title_id] ReqLeaveMapMsg map_title_id
          * @property {NFMsg.IBigMapLeaveMsg|null} [leave_msg] ReqLeaveMapMsg leave_msg
          */
 
@@ -11549,11 +11549,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqLeaveMapMsg map_title_id.
-         * @member {string} map_title_id
+         * @member {Uint8Array} map_title_id
          * @memberof NFMsg.ReqLeaveMapMsg
          * @instance
          */
-        ReqLeaveMapMsg.prototype.map_title_id = "";
+        ReqLeaveMapMsg.prototype.map_title_id = $util.newBuffer([]);
 
         /**
          * ReqLeaveMapMsg leave_msg.
@@ -11588,7 +11588,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.map_title_id != null && message.hasOwnProperty("map_title_id"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.map_title_id);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.map_title_id);
             if (message.leave_msg != null && message.hasOwnProperty("leave_msg"))
                 $root.NFMsg.BigMapLeaveMsg.encode(message.leave_msg, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             return writer;
@@ -11626,7 +11626,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.map_title_id = reader.string();
+                    message.map_title_id = reader.bytes();
                     break;
                 case 2:
                     message.leave_msg = $root.NFMsg.BigMapLeaveMsg.decode(reader, reader.uint32());
@@ -11667,8 +11667,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.map_title_id != null && message.hasOwnProperty("map_title_id"))
-                if (!$util.isString(message.map_title_id))
-                    return "map_title_id: string expected";
+                if (!(message.map_title_id && typeof message.map_title_id.length === "number" || $util.isString(message.map_title_id)))
+                    return "map_title_id: buffer expected";
             if (message.leave_msg != null && message.hasOwnProperty("leave_msg")) {
                 var error = $root.NFMsg.BigMapLeaveMsg.verify(message.leave_msg);
                 if (error)
@@ -11808,7 +11808,7 @@ $root.NFMsg = (function() {
          * Properties of a ReqGetMapAward.
          * @memberof NFMsg
          * @interface IReqGetMapAward
-         * @property {string|null} [map_title_id] ReqGetMapAward map_title_id
+         * @property {Uint8Array|null} [map_title_id] ReqGetMapAward map_title_id
          */
 
         /**
@@ -11828,11 +11828,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqGetMapAward map_title_id.
-         * @member {string} map_title_id
+         * @member {Uint8Array} map_title_id
          * @memberof NFMsg.ReqGetMapAward
          * @instance
          */
-        ReqGetMapAward.prototype.map_title_id = "";
+        ReqGetMapAward.prototype.map_title_id = $util.newBuffer([]);
 
         /**
          * Creates a new ReqGetMapAward instance using the specified properties.
@@ -11859,7 +11859,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.map_title_id != null && message.hasOwnProperty("map_title_id"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.map_title_id);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.map_title_id);
             return writer;
         };
 
@@ -11895,7 +11895,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.map_title_id = reader.string();
+                    message.map_title_id = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -11933,8 +11933,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.map_title_id != null && message.hasOwnProperty("map_title_id"))
-                if (!$util.isString(message.map_title_id))
-                    return "map_title_id: string expected";
+                if (!(message.map_title_id && typeof message.map_title_id.length === "number" || $util.isString(message.map_title_id)))
+                    return "map_title_id: buffer expected";
             return null;
         };
 
@@ -12069,7 +12069,7 @@ $root.NFMsg = (function() {
          * Properties of a ReqMapHunting.
          * @memberof NFMsg
          * @interface IReqMapHunting
-         * @property {string|null} [map_title_id] ReqMapHunting map_title_id
+         * @property {Uint8Array|null} [map_title_id] ReqMapHunting map_title_id
          */
 
         /**
@@ -12089,11 +12089,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqMapHunting map_title_id.
-         * @member {string} map_title_id
+         * @member {Uint8Array} map_title_id
          * @memberof NFMsg.ReqMapHunting
          * @instance
          */
-        ReqMapHunting.prototype.map_title_id = "";
+        ReqMapHunting.prototype.map_title_id = $util.newBuffer([]);
 
         /**
          * Creates a new ReqMapHunting instance using the specified properties.
@@ -12120,7 +12120,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.map_title_id != null && message.hasOwnProperty("map_title_id"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.map_title_id);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.map_title_id);
             return writer;
         };
 
@@ -12156,7 +12156,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.map_title_id = reader.string();
+                    message.map_title_id = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -12194,8 +12194,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.map_title_id != null && message.hasOwnProperty("map_title_id"))
-                if (!$util.isString(message.map_title_id))
-                    return "map_title_id: string expected";
+                if (!(message.map_title_id && typeof message.map_title_id.length === "number" || $util.isString(message.map_title_id)))
+                    return "map_title_id: buffer expected";
             return null;
         };
 
@@ -12330,7 +12330,7 @@ $root.NFMsg = (function() {
          * Properties of a ReqMapKingWar.
          * @memberof NFMsg
          * @interface IReqMapKingWar
-         * @property {string|null} [map_title] ReqMapKingWar map_title
+         * @property {Uint8Array|null} [map_title] ReqMapKingWar map_title
          */
 
         /**
@@ -12350,11 +12350,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqMapKingWar map_title.
-         * @member {string} map_title
+         * @member {Uint8Array} map_title
          * @memberof NFMsg.ReqMapKingWar
          * @instance
          */
-        ReqMapKingWar.prototype.map_title = "";
+        ReqMapKingWar.prototype.map_title = $util.newBuffer([]);
 
         /**
          * Creates a new ReqMapKingWar instance using the specified properties.
@@ -12381,7 +12381,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.map_title != null && message.hasOwnProperty("map_title"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.map_title);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.map_title);
             return writer;
         };
 
@@ -12417,7 +12417,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.map_title = reader.string();
+                    message.map_title = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -12455,8 +12455,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.map_title != null && message.hasOwnProperty("map_title"))
-                if (!$util.isString(message.map_title))
-                    return "map_title: string expected";
+                if (!(message.map_title && typeof message.map_title.length === "number" || $util.isString(message.map_title)))
+                    return "map_title: buffer expected";
             return null;
         };
 
@@ -12469,7 +12469,7 @@ $root.NFMsg = (function() {
          * Properties of an AckMapKingWar.
          * @memberof NFMsg
          * @interface IAckMapKingWar
-         * @property {string|null} [map_title] AckMapKingWar map_title
+         * @property {Uint8Array|null} [map_title] AckMapKingWar map_title
          */
 
         /**
@@ -12489,11 +12489,11 @@ $root.NFMsg = (function() {
 
         /**
          * AckMapKingWar map_title.
-         * @member {string} map_title
+         * @member {Uint8Array} map_title
          * @memberof NFMsg.AckMapKingWar
          * @instance
          */
-        AckMapKingWar.prototype.map_title = "";
+        AckMapKingWar.prototype.map_title = $util.newBuffer([]);
 
         /**
          * Creates a new AckMapKingWar instance using the specified properties.
@@ -12520,7 +12520,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.map_title != null && message.hasOwnProperty("map_title"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.map_title);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.map_title);
             return writer;
         };
 
@@ -12556,7 +12556,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.map_title = reader.string();
+                    message.map_title = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -12594,8 +12594,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.map_title != null && message.hasOwnProperty("map_title"))
-                if (!$util.isString(message.map_title))
-                    return "map_title: string expected";
+                if (!(message.map_title && typeof message.map_title.length === "number" || $util.isString(message.map_title)))
+                    return "map_title: buffer expected";
             return null;
         };
 
@@ -12645,8 +12645,8 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IServerInfoReport
          * @property {number|null} [server_id] ServerInfoReport server_id
-         * @property {string|null} [server_name] ServerInfoReport server_name
-         * @property {string|null} [server_ip] ServerInfoReport server_ip
+         * @property {Uint8Array|null} [server_name] ServerInfoReport server_name
+         * @property {Uint8Array|null} [server_ip] ServerInfoReport server_ip
          * @property {number|null} [server_port] ServerInfoReport server_port
          * @property {number|null} [server_max_online] ServerInfoReport server_max_online
          * @property {number|null} [server_cur_count] ServerInfoReport server_cur_count
@@ -12679,19 +12679,19 @@ $root.NFMsg = (function() {
 
         /**
          * ServerInfoReport server_name.
-         * @member {string} server_name
+         * @member {Uint8Array} server_name
          * @memberof NFMsg.ServerInfoReport
          * @instance
          */
-        ServerInfoReport.prototype.server_name = "";
+        ServerInfoReport.prototype.server_name = $util.newBuffer([]);
 
         /**
          * ServerInfoReport server_ip.
-         * @member {string} server_ip
+         * @member {Uint8Array} server_ip
          * @memberof NFMsg.ServerInfoReport
          * @instance
          */
-        ServerInfoReport.prototype.server_ip = "";
+        ServerInfoReport.prototype.server_ip = $util.newBuffer([]);
 
         /**
          * ServerInfoReport server_port.
@@ -12760,9 +12760,9 @@ $root.NFMsg = (function() {
             if (message.server_id != null && message.hasOwnProperty("server_id"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.server_id);
             if (message.server_name != null && message.hasOwnProperty("server_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.server_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.server_name);
             if (message.server_ip != null && message.hasOwnProperty("server_ip"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.server_ip);
+                writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.server_ip);
             if (message.server_port != null && message.hasOwnProperty("server_port"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.server_port);
             if (message.server_max_online != null && message.hasOwnProperty("server_max_online"))
@@ -12811,10 +12811,10 @@ $root.NFMsg = (function() {
                     message.server_id = reader.int32();
                     break;
                 case 2:
-                    message.server_name = reader.string();
+                    message.server_name = reader.bytes();
                     break;
                 case 3:
-                    message.server_ip = reader.string();
+                    message.server_ip = reader.bytes();
                     break;
                 case 4:
                     message.server_port = reader.int32();
@@ -12870,11 +12870,11 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.server_id))
                     return "server_id: integer expected";
             if (message.server_name != null && message.hasOwnProperty("server_name"))
-                if (!$util.isString(message.server_name))
-                    return "server_name: string expected";
+                if (!(message.server_name && typeof message.server_name.length === "number" || $util.isString(message.server_name)))
+                    return "server_name: buffer expected";
             if (message.server_ip != null && message.hasOwnProperty("server_ip"))
-                if (!$util.isString(message.server_ip))
-                    return "server_ip: string expected";
+                if (!(message.server_ip && typeof message.server_ip.length === "number" || $util.isString(message.server_ip)))
+                    return "server_ip: buffer expected";
             if (message.server_port != null && message.hasOwnProperty("server_port"))
                 if (!$util.isInteger(message.server_port))
                     return "server_port: integer expected";
@@ -13287,16 +13287,16 @@ $root.NFMsg = (function() {
          * Properties of a ReqAccountLogin.
          * @memberof NFMsg
          * @interface IReqAccountLogin
-         * @property {string|null} [account] ReqAccountLogin account
-         * @property {string|null} [password] ReqAccountLogin password
-         * @property {string|null} [security_code] ReqAccountLogin security_code
-         * @property {string|null} [signBuff] ReqAccountLogin signBuff
+         * @property {Uint8Array|null} [account] ReqAccountLogin account
+         * @property {Uint8Array|null} [password] ReqAccountLogin password
+         * @property {Uint8Array|null} [security_code] ReqAccountLogin security_code
+         * @property {Uint8Array|null} [signBuff] ReqAccountLogin signBuff
          * @property {number|null} [clientVersion] ReqAccountLogin clientVersion
          * @property {NFMsg.ELoginMode|null} [loginMode] ReqAccountLogin loginMode
          * @property {number|null} [clientIP] ReqAccountLogin clientIP
          * @property {number|Long|null} [clientMAC] ReqAccountLogin clientMAC
-         * @property {string|null} [device_info] ReqAccountLogin device_info
-         * @property {string|null} [extra_info] ReqAccountLogin extra_info
+         * @property {Uint8Array|null} [device_info] ReqAccountLogin device_info
+         * @property {Uint8Array|null} [extra_info] ReqAccountLogin extra_info
          * @property {number|null} [platform_type] ReqAccountLogin platform_type
          */
 
@@ -13317,35 +13317,35 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAccountLogin account.
-         * @member {string} account
+         * @member {Uint8Array} account
          * @memberof NFMsg.ReqAccountLogin
          * @instance
          */
-        ReqAccountLogin.prototype.account = "";
+        ReqAccountLogin.prototype.account = $util.newBuffer([]);
 
         /**
          * ReqAccountLogin password.
-         * @member {string} password
+         * @member {Uint8Array} password
          * @memberof NFMsg.ReqAccountLogin
          * @instance
          */
-        ReqAccountLogin.prototype.password = "";
+        ReqAccountLogin.prototype.password = $util.newBuffer([]);
 
         /**
          * ReqAccountLogin security_code.
-         * @member {string} security_code
+         * @member {Uint8Array} security_code
          * @memberof NFMsg.ReqAccountLogin
          * @instance
          */
-        ReqAccountLogin.prototype.security_code = "";
+        ReqAccountLogin.prototype.security_code = $util.newBuffer([]);
 
         /**
          * ReqAccountLogin signBuff.
-         * @member {string} signBuff
+         * @member {Uint8Array} signBuff
          * @memberof NFMsg.ReqAccountLogin
          * @instance
          */
-        ReqAccountLogin.prototype.signBuff = "";
+        ReqAccountLogin.prototype.signBuff = $util.newBuffer([]);
 
         /**
          * ReqAccountLogin clientVersion.
@@ -13381,19 +13381,19 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAccountLogin device_info.
-         * @member {string} device_info
+         * @member {Uint8Array} device_info
          * @memberof NFMsg.ReqAccountLogin
          * @instance
          */
-        ReqAccountLogin.prototype.device_info = "";
+        ReqAccountLogin.prototype.device_info = $util.newBuffer([]);
 
         /**
          * ReqAccountLogin extra_info.
-         * @member {string} extra_info
+         * @member {Uint8Array} extra_info
          * @memberof NFMsg.ReqAccountLogin
          * @instance
          */
-        ReqAccountLogin.prototype.extra_info = "";
+        ReqAccountLogin.prototype.extra_info = $util.newBuffer([]);
 
         /**
          * ReqAccountLogin platform_type.
@@ -13428,13 +13428,13 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.account != null && message.hasOwnProperty("account"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.account);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.account);
             if (message.password != null && message.hasOwnProperty("password"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.password);
+                writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.password);
             if (message.security_code != null && message.hasOwnProperty("security_code"))
-                writer.uint32(/* id 4, wireType 2 =*/34).string(message.security_code);
+                writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.security_code);
             if (message.signBuff != null && message.hasOwnProperty("signBuff"))
-                writer.uint32(/* id 5, wireType 2 =*/42).string(message.signBuff);
+                writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.signBuff);
             if (message.clientVersion != null && message.hasOwnProperty("clientVersion"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.clientVersion);
             if (message.loginMode != null && message.hasOwnProperty("loginMode"))
@@ -13444,9 +13444,9 @@ $root.NFMsg = (function() {
             if (message.clientMAC != null && message.hasOwnProperty("clientMAC"))
                 writer.uint32(/* id 9, wireType 0 =*/72).int64(message.clientMAC);
             if (message.device_info != null && message.hasOwnProperty("device_info"))
-                writer.uint32(/* id 10, wireType 2 =*/82).string(message.device_info);
+                writer.uint32(/* id 10, wireType 2 =*/82).bytes(message.device_info);
             if (message.extra_info != null && message.hasOwnProperty("extra_info"))
-                writer.uint32(/* id 11, wireType 2 =*/90).string(message.extra_info);
+                writer.uint32(/* id 11, wireType 2 =*/90).bytes(message.extra_info);
             if (message.platform_type != null && message.hasOwnProperty("platform_type"))
                 writer.uint32(/* id 12, wireType 0 =*/96).int32(message.platform_type);
             return writer;
@@ -13484,16 +13484,16 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 2:
-                    message.account = reader.string();
+                    message.account = reader.bytes();
                     break;
                 case 3:
-                    message.password = reader.string();
+                    message.password = reader.bytes();
                     break;
                 case 4:
-                    message.security_code = reader.string();
+                    message.security_code = reader.bytes();
                     break;
                 case 5:
-                    message.signBuff = reader.string();
+                    message.signBuff = reader.bytes();
                     break;
                 case 6:
                     message.clientVersion = reader.int32();
@@ -13508,10 +13508,10 @@ $root.NFMsg = (function() {
                     message.clientMAC = reader.int64();
                     break;
                 case 10:
-                    message.device_info = reader.string();
+                    message.device_info = reader.bytes();
                     break;
                 case 11:
-                    message.extra_info = reader.string();
+                    message.extra_info = reader.bytes();
                     break;
                 case 12:
                     message.platform_type = reader.int32();
@@ -13552,17 +13552,17 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.account != null && message.hasOwnProperty("account"))
-                if (!$util.isString(message.account))
-                    return "account: string expected";
+                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
+                    return "account: buffer expected";
             if (message.password != null && message.hasOwnProperty("password"))
-                if (!$util.isString(message.password))
-                    return "password: string expected";
+                if (!(message.password && typeof message.password.length === "number" || $util.isString(message.password)))
+                    return "password: buffer expected";
             if (message.security_code != null && message.hasOwnProperty("security_code"))
-                if (!$util.isString(message.security_code))
-                    return "security_code: string expected";
+                if (!(message.security_code && typeof message.security_code.length === "number" || $util.isString(message.security_code)))
+                    return "security_code: buffer expected";
             if (message.signBuff != null && message.hasOwnProperty("signBuff"))
-                if (!$util.isString(message.signBuff))
-                    return "signBuff: string expected";
+                if (!(message.signBuff && typeof message.signBuff.length === "number" || $util.isString(message.signBuff)))
+                    return "signBuff: buffer expected";
             if (message.clientVersion != null && message.hasOwnProperty("clientVersion"))
                 if (!$util.isInteger(message.clientVersion))
                     return "clientVersion: integer expected";
@@ -13582,11 +13582,11 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.clientMAC) && !(message.clientMAC && $util.isInteger(message.clientMAC.low) && $util.isInteger(message.clientMAC.high)))
                     return "clientMAC: integer|Long expected";
             if (message.device_info != null && message.hasOwnProperty("device_info"))
-                if (!$util.isString(message.device_info))
-                    return "device_info: string expected";
+                if (!(message.device_info && typeof message.device_info.length === "number" || $util.isString(message.device_info)))
+                    return "device_info: buffer expected";
             if (message.extra_info != null && message.hasOwnProperty("extra_info"))
-                if (!$util.isString(message.extra_info))
-                    return "extra_info: string expected";
+                if (!(message.extra_info && typeof message.extra_info.length === "number" || $util.isString(message.extra_info)))
+                    return "extra_info: buffer expected";
             if (message.platform_type != null && message.hasOwnProperty("platform_type"))
                 if (!$util.isInteger(message.platform_type))
                     return "platform_type: integer expected";
@@ -13602,8 +13602,8 @@ $root.NFMsg = (function() {
          * Properties of a ReqAccountLogout.
          * @memberof NFMsg
          * @interface IReqAccountLogout
-         * @property {string|null} [account] ReqAccountLogout account
-         * @property {string|null} [extra_info] ReqAccountLogout extra_info
+         * @property {Uint8Array|null} [account] ReqAccountLogout account
+         * @property {Uint8Array|null} [extra_info] ReqAccountLogout extra_info
          */
 
         /**
@@ -13623,19 +13623,19 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAccountLogout account.
-         * @member {string} account
+         * @member {Uint8Array} account
          * @memberof NFMsg.ReqAccountLogout
          * @instance
          */
-        ReqAccountLogout.prototype.account = "";
+        ReqAccountLogout.prototype.account = $util.newBuffer([]);
 
         /**
          * ReqAccountLogout extra_info.
-         * @member {string} extra_info
+         * @member {Uint8Array} extra_info
          * @memberof NFMsg.ReqAccountLogout
          * @instance
          */
-        ReqAccountLogout.prototype.extra_info = "";
+        ReqAccountLogout.prototype.extra_info = $util.newBuffer([]);
 
         /**
          * Creates a new ReqAccountLogout instance using the specified properties.
@@ -13662,9 +13662,9 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.account != null && message.hasOwnProperty("account"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.account);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.account);
             if (message.extra_info != null && message.hasOwnProperty("extra_info"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.extra_info);
+                writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.extra_info);
             return writer;
         };
 
@@ -13700,10 +13700,10 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 2:
-                    message.account = reader.string();
+                    message.account = reader.bytes();
                     break;
                 case 3:
-                    message.extra_info = reader.string();
+                    message.extra_info = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -13741,11 +13741,11 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.account != null && message.hasOwnProperty("account"))
-                if (!$util.isString(message.account))
-                    return "account: string expected";
+                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
+                    return "account: buffer expected";
             if (message.extra_info != null && message.hasOwnProperty("extra_info"))
-                if (!$util.isString(message.extra_info))
-                    return "extra_info: string expected";
+                if (!(message.extra_info && typeof message.extra_info.length === "number" || $util.isString(message.extra_info)))
+                    return "extra_info: buffer expected";
             return null;
         };
 
@@ -13759,7 +13759,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IServerInfo
          * @property {number|null} [server_id] ServerInfo server_id
-         * @property {string|null} [name] ServerInfo name
+         * @property {Uint8Array|null} [name] ServerInfo name
          * @property {number|null} [wait_count] ServerInfo wait_count
          * @property {NFMsg.EServerState|null} [status] ServerInfo status
          */
@@ -13789,11 +13789,11 @@ $root.NFMsg = (function() {
 
         /**
          * ServerInfo name.
-         * @member {string} name
+         * @member {Uint8Array} name
          * @memberof NFMsg.ServerInfo
          * @instance
          */
-        ServerInfo.prototype.name = "";
+        ServerInfo.prototype.name = $util.newBuffer([]);
 
         /**
          * ServerInfo wait_count.
@@ -13838,7 +13838,7 @@ $root.NFMsg = (function() {
             if (message.server_id != null && message.hasOwnProperty("server_id"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.server_id);
             if (message.name != null && message.hasOwnProperty("name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.name);
             if (message.wait_count != null && message.hasOwnProperty("wait_count"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.wait_count);
             if (message.status != null && message.hasOwnProperty("status"))
@@ -13881,7 +13881,7 @@ $root.NFMsg = (function() {
                     message.server_id = reader.int32();
                     break;
                 case 2:
-                    message.name = reader.string();
+                    message.name = reader.bytes();
                     break;
                 case 3:
                     message.wait_count = reader.int32();
@@ -13928,8 +13928,8 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.server_id))
                     return "server_id: integer expected";
             if (message.name != null && message.hasOwnProperty("name"))
-                if (!$util.isString(message.name))
-                    return "name: string expected";
+                if (!(message.name && typeof message.name.length === "number" || $util.isString(message.name)))
+                    return "name: buffer expected";
             if (message.wait_count != null && message.hasOwnProperty("wait_count"))
                 if (!$util.isInteger(message.wait_count))
                     return "wait_count: integer expected";
@@ -14286,7 +14286,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IReqConnectWorld
          * @property {number|null} [world_id] ReqConnectWorld world_id
-         * @property {string|null} [account] ReqConnectWorld account
+         * @property {Uint8Array|null} [account] ReqConnectWorld account
          * @property {NFMsg.IIdent|null} [sender] ReqConnectWorld sender
          * @property {number|null} [login_id] ReqConnectWorld login_id
          */
@@ -14316,11 +14316,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqConnectWorld account.
-         * @member {string} account
+         * @member {Uint8Array} account
          * @memberof NFMsg.ReqConnectWorld
          * @instance
          */
-        ReqConnectWorld.prototype.account = "";
+        ReqConnectWorld.prototype.account = $util.newBuffer([]);
 
         /**
          * ReqConnectWorld sender.
@@ -14365,7 +14365,7 @@ $root.NFMsg = (function() {
             if (message.world_id != null && message.hasOwnProperty("world_id"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.world_id);
             if (message.account != null && message.hasOwnProperty("account"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.account);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.account);
             if (message.sender != null && message.hasOwnProperty("sender"))
                 $root.NFMsg.Ident.encode(message.sender, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
             if (message.login_id != null && message.hasOwnProperty("login_id"))
@@ -14408,7 +14408,7 @@ $root.NFMsg = (function() {
                     message.world_id = reader.int32();
                     break;
                 case 2:
-                    message.account = reader.string();
+                    message.account = reader.bytes();
                     break;
                 case 3:
                     message.sender = $root.NFMsg.Ident.decode(reader, reader.uint32());
@@ -14455,8 +14455,8 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.world_id))
                     return "world_id: integer expected";
             if (message.account != null && message.hasOwnProperty("account"))
-                if (!$util.isString(message.account))
-                    return "account: string expected";
+                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
+                    return "account: buffer expected";
             if (message.sender != null && message.hasOwnProperty("sender")) {
                 var error = $root.NFMsg.Ident.verify(message.sender);
                 if (error)
@@ -14480,10 +14480,10 @@ $root.NFMsg = (function() {
          * @property {number|null} [world_id] AckConnectWorldResult world_id
          * @property {NFMsg.IIdent|null} [sender] AckConnectWorldResult sender
          * @property {number|null} [login_id] AckConnectWorldResult login_id
-         * @property {string|null} [account] AckConnectWorldResult account
-         * @property {string|null} [world_ip] AckConnectWorldResult world_ip
+         * @property {Uint8Array|null} [account] AckConnectWorldResult account
+         * @property {Uint8Array|null} [world_ip] AckConnectWorldResult world_ip
          * @property {number|null} [world_port] AckConnectWorldResult world_port
-         * @property {string|null} [world_key] AckConnectWorldResult world_key
+         * @property {Uint8Array|null} [world_key] AckConnectWorldResult world_key
          */
 
         /**
@@ -14527,19 +14527,19 @@ $root.NFMsg = (function() {
 
         /**
          * AckConnectWorldResult account.
-         * @member {string} account
+         * @member {Uint8Array} account
          * @memberof NFMsg.AckConnectWorldResult
          * @instance
          */
-        AckConnectWorldResult.prototype.account = "";
+        AckConnectWorldResult.prototype.account = $util.newBuffer([]);
 
         /**
          * AckConnectWorldResult world_ip.
-         * @member {string} world_ip
+         * @member {Uint8Array} world_ip
          * @memberof NFMsg.AckConnectWorldResult
          * @instance
          */
-        AckConnectWorldResult.prototype.world_ip = "";
+        AckConnectWorldResult.prototype.world_ip = $util.newBuffer([]);
 
         /**
          * AckConnectWorldResult world_port.
@@ -14551,11 +14551,11 @@ $root.NFMsg = (function() {
 
         /**
          * AckConnectWorldResult world_key.
-         * @member {string} world_key
+         * @member {Uint8Array} world_key
          * @memberof NFMsg.AckConnectWorldResult
          * @instance
          */
-        AckConnectWorldResult.prototype.world_key = "";
+        AckConnectWorldResult.prototype.world_key = $util.newBuffer([]);
 
         /**
          * Creates a new AckConnectWorldResult instance using the specified properties.
@@ -14588,13 +14588,13 @@ $root.NFMsg = (function() {
             if (message.login_id != null && message.hasOwnProperty("login_id"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.login_id);
             if (message.account != null && message.hasOwnProperty("account"))
-                writer.uint32(/* id 4, wireType 2 =*/34).string(message.account);
+                writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.account);
             if (message.world_ip != null && message.hasOwnProperty("world_ip"))
-                writer.uint32(/* id 5, wireType 2 =*/42).string(message.world_ip);
+                writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.world_ip);
             if (message.world_port != null && message.hasOwnProperty("world_port"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.world_port);
             if (message.world_key != null && message.hasOwnProperty("world_key"))
-                writer.uint32(/* id 7, wireType 2 =*/58).string(message.world_key);
+                writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.world_key);
             return writer;
         };
 
@@ -14639,16 +14639,16 @@ $root.NFMsg = (function() {
                     message.login_id = reader.int32();
                     break;
                 case 4:
-                    message.account = reader.string();
+                    message.account = reader.bytes();
                     break;
                 case 5:
-                    message.world_ip = reader.string();
+                    message.world_ip = reader.bytes();
                     break;
                 case 6:
                     message.world_port = reader.int32();
                     break;
                 case 7:
-                    message.world_key = reader.string();
+                    message.world_key = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -14697,17 +14697,17 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.login_id))
                     return "login_id: integer expected";
             if (message.account != null && message.hasOwnProperty("account"))
-                if (!$util.isString(message.account))
-                    return "account: string expected";
+                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
+                    return "account: buffer expected";
             if (message.world_ip != null && message.hasOwnProperty("world_ip"))
-                if (!$util.isString(message.world_ip))
-                    return "world_ip: string expected";
+                if (!(message.world_ip && typeof message.world_ip.length === "number" || $util.isString(message.world_ip)))
+                    return "world_ip: buffer expected";
             if (message.world_port != null && message.hasOwnProperty("world_port"))
                 if (!$util.isInteger(message.world_port))
                     return "world_port: integer expected";
             if (message.world_key != null && message.hasOwnProperty("world_key"))
-                if (!$util.isString(message.world_key))
-                    return "world_key: string expected";
+                if (!(message.world_key && typeof message.world_key.length === "number" || $util.isString(message.world_key)))
+                    return "world_key: buffer expected";
             return null;
         };
 
@@ -14860,7 +14860,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IReqKickFromWorld
          * @property {number|null} [world_id] ReqKickFromWorld world_id
-         * @property {string|null} [account] ReqKickFromWorld account
+         * @property {Uint8Array|null} [account] ReqKickFromWorld account
          */
 
         /**
@@ -14888,11 +14888,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqKickFromWorld account.
-         * @member {string} account
+         * @member {Uint8Array} account
          * @memberof NFMsg.ReqKickFromWorld
          * @instance
          */
-        ReqKickFromWorld.prototype.account = "";
+        ReqKickFromWorld.prototype.account = $util.newBuffer([]);
 
         /**
          * Creates a new ReqKickFromWorld instance using the specified properties.
@@ -14921,7 +14921,7 @@ $root.NFMsg = (function() {
             if (message.world_id != null && message.hasOwnProperty("world_id"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.world_id);
             if (message.account != null && message.hasOwnProperty("account"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.account);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.account);
             return writer;
         };
 
@@ -14960,7 +14960,7 @@ $root.NFMsg = (function() {
                     message.world_id = reader.int32();
                     break;
                 case 2:
-                    message.account = reader.string();
+                    message.account = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -15001,8 +15001,8 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.world_id))
                     return "world_id: integer expected";
             if (message.account != null && message.hasOwnProperty("account"))
-                if (!$util.isString(message.account))
-                    return "account: string expected";
+                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
+                    return "account: buffer expected";
             return null;
         };
 
@@ -15016,7 +15016,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IReqRoleList
          * @property {number|null} [game_id] ReqRoleList game_id
-         * @property {string|null} [account] ReqRoleList account
+         * @property {Uint8Array|null} [account] ReqRoleList account
          */
 
         /**
@@ -15044,11 +15044,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqRoleList account.
-         * @member {string} account
+         * @member {Uint8Array} account
          * @memberof NFMsg.ReqRoleList
          * @instance
          */
-        ReqRoleList.prototype.account = "";
+        ReqRoleList.prototype.account = $util.newBuffer([]);
 
         /**
          * Creates a new ReqRoleList instance using the specified properties.
@@ -15077,7 +15077,7 @@ $root.NFMsg = (function() {
             if (message.game_id != null && message.hasOwnProperty("game_id"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.game_id);
             if (message.account != null && message.hasOwnProperty("account"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.account);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.account);
             return writer;
         };
 
@@ -15116,7 +15116,7 @@ $root.NFMsg = (function() {
                     message.game_id = reader.int32();
                     break;
                 case 2:
-                    message.account = reader.string();
+                    message.account = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -15157,8 +15157,8 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.game_id))
                     return "game_id: integer expected";
             if (message.account != null && message.hasOwnProperty("account"))
-                if (!$util.isString(message.account))
-                    return "account: string expected";
+                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
+                    return "account: buffer expected";
             return null;
         };
 
@@ -15175,14 +15175,14 @@ $root.NFMsg = (function() {
          * @property {number|null} [career] RoleLiteInfo career
          * @property {number|null} [sex] RoleLiteInfo sex
          * @property {number|null} [race] RoleLiteInfo race
-         * @property {string|null} [noob_name] RoleLiteInfo noob_name
+         * @property {Uint8Array|null} [noob_name] RoleLiteInfo noob_name
          * @property {number|null} [game_id] RoleLiteInfo game_id
          * @property {number|null} [role_level] RoleLiteInfo role_level
          * @property {number|null} [delete_time] RoleLiteInfo delete_time
          * @property {number|null} [reg_time] RoleLiteInfo reg_time
          * @property {number|null} [last_offline_time] RoleLiteInfo last_offline_time
          * @property {number|null} [last_offline_ip] RoleLiteInfo last_offline_ip
-         * @property {string|null} [view_record] RoleLiteInfo view_record
+         * @property {Uint8Array|null} [view_record] RoleLiteInfo view_record
          */
 
         /**
@@ -15234,11 +15234,11 @@ $root.NFMsg = (function() {
 
         /**
          * RoleLiteInfo noob_name.
-         * @member {string} noob_name
+         * @member {Uint8Array} noob_name
          * @memberof NFMsg.RoleLiteInfo
          * @instance
          */
-        RoleLiteInfo.prototype.noob_name = "";
+        RoleLiteInfo.prototype.noob_name = $util.newBuffer([]);
 
         /**
          * RoleLiteInfo game_id.
@@ -15290,11 +15290,11 @@ $root.NFMsg = (function() {
 
         /**
          * RoleLiteInfo view_record.
-         * @member {string} view_record
+         * @member {Uint8Array} view_record
          * @memberof NFMsg.RoleLiteInfo
          * @instance
          */
-        RoleLiteInfo.prototype.view_record = "";
+        RoleLiteInfo.prototype.view_record = $util.newBuffer([]);
 
         /**
          * Creates a new RoleLiteInfo instance using the specified properties.
@@ -15329,7 +15329,7 @@ $root.NFMsg = (function() {
             if (message.race != null && message.hasOwnProperty("race"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.race);
             if (message.noob_name != null && message.hasOwnProperty("noob_name"))
-                writer.uint32(/* id 5, wireType 2 =*/42).string(message.noob_name);
+                writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.noob_name);
             if (message.game_id != null && message.hasOwnProperty("game_id"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.game_id);
             if (message.role_level != null && message.hasOwnProperty("role_level"))
@@ -15343,7 +15343,7 @@ $root.NFMsg = (function() {
             if (message.last_offline_ip != null && message.hasOwnProperty("last_offline_ip"))
                 writer.uint32(/* id 11, wireType 0 =*/88).int32(message.last_offline_ip);
             if (message.view_record != null && message.hasOwnProperty("view_record"))
-                writer.uint32(/* id 12, wireType 2 =*/98).string(message.view_record);
+                writer.uint32(/* id 12, wireType 2 =*/98).bytes(message.view_record);
             return writer;
         };
 
@@ -15391,7 +15391,7 @@ $root.NFMsg = (function() {
                     message.race = reader.int32();
                     break;
                 case 5:
-                    message.noob_name = reader.string();
+                    message.noob_name = reader.bytes();
                     break;
                 case 6:
                     message.game_id = reader.int32();
@@ -15412,7 +15412,7 @@ $root.NFMsg = (function() {
                     message.last_offline_ip = reader.int32();
                     break;
                 case 12:
-                    message.view_record = reader.string();
+                    message.view_record = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -15464,8 +15464,8 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.race))
                     return "race: integer expected";
             if (message.noob_name != null && message.hasOwnProperty("noob_name"))
-                if (!$util.isString(message.noob_name))
-                    return "noob_name: string expected";
+                if (!(message.noob_name && typeof message.noob_name.length === "number" || $util.isString(message.noob_name)))
+                    return "noob_name: buffer expected";
             if (message.game_id != null && message.hasOwnProperty("game_id"))
                 if (!$util.isInteger(message.game_id))
                     return "game_id: integer expected";
@@ -15485,8 +15485,8 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.last_offline_ip))
                     return "last_offline_ip: integer expected";
             if (message.view_record != null && message.hasOwnProperty("view_record"))
-                if (!$util.isString(message.view_record))
-                    return "view_record: string expected";
+                if (!(message.view_record && typeof message.view_record.length === "number" || $util.isString(message.view_record)))
+                    return "view_record: buffer expected";
             return null;
         };
 
@@ -15500,7 +15500,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IAckRoleLiteInfoList
          * @property {Array.<NFMsg.IRoleLiteInfo>|null} [char_data] AckRoleLiteInfoList char_data
-         * @property {string|null} [account] AckRoleLiteInfoList account
+         * @property {Uint8Array|null} [account] AckRoleLiteInfoList account
          */
 
         /**
@@ -15529,11 +15529,11 @@ $root.NFMsg = (function() {
 
         /**
          * AckRoleLiteInfoList account.
-         * @member {string} account
+         * @member {Uint8Array} account
          * @memberof NFMsg.AckRoleLiteInfoList
          * @instance
          */
-        AckRoleLiteInfoList.prototype.account = "";
+        AckRoleLiteInfoList.prototype.account = $util.newBuffer([]);
 
         /**
          * Creates a new AckRoleLiteInfoList instance using the specified properties.
@@ -15563,7 +15563,7 @@ $root.NFMsg = (function() {
                 for (var i = 0; i < message.char_data.length; ++i)
                     $root.NFMsg.RoleLiteInfo.encode(message.char_data[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.account != null && message.hasOwnProperty("account"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.account);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.account);
             return writer;
         };
 
@@ -15604,7 +15604,7 @@ $root.NFMsg = (function() {
                     message.char_data.push($root.NFMsg.RoleLiteInfo.decode(reader, reader.uint32()));
                     break;
                 case 2:
-                    message.account = reader.string();
+                    message.account = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -15651,8 +15651,8 @@ $root.NFMsg = (function() {
                 }
             }
             if (message.account != null && message.hasOwnProperty("account"))
-                if (!$util.isString(message.account))
-                    return "account: string expected";
+                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
+                    return "account: buffer expected";
             return null;
         };
 
@@ -15665,11 +15665,11 @@ $root.NFMsg = (function() {
          * Properties of a ReqCreateRole.
          * @memberof NFMsg
          * @interface IReqCreateRole
-         * @property {string|null} [account] ReqCreateRole account
+         * @property {Uint8Array|null} [account] ReqCreateRole account
          * @property {number|null} [career] ReqCreateRole career
          * @property {number|null} [sex] ReqCreateRole sex
          * @property {number|null} [race] ReqCreateRole race
-         * @property {string|null} [noob_name] ReqCreateRole noob_name
+         * @property {Uint8Array|null} [noob_name] ReqCreateRole noob_name
          * @property {number|null} [game_id] ReqCreateRole game_id
          */
 
@@ -15690,11 +15690,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqCreateRole account.
-         * @member {string} account
+         * @member {Uint8Array} account
          * @memberof NFMsg.ReqCreateRole
          * @instance
          */
-        ReqCreateRole.prototype.account = "";
+        ReqCreateRole.prototype.account = $util.newBuffer([]);
 
         /**
          * ReqCreateRole career.
@@ -15722,11 +15722,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqCreateRole noob_name.
-         * @member {string} noob_name
+         * @member {Uint8Array} noob_name
          * @memberof NFMsg.ReqCreateRole
          * @instance
          */
-        ReqCreateRole.prototype.noob_name = "";
+        ReqCreateRole.prototype.noob_name = $util.newBuffer([]);
 
         /**
          * ReqCreateRole game_id.
@@ -15761,7 +15761,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.account != null && message.hasOwnProperty("account"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.account);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.account);
             if (message.career != null && message.hasOwnProperty("career"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.career);
             if (message.sex != null && message.hasOwnProperty("sex"))
@@ -15769,7 +15769,7 @@ $root.NFMsg = (function() {
             if (message.race != null && message.hasOwnProperty("race"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.race);
             if (message.noob_name != null && message.hasOwnProperty("noob_name"))
-                writer.uint32(/* id 5, wireType 2 =*/42).string(message.noob_name);
+                writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.noob_name);
             if (message.game_id != null && message.hasOwnProperty("game_id"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.game_id);
             return writer;
@@ -15807,7 +15807,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.account = reader.string();
+                    message.account = reader.bytes();
                     break;
                 case 2:
                     message.career = reader.int32();
@@ -15819,7 +15819,7 @@ $root.NFMsg = (function() {
                     message.race = reader.int32();
                     break;
                 case 5:
-                    message.noob_name = reader.string();
+                    message.noob_name = reader.bytes();
                     break;
                 case 6:
                     message.game_id = reader.int32();
@@ -15860,8 +15860,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.account != null && message.hasOwnProperty("account"))
-                if (!$util.isString(message.account))
-                    return "account: string expected";
+                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
+                    return "account: buffer expected";
             if (message.career != null && message.hasOwnProperty("career"))
                 if (!$util.isInteger(message.career))
                     return "career: integer expected";
@@ -15872,8 +15872,8 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.race))
                     return "race: integer expected";
             if (message.noob_name != null && message.hasOwnProperty("noob_name"))
-                if (!$util.isString(message.noob_name))
-                    return "noob_name: string expected";
+                if (!(message.noob_name && typeof message.noob_name.length === "number" || $util.isString(message.noob_name)))
+                    return "noob_name: buffer expected";
             if (message.game_id != null && message.hasOwnProperty("game_id"))
                 if (!$util.isInteger(message.game_id))
                     return "game_id: integer expected";
@@ -15889,8 +15889,8 @@ $root.NFMsg = (function() {
          * Properties of a ReqDeleteRole.
          * @memberof NFMsg
          * @interface IReqDeleteRole
-         * @property {string|null} [account] ReqDeleteRole account
-         * @property {string|null} [name] ReqDeleteRole name
+         * @property {Uint8Array|null} [account] ReqDeleteRole account
+         * @property {Uint8Array|null} [name] ReqDeleteRole name
          * @property {number|null} [game_id] ReqDeleteRole game_id
          */
 
@@ -15911,19 +15911,19 @@ $root.NFMsg = (function() {
 
         /**
          * ReqDeleteRole account.
-         * @member {string} account
+         * @member {Uint8Array} account
          * @memberof NFMsg.ReqDeleteRole
          * @instance
          */
-        ReqDeleteRole.prototype.account = "";
+        ReqDeleteRole.prototype.account = $util.newBuffer([]);
 
         /**
          * ReqDeleteRole name.
-         * @member {string} name
+         * @member {Uint8Array} name
          * @memberof NFMsg.ReqDeleteRole
          * @instance
          */
-        ReqDeleteRole.prototype.name = "";
+        ReqDeleteRole.prototype.name = $util.newBuffer([]);
 
         /**
          * ReqDeleteRole game_id.
@@ -15958,9 +15958,9 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.account != null && message.hasOwnProperty("account"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.account);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.account);
             if (message.name != null && message.hasOwnProperty("name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.name);
             if (message.game_id != null && message.hasOwnProperty("game_id"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.game_id);
             return writer;
@@ -15998,10 +15998,10 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.account = reader.string();
+                    message.account = reader.bytes();
                     break;
                 case 2:
-                    message.name = reader.string();
+                    message.name = reader.bytes();
                     break;
                 case 3:
                     message.game_id = reader.int32();
@@ -16042,11 +16042,11 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.account != null && message.hasOwnProperty("account"))
-                if (!$util.isString(message.account))
-                    return "account: string expected";
+                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
+                    return "account: buffer expected";
             if (message.name != null && message.hasOwnProperty("name"))
-                if (!$util.isString(message.name))
-                    return "name: string expected";
+                if (!(message.name && typeof message.name.length === "number" || $util.isString(message.name)))
+                    return "name: buffer expected";
             if (message.game_id != null && message.hasOwnProperty("game_id"))
                 if (!$util.isInteger(message.game_id))
                     return "game_id: integer expected";
@@ -16062,8 +16062,8 @@ $root.NFMsg = (function() {
          * Properties of a ReqRecoverRole.
          * @memberof NFMsg
          * @interface IReqRecoverRole
-         * @property {string|null} [account] ReqRecoverRole account
-         * @property {string|null} [name] ReqRecoverRole name
+         * @property {Uint8Array|null} [account] ReqRecoverRole account
+         * @property {Uint8Array|null} [name] ReqRecoverRole name
          * @property {number|null} [game_id] ReqRecoverRole game_id
          */
 
@@ -16084,19 +16084,19 @@ $root.NFMsg = (function() {
 
         /**
          * ReqRecoverRole account.
-         * @member {string} account
+         * @member {Uint8Array} account
          * @memberof NFMsg.ReqRecoverRole
          * @instance
          */
-        ReqRecoverRole.prototype.account = "";
+        ReqRecoverRole.prototype.account = $util.newBuffer([]);
 
         /**
          * ReqRecoverRole name.
-         * @member {string} name
+         * @member {Uint8Array} name
          * @memberof NFMsg.ReqRecoverRole
          * @instance
          */
-        ReqRecoverRole.prototype.name = "";
+        ReqRecoverRole.prototype.name = $util.newBuffer([]);
 
         /**
          * ReqRecoverRole game_id.
@@ -16131,9 +16131,9 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.account != null && message.hasOwnProperty("account"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.account);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.account);
             if (message.name != null && message.hasOwnProperty("name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.name);
             if (message.game_id != null && message.hasOwnProperty("game_id"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.game_id);
             return writer;
@@ -16171,10 +16171,10 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.account = reader.string();
+                    message.account = reader.bytes();
                     break;
                 case 2:
-                    message.name = reader.string();
+                    message.name = reader.bytes();
                     break;
                 case 3:
                     message.game_id = reader.int32();
@@ -16215,11 +16215,11 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.account != null && message.hasOwnProperty("account"))
-                if (!$util.isString(message.account))
-                    return "account: string expected";
+                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
+                    return "account: buffer expected";
             if (message.name != null && message.hasOwnProperty("name"))
-                if (!$util.isString(message.name))
-                    return "name: string expected";
+                if (!(message.name && typeof message.name.length === "number" || $util.isString(message.name)))
+                    return "name: buffer expected";
             if (message.game_id != null && message.hasOwnProperty("game_id"))
                 if (!$util.isInteger(message.game_id))
                     return "game_id: integer expected";
@@ -16942,9 +16942,9 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IReqEnterGameServer
          * @property {NFMsg.IIdent|null} [id] ReqEnterGameServer id
-         * @property {string|null} [account] ReqEnterGameServer account
+         * @property {Uint8Array|null} [account] ReqEnterGameServer account
          * @property {number|null} [game_id] ReqEnterGameServer game_id
-         * @property {string|null} [name] ReqEnterGameServer name
+         * @property {Uint8Array|null} [name] ReqEnterGameServer name
          */
 
         /**
@@ -16972,11 +16972,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqEnterGameServer account.
-         * @member {string} account
+         * @member {Uint8Array} account
          * @memberof NFMsg.ReqEnterGameServer
          * @instance
          */
-        ReqEnterGameServer.prototype.account = "";
+        ReqEnterGameServer.prototype.account = $util.newBuffer([]);
 
         /**
          * ReqEnterGameServer game_id.
@@ -16988,11 +16988,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqEnterGameServer name.
-         * @member {string} name
+         * @member {Uint8Array} name
          * @memberof NFMsg.ReqEnterGameServer
          * @instance
          */
-        ReqEnterGameServer.prototype.name = "";
+        ReqEnterGameServer.prototype.name = $util.newBuffer([]);
 
         /**
          * Creates a new ReqEnterGameServer instance using the specified properties.
@@ -17021,11 +17021,11 @@ $root.NFMsg = (function() {
             if (message.id != null && message.hasOwnProperty("id"))
                 $root.NFMsg.Ident.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.account != null && message.hasOwnProperty("account"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.account);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.account);
             if (message.game_id != null && message.hasOwnProperty("game_id"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.game_id);
             if (message.name != null && message.hasOwnProperty("name"))
-                writer.uint32(/* id 4, wireType 2 =*/34).string(message.name);
+                writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.name);
             return writer;
         };
 
@@ -17064,13 +17064,13 @@ $root.NFMsg = (function() {
                     message.id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.account = reader.string();
+                    message.account = reader.bytes();
                     break;
                 case 3:
                     message.game_id = reader.int32();
                     break;
                 case 4:
-                    message.name = reader.string();
+                    message.name = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -17113,14 +17113,14 @@ $root.NFMsg = (function() {
                     return "id." + error;
             }
             if (message.account != null && message.hasOwnProperty("account"))
-                if (!$util.isString(message.account))
-                    return "account: string expected";
+                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
+                    return "account: buffer expected";
             if (message.game_id != null && message.hasOwnProperty("game_id"))
                 if (!$util.isInteger(message.game_id))
                     return "game_id: integer expected";
             if (message.name != null && message.hasOwnProperty("name"))
-                if (!$util.isString(message.name))
-                    return "name: string expected";
+                if (!(message.name && typeof message.name.length === "number" || $util.isString(message.name)))
+                    return "name: buffer expected";
             return null;
         };
 
@@ -17556,9 +17556,9 @@ $root.NFMsg = (function() {
          * @property {number|null} [z] PlayerEntryInfo z
          * @property {number|null} [career_type] PlayerEntryInfo career_type
          * @property {number|null} [player_state] PlayerEntryInfo player_state
-         * @property {string|null} [config_id] PlayerEntryInfo config_id
+         * @property {Uint8Array|null} [config_id] PlayerEntryInfo config_id
          * @property {number|null} [scene_id] PlayerEntryInfo scene_id
-         * @property {string|null} [class_id] PlayerEntryInfo class_id
+         * @property {Uint8Array|null} [class_id] PlayerEntryInfo class_id
          */
 
         /**
@@ -17626,11 +17626,11 @@ $root.NFMsg = (function() {
 
         /**
          * PlayerEntryInfo config_id.
-         * @member {string} config_id
+         * @member {Uint8Array} config_id
          * @memberof NFMsg.PlayerEntryInfo
          * @instance
          */
-        PlayerEntryInfo.prototype.config_id = "";
+        PlayerEntryInfo.prototype.config_id = $util.newBuffer([]);
 
         /**
          * PlayerEntryInfo scene_id.
@@ -17642,11 +17642,11 @@ $root.NFMsg = (function() {
 
         /**
          * PlayerEntryInfo class_id.
-         * @member {string} class_id
+         * @member {Uint8Array} class_id
          * @memberof NFMsg.PlayerEntryInfo
          * @instance
          */
-        PlayerEntryInfo.prototype.class_id = "";
+        PlayerEntryInfo.prototype.class_id = $util.newBuffer([]);
 
         /**
          * Creates a new PlayerEntryInfo instance using the specified properties.
@@ -17685,11 +17685,11 @@ $root.NFMsg = (function() {
             if (message.player_state != null && message.hasOwnProperty("player_state"))
                 writer.uint32(/* id 6, wireType 0 =*/48).int32(message.player_state);
             if (message.config_id != null && message.hasOwnProperty("config_id"))
-                writer.uint32(/* id 7, wireType 2 =*/58).string(message.config_id);
+                writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.config_id);
             if (message.scene_id != null && message.hasOwnProperty("scene_id"))
                 writer.uint32(/* id 8, wireType 0 =*/64).int32(message.scene_id);
             if (message.class_id != null && message.hasOwnProperty("class_id"))
-                writer.uint32(/* id 9, wireType 2 =*/74).string(message.class_id);
+                writer.uint32(/* id 9, wireType 2 =*/74).bytes(message.class_id);
             return writer;
         };
 
@@ -17743,13 +17743,13 @@ $root.NFMsg = (function() {
                     message.player_state = reader.int32();
                     break;
                 case 7:
-                    message.config_id = reader.string();
+                    message.config_id = reader.bytes();
                     break;
                 case 8:
                     message.scene_id = reader.int32();
                     break;
                 case 9:
-                    message.class_id = reader.string();
+                    message.class_id = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -17807,14 +17807,14 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.player_state))
                     return "player_state: integer expected";
             if (message.config_id != null && message.hasOwnProperty("config_id"))
-                if (!$util.isString(message.config_id))
-                    return "config_id: string expected";
+                if (!(message.config_id && typeof message.config_id.length === "number" || $util.isString(message.config_id)))
+                    return "config_id: buffer expected";
             if (message.scene_id != null && message.hasOwnProperty("scene_id"))
                 if (!$util.isInteger(message.scene_id))
                     return "scene_id: integer expected";
             if (message.class_id != null && message.hasOwnProperty("class_id"))
-                if (!$util.isString(message.class_id))
-                    return "class_id: string expected";
+                if (!(message.class_id && typeof message.class_id.length === "number" || $util.isString(message.class_id)))
+                    return "class_id: buffer expected";
             return null;
         };
 
@@ -18127,7 +18127,7 @@ $root.NFMsg = (function() {
          * @interface IReqAckSynData
          * @property {NFMsg.IIdent|null} [syser] ReqAckSynData syser
          * @property {Array.<NFMsg.IIdent>|null} [object_list] ReqAckSynData object_list
-         * @property {string|null} [data] ReqAckSynData data
+         * @property {Uint8Array|null} [data] ReqAckSynData data
          * @property {NFMsg.ReqAckSynData.SynType|null} [syn_type] ReqAckSynData syn_type
          * @property {NFMsg.ESynMsgID|null} [msg_id] ReqAckSynData msg_id
          */
@@ -18166,11 +18166,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAckSynData data.
-         * @member {string} data
+         * @member {Uint8Array} data
          * @memberof NFMsg.ReqAckSynData
          * @instance
          */
-        ReqAckSynData.prototype.data = "";
+        ReqAckSynData.prototype.data = $util.newBuffer([]);
 
         /**
          * ReqAckSynData syn_type.
@@ -18218,7 +18218,7 @@ $root.NFMsg = (function() {
                 for (var i = 0; i < message.object_list.length; ++i)
                     $root.NFMsg.Ident.encode(message.object_list[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             if (message.data != null && message.hasOwnProperty("data"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.data);
+                writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.data);
             if (message.syn_type != null && message.hasOwnProperty("syn_type"))
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.syn_type);
             if (message.msg_id != null && message.hasOwnProperty("msg_id"))
@@ -18266,7 +18266,7 @@ $root.NFMsg = (function() {
                     message.object_list.push($root.NFMsg.Ident.decode(reader, reader.uint32()));
                     break;
                 case 3:
-                    message.data = reader.string();
+                    message.data = reader.bytes();
                     break;
                 case 4:
                     message.syn_type = reader.int32();
@@ -18324,8 +18324,8 @@ $root.NFMsg = (function() {
                 }
             }
             if (message.data != null && message.hasOwnProperty("data"))
-                if (!$util.isString(message.data))
-                    return "data: string expected";
+                if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
+                    return "data: buffer expected";
             if (message.syn_type != null && message.hasOwnProperty("syn_type"))
                 switch (message.syn_type) {
                 default:
@@ -18668,8 +18668,8 @@ $root.NFMsg = (function() {
          * @interface IReqAckPlayerChat
          * @property {NFMsg.IIdent|null} [chat_id] ReqAckPlayerChat chat_id
          * @property {NFMsg.ReqAckPlayerChat.EGameChatType|null} [chat_type] ReqAckPlayerChat chat_type
-         * @property {string|null} [chat_info] ReqAckPlayerChat chat_info
-         * @property {string|null} [chat_name] ReqAckPlayerChat chat_name
+         * @property {Uint8Array|null} [chat_info] ReqAckPlayerChat chat_info
+         * @property {Uint8Array|null} [chat_name] ReqAckPlayerChat chat_name
          * @property {NFMsg.IIdent|null} [target_id] ReqAckPlayerChat target_id
          * @property {Array.<NFMsg.ReqAckPlayerChat.IChatContainer>|null} [Container_data] ReqAckPlayerChat Container_data
          */
@@ -18708,19 +18708,19 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAckPlayerChat chat_info.
-         * @member {string} chat_info
+         * @member {Uint8Array} chat_info
          * @memberof NFMsg.ReqAckPlayerChat
          * @instance
          */
-        ReqAckPlayerChat.prototype.chat_info = "";
+        ReqAckPlayerChat.prototype.chat_info = $util.newBuffer([]);
 
         /**
          * ReqAckPlayerChat chat_name.
-         * @member {string} chat_name
+         * @member {Uint8Array} chat_name
          * @memberof NFMsg.ReqAckPlayerChat
          * @instance
          */
-        ReqAckPlayerChat.prototype.chat_name = "";
+        ReqAckPlayerChat.prototype.chat_name = $util.newBuffer([]);
 
         /**
          * ReqAckPlayerChat target_id.
@@ -18767,9 +18767,9 @@ $root.NFMsg = (function() {
             if (message.chat_type != null && message.hasOwnProperty("chat_type"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.chat_type);
             if (message.chat_info != null && message.hasOwnProperty("chat_info"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.chat_info);
+                writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.chat_info);
             if (message.chat_name != null && message.hasOwnProperty("chat_name"))
-                writer.uint32(/* id 4, wireType 2 =*/34).string(message.chat_name);
+                writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.chat_name);
             if (message.target_id != null && message.hasOwnProperty("target_id"))
                 $root.NFMsg.Ident.encode(message.target_id, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
             if (message.Container_data != null && message.Container_data.length)
@@ -18816,10 +18816,10 @@ $root.NFMsg = (function() {
                     message.chat_type = reader.int32();
                     break;
                 case 3:
-                    message.chat_info = reader.string();
+                    message.chat_info = reader.bytes();
                     break;
                 case 4:
-                    message.chat_name = reader.string();
+                    message.chat_name = reader.bytes();
                     break;
                 case 5:
                     message.target_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
@@ -18880,11 +18880,11 @@ $root.NFMsg = (function() {
                     break;
                 }
             if (message.chat_info != null && message.hasOwnProperty("chat_info"))
-                if (!$util.isString(message.chat_info))
-                    return "chat_info: string expected";
+                if (!(message.chat_info && typeof message.chat_info.length === "number" || $util.isString(message.chat_info)))
+                    return "chat_info: buffer expected";
             if (message.chat_name != null && message.hasOwnProperty("chat_name"))
-                if (!$util.isString(message.chat_name))
-                    return "chat_name: string expected";
+                if (!(message.chat_name && typeof message.chat_name.length === "number" || $util.isString(message.chat_name)))
+                    return "chat_name: buffer expected";
             if (message.target_id != null && message.hasOwnProperty("target_id")) {
                 var error = $root.NFMsg.Ident.verify(message.target_id);
                 if (error)
@@ -18927,7 +18927,7 @@ $root.NFMsg = (function() {
              * @memberof NFMsg.ReqAckPlayerChat
              * @interface IChatContainer
              * @property {number|null} [ConTainerType] ChatContainer ConTainerType
-             * @property {string|null} [data_info] ChatContainer data_info
+             * @property {Uint8Array|null} [data_info] ChatContainer data_info
              */
 
             /**
@@ -18955,11 +18955,11 @@ $root.NFMsg = (function() {
 
             /**
              * ChatContainer data_info.
-             * @member {string} data_info
+             * @member {Uint8Array} data_info
              * @memberof NFMsg.ReqAckPlayerChat.ChatContainer
              * @instance
              */
-            ChatContainer.prototype.data_info = "";
+            ChatContainer.prototype.data_info = $util.newBuffer([]);
 
             /**
              * Creates a new ChatContainer instance using the specified properties.
@@ -18988,7 +18988,7 @@ $root.NFMsg = (function() {
                 if (message.ConTainerType != null && message.hasOwnProperty("ConTainerType"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.ConTainerType);
                 if (message.data_info != null && message.hasOwnProperty("data_info"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.data_info);
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.data_info);
                 return writer;
             };
 
@@ -19027,7 +19027,7 @@ $root.NFMsg = (function() {
                         message.ConTainerType = reader.int32();
                         break;
                     case 3:
-                        message.data_info = reader.string();
+                        message.data_info = reader.bytes();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -19068,8 +19068,8 @@ $root.NFMsg = (function() {
                     if (!$util.isInteger(message.ConTainerType))
                         return "ConTainerType: integer expected";
                 if (message.data_info != null && message.hasOwnProperty("data_info"))
-                    if (!$util.isString(message.data_info))
-                        return "data_info: string expected";
+                    if (!(message.data_info && typeof message.data_info.length === "number" || $util.isString(message.data_info)))
+                        return "data_info: buffer expected";
                 return null;
             };
 
@@ -19303,7 +19303,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IReqAckUseSkill
          * @property {NFMsg.IIdent|null} [user] ReqAckUseSkill user
-         * @property {string|null} [skill_id] ReqAckUseSkill skill_id
+         * @property {Uint8Array|null} [skill_id] ReqAckUseSkill skill_id
          * @property {number|null} [use_index] ReqAckUseSkill use_index
          * @property {Array.<NFMsg.IEffectData>|null} [effect_data] ReqAckUseSkill effect_data
          */
@@ -19334,11 +19334,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAckUseSkill skill_id.
-         * @member {string} skill_id
+         * @member {Uint8Array} skill_id
          * @memberof NFMsg.ReqAckUseSkill
          * @instance
          */
-        ReqAckUseSkill.prototype.skill_id = "";
+        ReqAckUseSkill.prototype.skill_id = $util.newBuffer([]);
 
         /**
          * ReqAckUseSkill use_index.
@@ -19383,7 +19383,7 @@ $root.NFMsg = (function() {
             if (message.user != null && message.hasOwnProperty("user"))
                 $root.NFMsg.Ident.encode(message.user, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.skill_id != null && message.hasOwnProperty("skill_id"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.skill_id);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.skill_id);
             if (message.use_index != null && message.hasOwnProperty("use_index"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.use_index);
             if (message.effect_data != null && message.effect_data.length)
@@ -19427,7 +19427,7 @@ $root.NFMsg = (function() {
                     message.user = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.skill_id = reader.string();
+                    message.skill_id = reader.bytes();
                     break;
                 case 3:
                     message.use_index = reader.int32();
@@ -19478,8 +19478,8 @@ $root.NFMsg = (function() {
                     return "user." + error;
             }
             if (message.skill_id != null && message.hasOwnProperty("skill_id"))
-                if (!$util.isString(message.skill_id))
-                    return "skill_id: string expected";
+                if (!(message.skill_id && typeof message.skill_id.length === "number" || $util.isString(message.skill_id)))
+                    return "skill_id: buffer expected";
             if (message.use_index != null && message.hasOwnProperty("use_index"))
                 if (!$util.isInteger(message.use_index))
                     return "use_index: integer expected";
@@ -19754,7 +19754,7 @@ $root.NFMsg = (function() {
          * @property {number|null} [x] ReqAckSwapScene x
          * @property {number|null} [y] ReqAckSwapScene y
          * @property {number|null} [z] ReqAckSwapScene z
-         * @property {string|null} [data] ReqAckSwapScene data
+         * @property {Uint8Array|null} [data] ReqAckSwapScene data
          */
 
         /**
@@ -19822,11 +19822,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAckSwapScene data.
-         * @member {string} data
+         * @member {Uint8Array} data
          * @memberof NFMsg.ReqAckSwapScene
          * @instance
          */
-        ReqAckSwapScene.prototype.data = "";
+        ReqAckSwapScene.prototype.data = $util.newBuffer([]);
 
         /**
          * Creates a new ReqAckSwapScene instance using the specified properties.
@@ -19865,7 +19865,7 @@ $root.NFMsg = (function() {
             if (message.z != null && message.hasOwnProperty("z"))
                 writer.uint32(/* id 6, wireType 5 =*/53).float(message.z);
             if (message.data != null && message.hasOwnProperty("data"))
-                writer.uint32(/* id 7, wireType 2 =*/58).string(message.data);
+                writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.data);
             return writer;
         };
 
@@ -19919,7 +19919,7 @@ $root.NFMsg = (function() {
                     message.z = reader.float();
                     break;
                 case 7:
-                    message.data = reader.string();
+                    message.data = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -19982,8 +19982,8 @@ $root.NFMsg = (function() {
                 if (typeof message.z !== "number")
                     return "z: number expected";
             if (message.data != null && message.hasOwnProperty("data"))
-                if (!$util.isString(message.data))
-                    return "data: string expected";
+                if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
+                    return "data: buffer expected";
             return null;
         };
 
@@ -20014,7 +20014,7 @@ $root.NFMsg = (function() {
          * Properties of a ReqAckHomeScene.
          * @memberof NFMsg
          * @interface IReqAckHomeScene
-         * @property {string|null} [data] ReqAckHomeScene data
+         * @property {Uint8Array|null} [data] ReqAckHomeScene data
          */
 
         /**
@@ -20034,11 +20034,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAckHomeScene data.
-         * @member {string} data
+         * @member {Uint8Array} data
          * @memberof NFMsg.ReqAckHomeScene
          * @instance
          */
-        ReqAckHomeScene.prototype.data = "";
+        ReqAckHomeScene.prototype.data = $util.newBuffer([]);
 
         /**
          * Creates a new ReqAckHomeScene instance using the specified properties.
@@ -20065,7 +20065,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.data != null && message.hasOwnProperty("data"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.data);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.data);
             return writer;
         };
 
@@ -20101,7 +20101,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.data = reader.string();
+                    message.data = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -20139,8 +20139,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.data != null && message.hasOwnProperty("data"))
-                if (!$util.isString(message.data))
-                    return "data: string expected";
+                if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
+                    return "data: buffer expected";
             return null;
         };
 
@@ -20153,7 +20153,7 @@ $root.NFMsg = (function() {
          * Properties of an ItemStruct.
          * @memberof NFMsg
          * @interface IItemStruct
-         * @property {string|null} [item_id] ItemStruct item_id
+         * @property {Uint8Array|null} [item_id] ItemStruct item_id
          * @property {number|null} [item_count] ItemStruct item_count
          */
 
@@ -20174,11 +20174,11 @@ $root.NFMsg = (function() {
 
         /**
          * ItemStruct item_id.
-         * @member {string} item_id
+         * @member {Uint8Array} item_id
          * @memberof NFMsg.ItemStruct
          * @instance
          */
-        ItemStruct.prototype.item_id = "";
+        ItemStruct.prototype.item_id = $util.newBuffer([]);
 
         /**
          * ItemStruct item_count.
@@ -20213,7 +20213,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.item_id != null && message.hasOwnProperty("item_id"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.item_id);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.item_id);
             if (message.item_count != null && message.hasOwnProperty("item_count"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.item_count);
             return writer;
@@ -20251,7 +20251,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.item_id = reader.string();
+                    message.item_id = reader.bytes();
                     break;
                 case 2:
                     message.item_count = reader.int32();
@@ -20292,8 +20292,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.item_id != null && message.hasOwnProperty("item_id"))
-                if (!$util.isString(message.item_id))
-                    return "item_id: string expected";
+                if (!(message.item_id && typeof message.item_id.length === "number" || $util.isString(message.item_id)))
+                    return "item_id: buffer expected";
             if (message.item_count != null && message.hasOwnProperty("item_count"))
                 if (!$util.isInteger(message.item_count))
                     return "item_count: integer expected";
@@ -21257,7 +21257,7 @@ $root.NFMsg = (function() {
          * Properties of a ReqAcceptTask.
          * @memberof NFMsg
          * @interface IReqAcceptTask
-         * @property {string|null} [task_id] ReqAcceptTask task_id
+         * @property {Uint8Array|null} [task_id] ReqAcceptTask task_id
          */
 
         /**
@@ -21277,11 +21277,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAcceptTask task_id.
-         * @member {string} task_id
+         * @member {Uint8Array} task_id
          * @memberof NFMsg.ReqAcceptTask
          * @instance
          */
-        ReqAcceptTask.prototype.task_id = "";
+        ReqAcceptTask.prototype.task_id = $util.newBuffer([]);
 
         /**
          * Creates a new ReqAcceptTask instance using the specified properties.
@@ -21308,7 +21308,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.task_id != null && message.hasOwnProperty("task_id"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.task_id);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.task_id);
             return writer;
         };
 
@@ -21344,7 +21344,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.task_id = reader.string();
+                    message.task_id = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -21382,8 +21382,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.task_id != null && message.hasOwnProperty("task_id"))
-                if (!$util.isString(message.task_id))
-                    return "task_id: string expected";
+                if (!(message.task_id && typeof message.task_id.length === "number" || $util.isString(message.task_id)))
+                    return "task_id: buffer expected";
             return null;
         };
 
@@ -21396,7 +21396,7 @@ $root.NFMsg = (function() {
          * Properties of a ReqCompeleteTask.
          * @memberof NFMsg
          * @interface IReqCompeleteTask
-         * @property {string|null} [task_id] ReqCompeleteTask task_id
+         * @property {Uint8Array|null} [task_id] ReqCompeleteTask task_id
          */
 
         /**
@@ -21416,11 +21416,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqCompeleteTask task_id.
-         * @member {string} task_id
+         * @member {Uint8Array} task_id
          * @memberof NFMsg.ReqCompeleteTask
          * @instance
          */
-        ReqCompeleteTask.prototype.task_id = "";
+        ReqCompeleteTask.prototype.task_id = $util.newBuffer([]);
 
         /**
          * Creates a new ReqCompeleteTask instance using the specified properties.
@@ -21447,7 +21447,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.task_id != null && message.hasOwnProperty("task_id"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.task_id);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.task_id);
             return writer;
         };
 
@@ -21483,7 +21483,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.task_id = reader.string();
+                    message.task_id = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -21521,8 +21521,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.task_id != null && message.hasOwnProperty("task_id"))
-                if (!$util.isString(message.task_id))
-                    return "task_id: string expected";
+                if (!(message.task_id && typeof message.task_id.length === "number" || $util.isString(message.task_id)))
+                    return "task_id: buffer expected";
             return null;
         };
 
@@ -21724,7 +21724,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IReqAckCreateGuild
          * @property {NFMsg.IIdent|null} [guild_id] ReqAckCreateGuild guild_id
-         * @property {string|null} [guild_name] ReqAckCreateGuild guild_name
+         * @property {Uint8Array|null} [guild_name] ReqAckCreateGuild guild_name
          */
 
         /**
@@ -21752,11 +21752,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAckCreateGuild guild_name.
-         * @member {string} guild_name
+         * @member {Uint8Array} guild_name
          * @memberof NFMsg.ReqAckCreateGuild
          * @instance
          */
-        ReqAckCreateGuild.prototype.guild_name = "";
+        ReqAckCreateGuild.prototype.guild_name = $util.newBuffer([]);
 
         /**
          * Creates a new ReqAckCreateGuild instance using the specified properties.
@@ -21785,7 +21785,7 @@ $root.NFMsg = (function() {
             if (message.guild_id != null && message.hasOwnProperty("guild_id"))
                 $root.NFMsg.Ident.encode(message.guild_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.guild_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.guild_name);
             return writer;
         };
 
@@ -21824,7 +21824,7 @@ $root.NFMsg = (function() {
                     message.guild_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.guild_name = reader.string();
+                    message.guild_name = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -21867,8 +21867,8 @@ $root.NFMsg = (function() {
                     return "guild_id." + error;
             }
             if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                if (!$util.isString(message.guild_name))
-                    return "guild_name: string expected";
+                if (!(message.guild_name && typeof message.guild_name.length === "number" || $util.isString(message.guild_name)))
+                    return "guild_name: buffer expected";
             return null;
         };
 
@@ -21881,7 +21881,7 @@ $root.NFMsg = (function() {
          * Properties of a ReqSearchGuild.
          * @memberof NFMsg
          * @interface IReqSearchGuild
-         * @property {string|null} [guild_name] ReqSearchGuild guild_name
+         * @property {Uint8Array|null} [guild_name] ReqSearchGuild guild_name
          */
 
         /**
@@ -21901,11 +21901,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqSearchGuild guild_name.
-         * @member {string} guild_name
+         * @member {Uint8Array} guild_name
          * @memberof NFMsg.ReqSearchGuild
          * @instance
          */
-        ReqSearchGuild.prototype.guild_name = "";
+        ReqSearchGuild.prototype.guild_name = $util.newBuffer([]);
 
         /**
          * Creates a new ReqSearchGuild instance using the specified properties.
@@ -21932,7 +21932,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.guild_name);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.guild_name);
             return writer;
         };
 
@@ -21968,7 +21968,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.guild_name = reader.string();
+                    message.guild_name = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -22006,8 +22006,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                if (!$util.isString(message.guild_name))
-                    return "guild_name: string expected";
+                if (!(message.guild_name && typeof message.guild_name.length === "number" || $util.isString(message.guild_name)))
+                    return "guild_name: buffer expected";
             return null;
         };
 
@@ -22167,8 +22167,8 @@ $root.NFMsg = (function() {
              * @memberof NFMsg.AckSearchGuild
              * @interface ISearchGuildObject
              * @property {NFMsg.IIdent|null} [guild_ID] SearchGuildObject guild_ID
-             * @property {string|null} [guild_name] SearchGuildObject guild_name
-             * @property {string|null} [guild_icon] SearchGuildObject guild_icon
+             * @property {Uint8Array|null} [guild_name] SearchGuildObject guild_name
+             * @property {Uint8Array|null} [guild_icon] SearchGuildObject guild_icon
              * @property {number|null} [guild_member_count] SearchGuildObject guild_member_count
              * @property {number|null} [guild_member_max_count] SearchGuildObject guild_member_max_count
              * @property {number|null} [guild_honor] SearchGuildObject guild_honor
@@ -22200,19 +22200,19 @@ $root.NFMsg = (function() {
 
             /**
              * SearchGuildObject guild_name.
-             * @member {string} guild_name
+             * @member {Uint8Array} guild_name
              * @memberof NFMsg.AckSearchGuild.SearchGuildObject
              * @instance
              */
-            SearchGuildObject.prototype.guild_name = "";
+            SearchGuildObject.prototype.guild_name = $util.newBuffer([]);
 
             /**
              * SearchGuildObject guild_icon.
-             * @member {string} guild_icon
+             * @member {Uint8Array} guild_icon
              * @memberof NFMsg.AckSearchGuild.SearchGuildObject
              * @instance
              */
-            SearchGuildObject.prototype.guild_icon = "";
+            SearchGuildObject.prototype.guild_icon = $util.newBuffer([]);
 
             /**
              * SearchGuildObject guild_member_count.
@@ -22273,9 +22273,9 @@ $root.NFMsg = (function() {
                 if (message.guild_ID != null && message.hasOwnProperty("guild_ID"))
                     $root.NFMsg.Ident.encode(message.guild_ID, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.guild_name);
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.guild_name);
                 if (message.guild_icon != null && message.hasOwnProperty("guild_icon"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.guild_icon);
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.guild_icon);
                 if (message.guild_member_count != null && message.hasOwnProperty("guild_member_count"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.guild_member_count);
                 if (message.guild_member_max_count != null && message.hasOwnProperty("guild_member_max_count"))
@@ -22322,10 +22322,10 @@ $root.NFMsg = (function() {
                         message.guild_ID = $root.NFMsg.Ident.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.guild_name = reader.string();
+                        message.guild_name = reader.bytes();
                         break;
                     case 3:
-                        message.guild_icon = reader.string();
+                        message.guild_icon = reader.bytes();
                         break;
                     case 4:
                         message.guild_member_count = reader.int32();
@@ -22380,11 +22380,11 @@ $root.NFMsg = (function() {
                         return "guild_ID." + error;
                 }
                 if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                    if (!$util.isString(message.guild_name))
-                        return "guild_name: string expected";
+                    if (!(message.guild_name && typeof message.guild_name.length === "number" || $util.isString(message.guild_name)))
+                        return "guild_name: buffer expected";
                 if (message.guild_icon != null && message.hasOwnProperty("guild_icon"))
-                    if (!$util.isString(message.guild_icon))
-                        return "guild_icon: string expected";
+                    if (!(message.guild_icon && typeof message.guild_icon.length === "number" || $util.isString(message.guild_icon)))
+                        return "guild_icon: buffer expected";
                 if (message.guild_member_count != null && message.hasOwnProperty("guild_member_count"))
                     if (!$util.isInteger(message.guild_member_count))
                         return "guild_member_count: integer expected";
@@ -22413,7 +22413,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IReqAckJoinGuild
          * @property {NFMsg.IIdent|null} [guild_id] ReqAckJoinGuild guild_id
-         * @property {string|null} [guild_name] ReqAckJoinGuild guild_name
+         * @property {Uint8Array|null} [guild_name] ReqAckJoinGuild guild_name
          */
 
         /**
@@ -22441,11 +22441,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAckJoinGuild guild_name.
-         * @member {string} guild_name
+         * @member {Uint8Array} guild_name
          * @memberof NFMsg.ReqAckJoinGuild
          * @instance
          */
-        ReqAckJoinGuild.prototype.guild_name = "";
+        ReqAckJoinGuild.prototype.guild_name = $util.newBuffer([]);
 
         /**
          * Creates a new ReqAckJoinGuild instance using the specified properties.
@@ -22474,7 +22474,7 @@ $root.NFMsg = (function() {
             if (message.guild_id != null && message.hasOwnProperty("guild_id"))
                 $root.NFMsg.Ident.encode(message.guild_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.guild_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.guild_name);
             return writer;
         };
 
@@ -22513,7 +22513,7 @@ $root.NFMsg = (function() {
                     message.guild_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.guild_name = reader.string();
+                    message.guild_name = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -22556,8 +22556,8 @@ $root.NFMsg = (function() {
                     return "guild_id." + error;
             }
             if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                if (!$util.isString(message.guild_name))
-                    return "guild_name: string expected";
+                if (!(message.guild_name && typeof message.guild_name.length === "number" || $util.isString(message.guild_name)))
+                    return "guild_name: buffer expected";
             return null;
         };
 
@@ -22571,7 +22571,7 @@ $root.NFMsg = (function() {
          * @memberof NFMsg
          * @interface IReqAckLeaveGuild
          * @property {NFMsg.IIdent|null} [guild_id] ReqAckLeaveGuild guild_id
-         * @property {string|null} [guild_name] ReqAckLeaveGuild guild_name
+         * @property {Uint8Array|null} [guild_name] ReqAckLeaveGuild guild_name
          */
 
         /**
@@ -22599,11 +22599,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAckLeaveGuild guild_name.
-         * @member {string} guild_name
+         * @member {Uint8Array} guild_name
          * @memberof NFMsg.ReqAckLeaveGuild
          * @instance
          */
-        ReqAckLeaveGuild.prototype.guild_name = "";
+        ReqAckLeaveGuild.prototype.guild_name = $util.newBuffer([]);
 
         /**
          * Creates a new ReqAckLeaveGuild instance using the specified properties.
@@ -22632,7 +22632,7 @@ $root.NFMsg = (function() {
             if (message.guild_id != null && message.hasOwnProperty("guild_id"))
                 $root.NFMsg.Ident.encode(message.guild_id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.guild_name);
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.guild_name);
             return writer;
         };
 
@@ -22671,7 +22671,7 @@ $root.NFMsg = (function() {
                     message.guild_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.guild_name = reader.string();
+                    message.guild_name = reader.bytes();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -22714,8 +22714,8 @@ $root.NFMsg = (function() {
                     return "guild_id." + error;
             }
             if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                if (!$util.isString(message.guild_name))
-                    return "guild_name: string expected";
+                if (!(message.guild_name && typeof message.guild_name.length === "number" || $util.isString(message.guild_name)))
+                    return "guild_name: buffer expected";
             return null;
         };
 
@@ -23367,7 +23367,7 @@ $root.NFMsg = (function() {
          * Properties of a ReqBuyItemFromShop.
          * @memberof NFMsg
          * @interface IReqBuyItemFromShop
-         * @property {string|null} [itemID] ReqBuyItemFromShop itemID
+         * @property {Uint8Array|null} [itemID] ReqBuyItemFromShop itemID
          * @property {number|null} [count] ReqBuyItemFromShop count
          */
 
@@ -23388,11 +23388,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqBuyItemFromShop itemID.
-         * @member {string} itemID
+         * @member {Uint8Array} itemID
          * @memberof NFMsg.ReqBuyItemFromShop
          * @instance
          */
-        ReqBuyItemFromShop.prototype.itemID = "";
+        ReqBuyItemFromShop.prototype.itemID = $util.newBuffer([]);
 
         /**
          * ReqBuyItemFromShop count.
@@ -23427,7 +23427,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.itemID != null && message.hasOwnProperty("itemID"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.itemID);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.itemID);
             if (message.count != null && message.hasOwnProperty("count"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.count);
             return writer;
@@ -23465,7 +23465,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.itemID = reader.string();
+                    message.itemID = reader.bytes();
                     break;
                 case 2:
                     message.count = reader.int32();
@@ -23506,8 +23506,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.itemID != null && message.hasOwnProperty("itemID"))
-                if (!$util.isString(message.itemID))
-                    return "itemID: string expected";
+                if (!(message.itemID && typeof message.itemID.length === "number" || $util.isString(message.itemID)))
+                    return "itemID: buffer expected";
             if (message.count != null && message.hasOwnProperty("count"))
                 if (!$util.isInteger(message.count))
                     return "count: integer expected";
@@ -23523,7 +23523,7 @@ $root.NFMsg = (function() {
          * Properties of a ReqAddGambleValue.
          * @memberof NFMsg
          * @interface IReqAddGambleValue
-         * @property {string|null} [property] ReqAddGambleValue property
+         * @property {Uint8Array|null} [property] ReqAddGambleValue property
          * @property {number|null} [number] ReqAddGambleValue number
          */
 
@@ -23544,11 +23544,11 @@ $root.NFMsg = (function() {
 
         /**
          * ReqAddGambleValue property.
-         * @member {string} property
+         * @member {Uint8Array} property
          * @memberof NFMsg.ReqAddGambleValue
          * @instance
          */
-        ReqAddGambleValue.prototype.property = "";
+        ReqAddGambleValue.prototype.property = $util.newBuffer([]);
 
         /**
          * ReqAddGambleValue number.
@@ -23583,7 +23583,7 @@ $root.NFMsg = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.property != null && message.hasOwnProperty("property"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.property);
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.property);
             if (message.number != null && message.hasOwnProperty("number"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.number);
             return writer;
@@ -23621,7 +23621,7 @@ $root.NFMsg = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    message.property = reader.string();
+                    message.property = reader.bytes();
                     break;
                 case 2:
                     message.number = reader.int32();
@@ -23662,8 +23662,8 @@ $root.NFMsg = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.property != null && message.hasOwnProperty("property"))
-                if (!$util.isString(message.property))
-                    return "property: string expected";
+                if (!(message.property && typeof message.property.length === "number" || $util.isString(message.property)))
+                    return "property: buffer expected";
             if (message.number != null && message.hasOwnProperty("number"))
                 if (!$util.isInteger(message.number))
                     return "number: integer expected";
@@ -24027,7 +24027,7 @@ $root.NFMsg = (function() {
          * @interface ITileBuilding
          * @property {number|null} [x] TileBuilding x
          * @property {number|null} [y] TileBuilding y
-         * @property {string|null} [configID] TileBuilding configID
+         * @property {Uint8Array|null} [configID] TileBuilding configID
          * @property {NFMsg.IIdent|null} [guid] TileBuilding guid
          */
 
@@ -24064,11 +24064,11 @@ $root.NFMsg = (function() {
 
         /**
          * TileBuilding configID.
-         * @member {string} configID
+         * @member {Uint8Array} configID
          * @memberof NFMsg.TileBuilding
          * @instance
          */
-        TileBuilding.prototype.configID = "";
+        TileBuilding.prototype.configID = $util.newBuffer([]);
 
         /**
          * TileBuilding guid.
@@ -24107,7 +24107,7 @@ $root.NFMsg = (function() {
             if (message.y != null && message.hasOwnProperty("y"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.y);
             if (message.configID != null && message.hasOwnProperty("configID"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.configID);
+                writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.configID);
             if (message.guid != null && message.hasOwnProperty("guid"))
                 $root.NFMsg.Ident.encode(message.guid, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
             return writer;
@@ -24151,7 +24151,7 @@ $root.NFMsg = (function() {
                     message.y = reader.int32();
                     break;
                 case 3:
-                    message.configID = reader.string();
+                    message.configID = reader.bytes();
                     break;
                 case 4:
                     message.guid = $root.NFMsg.Ident.decode(reader, reader.uint32());
@@ -24198,8 +24198,8 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.y))
                     return "y: integer expected";
             if (message.configID != null && message.hasOwnProperty("configID"))
-                if (!$util.isString(message.configID))
-                    return "configID: string expected";
+                if (!(message.configID && typeof message.configID.length === "number" || $util.isString(message.configID)))
+                    return "configID: buffer expected";
             if (message.guid != null && message.hasOwnProperty("guid")) {
                 var error = $root.NFMsg.Ident.verify(message.guid);
                 if (error)
@@ -24219,7 +24219,7 @@ $root.NFMsg = (function() {
          * @interface ITileNPC
          * @property {number|null} [x] TileNPC x
          * @property {number|null} [y] TileNPC y
-         * @property {string|null} [configID] TileNPC configID
+         * @property {Uint8Array|null} [configID] TileNPC configID
          * @property {NFMsg.IIdent|null} [guid] TileNPC guid
          */
 
@@ -24256,11 +24256,11 @@ $root.NFMsg = (function() {
 
         /**
          * TileNPC configID.
-         * @member {string} configID
+         * @member {Uint8Array} configID
          * @memberof NFMsg.TileNPC
          * @instance
          */
-        TileNPC.prototype.configID = "";
+        TileNPC.prototype.configID = $util.newBuffer([]);
 
         /**
          * TileNPC guid.
@@ -24299,7 +24299,7 @@ $root.NFMsg = (function() {
             if (message.y != null && message.hasOwnProperty("y"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.y);
             if (message.configID != null && message.hasOwnProperty("configID"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.configID);
+                writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.configID);
             if (message.guid != null && message.hasOwnProperty("guid"))
                 $root.NFMsg.Ident.encode(message.guid, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
             return writer;
@@ -24343,7 +24343,7 @@ $root.NFMsg = (function() {
                     message.y = reader.int32();
                     break;
                 case 3:
-                    message.configID = reader.string();
+                    message.configID = reader.bytes();
                     break;
                 case 4:
                     message.guid = $root.NFMsg.Ident.decode(reader, reader.uint32());
@@ -24390,8 +24390,8 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.y))
                     return "y: integer expected";
             if (message.configID != null && message.hasOwnProperty("configID"))
-                if (!$util.isString(message.configID))
-                    return "configID: string expected";
+                if (!(message.configID && typeof message.configID.length === "number" || $util.isString(message.configID)))
+                    return "configID: buffer expected";
             if (message.guid != null && message.hasOwnProperty("guid")) {
                 var error = $root.NFMsg.Ident.verify(message.guid);
                 if (error)
@@ -24756,13 +24756,13 @@ $root.NFMsg = (function() {
          * @property {number|null} [diamond] AckSearchOppnent diamond
          * @property {number|null} [level] AckSearchOppnent level
          * @property {number|null} [cup] AckSearchOppnent cup
-         * @property {string|null} [name] AckSearchOppnent name
-         * @property {string|null} [head] AckSearchOppnent head
-         * @property {string|null} [hero_cnf1] AckSearchOppnent hero_cnf1
+         * @property {Uint8Array|null} [name] AckSearchOppnent name
+         * @property {Uint8Array|null} [head] AckSearchOppnent head
+         * @property {Uint8Array|null} [hero_cnf1] AckSearchOppnent hero_cnf1
          * @property {number|null} [hero_star1] AckSearchOppnent hero_star1
-         * @property {string|null} [hero_cnf2] AckSearchOppnent hero_cnf2
+         * @property {Uint8Array|null} [hero_cnf2] AckSearchOppnent hero_cnf2
          * @property {number|null} [hero_star2] AckSearchOppnent hero_star2
-         * @property {string|null} [hero_cnf3] AckSearchOppnent hero_cnf3
+         * @property {Uint8Array|null} [hero_cnf3] AckSearchOppnent hero_cnf3
          * @property {number|null} [hero_star3] AckSearchOppnent hero_star3
          * @property {NFMsg.IIdent|null} [hero_id1] AckSearchOppnent hero_id1
          * @property {NFMsg.IIdent|null} [hero_id2] AckSearchOppnent hero_id2
@@ -24831,27 +24831,27 @@ $root.NFMsg = (function() {
 
         /**
          * AckSearchOppnent name.
-         * @member {string} name
+         * @member {Uint8Array} name
          * @memberof NFMsg.AckSearchOppnent
          * @instance
          */
-        AckSearchOppnent.prototype.name = "";
+        AckSearchOppnent.prototype.name = $util.newBuffer([]);
 
         /**
          * AckSearchOppnent head.
-         * @member {string} head
+         * @member {Uint8Array} head
          * @memberof NFMsg.AckSearchOppnent
          * @instance
          */
-        AckSearchOppnent.prototype.head = "";
+        AckSearchOppnent.prototype.head = $util.newBuffer([]);
 
         /**
          * AckSearchOppnent hero_cnf1.
-         * @member {string} hero_cnf1
+         * @member {Uint8Array} hero_cnf1
          * @memberof NFMsg.AckSearchOppnent
          * @instance
          */
-        AckSearchOppnent.prototype.hero_cnf1 = "";
+        AckSearchOppnent.prototype.hero_cnf1 = $util.newBuffer([]);
 
         /**
          * AckSearchOppnent hero_star1.
@@ -24863,11 +24863,11 @@ $root.NFMsg = (function() {
 
         /**
          * AckSearchOppnent hero_cnf2.
-         * @member {string} hero_cnf2
+         * @member {Uint8Array} hero_cnf2
          * @memberof NFMsg.AckSearchOppnent
          * @instance
          */
-        AckSearchOppnent.prototype.hero_cnf2 = "";
+        AckSearchOppnent.prototype.hero_cnf2 = $util.newBuffer([]);
 
         /**
          * AckSearchOppnent hero_star2.
@@ -24879,11 +24879,11 @@ $root.NFMsg = (function() {
 
         /**
          * AckSearchOppnent hero_cnf3.
-         * @member {string} hero_cnf3
+         * @member {Uint8Array} hero_cnf3
          * @memberof NFMsg.AckSearchOppnent
          * @instance
          */
-        AckSearchOppnent.prototype.hero_cnf3 = "";
+        AckSearchOppnent.prototype.hero_cnf3 = $util.newBuffer([]);
 
         /**
          * AckSearchOppnent hero_star3.
@@ -24992,19 +24992,19 @@ $root.NFMsg = (function() {
             if (message.cup != null && message.hasOwnProperty("cup"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.cup);
             if (message.name != null && message.hasOwnProperty("name"))
-                writer.uint32(/* id 6, wireType 2 =*/50).string(message.name);
+                writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.name);
             if (message.head != null && message.hasOwnProperty("head"))
-                writer.uint32(/* id 7, wireType 2 =*/58).string(message.head);
+                writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.head);
             if (message.hero_cnf1 != null && message.hasOwnProperty("hero_cnf1"))
-                writer.uint32(/* id 8, wireType 2 =*/66).string(message.hero_cnf1);
+                writer.uint32(/* id 8, wireType 2 =*/66).bytes(message.hero_cnf1);
             if (message.hero_star1 != null && message.hasOwnProperty("hero_star1"))
                 writer.uint32(/* id 9, wireType 0 =*/72).int32(message.hero_star1);
             if (message.hero_cnf2 != null && message.hasOwnProperty("hero_cnf2"))
-                writer.uint32(/* id 10, wireType 2 =*/82).string(message.hero_cnf2);
+                writer.uint32(/* id 10, wireType 2 =*/82).bytes(message.hero_cnf2);
             if (message.hero_star2 != null && message.hasOwnProperty("hero_star2"))
                 writer.uint32(/* id 11, wireType 0 =*/88).int32(message.hero_star2);
             if (message.hero_cnf3 != null && message.hasOwnProperty("hero_cnf3"))
-                writer.uint32(/* id 12, wireType 2 =*/98).string(message.hero_cnf3);
+                writer.uint32(/* id 12, wireType 2 =*/98).bytes(message.hero_cnf3);
             if (message.hero_star3 != null && message.hasOwnProperty("hero_star3"))
                 writer.uint32(/* id 13, wireType 0 =*/104).int32(message.hero_star3);
             if (message.hero_id1 != null && message.hasOwnProperty("hero_id1"))
@@ -25073,25 +25073,25 @@ $root.NFMsg = (function() {
                     message.cup = reader.int32();
                     break;
                 case 6:
-                    message.name = reader.string();
+                    message.name = reader.bytes();
                     break;
                 case 7:
-                    message.head = reader.string();
+                    message.head = reader.bytes();
                     break;
                 case 8:
-                    message.hero_cnf1 = reader.string();
+                    message.hero_cnf1 = reader.bytes();
                     break;
                 case 9:
                     message.hero_star1 = reader.int32();
                     break;
                 case 10:
-                    message.hero_cnf2 = reader.string();
+                    message.hero_cnf2 = reader.bytes();
                     break;
                 case 11:
                     message.hero_star2 = reader.int32();
                     break;
                 case 12:
-                    message.hero_cnf3 = reader.string();
+                    message.hero_cnf3 = reader.bytes();
                     break;
                 case 13:
                     message.hero_star3 = reader.int32();
@@ -25171,26 +25171,26 @@ $root.NFMsg = (function() {
                 if (!$util.isInteger(message.cup))
                     return "cup: integer expected";
             if (message.name != null && message.hasOwnProperty("name"))
-                if (!$util.isString(message.name))
-                    return "name: string expected";
+                if (!(message.name && typeof message.name.length === "number" || $util.isString(message.name)))
+                    return "name: buffer expected";
             if (message.head != null && message.hasOwnProperty("head"))
-                if (!$util.isString(message.head))
-                    return "head: string expected";
+                if (!(message.head && typeof message.head.length === "number" || $util.isString(message.head)))
+                    return "head: buffer expected";
             if (message.hero_cnf1 != null && message.hasOwnProperty("hero_cnf1"))
-                if (!$util.isString(message.hero_cnf1))
-                    return "hero_cnf1: string expected";
+                if (!(message.hero_cnf1 && typeof message.hero_cnf1.length === "number" || $util.isString(message.hero_cnf1)))
+                    return "hero_cnf1: buffer expected";
             if (message.hero_star1 != null && message.hasOwnProperty("hero_star1"))
                 if (!$util.isInteger(message.hero_star1))
                     return "hero_star1: integer expected";
             if (message.hero_cnf2 != null && message.hasOwnProperty("hero_cnf2"))
-                if (!$util.isString(message.hero_cnf2))
-                    return "hero_cnf2: string expected";
+                if (!(message.hero_cnf2 && typeof message.hero_cnf2.length === "number" || $util.isString(message.hero_cnf2)))
+                    return "hero_cnf2: buffer expected";
             if (message.hero_star2 != null && message.hasOwnProperty("hero_star2"))
                 if (!$util.isInteger(message.hero_star2))
                     return "hero_star2: integer expected";
             if (message.hero_cnf3 != null && message.hasOwnProperty("hero_cnf3"))
-                if (!$util.isString(message.hero_cnf3))
-                    return "hero_cnf3: string expected";
+                if (!(message.hero_cnf3 && typeof message.hero_cnf3.length === "number" || $util.isString(message.hero_cnf3)))
+                    return "hero_cnf3: buffer expected";
             if (message.hero_star3 != null && message.hasOwnProperty("hero_star3"))
                 if (!$util.isInteger(message.hero_star3))
                     return "hero_star3: integer expected";

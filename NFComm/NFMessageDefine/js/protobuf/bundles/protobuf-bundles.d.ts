@@ -690,7 +690,7 @@ declare namespace NFMsg {
     interface IPropertyInt {
 
         /** PropertyInt property_name */
-        property_name?: (string|null);
+        property_name?: (Uint8Array|null);
 
         /** PropertyInt data */
         data?: (number|Long|null);
@@ -706,7 +706,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IPropertyInt);
 
         /** PropertyInt property_name. */
-        public property_name: string;
+        public property_name: Uint8Array;
 
         /** PropertyInt data. */
         public data: (number|Long);
@@ -765,7 +765,7 @@ declare namespace NFMsg {
     interface IPropertyFloat {
 
         /** PropertyFloat property_name */
-        property_name?: (string|null);
+        property_name?: (Uint8Array|null);
 
         /** PropertyFloat data */
         data?: (number|null);
@@ -781,7 +781,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IPropertyFloat);
 
         /** PropertyFloat property_name. */
-        public property_name: string;
+        public property_name: Uint8Array;
 
         /** PropertyFloat data. */
         public data: number;
@@ -840,10 +840,10 @@ declare namespace NFMsg {
     interface IPropertyString {
 
         /** PropertyString property_name */
-        property_name?: (string|null);
+        property_name?: (Uint8Array|null);
 
         /** PropertyString data */
-        data?: (string|null);
+        data?: (Uint8Array|null);
     }
 
     /** Represents a PropertyString. */
@@ -856,10 +856,10 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IPropertyString);
 
         /** PropertyString property_name. */
-        public property_name: string;
+        public property_name: Uint8Array;
 
         /** PropertyString data. */
-        public data: string;
+        public data: Uint8Array;
 
         /**
          * Creates a new PropertyString instance using the specified properties.
@@ -915,7 +915,7 @@ declare namespace NFMsg {
     interface IPropertyObject {
 
         /** PropertyObject property_name */
-        property_name?: (string|null);
+        property_name?: (Uint8Array|null);
 
         /** PropertyObject data */
         data?: (NFMsg.IIdent|null);
@@ -931,7 +931,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IPropertyObject);
 
         /** PropertyObject property_name. */
-        public property_name: string;
+        public property_name: Uint8Array;
 
         /** PropertyObject data. */
         public data?: (NFMsg.IIdent|null);
@@ -990,7 +990,7 @@ declare namespace NFMsg {
     interface IPropertyVector2 {
 
         /** PropertyVector2 property_name */
-        property_name?: (string|null);
+        property_name?: (Uint8Array|null);
 
         /** PropertyVector2 data */
         data?: (NFMsg.IVector2|null);
@@ -1006,7 +1006,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IPropertyVector2);
 
         /** PropertyVector2 property_name. */
-        public property_name: string;
+        public property_name: Uint8Array;
 
         /** PropertyVector2 data. */
         public data?: (NFMsg.IVector2|null);
@@ -1065,7 +1065,7 @@ declare namespace NFMsg {
     interface IPropertyVector3 {
 
         /** PropertyVector3 property_name */
-        property_name?: (string|null);
+        property_name?: (Uint8Array|null);
 
         /** PropertyVector3 data */
         data?: (NFMsg.IVector3|null);
@@ -1081,7 +1081,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IPropertyVector3);
 
         /** PropertyVector3 property_name. */
-        public property_name: string;
+        public property_name: Uint8Array;
 
         /** PropertyVector3 data. */
         public data?: (NFMsg.IVector3|null);
@@ -1308,7 +1308,7 @@ declare namespace NFMsg {
         col?: (number|null);
 
         /** RecordString data */
-        data?: (string|null);
+        data?: (Uint8Array|null);
     }
 
     /** Represents a RecordString. */
@@ -1327,7 +1327,7 @@ declare namespace NFMsg {
         public col: number;
 
         /** RecordString data. */
-        public data: string;
+        public data: Uint8Array;
 
         /**
          * Creates a new RecordString instance using the specified properties.
@@ -1731,7 +1731,7 @@ declare namespace NFMsg {
     interface IObjectRecordBase {
 
         /** ObjectRecordBase record_name */
-        record_name?: (string|null);
+        record_name?: (Uint8Array|null);
 
         /** ObjectRecordBase row_struct */
         row_struct?: (NFMsg.IRecordAddRowStruct[]|null);
@@ -1747,7 +1747,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IObjectRecordBase);
 
         /** ObjectRecordBase record_name. */
-        public record_name: string;
+        public record_name: Uint8Array;
 
         /** ObjectRecordBase row_struct. */
         public row_struct: NFMsg.IRecordAddRowStruct[];
@@ -2259,7 +2259,7 @@ declare namespace NFMsg {
         player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordInt record_name */
-        record_name?: (string|null);
+        record_name?: (Uint8Array|null);
 
         /** ObjectRecordInt property_list */
         property_list?: (NFMsg.IRecordInt[]|null);
@@ -2278,7 +2278,7 @@ declare namespace NFMsg {
         public player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordInt record_name. */
-        public record_name: string;
+        public record_name: Uint8Array;
 
         /** ObjectRecordInt property_list. */
         public property_list: NFMsg.IRecordInt[];
@@ -2340,7 +2340,7 @@ declare namespace NFMsg {
         player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordFloat record_name */
-        record_name?: (string|null);
+        record_name?: (Uint8Array|null);
 
         /** ObjectRecordFloat property_list */
         property_list?: (NFMsg.IRecordFloat[]|null);
@@ -2359,7 +2359,7 @@ declare namespace NFMsg {
         public player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordFloat record_name. */
-        public record_name: string;
+        public record_name: Uint8Array;
 
         /** ObjectRecordFloat property_list. */
         public property_list: NFMsg.IRecordFloat[];
@@ -2421,7 +2421,7 @@ declare namespace NFMsg {
         player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordString record_name */
-        record_name?: (string|null);
+        record_name?: (Uint8Array|null);
 
         /** ObjectRecordString property_list */
         property_list?: (NFMsg.IRecordString[]|null);
@@ -2440,7 +2440,7 @@ declare namespace NFMsg {
         public player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordString record_name. */
-        public record_name: string;
+        public record_name: Uint8Array;
 
         /** ObjectRecordString property_list. */
         public property_list: NFMsg.IRecordString[];
@@ -2502,7 +2502,7 @@ declare namespace NFMsg {
         player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordObject record_name */
-        record_name?: (string|null);
+        record_name?: (Uint8Array|null);
 
         /** ObjectRecordObject property_list */
         property_list?: (NFMsg.IRecordObject[]|null);
@@ -2521,7 +2521,7 @@ declare namespace NFMsg {
         public player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordObject record_name. */
-        public record_name: string;
+        public record_name: Uint8Array;
 
         /** ObjectRecordObject property_list. */
         public property_list: NFMsg.IRecordObject[];
@@ -2583,7 +2583,7 @@ declare namespace NFMsg {
         player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordVector2 record_name */
-        record_name?: (string|null);
+        record_name?: (Uint8Array|null);
 
         /** ObjectRecordVector2 property_list */
         property_list?: (NFMsg.IRecordVector2[]|null);
@@ -2602,7 +2602,7 @@ declare namespace NFMsg {
         public player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordVector2 record_name. */
-        public record_name: string;
+        public record_name: Uint8Array;
 
         /** ObjectRecordVector2 property_list. */
         public property_list: NFMsg.IRecordVector2[];
@@ -2664,7 +2664,7 @@ declare namespace NFMsg {
         player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordVector3 record_name */
-        record_name?: (string|null);
+        record_name?: (Uint8Array|null);
 
         /** ObjectRecordVector3 property_list */
         property_list?: (NFMsg.IRecordVector3[]|null);
@@ -2683,7 +2683,7 @@ declare namespace NFMsg {
         public player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordVector3 record_name. */
-        public record_name: string;
+        public record_name: Uint8Array;
 
         /** ObjectRecordVector3 property_list. */
         public property_list: NFMsg.IRecordVector3[];
@@ -2745,10 +2745,10 @@ declare namespace NFMsg {
         player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordSwap origin_record_name */
-        origin_record_name?: (string|null);
+        origin_record_name?: (Uint8Array|null);
 
         /** ObjectRecordSwap target_record_name */
-        target_record_name?: (string|null);
+        target_record_name?: (Uint8Array|null);
 
         /** ObjectRecordSwap row_origin */
         row_origin?: (number|null);
@@ -2770,10 +2770,10 @@ declare namespace NFMsg {
         public player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordSwap origin_record_name. */
-        public origin_record_name: string;
+        public origin_record_name: Uint8Array;
 
         /** ObjectRecordSwap target_record_name. */
-        public target_record_name: string;
+        public target_record_name: Uint8Array;
 
         /** ObjectRecordSwap row_origin. */
         public row_origin: number;
@@ -2838,7 +2838,7 @@ declare namespace NFMsg {
         player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordAddRow record_name */
-        record_name?: (string|null);
+        record_name?: (Uint8Array|null);
 
         /** ObjectRecordAddRow row_data */
         row_data?: (NFMsg.IRecordAddRowStruct[]|null);
@@ -2857,7 +2857,7 @@ declare namespace NFMsg {
         public player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordAddRow record_name. */
-        public record_name: string;
+        public record_name: Uint8Array;
 
         /** ObjectRecordAddRow row_data. */
         public row_data: NFMsg.IRecordAddRowStruct[];
@@ -2919,7 +2919,7 @@ declare namespace NFMsg {
         player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordRemove record_name */
-        record_name?: (string|null);
+        record_name?: (Uint8Array|null);
 
         /** ObjectRecordRemove remove_row */
         remove_row?: (number[]|null);
@@ -2938,7 +2938,7 @@ declare namespace NFMsg {
         public player_id?: (NFMsg.IIdent|null);
 
         /** ObjectRecordRemove record_name. */
-        public record_name: string;
+        public record_name: Uint8Array;
 
         /** ObjectRecordRemove remove_row. */
         public remove_row: number[];
@@ -3408,7 +3408,7 @@ declare namespace NFMsg {
         command_id?: (NFMsg.ReqCommand.EGameCommandType|null);
 
         /** ReqCommand command_str_value */
-        command_str_value?: (string|null);
+        command_str_value?: (Uint8Array|null);
 
         /** ReqCommand command_value_int */
         command_value_int?: (number|Long|null);
@@ -3417,7 +3417,7 @@ declare namespace NFMsg {
         command_value_float?: (number|null);
 
         /** ReqCommand command_value_str */
-        command_value_str?: (string|null);
+        command_value_str?: (Uint8Array|null);
 
         /** ReqCommand command_value_object */
         command_value_object?: (NFMsg.IIdent|null);
@@ -3445,7 +3445,7 @@ declare namespace NFMsg {
         public command_id: NFMsg.ReqCommand.EGameCommandType;
 
         /** ReqCommand command_str_value. */
-        public command_str_value: string;
+        public command_str_value: Uint8Array;
 
         /** ReqCommand command_value_int. */
         public command_value_int: (number|Long);
@@ -3454,7 +3454,7 @@ declare namespace NFMsg {
         public command_value_float: number;
 
         /** ReqCommand command_value_str. */
-        public command_value_str: string;
+        public command_value_str: Uint8Array;
 
         /** ReqCommand command_value_object. */
         public command_value_object?: (NFMsg.IIdent|null);
@@ -4317,7 +4317,7 @@ declare namespace NFMsg {
         resource?: (number|null);
 
         /** GridGuildBaseInfo icon */
-        icon?: (string|null);
+        icon?: (Uint8Array|null);
     }
 
     /** big map///////////////////////////////////////////////////////////////////////////////////// */
@@ -4342,7 +4342,7 @@ declare namespace NFMsg {
         public resource: number;
 
         /** GridGuildBaseInfo icon. */
-        public icon: string;
+        public icon: Uint8Array;
 
         /**
          * Creates a new GridGuildBaseInfo instance using the specified properties.
@@ -4398,7 +4398,7 @@ declare namespace NFMsg {
     interface IReqBigMapGridInfo {
 
         /** ReqBigMapGridInfo map_title_id */
-        map_title_id?: (string[]|null);
+        map_title_id?: (Uint8Array[]|null);
     }
 
     /** Represents a ReqBigMapGridInfo. */
@@ -4411,7 +4411,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqBigMapGridInfo);
 
         /** ReqBigMapGridInfo map_title_id. */
-        public map_title_id: string[];
+        public map_title_id: Uint8Array[];
 
         /**
          * Creates a new ReqBigMapGridInfo instance using the specified properties.
@@ -4467,7 +4467,7 @@ declare namespace NFMsg {
     interface IBigMapGridBaseInfo {
 
         /** BigMapGridBaseInfo id */
-        id?: (string|null);
+        id?: (Uint8Array|null);
 
         /** BigMapGridBaseInfo guild_info */
         guild_info?: (NFMsg.IGridGuildBaseInfo|null);
@@ -4495,7 +4495,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IBigMapGridBaseInfo);
 
         /** BigMapGridBaseInfo id. */
-        public id: string;
+        public id: Uint8Array;
 
         /** BigMapGridBaseInfo guild_info. */
         public guild_info?: (NFMsg.IGridGuildBaseInfo|null);
@@ -4569,10 +4569,10 @@ declare namespace NFMsg {
         owner?: (NFMsg.IIdent|null);
 
         /** BigMapLeaveMsg owner_name */
-        owner_name?: (string|null);
+        owner_name?: (Uint8Array|null);
 
         /** BigMapLeaveMsg msg_data */
-        msg_data?: (string|null);
+        msg_data?: (Uint8Array|null);
 
         /** BigMapLeaveMsg msg_time */
         msg_time?: (number|null);
@@ -4594,10 +4594,10 @@ declare namespace NFMsg {
         public owner?: (NFMsg.IIdent|null);
 
         /** BigMapLeaveMsg owner_name. */
-        public owner_name: string;
+        public owner_name: Uint8Array;
 
         /** BigMapLeaveMsg msg_data. */
-        public msg_data: string;
+        public msg_data: Uint8Array;
 
         /** BigMapLeaveMsg msg_time. */
         public msg_time: number;
@@ -5034,7 +5034,7 @@ declare namespace NFMsg {
     interface IReqHoldMapGrid {
 
         /** ReqHoldMapGrid map_title_id */
-        map_title_id?: (string|null);
+        map_title_id?: (Uint8Array|null);
 
         /** ReqHoldMapGrid guild_id */
         guild_id?: (NFMsg.IIdent|null);
@@ -5050,7 +5050,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqHoldMapGrid);
 
         /** ReqHoldMapGrid map_title_id. */
-        public map_title_id: string;
+        public map_title_id: Uint8Array;
 
         /** ReqHoldMapGrid guild_id. */
         public guild_id?: (NFMsg.IIdent|null);
@@ -5172,7 +5172,7 @@ declare namespace NFMsg {
     interface IReqLeaveMapMsg {
 
         /** ReqLeaveMapMsg map_title_id */
-        map_title_id?: (string|null);
+        map_title_id?: (Uint8Array|null);
 
         /** ReqLeaveMapMsg leave_msg */
         leave_msg?: (NFMsg.IBigMapLeaveMsg|null);
@@ -5188,7 +5188,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqLeaveMapMsg);
 
         /** ReqLeaveMapMsg map_title_id. */
-        public map_title_id: string;
+        public map_title_id: Uint8Array;
 
         /** ReqLeaveMapMsg leave_msg. */
         public leave_msg?: (NFMsg.IBigMapLeaveMsg|null);
@@ -5310,7 +5310,7 @@ declare namespace NFMsg {
     interface IReqGetMapAward {
 
         /** ReqGetMapAward map_title_id */
-        map_title_id?: (string|null);
+        map_title_id?: (Uint8Array|null);
     }
 
     /** Represents a ReqGetMapAward. */
@@ -5323,7 +5323,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqGetMapAward);
 
         /** ReqGetMapAward map_title_id. */
-        public map_title_id: string;
+        public map_title_id: Uint8Array;
 
         /**
          * Creates a new ReqGetMapAward instance using the specified properties.
@@ -5442,7 +5442,7 @@ declare namespace NFMsg {
     interface IReqMapHunting {
 
         /** ReqMapHunting map_title_id */
-        map_title_id?: (string|null);
+        map_title_id?: (Uint8Array|null);
     }
 
     /** Represents a ReqMapHunting. */
@@ -5455,7 +5455,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqMapHunting);
 
         /** ReqMapHunting map_title_id. */
-        public map_title_id: string;
+        public map_title_id: Uint8Array;
 
         /**
          * Creates a new ReqMapHunting instance using the specified properties.
@@ -5574,7 +5574,7 @@ declare namespace NFMsg {
     interface IReqMapKingWar {
 
         /** ReqMapKingWar map_title */
-        map_title?: (string|null);
+        map_title?: (Uint8Array|null);
     }
 
     /** Represents a ReqMapKingWar. */
@@ -5587,7 +5587,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqMapKingWar);
 
         /** ReqMapKingWar map_title. */
-        public map_title: string;
+        public map_title: Uint8Array;
 
         /**
          * Creates a new ReqMapKingWar instance using the specified properties.
@@ -5643,7 +5643,7 @@ declare namespace NFMsg {
     interface IAckMapKingWar {
 
         /** AckMapKingWar map_title */
-        map_title?: (string|null);
+        map_title?: (Uint8Array|null);
     }
 
     /** Represents an AckMapKingWar. */
@@ -5656,7 +5656,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IAckMapKingWar);
 
         /** AckMapKingWar map_title. */
-        public map_title: string;
+        public map_title: Uint8Array;
 
         /**
          * Creates a new AckMapKingWar instance using the specified properties.
@@ -5731,10 +5731,10 @@ declare namespace NFMsg {
         server_id?: (number|null);
 
         /** ServerInfoReport server_name */
-        server_name?: (string|null);
+        server_name?: (Uint8Array|null);
 
         /** ServerInfoReport server_ip */
-        server_ip?: (string|null);
+        server_ip?: (Uint8Array|null);
 
         /** ServerInfoReport server_port */
         server_port?: (number|null);
@@ -5765,10 +5765,10 @@ declare namespace NFMsg {
         public server_id: number;
 
         /** ServerInfoReport server_name. */
-        public server_name: string;
+        public server_name: Uint8Array;
 
         /** ServerInfoReport server_ip. */
-        public server_ip: string;
+        public server_ip: Uint8Array;
 
         /** ServerInfoReport server_port. */
         public server_port: number;
@@ -5989,16 +5989,16 @@ declare namespace NFMsg {
     interface IReqAccountLogin {
 
         /** ReqAccountLogin account */
-        account?: (string|null);
+        account?: (Uint8Array|null);
 
         /** ReqAccountLogin password */
-        password?: (string|null);
+        password?: (Uint8Array|null);
 
         /** ReqAccountLogin security_code */
-        security_code?: (string|null);
+        security_code?: (Uint8Array|null);
 
         /** ReqAccountLogin signBuff */
-        signBuff?: (string|null);
+        signBuff?: (Uint8Array|null);
 
         /** ReqAccountLogin clientVersion */
         clientVersion?: (number|null);
@@ -6013,10 +6013,10 @@ declare namespace NFMsg {
         clientMAC?: (number|Long|null);
 
         /** ReqAccountLogin device_info */
-        device_info?: (string|null);
+        device_info?: (Uint8Array|null);
 
         /** ReqAccountLogin extra_info */
-        extra_info?: (string|null);
+        extra_info?: (Uint8Array|null);
 
         /** ReqAccountLogin platform_type */
         platform_type?: (number|null);
@@ -6032,16 +6032,16 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqAccountLogin);
 
         /** ReqAccountLogin account. */
-        public account: string;
+        public account: Uint8Array;
 
         /** ReqAccountLogin password. */
-        public password: string;
+        public password: Uint8Array;
 
         /** ReqAccountLogin security_code. */
-        public security_code: string;
+        public security_code: Uint8Array;
 
         /** ReqAccountLogin signBuff. */
-        public signBuff: string;
+        public signBuff: Uint8Array;
 
         /** ReqAccountLogin clientVersion. */
         public clientVersion: number;
@@ -6056,10 +6056,10 @@ declare namespace NFMsg {
         public clientMAC: (number|Long);
 
         /** ReqAccountLogin device_info. */
-        public device_info: string;
+        public device_info: Uint8Array;
 
         /** ReqAccountLogin extra_info. */
-        public extra_info: string;
+        public extra_info: Uint8Array;
 
         /** ReqAccountLogin platform_type. */
         public platform_type: number;
@@ -6118,10 +6118,10 @@ declare namespace NFMsg {
     interface IReqAccountLogout {
 
         /** ReqAccountLogout account */
-        account?: (string|null);
+        account?: (Uint8Array|null);
 
         /** ReqAccountLogout extra_info */
-        extra_info?: (string|null);
+        extra_info?: (Uint8Array|null);
     }
 
     /** Represents a ReqAccountLogout. */
@@ -6134,10 +6134,10 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqAccountLogout);
 
         /** ReqAccountLogout account. */
-        public account: string;
+        public account: Uint8Array;
 
         /** ReqAccountLogout extra_info. */
-        public extra_info: string;
+        public extra_info: Uint8Array;
 
         /**
          * Creates a new ReqAccountLogout instance using the specified properties.
@@ -6196,7 +6196,7 @@ declare namespace NFMsg {
         server_id?: (number|null);
 
         /** ServerInfo name */
-        name?: (string|null);
+        name?: (Uint8Array|null);
 
         /** ServerInfo wait_count */
         wait_count?: (number|null);
@@ -6218,7 +6218,7 @@ declare namespace NFMsg {
         public server_id: number;
 
         /** ServerInfo name. */
-        public name: string;
+        public name: Uint8Array;
 
         /** ServerInfo wait_count. */
         public wait_count: number;
@@ -6433,7 +6433,7 @@ declare namespace NFMsg {
         world_id?: (number|null);
 
         /** ReqConnectWorld account */
-        account?: (string|null);
+        account?: (Uint8Array|null);
 
         /** ReqConnectWorld sender */
         sender?: (NFMsg.IIdent|null);
@@ -6455,7 +6455,7 @@ declare namespace NFMsg {
         public world_id: number;
 
         /** ReqConnectWorld account. */
-        public account: string;
+        public account: Uint8Array;
 
         /** ReqConnectWorld sender. */
         public sender?: (NFMsg.IIdent|null);
@@ -6526,16 +6526,16 @@ declare namespace NFMsg {
         login_id?: (number|null);
 
         /** AckConnectWorldResult account */
-        account?: (string|null);
+        account?: (Uint8Array|null);
 
         /** AckConnectWorldResult world_ip */
-        world_ip?: (string|null);
+        world_ip?: (Uint8Array|null);
 
         /** AckConnectWorldResult world_port */
         world_port?: (number|null);
 
         /** AckConnectWorldResult world_key */
-        world_key?: (string|null);
+        world_key?: (Uint8Array|null);
     }
 
     /** Represents an AckConnectWorldResult. */
@@ -6557,16 +6557,16 @@ declare namespace NFMsg {
         public login_id: number;
 
         /** AckConnectWorldResult account. */
-        public account: string;
+        public account: Uint8Array;
 
         /** AckConnectWorldResult world_ip. */
-        public world_ip: string;
+        public world_ip: Uint8Array;
 
         /** AckConnectWorldResult world_port. */
         public world_port: number;
 
         /** AckConnectWorldResult world_key. */
-        public world_key: string;
+        public world_key: Uint8Array;
 
         /**
          * Creates a new AckConnectWorldResult instance using the specified properties.
@@ -6694,7 +6694,7 @@ declare namespace NFMsg {
         world_id?: (number|null);
 
         /** ReqKickFromWorld account */
-        account?: (string|null);
+        account?: (Uint8Array|null);
     }
 
     /** Represents a ReqKickFromWorld. */
@@ -6710,7 +6710,7 @@ declare namespace NFMsg {
         public world_id: number;
 
         /** ReqKickFromWorld account. */
-        public account: string;
+        public account: Uint8Array;
 
         /**
          * Creates a new ReqKickFromWorld instance using the specified properties.
@@ -6769,7 +6769,7 @@ declare namespace NFMsg {
         game_id?: (number|null);
 
         /** ReqRoleList account */
-        account?: (string|null);
+        account?: (Uint8Array|null);
     }
 
     /** Represents a ReqRoleList. */
@@ -6785,7 +6785,7 @@ declare namespace NFMsg {
         public game_id: number;
 
         /** ReqRoleList account. */
-        public account: string;
+        public account: Uint8Array;
 
         /**
          * Creates a new ReqRoleList instance using the specified properties.
@@ -6853,7 +6853,7 @@ declare namespace NFMsg {
         race?: (number|null);
 
         /** RoleLiteInfo noob_name */
-        noob_name?: (string|null);
+        noob_name?: (Uint8Array|null);
 
         /** RoleLiteInfo game_id */
         game_id?: (number|null);
@@ -6874,7 +6874,7 @@ declare namespace NFMsg {
         last_offline_ip?: (number|null);
 
         /** RoleLiteInfo view_record */
-        view_record?: (string|null);
+        view_record?: (Uint8Array|null);
     }
 
     /** Represents a RoleLiteInfo. */
@@ -6899,7 +6899,7 @@ declare namespace NFMsg {
         public race: number;
 
         /** RoleLiteInfo noob_name. */
-        public noob_name: string;
+        public noob_name: Uint8Array;
 
         /** RoleLiteInfo game_id. */
         public game_id: number;
@@ -6920,7 +6920,7 @@ declare namespace NFMsg {
         public last_offline_ip: number;
 
         /** RoleLiteInfo view_record. */
-        public view_record: string;
+        public view_record: Uint8Array;
 
         /**
          * Creates a new RoleLiteInfo instance using the specified properties.
@@ -6979,7 +6979,7 @@ declare namespace NFMsg {
         char_data?: (NFMsg.IRoleLiteInfo[]|null);
 
         /** AckRoleLiteInfoList account */
-        account?: (string|null);
+        account?: (Uint8Array|null);
     }
 
     /** Represents an AckRoleLiteInfoList. */
@@ -6995,7 +6995,7 @@ declare namespace NFMsg {
         public char_data: NFMsg.IRoleLiteInfo[];
 
         /** AckRoleLiteInfoList account. */
-        public account: string;
+        public account: Uint8Array;
 
         /**
          * Creates a new AckRoleLiteInfoList instance using the specified properties.
@@ -7051,7 +7051,7 @@ declare namespace NFMsg {
     interface IReqCreateRole {
 
         /** ReqCreateRole account */
-        account?: (string|null);
+        account?: (Uint8Array|null);
 
         /** ReqCreateRole career */
         career?: (number|null);
@@ -7063,7 +7063,7 @@ declare namespace NFMsg {
         race?: (number|null);
 
         /** ReqCreateRole noob_name */
-        noob_name?: (string|null);
+        noob_name?: (Uint8Array|null);
 
         /** ReqCreateRole game_id */
         game_id?: (number|null);
@@ -7079,7 +7079,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqCreateRole);
 
         /** ReqCreateRole account. */
-        public account: string;
+        public account: Uint8Array;
 
         /** ReqCreateRole career. */
         public career: number;
@@ -7091,7 +7091,7 @@ declare namespace NFMsg {
         public race: number;
 
         /** ReqCreateRole noob_name. */
-        public noob_name: string;
+        public noob_name: Uint8Array;
 
         /** ReqCreateRole game_id. */
         public game_id: number;
@@ -7150,10 +7150,10 @@ declare namespace NFMsg {
     interface IReqDeleteRole {
 
         /** ReqDeleteRole account */
-        account?: (string|null);
+        account?: (Uint8Array|null);
 
         /** ReqDeleteRole name */
-        name?: (string|null);
+        name?: (Uint8Array|null);
 
         /** ReqDeleteRole game_id */
         game_id?: (number|null);
@@ -7169,10 +7169,10 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqDeleteRole);
 
         /** ReqDeleteRole account. */
-        public account: string;
+        public account: Uint8Array;
 
         /** ReqDeleteRole name. */
-        public name: string;
+        public name: Uint8Array;
 
         /** ReqDeleteRole game_id. */
         public game_id: number;
@@ -7231,10 +7231,10 @@ declare namespace NFMsg {
     interface IReqRecoverRole {
 
         /** ReqRecoverRole account */
-        account?: (string|null);
+        account?: (Uint8Array|null);
 
         /** ReqRecoverRole name */
-        name?: (string|null);
+        name?: (Uint8Array|null);
 
         /** ReqRecoverRole game_id */
         game_id?: (number|null);
@@ -7250,10 +7250,10 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqRecoverRole);
 
         /** ReqRecoverRole account. */
-        public account: string;
+        public account: Uint8Array;
 
         /** ReqRecoverRole name. */
-        public name: string;
+        public name: Uint8Array;
 
         /** ReqRecoverRole game_id. */
         public game_id: number;
@@ -7639,13 +7639,13 @@ declare namespace NFMsg {
         id?: (NFMsg.IIdent|null);
 
         /** ReqEnterGameServer account */
-        account?: (string|null);
+        account?: (Uint8Array|null);
 
         /** ReqEnterGameServer game_id */
         game_id?: (number|null);
 
         /** ReqEnterGameServer name */
-        name?: (string|null);
+        name?: (Uint8Array|null);
     }
 
     /** Represents a ReqEnterGameServer. */
@@ -7661,13 +7661,13 @@ declare namespace NFMsg {
         public id?: (NFMsg.IIdent|null);
 
         /** ReqEnterGameServer account. */
-        public account: string;
+        public account: Uint8Array;
 
         /** ReqEnterGameServer game_id. */
         public game_id: number;
 
         /** ReqEnterGameServer name. */
-        public name: string;
+        public name: Uint8Array;
 
         /**
          * Creates a new ReqEnterGameServer instance using the specified properties.
@@ -7948,13 +7948,13 @@ declare namespace NFMsg {
         player_state?: (number|null);
 
         /** PlayerEntryInfo config_id */
-        config_id?: (string|null);
+        config_id?: (Uint8Array|null);
 
         /** PlayerEntryInfo scene_id */
         scene_id?: (number|null);
 
         /** PlayerEntryInfo class_id */
-        class_id?: (string|null);
+        class_id?: (Uint8Array|null);
     }
 
     /** Represents a PlayerEntryInfo. */
@@ -7985,13 +7985,13 @@ declare namespace NFMsg {
         public player_state: number;
 
         /** PlayerEntryInfo config_id. */
-        public config_id: string;
+        public config_id: Uint8Array;
 
         /** PlayerEntryInfo scene_id. */
         public scene_id: number;
 
         /** PlayerEntryInfo class_id. */
-        public class_id: string;
+        public class_id: Uint8Array;
 
         /**
          * Creates a new PlayerEntryInfo instance using the specified properties.
@@ -8191,7 +8191,7 @@ declare namespace NFMsg {
         object_list?: (NFMsg.IIdent[]|null);
 
         /** ReqAckSynData data */
-        data?: (string|null);
+        data?: (Uint8Array|null);
 
         /** ReqAckSynData syn_type */
         syn_type?: (NFMsg.ReqAckSynData.SynType|null);
@@ -8216,7 +8216,7 @@ declare namespace NFMsg {
         public object_list: NFMsg.IIdent[];
 
         /** ReqAckSynData data. */
-        public data: string;
+        public data: Uint8Array;
 
         /** ReqAckSynData syn_type. */
         public syn_type: NFMsg.ReqAckSynData.SynType;
@@ -8407,10 +8407,10 @@ declare namespace NFMsg {
         chat_type?: (NFMsg.ReqAckPlayerChat.EGameChatType|null);
 
         /** ReqAckPlayerChat chat_info */
-        chat_info?: (string|null);
+        chat_info?: (Uint8Array|null);
 
         /** ReqAckPlayerChat chat_name */
-        chat_name?: (string|null);
+        chat_name?: (Uint8Array|null);
 
         /** ReqAckPlayerChat target_id */
         target_id?: (NFMsg.IIdent|null);
@@ -8435,10 +8435,10 @@ declare namespace NFMsg {
         public chat_type: NFMsg.ReqAckPlayerChat.EGameChatType;
 
         /** ReqAckPlayerChat chat_info. */
-        public chat_info: string;
+        public chat_info: Uint8Array;
 
         /** ReqAckPlayerChat chat_name. */
-        public chat_name: string;
+        public chat_name: Uint8Array;
 
         /** ReqAckPlayerChat target_id. */
         public target_id?: (NFMsg.IIdent|null);
@@ -8513,7 +8513,7 @@ declare namespace NFMsg {
             ConTainerType?: (number|null);
 
             /** ChatContainer data_info */
-            data_info?: (string|null);
+            data_info?: (Uint8Array|null);
         }
 
         /** Represents a ChatContainer. */
@@ -8529,7 +8529,7 @@ declare namespace NFMsg {
             public ConTainerType: number;
 
             /** ChatContainer data_info. */
-            public data_info: string;
+            public data_info: Uint8Array;
 
             /**
              * Creates a new ChatContainer instance using the specified properties.
@@ -8691,7 +8691,7 @@ declare namespace NFMsg {
         user?: (NFMsg.IIdent|null);
 
         /** ReqAckUseSkill skill_id */
-        skill_id?: (string|null);
+        skill_id?: (Uint8Array|null);
 
         /** ReqAckUseSkill use_index */
         use_index?: (number|null);
@@ -8713,7 +8713,7 @@ declare namespace NFMsg {
         public user?: (NFMsg.IIdent|null);
 
         /** ReqAckUseSkill skill_id. */
-        public skill_id: string;
+        public skill_id: Uint8Array;
 
         /** ReqAckUseSkill use_index. */
         public use_index: number;
@@ -8892,7 +8892,7 @@ declare namespace NFMsg {
         z?: (number|null);
 
         /** ReqAckSwapScene data */
-        data?: (string|null);
+        data?: (Uint8Array|null);
     }
 
     /** Represents a ReqAckSwapScene. */
@@ -8923,7 +8923,7 @@ declare namespace NFMsg {
         public z: number;
 
         /** ReqAckSwapScene data. */
-        public data: string;
+        public data: Uint8Array;
 
         /**
          * Creates a new ReqAckSwapScene instance using the specified properties.
@@ -8990,7 +8990,7 @@ declare namespace NFMsg {
     interface IReqAckHomeScene {
 
         /** ReqAckHomeScene data */
-        data?: (string|null);
+        data?: (Uint8Array|null);
     }
 
     /** Represents a ReqAckHomeScene. */
@@ -9003,7 +9003,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqAckHomeScene);
 
         /** ReqAckHomeScene data. */
-        public data: string;
+        public data: Uint8Array;
 
         /**
          * Creates a new ReqAckHomeScene instance using the specified properties.
@@ -9059,7 +9059,7 @@ declare namespace NFMsg {
     interface IItemStruct {
 
         /** ItemStruct item_id */
-        item_id?: (string|null);
+        item_id?: (Uint8Array|null);
 
         /** ItemStruct item_count */
         item_count?: (number|null);
@@ -9075,7 +9075,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IItemStruct);
 
         /** ItemStruct item_id. */
-        public item_id: string;
+        public item_id: Uint8Array;
 
         /** ItemStruct item_count. */
         public item_count: number;
@@ -9584,7 +9584,7 @@ declare namespace NFMsg {
     interface IReqAcceptTask {
 
         /** ReqAcceptTask task_id */
-        task_id?: (string|null);
+        task_id?: (Uint8Array|null);
     }
 
     /** Represents a ReqAcceptTask. */
@@ -9597,7 +9597,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqAcceptTask);
 
         /** ReqAcceptTask task_id. */
-        public task_id: string;
+        public task_id: Uint8Array;
 
         /**
          * Creates a new ReqAcceptTask instance using the specified properties.
@@ -9653,7 +9653,7 @@ declare namespace NFMsg {
     interface IReqCompeleteTask {
 
         /** ReqCompeleteTask task_id */
-        task_id?: (string|null);
+        task_id?: (Uint8Array|null);
     }
 
     /** Represents a ReqCompeleteTask. */
@@ -9666,7 +9666,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqCompeleteTask);
 
         /** ReqCompeleteTask task_id. */
-        public task_id: string;
+        public task_id: Uint8Array;
 
         /**
          * Creates a new ReqCompeleteTask instance using the specified properties.
@@ -9813,7 +9813,7 @@ declare namespace NFMsg {
         guild_id?: (NFMsg.IIdent|null);
 
         /** ReqAckCreateGuild guild_name */
-        guild_name?: (string|null);
+        guild_name?: (Uint8Array|null);
     }
 
     /** Represents a ReqAckCreateGuild. */
@@ -9829,7 +9829,7 @@ declare namespace NFMsg {
         public guild_id?: (NFMsg.IIdent|null);
 
         /** ReqAckCreateGuild guild_name. */
-        public guild_name: string;
+        public guild_name: Uint8Array;
 
         /**
          * Creates a new ReqAckCreateGuild instance using the specified properties.
@@ -9885,7 +9885,7 @@ declare namespace NFMsg {
     interface IReqSearchGuild {
 
         /** ReqSearchGuild guild_name */
-        guild_name?: (string|null);
+        guild_name?: (Uint8Array|null);
     }
 
     /** Represents a ReqSearchGuild. */
@@ -9898,7 +9898,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqSearchGuild);
 
         /** ReqSearchGuild guild_name. */
-        public guild_name: string;
+        public guild_name: Uint8Array;
 
         /**
          * Creates a new ReqSearchGuild instance using the specified properties.
@@ -10028,10 +10028,10 @@ declare namespace NFMsg {
             guild_ID?: (NFMsg.IIdent|null);
 
             /** SearchGuildObject guild_name */
-            guild_name?: (string|null);
+            guild_name?: (Uint8Array|null);
 
             /** SearchGuildObject guild_icon */
-            guild_icon?: (string|null);
+            guild_icon?: (Uint8Array|null);
 
             /** SearchGuildObject guild_member_count */
             guild_member_count?: (number|null);
@@ -10059,10 +10059,10 @@ declare namespace NFMsg {
             public guild_ID?: (NFMsg.IIdent|null);
 
             /** SearchGuildObject guild_name. */
-            public guild_name: string;
+            public guild_name: Uint8Array;
 
             /** SearchGuildObject guild_icon. */
-            public guild_icon: string;
+            public guild_icon: Uint8Array;
 
             /** SearchGuildObject guild_member_count. */
             public guild_member_count: number;
@@ -10134,7 +10134,7 @@ declare namespace NFMsg {
         guild_id?: (NFMsg.IIdent|null);
 
         /** ReqAckJoinGuild guild_name */
-        guild_name?: (string|null);
+        guild_name?: (Uint8Array|null);
     }
 
     /** Represents a ReqAckJoinGuild. */
@@ -10150,7 +10150,7 @@ declare namespace NFMsg {
         public guild_id?: (NFMsg.IIdent|null);
 
         /** ReqAckJoinGuild guild_name. */
-        public guild_name: string;
+        public guild_name: Uint8Array;
 
         /**
          * Creates a new ReqAckJoinGuild instance using the specified properties.
@@ -10209,7 +10209,7 @@ declare namespace NFMsg {
         guild_id?: (NFMsg.IIdent|null);
 
         /** ReqAckLeaveGuild guild_name */
-        guild_name?: (string|null);
+        guild_name?: (Uint8Array|null);
     }
 
     /** Represents a ReqAckLeaveGuild. */
@@ -10225,7 +10225,7 @@ declare namespace NFMsg {
         public guild_id?: (NFMsg.IIdent|null);
 
         /** ReqAckLeaveGuild guild_name. */
-        public guild_name: string;
+        public guild_name: Uint8Array;
 
         /**
          * Creates a new ReqAckLeaveGuild instance using the specified properties.
@@ -10585,7 +10585,7 @@ declare namespace NFMsg {
     interface IReqBuyItemFromShop {
 
         /** ReqBuyItemFromShop itemID */
-        itemID?: (string|null);
+        itemID?: (Uint8Array|null);
 
         /** ReqBuyItemFromShop count */
         count?: (number|null);
@@ -10601,7 +10601,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqBuyItemFromShop);
 
         /** ReqBuyItemFromShop itemID. */
-        public itemID: string;
+        public itemID: Uint8Array;
 
         /** ReqBuyItemFromShop count. */
         public count: number;
@@ -10660,7 +10660,7 @@ declare namespace NFMsg {
     interface IReqAddGambleValue {
 
         /** ReqAddGambleValue property */
-        property?: (string|null);
+        property?: (Uint8Array|null);
 
         /** ReqAddGambleValue number */
         number?: (number|null);
@@ -10676,7 +10676,7 @@ declare namespace NFMsg {
         constructor(properties?: NFMsg.IReqAddGambleValue);
 
         /** ReqAddGambleValue property. */
-        public property: string;
+        public property: Uint8Array;
 
         /** ReqAddGambleValue number. */
         public number: number;
@@ -10903,7 +10903,7 @@ declare namespace NFMsg {
         y?: (number|null);
 
         /** TileBuilding configID */
-        configID?: (string|null);
+        configID?: (Uint8Array|null);
 
         /** TileBuilding guid */
         guid?: (NFMsg.IIdent|null);
@@ -10925,7 +10925,7 @@ declare namespace NFMsg {
         public y: number;
 
         /** TileBuilding configID. */
-        public configID: string;
+        public configID: Uint8Array;
 
         /** TileBuilding guid. */
         public guid?: (NFMsg.IIdent|null);
@@ -10990,7 +10990,7 @@ declare namespace NFMsg {
         y?: (number|null);
 
         /** TileNPC configID */
-        configID?: (string|null);
+        configID?: (Uint8Array|null);
 
         /** TileNPC guid */
         guid?: (NFMsg.IIdent|null);
@@ -11012,7 +11012,7 @@ declare namespace NFMsg {
         public y: number;
 
         /** TileNPC configID. */
-        public configID: string;
+        public configID: Uint8Array;
 
         /** TileNPC guid. */
         public guid?: (NFMsg.IIdent|null);
@@ -11236,25 +11236,25 @@ declare namespace NFMsg {
         cup?: (number|null);
 
         /** AckSearchOppnent name */
-        name?: (string|null);
+        name?: (Uint8Array|null);
 
         /** AckSearchOppnent head */
-        head?: (string|null);
+        head?: (Uint8Array|null);
 
         /** AckSearchOppnent hero_cnf1 */
-        hero_cnf1?: (string|null);
+        hero_cnf1?: (Uint8Array|null);
 
         /** AckSearchOppnent hero_star1 */
         hero_star1?: (number|null);
 
         /** AckSearchOppnent hero_cnf2 */
-        hero_cnf2?: (string|null);
+        hero_cnf2?: (Uint8Array|null);
 
         /** AckSearchOppnent hero_star2 */
         hero_star2?: (number|null);
 
         /** AckSearchOppnent hero_cnf3 */
-        hero_cnf3?: (string|null);
+        hero_cnf3?: (Uint8Array|null);
 
         /** AckSearchOppnent hero_star3 */
         hero_star3?: (number|null);
@@ -11309,25 +11309,25 @@ declare namespace NFMsg {
         public cup: number;
 
         /** AckSearchOppnent name. */
-        public name: string;
+        public name: Uint8Array;
 
         /** AckSearchOppnent head. */
-        public head: string;
+        public head: Uint8Array;
 
         /** AckSearchOppnent hero_cnf1. */
-        public hero_cnf1: string;
+        public hero_cnf1: Uint8Array;
 
         /** AckSearchOppnent hero_star1. */
         public hero_star1: number;
 
         /** AckSearchOppnent hero_cnf2. */
-        public hero_cnf2: string;
+        public hero_cnf2: Uint8Array;
 
         /** AckSearchOppnent hero_star2. */
         public hero_star2: number;
 
         /** AckSearchOppnent hero_cnf3. */
-        public hero_cnf3: string;
+        public hero_cnf3: Uint8Array;
 
         /** AckSearchOppnent hero_star3. */
         public hero_star3: number;

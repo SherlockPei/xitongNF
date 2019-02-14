@@ -4,54 +4,54 @@ package NFMsg;
 
 import "NFDefine.proto";
 
-message Ident//The base protocol can not be transfer directly
+message Ident //The base protocol can not be transfer directly
 { 
     int64		svrid = 1;
     int64      index = 2;
 }
-message Vector2//The base protocol can not be transfer directly
+message Vector2 //The base protocol can not be transfer directly
 { 
     float		x = 1;
     float      y = 2;
 }
-message Vector3//The base protocol can not be transfer directly
+message Vector3 //The base protocol can not be transfer directly
 { 
     float		x = 1;
     float      y = 2;
     float      z = 3;
 }
 ////////////////////////BaseCommon/////////////////////////////
-message PropertyInt//The base protocol can not be transfer directly
+message PropertyInt //The base protocol can not be transfer directly
 { 
     bytes     property_name = 1;
     int64      data = 2;
 }
 
-message PropertyFloat//The base protocol can not be transfer directly
+message PropertyFloat //The base protocol can not be transfer directly
 { 
     bytes     property_name = 1;
     float      data = 2;
 }
 
-message PropertyString//The base protocol can not be transfer directly
+message PropertyString //The base protocol can not be transfer directly
 { 
     bytes     property_name = 1;
     bytes     data = 2;
 }
 
-message PropertyObject//The base protocol can not be transfer directly
+message PropertyObject //The base protocol can not be transfer directly
 { 
     bytes     property_name = 1;
     Ident      data = 2;
 }
 
-message PropertyVector2//The base protocol can not be transfer directly
+message PropertyVector2 //The base protocol can not be transfer directly
 { 
     bytes     property_name = 1;
     Vector2      data = 2;
 }
 
-message PropertyVector3//The base protocol can not be transfer directly
+message PropertyVector3 //The base protocol can not be transfer directly
 { 
     bytes     property_name = 1;
     Vector3      data = 2;
@@ -59,7 +59,7 @@ message PropertyVector3//The base protocol can not be transfer directly
 
 ///////////////////////////////////////////////
 
-message RecordInt//The base protocol can not be transfer directly
+message RecordInt //The base protocol can not be transfer directly
 {
     int32      row = 1;
 	int32      col = 2;
@@ -67,42 +67,42 @@ message RecordInt//The base protocol can not be transfer directly
 }
 
 
-message RecordFloat//The base protocol can not be transfer directly
+message RecordFloat //The base protocol can not be transfer directly
 {
     int32      row = 1;
 	int32      col = 2;
 	float      data = 3;
 }
 
-message RecordString//The base protocol can not be transfer directly
+message RecordString //The base protocol can not be transfer directly
 { 
     int32      row = 1;
 	int32      col = 2;
 	bytes     data = 3;
 }
 
-message RecordObject//The base protocol can not be transfer directly
+message RecordObject //The base protocol can not be transfer directly
 {
     int32      row = 1;
 	int32      col = 2;
 	Ident      data = 3;
 }
 
-message RecordVector2//The base protocol can not be transfer directly
+message RecordVector2 //The base protocol can not be transfer directly
 {
     int32      row = 1;
 	int32      col = 2;
 	Vector2      data = 3;
 }
 
-message RecordVector3//The base protocol can not be transfer directly
+message RecordVector3 //The base protocol can not be transfer directly
 {
     int32      row = 1;
 	int32      col = 2;
 	Vector3      data = 3;
 }
 
-message RecordAddRowStruct//The base protocol can not be transfer directly
+message RecordAddRowStruct //The base protocol can not be transfer directly
 {
 	int32 				row = 1;
 	repeated RecordInt			record_int_list = 2;
@@ -112,7 +112,7 @@ message RecordAddRowStruct//The base protocol can not be transfer directly
 	repeated RecordVector2      record_vector2_list = 6;
 	repeated RecordVector3      record_vector3_list = 7;
 }
-message ObjectRecordBase//The base protocol can not be transfer directly
+message ObjectRecordBase //The base protocol can not be transfer directly
 { 
 	bytes  record_name = 1;
 	repeated RecordAddRowStruct row_struct = 2;
@@ -120,85 +120,85 @@ message ObjectRecordBase//The base protocol can not be transfer directly
 
 /////////////////////////////////////////////////
 
-message ObjectPropertyInt//when data's driver want to transfer data to client independently
+message ObjectPropertyInt //when data's driver want to transfer data to client independently
 {
 	Ident  player_id = 1;
     repeated PropertyInt	property_list = 2;
 } 
 
-message ObjectPropertyFloat//when data's driver want to transfer data to client independently
+message ObjectPropertyFloat //when data's driver want to transfer data to client independently
 {
 	Ident  player_id = 1;
     repeated PropertyFloat  	property_list = 2;
 } 
 
-message ObjectPropertyString//when data's driver want to transfer data to client independently
+message ObjectPropertyString //when data's driver want to transfer data to client independently
 {
 	Ident  player_id = 1;
     repeated PropertyString  	property_list = 2;
 } 
 
-message ObjectPropertyObject//when data's driver want to transfer data to client independently
+message ObjectPropertyObject //when data's driver want to transfer data to client independently
 {
 	Ident  player_id = 1;
     repeated PropertyObject  	property_list = 2;
 }
 
-message ObjectPropertyVector2//when data's driver want to transfer data to client independently
+message ObjectPropertyVector2 //when data's driver want to transfer data to client independently
 {
 	Ident  player_id = 1;
     repeated PropertyVector2  	property_list = 2;
 }
 
-message ObjectPropertyVector3//when data's driver want to transfer data to client independently
+message ObjectPropertyVector3 //when data's driver want to transfer data to client independently
 {
 	Ident  player_id = 1;
     repeated PropertyVector3  	property_list = 2;
 }
 
-message ObjectRecordInt//when data's driver want to transfer data to client independently
+message ObjectRecordInt //when data's driver want to transfer data to client independently
 {
 	Ident  player_id = 1;
 	bytes     	record_name = 2;
     repeated RecordInt  	property_list = 3;
 } 
 
-message ObjectRecordFloat//when data's driver want to transfer data to client independently
+message ObjectRecordFloat //when data's driver want to transfer data to client independently
 {
 	Ident  player_id = 1;
 	bytes     	record_name = 2;
     repeated RecordFloat  	property_list = 3;
 }
 
-message ObjectRecordString//when data's driver want to transfer data to client independently
+message ObjectRecordString //when data's driver want to transfer data to client independently
 {
 	Ident  player_id = 1;
 	bytes     	record_name = 2;
     repeated RecordString  	property_list = 3;
 }
 
-message ObjectRecordObject//when data's driver want to transfer data to client independently
+message ObjectRecordObject //when data's driver want to transfer data to client independently
 {
 	Ident  player_id = 1;
 	bytes     	record_name = 2;    
     repeated RecordObject  property_list = 3;
 }
 
-message ObjectRecordVector2//when data's driver want to transfer data to client independently
+message ObjectRecordVector2 //when data's driver want to transfer data to client independently
 {
 	Ident  player_id = 1;
 	bytes     	record_name = 2;    
     repeated RecordVector2  property_list = 3;
 }
 
-message ObjectRecordVector3//when data's driver want to transfer data to client independently
+message ObjectRecordVector3 //when data's driver want to transfer data to client independently
 {
 	Ident  player_id = 1;
 	bytes     	record_name = 2;    
     repeated RecordVector3  property_list = 3;
 }
 
-message ObjectRecordSwap//when data's driver want to transfer data to client independently
+message ObjectRecordSwap //when data's driver want to transfer data to client independently
 {
 	Ident  	player_id = 1;
 	bytes    	origin_record_name = 2;
@@ -207,14 +207,14 @@ message ObjectRecordSwap//when data's driver want to transfer data to client ind
 	int32 		row_target = 5;
 }
 
-message ObjectRecordAddRow//when data's driver want to transfer data to client independently
+message ObjectRecordAddRow //when data's driver want to transfer data to client independently
 {
 	Ident     			player_id = 1;
 	bytes     			record_name = 2;
 	repeated RecordAddRowStruct    row_data = 3;
 }
 
-message ObjectRecordRemove//when data's driver want to transfer data to client independently
+message ObjectRecordRemove //when data's driver want to transfer data to client independently
 {
 	Ident     	player_id = 1;
 	bytes    	record_name = 2;  
@@ -223,7 +223,7 @@ message ObjectRecordRemove//when data's driver want to transfer data to client i
 
 ///////////////////////////////////////////////////////////////////
 
-message ObjectPropertyList//send all properties as a pack when client log in or log off
+message ObjectPropertyList //send all properties as a pack when client log in or log off
 {
 	Ident  player_id = 1;
 	repeated PropertyInt property_int_list = 2;
@@ -234,18 +234,18 @@ message ObjectPropertyList//send all properties as a pack when client log in or 
 	repeated PropertyVector3 property_vector3_list = 7;
 }
  
-message MultiObjectPropertyList//send all client's properties as a pack when client log in or log off
+message MultiObjectPropertyList //send all client's properties as a pack when client log in or log off
 {
 	repeated ObjectPropertyList multi_player_property = 1;
 }
 
-message ObjectRecordList//send all records as a pack when client log in or log off
+message ObjectRecordList //send all records as a pack when client log in or log off
 {
 	Ident  player_id = 1;
 	repeated ObjectRecordBase record_list = 2;
 }
 
- message MultiObjectRecordList//send all client's records as a pack when client log in or log off
+ message MultiObjectRecordList //send all client's records as a pack when client log in or log off
  {
 	repeated ObjectRecordList multi_player_record = 1;
  }
@@ -260,7 +260,7 @@ message MsgBase
 	Ident  hash_ident = 4;
 }
 
-message ReqCommand//Game command
+message ReqCommand //Game command
 {
 	enum EGameCommandType
 	{
