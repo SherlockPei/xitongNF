@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package NFMsgBase; 
+message Ident //The base protocol can not be transfer directly
+{ 
+    int64		svrid = 1;
+    int64      index = 2;
+}
+///////////////////////////////////////////////////////////////////
+message MsgBase
+{
+	Ident  player_id = 1;//only be used between proxy-server and game-server
+	bytes  msg_data = 2;
+	repeated Ident  player_Client_list = 3;
+	Ident  hash_ident = 4;
+}
