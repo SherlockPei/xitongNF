@@ -47,6 +47,8 @@ bool NFCProxyServerNet_ServerModule::AfterInit()
 	m_pWebSocketModule->AddReceiveCallBack(NFMsg::EGMI_REQ_CONNECT_KEY,this, &NFCProxyServerNet_ServerModule::OnWebSocketReciveTest);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_CONNECT_KEY, this, &NFCProxyServerNet_ServerModule::OnConnectKeyProcess);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_WORLD_LIST, this, &NFCProxyServerNet_ServerModule::OnReqServerListProcess);
+	m_pWebSocketModule->AddReceiveCallBack(NFMsg::EGMI_REQ_WORLD_LIST, this, &NFCProxyServerNet_ServerModule::OnReqServerListProcessWS);
+	m_pWebSocketModule->AddReceiveCallBack(NFMsg::EGMI_REQ_SELECT_SERVER, this, &NFCProxyServerNet_ServerModule::OnSelectServerProcessWS);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_SELECT_SERVER, this, &NFCProxyServerNet_ServerModule::OnSelectServerProcess);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_ROLE_LIST, this, &NFCProxyServerNet_ServerModule::OnReqRoleListProcess);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_CREATE_ROLE, this, &NFCProxyServerNet_ServerModule::OnReqCreateRoleProcess);
@@ -257,7 +259,80 @@ void NFCProxyServerNet_ServerModule::OnClientDisconnect(const NFSOCK nAddress)
         mxClientIdent.RemoveElement(pNetObject->GetClientID());
     }
 }
+void NFCProxyServerNet_ServerModule::OnSelectServerProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char* msg, const int nLen)
+{
+	auto pNetObject = m_pWebSocketModule->GetNet()->GetNetObject(nSockIndex);
+	if (!pNetObject)
+	{
+		return;
+	}
 
+	std::string strMsgData = m_pSecurityModule->DecodeMsg(pNetObject->GetAccount(), pNetObject->GetSecurityKey(), nMsgID, msg, nLen);
+	if (strMsgData.empty())
+	{
+		//decode failed
+		return;
+	}
+
+	NFGUID nPlayerID;
+	NFMsg::ReqSelectServer xMsg;
+	if (!m_pNetModule->ReceivePB(nMsgID, strMsgData, xMsg, nPlayerID))
+	{
+		return;
+	}
+
+	NF_SHARE_PTR<ConnectData> pServerData = m_pNetClientModule->GetServerNetInfo(xMsg.world_id());
+	if (pServerData && ConnectDataState::NORMAL == pServerData->eState)
+	{
+		//Modify: not need check pNetObject again by wenmin
+		//NetObject* pNetObject = m_pNetModule->GetNet()->GetNetObject(nSockIndex);
+		//if (pNetObject)
+		//{
+		//now this client bind a game server, all message will be sent to this game server whom bind with client
+		pNetObject->SetGameID(xMsg.world_id());
+
+		NFMsg::AckEventResult xMsg;
+		xMsg.set_event_code(NFMsg::EGameEventCode::EGEC_SELECTSERVER_SUCCESS);
+		m_pWebSocketModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_SELECT_SERVER, xMsg, nSockIndex);
+		return;
+		//}
+	}
+
+	//actually, if you want the game server working with a good performance then we need to find the game server with lowest workload
+	int nWorkload = 999999;
+	int nGameID = 0;
+	NFMapEx<int, ConnectData>& xServerList = m_pNetClientModule->GetServerList();
+	ConnectData* pGameData = xServerList.FirstNude();
+	while (pGameData)
+	{
+		if (ConnectDataState::NORMAL == pGameData->eState
+			&& NF_SERVER_TYPES::NF_ST_GAME == pGameData->eServerType)
+		{
+			if (pGameData->nWorkLoad < nWorkload)
+			{
+				nWorkload = pGameData->nWorkLoad;
+				nGameID = pGameData->nGameID;
+			}
+		}
+
+		pGameData = xServerList.NextNude();
+	}
+
+	if (nGameID > 0)
+	{
+		pNetObject->SetGameID(nGameID);
+
+		NFMsg::AckEventResult xMsg;
+		xMsg.set_event_code(NFMsg::EGameEventCode::EGEC_SELECTSERVER_SUCCESS);
+		m_pWebSocketModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_SELECT_SERVER, xMsg, nSockIndex);
+		return;
+	}
+
+
+	NFMsg::AckEventResult xSendMsg;
+	xSendMsg.set_event_code(NFMsg::EGameEventCode::EGEC_SELECTSERVER_FAIL);
+	m_pWebSocketModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_SELECT_SERVER, xMsg, nSockIndex);
+}
 void NFCProxyServerNet_ServerModule::OnSelectServerProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen)
 {
 	m_pLogModule->LogInfo("This is a client, end to print Server Info-----OnSelectWorldResult3333sProcess----------------");
@@ -333,7 +408,60 @@ void NFCProxyServerNet_ServerModule::OnSelectServerProcess(const NFSOCK nSockInd
     xSendMsg.set_event_code(NFMsg::EGameEventCode::EGEC_SELECTSERVER_FAIL);
 	m_pNetModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_SELECT_SERVER, xMsg, nSockIndex);
 }
+void NFCProxyServerNet_ServerModule::OnReqServerListProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char* msg, const int nLen)
+{
+	auto pNetObject = m_pWebSocketModule->GetNet()->GetNetObject(nSockIndex);
+	if (!pNetObject)
+	{
+		return;
+	}
 
+	std::string strMsgData = m_pSecurityModule->DecodeMsg(pNetObject->GetAccount(), pNetObject->GetSecurityKey(), nMsgID, msg, nLen);
+	if (strMsgData.empty())
+	{
+		//decode failed
+		return;
+	}
+
+	if (pNetObject->GetConnectKeyState() > 0)
+	{
+		NFGUID nPlayerID;//no value
+		NFMsg::ReqServerList xMsg;
+		if (!m_pNetModule->ReceivePB(nMsgID, strMsgData, xMsg, nPlayerID))
+		{
+			return;
+		}
+
+		if (xMsg.type() != NFMsg::RSLT_GAMES_ERVER)
+		{
+			return;
+		}
+
+		//ack all gameserver data
+		NFMsg::AckServerList xData;
+		xData.set_type(NFMsg::RSLT_GAMES_ERVER);
+
+		NFMapEx<int, ConnectData>& xServerList = m_pNetClientModule->GetServerList();
+		ConnectData* pGameData = xServerList.FirstNude();
+		while (pGameData)
+		{
+			if (ConnectDataState::NORMAL == pGameData->eState
+				&& NF_SERVER_TYPES::NF_ST_GAME == pGameData->eServerType)
+			{
+				NFMsg::ServerInfo* pServerInfo = xData.add_info();
+
+				pServerInfo->set_name(pGameData->strName);
+				pServerInfo->set_status(NFMsg::EServerState::EST_NARMAL);
+				pServerInfo->set_server_id(pGameData->nGameID);
+				pServerInfo->set_wait_count(0);
+			}
+
+			pGameData = xServerList.NextNude();
+		}
+
+		m_pWebSocketModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_WORLD_LIST, xData, nSockIndex);
+	}
+}
 void NFCProxyServerNet_ServerModule::OnReqServerListProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen)
 {
 	m_pLogModule->LogInfo("This is a client, end to print Server Info-----OnSelectWorldResultsProces4444s----------------");
@@ -666,25 +794,42 @@ void NFCProxyServerNet_ServerModule::OnReqEnterGameServer(const NFSOCK nSockInde
     }
 }
 
-void NFCProxyServerNet_ServerModule::OnWebSocketReciveTest(websocketpp::connection_hdl hdl, const int nMsgID, const char * strPayload, const int nLen)
+void NFCProxyServerNet_ServerModule::OnWebSocketReciveTest(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen)
 {
-	m_pLogModule->LogInfo("This is a client, OnWebSocketReciveTest----------------");
-	m_pLogModule->LogInfo(strPayload);
-	m_pLogModule->LogInfo("This is a client, end to print OnWebSocketReciveTest Info-----OnSelectWorldResultsProces1111s----------------");
 	NFGUID nPlayerID;
-	NFMsg::TeammemberInfo xMsg;
-	if (!m_pNetModule->ReceivePB(nMsgID, strPayload, nLen, xMsg, nPlayerID))
+	NFMsg::ReqAccountLogin xMsg;
+	if (!m_pNetModule->ReceivePB(nMsgID, msg, nLen, xMsg, nPlayerID))
 	{
 		return;
 	}
 
-	auto t = xMsg.name();
 
+	bool bRet = m_pSecurityModule->VirifySecurityKey(xMsg.account(), xMsg.security_code());
+	//bool bRet = m_pProxyToWorldModule->VerifyConnectData(xMsg.account(), xMsg.security_code());
+	if (bRet)
+	{
+		auto pNetObject = m_pWebSocketModule->GetNet()->GetNetObject(nSockIndex);
+		if (pNetObject)
+		{
+			//this net-object verify successful and set state as true
+			pNetObject->SetConnectKeyState(1);
+			pNetObject->SetSecurityKey(xMsg.security_code());
 
-	auto m = xMsg.Utf8DebugString();
-	
-	m_pWebSocketModule->SendMsgToClient(nMsgID,strPayload, (const uint32_t)nLen, hdl, NF_WS_MSG_DATA_TYPE::BINARY);
-	
+			//this net-object bind a user's account
+			pNetObject->SetAccount(xMsg.account());
+
+			NFMsg::AckEventResult xSendMsg;
+			xSendMsg.set_event_code(NFMsg::EGEC_VERIFY_KEY_SUCCESS);
+			*xSendMsg.mutable_event_client() = NFINetModule::NFToPB(pNetObject->GetClientID());
+
+			m_pWebSocketModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_CONNECT_KEY, xSendMsg, nSockIndex);
+		}
+	}
+	else
+	{
+		//if verify failed then close this connect
+		//m_pWebSocketModule->GetNet()->CloseNetObject(nSockIndex);
+	}
 }
 
 int NFCProxyServerNet_ServerModule::EnterGameSuccessEvent(const NFGUID xClientID, const NFGUID xPlayerID)

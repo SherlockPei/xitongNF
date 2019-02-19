@@ -50,8 +50,11 @@ public:
     virtual bool Shut();
     virtual bool Execute();
 
+	void OnClientConnectedWS(websocketpp::connection_hdl hdl);
+
 
     virtual bool BeforeShut();
+	void OnSocketClientEventWS(websocketpp::connection_hdl hdl, NF_WS_EVENT event);
     virtual bool AfterInit();
 
     virtual void LogReceive(const char* str) {}
@@ -62,11 +65,14 @@ public:
 protected:
     void OnSocketClientEvent(const NFSOCK nSockIndex, const NF_NET_EVENT eEvent, NFINet* pNet);
 
+	void SynWorldToClientWS(websocketpp::connection_hdl hdl);
+
 protected:
     void OnClientDisconnect(const NFSOCK nAddress);
     void OnClientConnected(const NFSOCK nAddress);
 
     void OnLoginProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
+	void OnSelectWorldProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
 	void OnWSLoginProcess(websocketpp::connection_hdl, const int nMsgID, const char* msg, const int nLen);
     void OnSelectWorldProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
     void OnViewWorldProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
@@ -80,7 +86,10 @@ protected:
 protected:
     void SynWorldToClient(const NFSOCK nFD);
 
+	void OnViewWorldProcessWS(websocketpp::connection_hdl hdl, const int nMsgID, const char * msg, const int nLen);
+
     NFMapEx<NFGUID, NFSOCK> mxClientIdent;
+	NFMapEx<NFGUID, websocketpp::connection_hdl> mxClientIdentWS;
 
 private:
 

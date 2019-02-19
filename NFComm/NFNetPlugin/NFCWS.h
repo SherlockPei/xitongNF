@@ -18,7 +18,11 @@ class WSObject
 {
 public:
 
-
+	WSObject() {
+		mnLogicState = 0;
+		mnGameID = 0;
+		bNeedRemove = false;
+	}
 
 	virtual ~WSObject()
 	{
@@ -124,6 +128,36 @@ public:
 		mnGameID = nData;
 	}
 
+	const NFGUID& GetUserID()
+	{
+		return mnUserID;
+	}
+
+	void SetUserID(const NFGUID& nUserID)
+	{
+		mnUserID = nUserID;
+	}
+
+	const NFGUID& GetClientID()
+	{
+		return mnClientID;
+	}
+
+	void SetClientID(const NFGUID& xClientID)
+	{
+		mnClientID = xClientID;
+	}
+
+	const NFGUID& GetHashIdentID()
+	{
+		return mnHashIdentID;
+	}
+
+	void SetHashIdentID(const NFGUID& xHashIdentID)
+	{
+		mnHashIdentID = xHashIdentID;
+	}
+
 	NFSOCK GetRealFD()
 	{
 		return nFD;
@@ -139,6 +173,9 @@ private:
 
 	int32_t mnLogicState;
 	int32_t mnGameID;
+	NFGUID mnUserID;//player id
+	NFGUID mnClientID;//temporary client id
+	NFGUID mnHashIdentID;//hash ident, special for distributed
 	//
 	NFSOCK nFD;
 	bool bNeedRemove;

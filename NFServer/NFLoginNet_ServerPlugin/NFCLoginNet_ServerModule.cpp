@@ -57,9 +57,11 @@ bool NFCLoginNet_ServerModule::AfterInit()
 
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_LOGOUT, this, &NFCLoginNet_ServerModule::OnLogOut);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_CONNECT_WORLD, this, &NFCLoginNet_ServerModule::OnSelectWorldProcess);
+	m_pWebSocketModule->AddReceiveCallBack(NFMsg::EGMI_REQ_CONNECT_WORLD, this, &NFCLoginNet_ServerModule::OnSelectWorldProcessWS);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_WORLD_LIST, this, &NFCLoginNet_ServerModule::OnViewWorldProcess);
+	m_pWebSocketModule->AddReceiveCallBack(NFMsg::EGMI_REQ_WORLD_LIST, this, &NFCLoginNet_ServerModule::OnViewWorldProcessWS);
 	m_pNetModule->AddReceiveCallBack(this, &NFCLoginNet_ServerModule::InvalidMessage);
-
+	m_pWebSocketModule->SetEventCallBack(this, &NFCLoginNet_ServerModule::OnSocketClientEventWS);
 	m_pNetModule->AddEventCallBack(this, &NFCLoginNet_ServerModule::OnSocketClientEvent);
 	m_pNetModule->ExpandBufferSize();
 
@@ -113,6 +115,20 @@ int NFCLoginNet_ServerModule::OnSelectWorldResultsProcess(const int nWorldID, co
 
 		m_pNetModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_CONNECT_WORLD, xMsg, *xFD);
 	}
+	else {
+		auto wsFd = mxClientIdentWS.GetElement(xSenderID);
+		if (wsFd) {
+			NFMsg::AckConnectWorldResult xMsg;
+			xMsg.set_world_id(nWorldID);
+			xMsg.mutable_sender()->CopyFrom(NFINetModule::NFToPB(xSenderID));
+			xMsg.set_login_id(nLoginID);
+			xMsg.set_account(strAccount);
+			xMsg.set_world_ip(strWorldIP);
+			xMsg.set_world_port(nWorldPort);
+			xMsg.set_world_key(strWorldKey);
+			m_pWebSocketModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_CONNECT_WORLD, xMsg, *wsFd);
+		}
+	}
 
 	return 0;
 }
@@ -121,7 +137,16 @@ bool NFCLoginNet_ServerModule::Execute()
 {
 	return true;
 }
-
+void NFCLoginNet_ServerModule::OnClientConnectedWS(websocketpp::connection_hdl hdl)
+{
+	auto pObject = m_pWebSocketModule->GetNet()->GetNetObject(hdl);
+	if (pObject)
+	{
+		NFGUID xIdent = m_pKernelModule->CreateGUID();
+		pObject->SetClientID(xIdent);
+		mxClientIdentWS.AddElement(xIdent, NF_SHARE_PTR<websocketpp::connection_hdl>(NF_NEW websocketpp::connection_hdl(hdl)));
+	}
+}
 void NFCLoginNet_ServerModule::OnClientConnected(const NFSOCK nAddress)
 {
 	NetObject* pObject = m_pNetModule->GetNet()->GetNetObject(nAddress);
@@ -152,22 +177,23 @@ void NFCLoginNet_ServerModule::OnWSLoginProcess(websocketpp::connection_hdl hdl,
 		return;
 	}
 
-	/*NetObject* pNetObject = m_pWebSocketModule->GetNet()->GetNetObject(hdl);*/
-	//if (pNetObject)
-	//{
-	//	if (pNetObject->GetConnectKeyState() == 0)
-	//	{
+	auto pNetObject = m_pWebSocketModule->GetNet()->GetNetObject(hdl);
+	if (pNetObject)
+	{
+		if (pNetObject->GetConnectKeyState() == 0)
+		{
+			int nState = 0;//successful
 
-			//pNetObject->SetConnectKeyState(1);
-			//pNetObject->SetAccount(xMsg.account());
+			pNetObject->SetConnectKeyState(1);
+			pNetObject->SetAccount(xMsg.account());
 
 			NFMsg::AckEventResult xData;
 			xData.set_event_code(NFMsg::EGEC_ACCOUNT_SUCCESS);
 			m_pWebSocketModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_LOGIN, xData,hdl);
 
 			m_pLogModule->LogNormal(NFILogModule::NLL_INFO_NORMAL, NFGUID(0, 1), "Login successed :", xMsg.account().c_str());
-	//	}
-	//}
+		}
+	}
 }
 
 
@@ -211,7 +237,34 @@ void NFCLoginNet_ServerModule::OnLoginProcess(const NFSOCK nSockIndex, const int
 		}
 	}
 }
+void NFCLoginNet_ServerModule::OnSelectWorldProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char* msg, const int nLen)
+{
+	NFGUID nPlayerID;
+	NFMsg::ReqConnectWorld xMsg;
+	if (!m_pNetModule->ReceivePB(nMsgID, msg, nLen, xMsg, nPlayerID))
+	{
+		return;
+	}
 
+	auto pNetObject = m_pWebSocketModule->GetNet()->GetNetObject(nSockIndex);
+	if (!pNetObject)
+	{
+		return;
+	}
+
+
+	if (pNetObject->GetConnectKeyState() <= 0)
+	{
+		return;
+	}
+	NFMsg::ReqConnectWorld xData;
+	xData.set_world_id(xMsg.world_id());
+	xData.set_login_id(pPluginManager->GetAppID());
+	xData.mutable_sender()->CopyFrom(NFINetModule::NFToPB(pNetObject->GetClientID()));
+	xData.set_account(pNetObject->GetAccount());
+
+	m_pNetClientModule->SendSuitByPB(NF_SERVER_TYPES::NF_ST_MASTER, pNetObject->GetAccount(), NFMsg::EGameMsgID::EGMI_REQ_CONNECT_WORLD, xData);
+}
 void NFCLoginNet_ServerModule::OnSelectWorldProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen)
 {
 	NFGUID nPlayerID;
@@ -241,7 +294,31 @@ void NFCLoginNet_ServerModule::OnSelectWorldProcess(const NFSOCK nSockIndex, con
 
 	m_pNetClientModule->SendSuitByPB(NF_SERVER_TYPES::NF_ST_MASTER, pNetObject->GetAccount(), NFMsg::EGameMsgID::EGMI_REQ_CONNECT_WORLD, xData);
 }
-
+void NFCLoginNet_ServerModule::OnSocketClientEventWS(websocketpp::connection_hdl hdl, NF_WS_EVENT event) {
+	switch (event)
+	{
+	case NF_WS_EVENT_OPEN:
+		OnClientConnectedWS(hdl);
+		break;
+	case NF_WS_EVENT_CLOSE:
+		break;
+	case NF_WS_EVENT_FAIL:
+		break;
+	case NF_WS_EVENT_INTERRUPT:
+		break;
+	case NF_WS_EVENT_PING:
+		break;
+	case NF_WS_EVENT_PONG:
+		break;
+	case NF_WS_EVENT_PONG_TIMEOUT:
+		break;
+	case NF_WS_EVENT_MSG:
+		break;
+	default:
+		break;
+	}
+	;
+}
 void NFCLoginNet_ServerModule::OnSocketClientEvent(const NFSOCK nSockIndex, const NF_NET_EVENT eEvent, NFINet* pNet)
 {
 	if (eEvent & NF_NET_EVENT_EOF)
@@ -265,7 +342,28 @@ void NFCLoginNet_ServerModule::OnSocketClientEvent(const NFSOCK nSockIndex, cons
 		OnClientConnected(nSockIndex);
 	}
 }
+void NFCLoginNet_ServerModule::SynWorldToClientWS(websocketpp::connection_hdl nFD)
+{
+	NFMsg::AckServerList xData;
+	xData.set_type(NFMsg::RSLT_WORLD_SERVER);
 
+	NFMapEx<int, NFMsg::ServerInfoReport>& xWorldMap = m_pLoginToMasterModule->GetWorldMap();
+	NFMsg::ServerInfoReport* pWorldData = xWorldMap.FirstNude();
+	while (pWorldData)
+	{
+		NFMsg::ServerInfo* pServerInfo = xData.add_info();
+
+		pServerInfo->set_name(pWorldData->server_name());
+		pServerInfo->set_status(pWorldData->server_state());
+		pServerInfo->set_server_id(pWorldData->server_id());
+		pServerInfo->set_wait_count(0);
+
+		pWorldData = xWorldMap.NextNude();
+	}
+
+
+	m_pWebSocketModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_WORLD_LIST, xData, nFD);
+}
 void NFCLoginNet_ServerModule::SynWorldToClient(const NFSOCK nFD)
 {
 	NFMsg::AckServerList xData;
@@ -288,7 +386,20 @@ void NFCLoginNet_ServerModule::SynWorldToClient(const NFSOCK nFD)
 
 	m_pNetModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_WORLD_LIST, xData, nFD);
 }
+void NFCLoginNet_ServerModule::OnViewWorldProcessWS(websocketpp::connection_hdl hdl, const int nMsgID, const char* msg, const int nLen)
+{
+	NFGUID nPlayerID;
+	NFMsg::ReqServerList xMsg;
+	if (!m_pNetModule->ReceivePB(nMsgID, msg, nLen, xMsg, nPlayerID))
+	{
+		return;
+	}
 
+	if (xMsg.type() == NFMsg::RSLT_WORLD_SERVER)
+	{
+		SynWorldToClientWS(hdl);
+	}
+}
 void NFCLoginNet_ServerModule::OnViewWorldProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen)
 {
 	NFGUID nPlayerID;

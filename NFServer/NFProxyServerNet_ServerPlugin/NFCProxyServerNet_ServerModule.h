@@ -63,11 +63,13 @@ protected:
     void OnSocketClientEvent(const NFSOCK nSockIndex, const NF_NET_EVENT eEvent, NFINet* pNet);
 
     void OnClientDisconnect(const NFSOCK nAddress);
+	void OnSelectServerProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
     void OnClientConnected(const NFSOCK nAddress);
 
     void OnConnectKeyProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
     void OnReqServerListProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
     void OnSelectServerProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
+	void OnReqServerListProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
     void OnReqRoleListProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
     void OnReqCreateRoleProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
     void OnReqDelRoleProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);

@@ -9,13 +9,14 @@
 #define NFI_WEBSOCKET_MODULE_H__
 
 #include "NFComm/NFNetPlugin/NFIWS.h"
+#include "NFComm/NFNetPlugin/NFCWS.h"
 #include "NFIModule.h"
 
 class NFIWebsocketModule : public NFIModule
 {
 public:
 
-
+	virtual NFCWS * GetNet() = 0;
 	template<typename BaseType>
 	void AddReceiveCallBack(const int nMsgID,BaseType* pBaseType, void (BaseType::*handleRecieve)(websocketpp::connection_hdl, const int nMsgID, const char *, const int length))
 	{

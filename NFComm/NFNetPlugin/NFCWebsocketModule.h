@@ -20,6 +20,9 @@ class NFCWebsocketModule : public NFIWebsocketModule
 public:
 	NFCWebsocketModule(NFIPluginManager* p);
 
+	virtual NFCWS* GetNet() {
+		return m_pWSServer;
+	};
 	virtual bool Init() override;
 
 	virtual bool AfterInit() override;
