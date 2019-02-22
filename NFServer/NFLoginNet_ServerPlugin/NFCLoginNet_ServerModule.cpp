@@ -36,6 +36,7 @@ bool NFCLoginNet_ServerModule::Init()
 	m_pNetClientModule = pPluginManager->FindModule<NFINetClientModule>();
 	m_pLoginToMasterModule = pPluginManager->FindModule<NFILoginToMasterModule>();
 	m_pWebSocketModule = pPluginManager->FindModule<NFIWebsocketModule>();
+	m_pLoginLogicModule = pPluginManager->FindModule<NFILoginLogicModule>();
 	return true;
 }
 
@@ -183,7 +184,6 @@ void NFCLoginNet_ServerModule::OnWSLoginProcess(websocketpp::connection_hdl hdl,
 		if (pNetObject->GetConnectKeyState() == 0)
 		{
 			int nState = 0;//successful
-
 			pNetObject->SetConnectKeyState(1);
 			pNetObject->SetAccount(xMsg.account());
 

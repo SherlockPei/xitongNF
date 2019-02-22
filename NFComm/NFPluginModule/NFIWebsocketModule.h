@@ -17,6 +17,7 @@ class NFIWebsocketModule : public NFIModule
 public:
 
 	virtual NFCWS * GetNet() = 0;
+	virtual void RemoveReceiveCallBack(const int nMsgID) = 0;
 	template<typename BaseType>
 	void AddReceiveCallBack(const int nMsgID,BaseType* pBaseType, void (BaseType::*handleRecieve)(websocketpp::connection_hdl, const int nMsgID, const char *, const int length))
 	{
@@ -49,7 +50,7 @@ public:
 	virtual bool SendMsgToClient(const char* msg, const uint32_t nLen, const std::vector<websocketpp::connection_hdl>& conn_list, NF_WS_MSG_DATA_TYPE msg_data_type) = 0;
 	virtual bool SendMsgToClient(const char* msg, const uint32_t nLen, websocketpp::connection_hdl conn, NF_WS_MSG_DATA_TYPE msg_data_type) = 0;
 	virtual bool SendMsgToClient(const int nMsgID,const char* msg, const uint32_t nLen, websocketpp::connection_hdl conn, NF_WS_MSG_DATA_TYPE msg_data_type) = 0;
-	
+	virtual bool SendMsgWithOutHead(const int nMsgID, const std::string& msg, websocketpp::connection_hdl conn)=0;
 	virtual bool SendMsgPB(const uint16_t nMsgID, const google::protobuf::Message& xData, websocketpp::connection_hdl conn) = 0;
 protected:
 	virtual void AddReceiveCallBack(const int nMsgID,NF_WS_MSG_CALL_BACK_PTR functorPtr) = 0;

@@ -101,6 +101,7 @@ private:
     NFIKernelModule* m_pKernelModule;
     NFILogModule* m_pLogModule;
 	NFILoginToMasterModule* m_pLoginToMasterModule;
+	NFILoginLogicModule * m_pLoginLogicModule;
 };
 
 #endif

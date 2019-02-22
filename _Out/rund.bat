@@ -12,7 +12,7 @@ start "NFWorldServer" "NFPluginLoader_d.exe" "Server=WorldServer" "ID=7" "Plugin
 choice /t 5 /d y /n >nul
 
 echo Starting NFLoginServer...
-start "NFLoginServer" "NFPluginLoader_d.exe" "Server=LoginServer" "ID=4" "PluginX.xml"
+REM start "NFLoginServer" "NFPluginLoader_d.exe" "Server=LoginServer" "ID=4" "PluginX.xml"
 
 choice /t 5 /d y /n >nul
 

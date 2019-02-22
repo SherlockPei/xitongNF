@@ -51,9 +51,13 @@ public:
     virtual bool Shut();
     virtual bool Execute();
 
+	void OnOtherMessageWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
+
     virtual bool AfterInit();
 
     virtual int Transpond(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
+
+	void OnClientConnectedWS(websocketpp::connection_hdl hdl);
 
     
     virtual int EnterGameSuccessEvent(const NFGUID xClientID, const NFGUID xPlayerID);
@@ -66,13 +70,18 @@ protected:
 	void OnSelectServerProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
     void OnClientConnected(const NFSOCK nAddress);
 
+	void OnReqRoleListProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
+
     void OnConnectKeyProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
+	void OnSocketClientEventWS(websocketpp::connection_hdl hdl, NF_WS_EVENT event);
     void OnReqServerListProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
     void OnSelectServerProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
 	void OnReqServerListProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
     void OnReqRoleListProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
+	void OnReqCreateRoleProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
     void OnReqCreateRoleProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
     void OnReqDelRoleProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
+	void OnReqEnterGameServerWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
     void OnReqEnterGameServer(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
 
 
@@ -82,7 +91,7 @@ protected:
 
 	void OnOtherMessage(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
 protected:
-
+	NFMapEx<NFGUID, websocketpp::connection_hdl> mxClientIdentWS;
     NFMapEx<NFGUID, NFSOCK> mxClientIdent;
 protected:
     NFINetClientModule* m_pNetClientModule;

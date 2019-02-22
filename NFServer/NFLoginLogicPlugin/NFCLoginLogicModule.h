@@ -34,7 +34,7 @@
 #include "NFComm/NFPluginModule/NFILogModule.h"
 #include "NFComm/NFPluginModule/NFINetModule.h"
 #include "NFComm/NFPluginModule/NFIAccountRedisModule.h"
-
+#include "NFComm/NFPluginModule/NFIWebsocketModule.h"
 class NFCLoginLogicModule
     : public NFILoginLogicModule
 {
@@ -46,6 +46,7 @@ public:
 
     virtual bool Init();
     virtual bool Shut();
+	void OnLoginProcessWS(websocketpp::connection_hdl, const int nMsgID, const char * msg, const int nLen);
     virtual bool ReadyExecute();
     virtual bool Execute();
 
@@ -56,6 +57,7 @@ public:
 protected:
 	NFINetModule* m_pNetModule;
 	NFILogModule* m_pLogModule;
+	NFIWebsocketModule * m_pWebSocketModule;
 	NFIAccountRedisModule* m_pAccountRedisModule;
 private:
 };

@@ -32,6 +32,7 @@ bool NFCLoginLogicModule::Init()
 	m_pAccountRedisModule = pPluginManager->FindModule<NFIAccountRedisModule>();
 	m_pNetModule = pPluginManager->FindModule<NFINetModule>();
 	m_pLogModule = pPluginManager->FindModule<NFILogModule>();
+	m_pWebSocketModule = pPluginManager->FindModule<NFIWebsocketModule>();
 
     return true;
 }
@@ -40,7 +41,68 @@ bool NFCLoginLogicModule::Shut()
 {
     return true;
 }
+void NFCLoginLogicModule::OnLoginProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char* msg, const int nLen)
+{
+	NFGUID nPlayerID;
+	NFMsg::ReqAccountLogin xMsg;
+	if (!m_pNetModule->ReceivePB(nMsgID, msg, nLen, xMsg, nPlayerID))
+	{
+		return;
+	}
 
+	auto pNetObject = m_pWebSocketModule->GetNet()->GetNetObject(nSockIndex);
+	if (pNetObject)
+	{
+		if (pNetObject->GetConnectKeyState() == 0)
+		{
+			NFMsg::AckEventResult xAckMsg;
+
+			switch (xMsg.loginmode())
+			{
+			case NFMsg::ELM_AUTO_REGISTER_LOGIN: // auto register when login
+				if (m_pAccountRedisModule->AddAccount(xMsg.account(), xMsg.password()))
+				{
+					break;
+				}
+				//goto case NFMsg::ELM_LOGIN
+
+			case NFMsg::ELM_LOGIN: // login
+				if (!m_pAccountRedisModule->VerifyAccount(xMsg.account(), xMsg.password()))
+				{
+					std::ostringstream strLog;
+					strLog << "Check password failed, Account = " << xMsg.account() << " Password = " << xMsg.password();
+
+					xAckMsg.set_event_code(NFMsg::EGEC_ACCOUNTPWD_INVALID);
+					m_pWebSocketModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_LOGIN, xAckMsg, nSockIndex);
+					return;
+				}
+				break;
+
+			case NFMsg::ELM_REGISTER: // register
+				if (!m_pAccountRedisModule->AddAccount(xMsg.account(), xMsg.password()))
+				{
+					std::ostringstream strLog;
+					strLog << "Create account failed, Account = " << xMsg.account() << " Password = " << xMsg.password();
+
+					xAckMsg.set_event_code(NFMsg::EGEC_ACCOUNT_EXIST);
+					m_pWebSocketModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_LOGIN, xAckMsg, nSockIndex);
+					return;
+				}
+				break;
+
+			default:
+				break;
+			}
+
+			pNetObject->SetConnectKeyState(1);
+			pNetObject->SetAccount(xMsg.account());
+
+			xAckMsg.set_event_code(NFMsg::EGEC_ACCOUNT_SUCCESS);
+			m_pWebSocketModule->SendMsgPB(NFMsg::EGameMsgID::EGMI_ACK_LOGIN, xAckMsg, nSockIndex);
+
+		}
+	}
+}
 void NFCLoginLogicModule::OnLoginProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen)
 {
 	NFGUID nPlayerID;
@@ -64,7 +126,7 @@ void NFCLoginLogicModule::OnLoginProcess(const NFSOCK nSockIndex, const int nMsg
 				{
 					break;
 				}
-				// goto case NFMsg::ELM_LOGIN
+				//goto case NFMsg::ELM_LOGIN
 
 			case NFMsg::ELM_LOGIN: // login
 				if (!m_pAccountRedisModule->VerifyAccount(xMsg.account(), xMsg.password()))
@@ -111,7 +173,8 @@ bool NFCLoginLogicModule::ReadyExecute()
 {
 	m_pNetModule->RemoveReceiveCallBack(NFMsg::EGMI_REQ_LOGIN);
 	m_pNetModule->AddReceiveCallBack(NFMsg::EGMI_REQ_LOGIN, this, &NFCLoginLogicModule::OnLoginProcess);
-
+	m_pWebSocketModule->RemoveReceiveCallBack(NFMsg::EGMI_REQ_LOGIN);
+	m_pWebSocketModule->AddReceiveCallBack(NFMsg::EGMI_REQ_LOGIN, this, &NFCLoginLogicModule::OnLoginProcessWS);
     return true;
 }
 

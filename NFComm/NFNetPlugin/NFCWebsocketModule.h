@@ -102,6 +102,14 @@ private:
 	// 通过 NFIWebsocketModule 继承
 	virtual bool SendMsgPB(const uint16_t nMsgID, const google::protobuf::Message & xData, websocketpp::connection_hdl conn) override;
 
+
+	// 通过 NFIWebsocketModule 继承
+	virtual bool SendMsgWithOutHead(const int nMsgID, const std::string & msg, websocketpp::connection_hdl conn) override;
+
+
+	// 通过 NFIWebsocketModule 继承
+	virtual void RemoveReceiveCallBack(const int nMsgID) override;
+
 };
 
 #endif

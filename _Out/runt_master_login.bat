@@ -11,12 +11,15 @@ start "NFWorldServer" "NFPluginLoader_d.exe" "Server=WorldServer" "ID=7" "Plugin
 
 choice /t 2 /d y /n >nul
 
-echo Starting NFGameServer...
-start "NFGameServer" "NFPluginLoader_d.exe" "Server=GameServer" "ID=6" "PluginX.xml"
+REM echo Starting NFGameServer...
+REM start "NFGameServer" "NFPluginLoader_d.exe" "Server=GameServer" "ID=6" "PluginX.xml"
 
 echo Starting NFProxyServer...
 start "NFProxyServer" "NFPluginLoader_d.exe" "Server=LoginServer" "ID=4" "PluginX.xml"
 
+
+echo Starting NFDBServer...
+start "NFDBServer" "NFPluginLoader_d.exe" "Server=DBServer" "ID=8" "PluginX.xml"
 
 
 

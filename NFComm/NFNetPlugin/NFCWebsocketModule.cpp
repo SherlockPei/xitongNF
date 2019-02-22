@@ -164,3 +164,21 @@ bool NFCWebsocketModule::SendMsgPB(const uint16_t nMsgID, const google::protobuf
 	m_pWSServer->SendMsgToClient(strMsg.data(), nMsgID,strMsg.length(), conn, NF_WS_MSG_DATA_TYPE::BINARY);
 	return true;
 }
+
+bool NFCWebsocketModule::SendMsgWithOutHead(const int nMsgID, const std::string & msg, websocketpp::connection_hdl conn)
+{
+	
+	m_pWSServer->SendMsgToClient(msg.data(), nMsgID, msg.length(), conn, NF_WS_MSG_DATA_TYPE::BINARY);
+
+	return false;
+}
+
+void NFCWebsocketModule::RemoveReceiveCallBack(const int nMsgID)
+{
+	auto it = mxReceiveCallBack.find(nMsgID);
+	if ( it== mxReceiveCallBack.end())
+	{
+		return;
+	}
+	mxReceiveCallBack.erase(it);
+}
