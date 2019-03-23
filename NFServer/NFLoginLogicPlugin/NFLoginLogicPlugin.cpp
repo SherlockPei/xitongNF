@@ -26,13 +26,16 @@
 
 #include "NFLoginLogicPlugin.h"
 #include "NFCLoginLogicModule.h"
-
+#include "NFCPlayerRedisModule.h"
+#include "NFCCommonRedisModule.h"
 //
 #ifdef NF_DYNAMIC_PLUGIN
 
 NF_EXPORT void DllStartPlugin(NFIPluginManager* pm)
 {
     CREATE_PLUGIN(pm, NFLoginLogicPlugin)
+
+
 };
 
 NF_EXPORT void DllStopPlugin(NFIPluginManager* pm)
@@ -57,10 +60,14 @@ void NFLoginLogicPlugin::Install()
 {
 
     REGISTER_MODULE(pPluginManager, NFILoginLogicModule, NFCLoginLogicModule)
+	REGISTER_MODULE(pPluginManager, NFIPlayerRedisModule, NFCPlayerRedisModule)
+	REGISTER_MODULE(pPluginManager, NFICommonRedisModule, NFCCommonRedisModule)
 
 }
 
 void NFLoginLogicPlugin::Uninstall()
 {
     UNREGISTER_MODULE(pPluginManager, NFILoginLogicModule, NFCLoginLogicModule)
+	UNREGISTER_MODULE(pPluginManager, NFIPlayerRedisModule, NFCPlayerRedisModule)
+	UNREGISTER_MODULE(pPluginManager, NFICommonRedisModule, NFCCommonRedisModule)
 }

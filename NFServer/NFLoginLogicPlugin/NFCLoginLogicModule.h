@@ -46,7 +46,7 @@ public:
 
     virtual bool Init();
     virtual bool Shut();
-	void OnLoginProcessWS(websocketpp::connection_hdl, const int nMsgID, const char * msg, const int nLen);
+	void OnLoginProcessWS(websocketpp::connection_hdl, const int nMsgID, const char * msg, const uint32_t nLen);
     virtual bool ReadyExecute();
     virtual bool Execute();
 

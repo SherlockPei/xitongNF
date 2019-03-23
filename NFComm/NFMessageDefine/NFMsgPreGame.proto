@@ -130,6 +130,11 @@ message ReqRoleList
 	bytes   account = 2;	
 }
 
+message ReqRoleData{
+	bytes noob_name = 1;
+	bytes account = 2;
+	Ident role_id = 3;
+}
 message RoleLiteInfo
 {
 	Ident 		id = 1;

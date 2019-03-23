@@ -3,10 +3,14 @@
   <ItemGroup>
     <ClInclude Include="NFLoginLogicPlugin.h" />
     <ClInclude Include="NFCLoginLogicModule.h" />
+    <ClInclude Include="NFCPlayerRedisModule.h" />
+    <ClInclude Include="NFCCommonRedisModule.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="NFLoginLogicPlugin.cpp" />
     <ClCompile Include="NFCLoginLogicModule.cpp" />
+    <ClCompile Include="NFCPlayerRedisModule.cpp" />
+    <ClCompile Include="NFCCommonRedisModule.cpp" />
   </ItemGroup>
 </Project>

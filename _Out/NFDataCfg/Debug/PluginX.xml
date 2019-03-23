@@ -35,6 +35,7 @@
 		<Plugin Name="NFDBLogicPlugin" />
 		<Plugin Name="NFActorPlugin" />
 		<Plugin Name="NFNoSqlPlugin" />	
+		<Plugin Name="NFSecurityPlugin" />	
 	</LoginServer>
 
 	<MasterServer>

@@ -95,6 +95,11 @@ class ReqRoleListDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<ReqRoleList>
       _instance;
 } _ReqRoleList_default_instance_;
+class ReqRoleDataDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<ReqRoleData>
+      _instance;
+} _ReqRoleData_default_instance_;
 class RoleLiteInfoDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<RoleLiteInfo>
@@ -329,6 +334,21 @@ static void InitDefaultsReqRoleList() {
 LIBPROTOC_EXPORT ::google::protobuf::internal::SCCInfo<0> scc_info_ReqRoleList =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsReqRoleList}, {}};
 
+static void InitDefaultsReqRoleData() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::NFMsg::_ReqRoleData_default_instance_;
+    new (ptr) ::NFMsg::ReqRoleData();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::NFMsg::ReqRoleData::InitAsDefaultInstance();
+}
+
+LIBPROTOC_EXPORT ::google::protobuf::internal::SCCInfo<1> scc_info_ReqRoleData =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsReqRoleData}, {
+      &protobuf_NFMsgBase_2eproto::scc_info_Ident.base,}};
+
 static void InitDefaultsRoleLiteInfo() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -476,6 +496,7 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_ReqSelectServer.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ReqKickFromWorld.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ReqRoleList.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_ReqRoleData.base);
   ::google::protobuf::internal::InitSCC(&scc_info_RoleLiteInfo.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AckRoleLiteInfoList.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ReqCreateRole.base);
@@ -487,7 +508,7 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_RoleDataPack.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[22];
+::google::protobuf::Metadata file_level_metadata[23];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[3];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -605,6 +626,14 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NFMsg::ReqRoleList, game_id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NFMsg::ReqRoleList, account_),
   ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NFMsg::ReqRoleData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NFMsg::ReqRoleData, noob_name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NFMsg::ReqRoleData, account_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NFMsg::ReqRoleData, role_id_),
+  ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NFMsg::RoleLiteInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -702,15 +731,16 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 93, -1, sizeof(::NFMsg::ReqSelectServer)},
   { 99, -1, sizeof(::NFMsg::ReqKickFromWorld)},
   { 106, -1, sizeof(::NFMsg::ReqRoleList)},
-  { 113, -1, sizeof(::NFMsg::RoleLiteInfo)},
-  { 130, -1, sizeof(::NFMsg::AckRoleLiteInfoList)},
-  { 137, -1, sizeof(::NFMsg::ReqCreateRole)},
-  { 148, -1, sizeof(::NFMsg::ReqDeleteRole)},
-  { 156, -1, sizeof(::NFMsg::ReqRecoverRole)},
-  { 164, -1, sizeof(::NFMsg::ServerHeartBeat)},
-  { 170, -1, sizeof(::NFMsg::RoleOnlineNotify)},
-  { 179, -1, sizeof(::NFMsg::RoleOfflineNotify)},
-  { 188, -1, sizeof(::NFMsg::RoleDataPack)},
+  { 113, -1, sizeof(::NFMsg::ReqRoleData)},
+  { 121, -1, sizeof(::NFMsg::RoleLiteInfo)},
+  { 138, -1, sizeof(::NFMsg::AckRoleLiteInfoList)},
+  { 145, -1, sizeof(::NFMsg::ReqCreateRole)},
+  { 156, -1, sizeof(::NFMsg::ReqDeleteRole)},
+  { 164, -1, sizeof(::NFMsg::ReqRecoverRole)},
+  { 172, -1, sizeof(::NFMsg::ServerHeartBeat)},
+  { 178, -1, sizeof(::NFMsg::RoleOnlineNotify)},
+  { 187, -1, sizeof(::NFMsg::RoleOfflineNotify)},
+  { 196, -1, sizeof(::NFMsg::RoleDataPack)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -727,6 +757,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::NFMsg::_ReqSelectServer_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NFMsg::_ReqKickFromWorld_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NFMsg::_ReqRoleList_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::NFMsg::_ReqRoleData_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NFMsg::_RoleLiteInfo_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NFMsg::_AckRoleLiteInfoList_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NFMsg::_ReqCreateRole_default_instance_),
@@ -753,7 +784,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 22);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 23);
 }
 
 void AddDescriptorsImpl() {
@@ -795,40 +826,42 @@ void AddDescriptorsImpl() {
       "ReqSelectServer\022\020\n\010world_id\030\001 \001(\005\"5\n\020Req"
       "KickFromWorld\022\020\n\010world_id\030\001 \001(\005\022\017\n\007accou"
       "nt\030\002 \001(\014\"/\n\013ReqRoleList\022\017\n\007game_id\030\001 \001(\005"
-      "\022\017\n\007account\030\002 \001(\014\"\373\001\n\014RoleLiteInfo\022\030\n\002id"
-      "\030\001 \001(\0132\014.NFMsg.Ident\022\016\n\006career\030\002 \001(\005\022\013\n\003"
-      "sex\030\003 \001(\005\022\014\n\004race\030\004 \001(\005\022\021\n\tnoob_name\030\005 \001"
-      "(\014\022\017\n\007game_id\030\006 \001(\005\022\022\n\nrole_level\030\007 \001(\005\022"
-      "\023\n\013delete_time\030\010 \001(\005\022\020\n\010reg_time\030\t \001(\005\022\031"
-      "\n\021last_offline_time\030\n \001(\005\022\027\n\017last_offlin"
-      "e_ip\030\013 \001(\005\022\023\n\013view_record\030\014 \001(\014\"N\n\023AckRo"
-      "leLiteInfoList\022&\n\tchar_data\030\001 \003(\0132\023.NFMs"
-      "g.RoleLiteInfo\022\017\n\007account\030\002 \001(\014\"o\n\rReqCr"
-      "eateRole\022\017\n\007account\030\001 \001(\014\022\016\n\006career\030\002 \001("
-      "\005\022\013\n\003sex\030\003 \001(\005\022\014\n\004race\030\004 \001(\005\022\021\n\tnoob_nam"
-      "e\030\005 \001(\014\022\017\n\007game_id\030\006 \001(\005\"\?\n\rReqDeleteRol"
-      "e\022\017\n\007account\030\001 \001(\014\022\014\n\004name\030\002 \001(\014\022\017\n\007game"
-      "_id\030\003 \001(\005\"@\n\016ReqRecoverRole\022\017\n\007account\030\001"
-      " \001(\014\022\014\n\004name\030\002 \001(\014\022\017\n\007game_id\030\003 \001(\005\" \n\017S"
-      "erverHeartBeat\022\r\n\005count\030\001 \001(\005\"h\n\020RoleOnl"
-      "ineNotify\022\032\n\004self\030\001 \001(\0132\014.NFMsg.Ident\022\033\n"
-      "\005guild\030\002 \001(\0132\014.NFMsg.Ident\022\014\n\004game\030\003 \001(\005"
-      "\022\r\n\005proxy\030\004 \001(\005\"i\n\021RoleOfflineNotify\022\032\n\004"
-      "self\030\001 \001(\0132\014.NFMsg.Ident\022\033\n\005guild\030\002 \001(\0132"
-      "\014.NFMsg.Ident\022\014\n\004game\030\003 \001(\005\022\r\n\005proxy\030\004 \001"
-      "(\005\"~\n\014RoleDataPack\022\030\n\002id\030\001 \001(\0132\014.NFMsg.I"
-      "dent\022+\n\010property\030\002 \001(\0132\031.NFMsg.ObjectPro"
-      "pertyList\022\'\n\006record\030\004 \001(\0132\027.NFMsg.Object"
-      "RecordList*Z\n\014EServerState\022\r\n\tEST_CRASH\020"
-      "\000\022\016\n\nEST_NARMAL\020\001\022\014\n\010EST_BUSY\020\002\022\014\n\010EST_F"
-      "IRE\020\003\022\017\n\013EST_MAINTEN\020\004*J\n\nELoginMode\022\r\n\t"
-      "ELM_LOGIN\020\000\022\020\n\014ELM_REGISTER\020\001\022\033\n\027ELM_AUT"
-      "O_REGISTER_LOGIN\020\002*@\n\021ReqServerListType\022"
-      "\025\n\021RSLT_WORLD_SERVER\020\000\022\024\n\020RSLT_GAMES_ERV"
-      "ER\020\001b\006proto3"
+      "\022\017\n\007account\030\002 \001(\014\"P\n\013ReqRoleData\022\021\n\tnoob"
+      "_name\030\001 \001(\014\022\017\n\007account\030\002 \001(\014\022\035\n\007role_id\030"
+      "\003 \001(\0132\014.NFMsg.Ident\"\373\001\n\014RoleLiteInfo\022\030\n\002"
+      "id\030\001 \001(\0132\014.NFMsg.Ident\022\016\n\006career\030\002 \001(\005\022\013"
+      "\n\003sex\030\003 \001(\005\022\014\n\004race\030\004 \001(\005\022\021\n\tnoob_name\030\005"
+      " \001(\014\022\017\n\007game_id\030\006 \001(\005\022\022\n\nrole_level\030\007 \001("
+      "\005\022\023\n\013delete_time\030\010 \001(\005\022\020\n\010reg_time\030\t \001(\005"
+      "\022\031\n\021last_offline_time\030\n \001(\005\022\027\n\017last_offl"
+      "ine_ip\030\013 \001(\005\022\023\n\013view_record\030\014 \001(\014\"N\n\023Ack"
+      "RoleLiteInfoList\022&\n\tchar_data\030\001 \003(\0132\023.NF"
+      "Msg.RoleLiteInfo\022\017\n\007account\030\002 \001(\014\"o\n\rReq"
+      "CreateRole\022\017\n\007account\030\001 \001(\014\022\016\n\006career\030\002 "
+      "\001(\005\022\013\n\003sex\030\003 \001(\005\022\014\n\004race\030\004 \001(\005\022\021\n\tnoob_n"
+      "ame\030\005 \001(\014\022\017\n\007game_id\030\006 \001(\005\"\?\n\rReqDeleteR"
+      "ole\022\017\n\007account\030\001 \001(\014\022\014\n\004name\030\002 \001(\014\022\017\n\007ga"
+      "me_id\030\003 \001(\005\"@\n\016ReqRecoverRole\022\017\n\007account"
+      "\030\001 \001(\014\022\014\n\004name\030\002 \001(\014\022\017\n\007game_id\030\003 \001(\005\" \n"
+      "\017ServerHeartBeat\022\r\n\005count\030\001 \001(\005\"h\n\020RoleO"
+      "nlineNotify\022\032\n\004self\030\001 \001(\0132\014.NFMsg.Ident\022"
+      "\033\n\005guild\030\002 \001(\0132\014.NFMsg.Ident\022\014\n\004game\030\003 \001"
+      "(\005\022\r\n\005proxy\030\004 \001(\005\"i\n\021RoleOfflineNotify\022\032"
+      "\n\004self\030\001 \001(\0132\014.NFMsg.Ident\022\033\n\005guild\030\002 \001("
+      "\0132\014.NFMsg.Ident\022\014\n\004game\030\003 \001(\005\022\r\n\005proxy\030\004"
+      " \001(\005\"~\n\014RoleDataPack\022\030\n\002id\030\001 \001(\0132\014.NFMsg"
+      ".Ident\022+\n\010property\030\002 \001(\0132\031.NFMsg.ObjectP"
+      "ropertyList\022\'\n\006record\030\004 \001(\0132\027.NFMsg.Obje"
+      "ctRecordList*Z\n\014EServerState\022\r\n\tEST_CRAS"
+      "H\020\000\022\016\n\nEST_NARMAL\020\001\022\014\n\010EST_BUSY\020\002\022\014\n\010EST"
+      "_FIRE\020\003\022\017\n\013EST_MAINTEN\020\004*J\n\nELoginMode\022\r"
+      "\n\tELM_LOGIN\020\000\022\020\n\014ELM_REGISTER\020\001\022\033\n\027ELM_A"
+      "UTO_REGISTER_LOGIN\020\002*@\n\021ReqServerListTyp"
+      "e\022\025\n\021RSLT_WORLD_SERVER\020\000\022\024\n\020RSLT_GAMES_E"
+      "RVER\020\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2652);
+      descriptor, 2734);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "NFMsgPreGame.proto", &protobuf_RegisterTypes);
   ::protobuf_NFDefine_2eproto::AddDescriptors();
@@ -5357,6 +5390,338 @@ void ReqRoleList::InternalSwap(ReqRoleList* other) {
 
 // ===================================================================
 
+void ReqRoleData::InitAsDefaultInstance() {
+  ::NFMsg::_ReqRoleData_default_instance_._instance.get_mutable()->role_id_ = const_cast< ::NFMsg::Ident*>(
+      ::NFMsg::Ident::internal_default_instance());
+}
+void ReqRoleData::clear_role_id() {
+  if (GetArenaNoVirtual() == NULL && role_id_ != NULL) {
+    delete role_id_;
+  }
+  role_id_ = NULL;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int ReqRoleData::kNoobNameFieldNumber;
+const int ReqRoleData::kAccountFieldNumber;
+const int ReqRoleData::kRoleIdFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+ReqRoleData::ReqRoleData()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_NFMsgPreGame_2eproto::scc_info_ReqRoleData.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:NFMsg.ReqRoleData)
+}
+ReqRoleData::ReqRoleData(const ReqRoleData& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  noob_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.noob_name().size() > 0) {
+    noob_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.noob_name_);
+  }
+  account_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.account().size() > 0) {
+    account_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.account_);
+  }
+  if (from.has_role_id()) {
+    role_id_ = new ::NFMsg::Ident(*from.role_id_);
+  } else {
+    role_id_ = NULL;
+  }
+  // @@protoc_insertion_point(copy_constructor:NFMsg.ReqRoleData)
+}
+
+void ReqRoleData::SharedCtor() {
+  noob_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  account_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  role_id_ = NULL;
+}
+
+ReqRoleData::~ReqRoleData() {
+  // @@protoc_insertion_point(destructor:NFMsg.ReqRoleData)
+  SharedDtor();
+}
+
+void ReqRoleData::SharedDtor() {
+  noob_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  account_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete role_id_;
+}
+
+void ReqRoleData::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* ReqRoleData::descriptor() {
+  ::protobuf_NFMsgPreGame_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_NFMsgPreGame_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const ReqRoleData& ReqRoleData::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_NFMsgPreGame_2eproto::scc_info_ReqRoleData.base);
+  return *internal_default_instance();
+}
+
+
+void ReqRoleData::Clear() {
+// @@protoc_insertion_point(message_clear_start:NFMsg.ReqRoleData)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  noob_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && role_id_ != NULL) {
+    delete role_id_;
+  }
+  role_id_ = NULL;
+  _internal_metadata_.Clear();
+}
+
+bool ReqRoleData::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:NFMsg.ReqRoleData)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // bytes noob_name = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_noob_name()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // bytes account = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_account()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .NFMsg.Ident role_id = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_role_id()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:NFMsg.ReqRoleData)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:NFMsg.ReqRoleData)
+  return false;
+#undef DO_
+}
+
+void ReqRoleData::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:NFMsg.ReqRoleData)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes noob_name = 1;
+  if (this->noob_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      1, this->noob_name(), output);
+  }
+
+  // bytes account = 2;
+  if (this->account().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      2, this->account(), output);
+  }
+
+  // .NFMsg.Ident role_id = 3;
+  if (this->has_role_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->_internal_role_id(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:NFMsg.ReqRoleData)
+}
+
+::google::protobuf::uint8* ReqRoleData::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:NFMsg.ReqRoleData)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes noob_name = 1;
+  if (this->noob_name().size() > 0) {
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
+        1, this->noob_name(), target);
+  }
+
+  // bytes account = 2;
+  if (this->account().size() > 0) {
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
+        2, this->account(), target);
+  }
+
+  // .NFMsg.Ident role_id = 3;
+  if (this->has_role_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, this->_internal_role_id(), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:NFMsg.ReqRoleData)
+  return target;
+}
+
+size_t ReqRoleData::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:NFMsg.ReqRoleData)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // bytes noob_name = 1;
+  if (this->noob_name().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
+        this->noob_name());
+  }
+
+  // bytes account = 2;
+  if (this->account().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
+        this->account());
+  }
+
+  // .NFMsg.Ident role_id = 3;
+  if (this->has_role_id()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *role_id_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ReqRoleData::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:NFMsg.ReqRoleData)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ReqRoleData* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const ReqRoleData>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NFMsg.ReqRoleData)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:NFMsg.ReqRoleData)
+    MergeFrom(*source);
+  }
+}
+
+void ReqRoleData::MergeFrom(const ReqRoleData& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:NFMsg.ReqRoleData)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.noob_name().size() > 0) {
+
+    noob_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.noob_name_);
+  }
+  if (from.account().size() > 0) {
+
+    account_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.account_);
+  }
+  if (from.has_role_id()) {
+    mutable_role_id()->::NFMsg::Ident::MergeFrom(from.role_id());
+  }
+}
+
+void ReqRoleData::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:NFMsg.ReqRoleData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ReqRoleData::CopyFrom(const ReqRoleData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:NFMsg.ReqRoleData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ReqRoleData::IsInitialized() const {
+  return true;
+}
+
+void ReqRoleData::Swap(ReqRoleData* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ReqRoleData::InternalSwap(ReqRoleData* other) {
+  using std::swap;
+  noob_name_.Swap(&other->noob_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  account_.Swap(&other->account_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(role_id_, other->role_id_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata ReqRoleData::GetMetadata() const {
+  protobuf_NFMsgPreGame_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_NFMsgPreGame_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void RoleLiteInfo::InitAsDefaultInstance() {
   ::NFMsg::_RoleLiteInfo_default_instance_._instance.get_mutable()->id_ = const_cast< ::NFMsg::Ident*>(
       ::NFMsg::Ident::internal_default_instance());
@@ -8720,6 +9085,9 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NFMsg::ReqKickFromWorld* Arena::
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NFMsg::ReqRoleList* Arena::CreateMaybeMessage< ::NFMsg::ReqRoleList >(Arena* arena) {
   return Arena::CreateInternal< ::NFMsg::ReqRoleList >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NFMsg::ReqRoleData* Arena::CreateMaybeMessage< ::NFMsg::ReqRoleData >(Arena* arena) {
+  return Arena::CreateInternal< ::NFMsg::ReqRoleData >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NFMsg::RoleLiteInfo* Arena::CreateMaybeMessage< ::NFMsg::RoleLiteInfo >(Arena* arena) {
   return Arena::CreateInternal< ::NFMsg::RoleLiteInfo >(arena);

@@ -51,7 +51,7 @@ public:
     virtual bool Shut();
     virtual bool Execute();
 
-	void OnOtherMessageWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
+	void OnOtherMessageWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const uint32_t nLen);
 
     virtual bool AfterInit();
 
@@ -66,26 +66,28 @@ protected:
 
     void OnSocketClientEvent(const NFSOCK nSockIndex, const NF_NET_EVENT eEvent, NFINet* pNet);
 
+	void OnClientDisconnectWS(websocketpp::connection_hdl nAddress);
+
     void OnClientDisconnect(const NFSOCK nAddress);
-	void OnSelectServerProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
+	void OnSelectServerProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const uint32_t nLen);
     void OnClientConnected(const NFSOCK nAddress);
 
-	void OnReqRoleListProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
+	void OnReqRoleListProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const uint32_t nLen);
 
     void OnConnectKeyProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
 	void OnSocketClientEventWS(websocketpp::connection_hdl hdl, NF_WS_EVENT event);
     void OnReqServerListProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
     void OnSelectServerProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
-	void OnReqServerListProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
+	void OnReqServerListProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const uint32_t nLen);
     void OnReqRoleListProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
-	void OnReqCreateRoleProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
+	void OnReqCreateRoleProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const uint32_t nLen);
     void OnReqCreateRoleProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
     void OnReqDelRoleProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
-	void OnReqEnterGameServerWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
+	void OnReqEnterGameServerWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const uint32_t nLen);
     void OnReqEnterGameServer(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
 
 
-	void OnWebSocketReciveTest(websocketpp::connection_hdl, const int nMsgID, const char *, const int nLen);
+	void OnWebSocketReciveTest(websocketpp::connection_hdl, const int nMsgID, const char *, const uint32_t nLen);
 
     //////////////////////////////////////////////////////////////////////////
 

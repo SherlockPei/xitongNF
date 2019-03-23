@@ -496,14 +496,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IIdent, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified Ident message, length delimited. Does not implicitly {@link NFMsg.Ident.verify|verify} messages.
-         * @param message Ident message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IIdent, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an Ident message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -512,22 +504,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.Ident;
-
-        /**
-         * Decodes an Ident message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns Ident
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.Ident;
-
-        /**
-         * Verifies an Ident message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a Vector2. */
@@ -571,14 +547,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IVector2, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified Vector2 message, length delimited. Does not implicitly {@link NFMsg.Vector2.verify|verify} messages.
-         * @param message Vector2 message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IVector2, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a Vector2 message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -587,22 +555,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.Vector2;
-
-        /**
-         * Decodes a Vector2 message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns Vector2
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.Vector2;
-
-        /**
-         * Verifies a Vector2 message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a Vector3. */
@@ -652,14 +604,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IVector3, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified Vector3 message, length delimited. Does not implicitly {@link NFMsg.Vector3.verify|verify} messages.
-         * @param message Vector3 message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IVector3, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a Vector3 message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -668,22 +612,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.Vector3;
-
-        /**
-         * Decodes a Vector3 message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns Vector3
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.Vector3;
-
-        /**
-         * Verifies a Vector3 message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a PropertyInt. */
@@ -727,14 +655,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IPropertyInt, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified PropertyInt message, length delimited. Does not implicitly {@link NFMsg.PropertyInt.verify|verify} messages.
-         * @param message PropertyInt message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IPropertyInt, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a PropertyInt message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -743,22 +663,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.PropertyInt;
-
-        /**
-         * Decodes a PropertyInt message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns PropertyInt
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.PropertyInt;
-
-        /**
-         * Verifies a PropertyInt message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a PropertyFloat. */
@@ -802,14 +706,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IPropertyFloat, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified PropertyFloat message, length delimited. Does not implicitly {@link NFMsg.PropertyFloat.verify|verify} messages.
-         * @param message PropertyFloat message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IPropertyFloat, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a PropertyFloat message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -818,22 +714,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.PropertyFloat;
-
-        /**
-         * Decodes a PropertyFloat message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns PropertyFloat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.PropertyFloat;
-
-        /**
-         * Verifies a PropertyFloat message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a PropertyString. */
@@ -877,14 +757,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IPropertyString, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified PropertyString message, length delimited. Does not implicitly {@link NFMsg.PropertyString.verify|verify} messages.
-         * @param message PropertyString message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IPropertyString, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a PropertyString message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -893,22 +765,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.PropertyString;
-
-        /**
-         * Decodes a PropertyString message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns PropertyString
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.PropertyString;
-
-        /**
-         * Verifies a PropertyString message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a PropertyObject. */
@@ -952,14 +808,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IPropertyObject, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified PropertyObject message, length delimited. Does not implicitly {@link NFMsg.PropertyObject.verify|verify} messages.
-         * @param message PropertyObject message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IPropertyObject, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a PropertyObject message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -968,22 +816,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.PropertyObject;
-
-        /**
-         * Decodes a PropertyObject message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns PropertyObject
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.PropertyObject;
-
-        /**
-         * Verifies a PropertyObject message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a PropertyVector2. */
@@ -1027,14 +859,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IPropertyVector2, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified PropertyVector2 message, length delimited. Does not implicitly {@link NFMsg.PropertyVector2.verify|verify} messages.
-         * @param message PropertyVector2 message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IPropertyVector2, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a PropertyVector2 message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -1043,22 +867,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.PropertyVector2;
-
-        /**
-         * Decodes a PropertyVector2 message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns PropertyVector2
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.PropertyVector2;
-
-        /**
-         * Verifies a PropertyVector2 message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a PropertyVector3. */
@@ -1102,14 +910,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IPropertyVector3, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified PropertyVector3 message, length delimited. Does not implicitly {@link NFMsg.PropertyVector3.verify|verify} messages.
-         * @param message PropertyVector3 message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IPropertyVector3, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a PropertyVector3 message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -1118,22 +918,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.PropertyVector3;
-
-        /**
-         * Decodes a PropertyVector3 message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns PropertyVector3
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.PropertyVector3;
-
-        /**
-         * Verifies a PropertyVector3 message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a RecordInt. */
@@ -1183,14 +967,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IRecordInt, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified RecordInt message, length delimited. Does not implicitly {@link NFMsg.RecordInt.verify|verify} messages.
-         * @param message RecordInt message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IRecordInt, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a RecordInt message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -1199,22 +975,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.RecordInt;
-
-        /**
-         * Decodes a RecordInt message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns RecordInt
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.RecordInt;
-
-        /**
-         * Verifies a RecordInt message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a RecordFloat. */
@@ -1264,14 +1024,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IRecordFloat, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified RecordFloat message, length delimited. Does not implicitly {@link NFMsg.RecordFloat.verify|verify} messages.
-         * @param message RecordFloat message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IRecordFloat, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a RecordFloat message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -1280,22 +1032,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.RecordFloat;
-
-        /**
-         * Decodes a RecordFloat message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns RecordFloat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.RecordFloat;
-
-        /**
-         * Verifies a RecordFloat message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a RecordString. */
@@ -1345,14 +1081,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IRecordString, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified RecordString message, length delimited. Does not implicitly {@link NFMsg.RecordString.verify|verify} messages.
-         * @param message RecordString message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IRecordString, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a RecordString message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -1361,22 +1089,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.RecordString;
-
-        /**
-         * Decodes a RecordString message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns RecordString
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.RecordString;
-
-        /**
-         * Verifies a RecordString message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a RecordObject. */
@@ -1426,14 +1138,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IRecordObject, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified RecordObject message, length delimited. Does not implicitly {@link NFMsg.RecordObject.verify|verify} messages.
-         * @param message RecordObject message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IRecordObject, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a RecordObject message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -1442,22 +1146,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.RecordObject;
-
-        /**
-         * Decodes a RecordObject message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns RecordObject
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.RecordObject;
-
-        /**
-         * Verifies a RecordObject message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a RecordVector2. */
@@ -1507,14 +1195,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IRecordVector2, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified RecordVector2 message, length delimited. Does not implicitly {@link NFMsg.RecordVector2.verify|verify} messages.
-         * @param message RecordVector2 message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IRecordVector2, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a RecordVector2 message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -1523,22 +1203,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.RecordVector2;
-
-        /**
-         * Decodes a RecordVector2 message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns RecordVector2
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.RecordVector2;
-
-        /**
-         * Verifies a RecordVector2 message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a RecordVector3. */
@@ -1588,14 +1252,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IRecordVector3, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified RecordVector3 message, length delimited. Does not implicitly {@link NFMsg.RecordVector3.verify|verify} messages.
-         * @param message RecordVector3 message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IRecordVector3, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a RecordVector3 message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -1604,22 +1260,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.RecordVector3;
-
-        /**
-         * Decodes a RecordVector3 message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns RecordVector3
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.RecordVector3;
-
-        /**
-         * Verifies a RecordVector3 message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a RecordAddRowStruct. */
@@ -1693,14 +1333,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IRecordAddRowStruct, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified RecordAddRowStruct message, length delimited. Does not implicitly {@link NFMsg.RecordAddRowStruct.verify|verify} messages.
-         * @param message RecordAddRowStruct message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IRecordAddRowStruct, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a RecordAddRowStruct message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -1709,22 +1341,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.RecordAddRowStruct;
-
-        /**
-         * Decodes a RecordAddRowStruct message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns RecordAddRowStruct
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.RecordAddRowStruct;
-
-        /**
-         * Verifies a RecordAddRowStruct message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectRecordBase. */
@@ -1768,14 +1384,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectRecordBase, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectRecordBase message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordBase.verify|verify} messages.
-         * @param message ObjectRecordBase message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectRecordBase, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectRecordBase message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -1784,22 +1392,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectRecordBase;
-
-        /**
-         * Decodes an ObjectRecordBase message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectRecordBase
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectRecordBase;
-
-        /**
-         * Verifies an ObjectRecordBase message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectPropertyInt. */
@@ -1843,14 +1435,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectPropertyInt, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectPropertyInt message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyInt.verify|verify} messages.
-         * @param message ObjectPropertyInt message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectPropertyInt, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectPropertyInt message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -1859,22 +1443,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectPropertyInt;
-
-        /**
-         * Decodes an ObjectPropertyInt message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectPropertyInt
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectPropertyInt;
-
-        /**
-         * Verifies an ObjectPropertyInt message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectPropertyFloat. */
@@ -1918,14 +1486,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectPropertyFloat, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectPropertyFloat message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyFloat.verify|verify} messages.
-         * @param message ObjectPropertyFloat message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectPropertyFloat, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectPropertyFloat message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -1934,22 +1494,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectPropertyFloat;
-
-        /**
-         * Decodes an ObjectPropertyFloat message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectPropertyFloat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectPropertyFloat;
-
-        /**
-         * Verifies an ObjectPropertyFloat message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectPropertyString. */
@@ -1993,14 +1537,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectPropertyString, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectPropertyString message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyString.verify|verify} messages.
-         * @param message ObjectPropertyString message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectPropertyString, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectPropertyString message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2009,22 +1545,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectPropertyString;
-
-        /**
-         * Decodes an ObjectPropertyString message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectPropertyString
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectPropertyString;
-
-        /**
-         * Verifies an ObjectPropertyString message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectPropertyObject. */
@@ -2068,14 +1588,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectPropertyObject, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectPropertyObject message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyObject.verify|verify} messages.
-         * @param message ObjectPropertyObject message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectPropertyObject, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectPropertyObject message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2084,22 +1596,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectPropertyObject;
-
-        /**
-         * Decodes an ObjectPropertyObject message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectPropertyObject
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectPropertyObject;
-
-        /**
-         * Verifies an ObjectPropertyObject message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectPropertyVector2. */
@@ -2143,14 +1639,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectPropertyVector2, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectPropertyVector2 message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyVector2.verify|verify} messages.
-         * @param message ObjectPropertyVector2 message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectPropertyVector2, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectPropertyVector2 message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2159,22 +1647,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectPropertyVector2;
-
-        /**
-         * Decodes an ObjectPropertyVector2 message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectPropertyVector2
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectPropertyVector2;
-
-        /**
-         * Verifies an ObjectPropertyVector2 message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectPropertyVector3. */
@@ -2218,14 +1690,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectPropertyVector3, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectPropertyVector3 message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyVector3.verify|verify} messages.
-         * @param message ObjectPropertyVector3 message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectPropertyVector3, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectPropertyVector3 message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2234,22 +1698,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectPropertyVector3;
-
-        /**
-         * Decodes an ObjectPropertyVector3 message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectPropertyVector3
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectPropertyVector3;
-
-        /**
-         * Verifies an ObjectPropertyVector3 message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectRecordInt. */
@@ -2299,14 +1747,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectRecordInt, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectRecordInt message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordInt.verify|verify} messages.
-         * @param message ObjectRecordInt message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectRecordInt, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectRecordInt message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2315,22 +1755,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectRecordInt;
-
-        /**
-         * Decodes an ObjectRecordInt message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectRecordInt
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectRecordInt;
-
-        /**
-         * Verifies an ObjectRecordInt message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectRecordFloat. */
@@ -2380,14 +1804,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectRecordFloat, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectRecordFloat message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordFloat.verify|verify} messages.
-         * @param message ObjectRecordFloat message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectRecordFloat, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectRecordFloat message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2396,22 +1812,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectRecordFloat;
-
-        /**
-         * Decodes an ObjectRecordFloat message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectRecordFloat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectRecordFloat;
-
-        /**
-         * Verifies an ObjectRecordFloat message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectRecordString. */
@@ -2461,14 +1861,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectRecordString, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectRecordString message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordString.verify|verify} messages.
-         * @param message ObjectRecordString message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectRecordString, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectRecordString message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2477,22 +1869,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectRecordString;
-
-        /**
-         * Decodes an ObjectRecordString message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectRecordString
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectRecordString;
-
-        /**
-         * Verifies an ObjectRecordString message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectRecordObject. */
@@ -2542,14 +1918,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectRecordObject, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectRecordObject message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordObject.verify|verify} messages.
-         * @param message ObjectRecordObject message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectRecordObject, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectRecordObject message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2558,22 +1926,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectRecordObject;
-
-        /**
-         * Decodes an ObjectRecordObject message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectRecordObject
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectRecordObject;
-
-        /**
-         * Verifies an ObjectRecordObject message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectRecordVector2. */
@@ -2623,14 +1975,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectRecordVector2, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectRecordVector2 message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordVector2.verify|verify} messages.
-         * @param message ObjectRecordVector2 message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectRecordVector2, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectRecordVector2 message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2639,22 +1983,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectRecordVector2;
-
-        /**
-         * Decodes an ObjectRecordVector2 message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectRecordVector2
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectRecordVector2;
-
-        /**
-         * Verifies an ObjectRecordVector2 message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectRecordVector3. */
@@ -2704,14 +2032,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectRecordVector3, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectRecordVector3 message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordVector3.verify|verify} messages.
-         * @param message ObjectRecordVector3 message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectRecordVector3, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectRecordVector3 message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2720,22 +2040,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectRecordVector3;
-
-        /**
-         * Decodes an ObjectRecordVector3 message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectRecordVector3
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectRecordVector3;
-
-        /**
-         * Verifies an ObjectRecordVector3 message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectRecordSwap. */
@@ -2797,14 +2101,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectRecordSwap, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectRecordSwap message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordSwap.verify|verify} messages.
-         * @param message ObjectRecordSwap message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectRecordSwap, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectRecordSwap message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2813,22 +2109,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectRecordSwap;
-
-        /**
-         * Decodes an ObjectRecordSwap message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectRecordSwap
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectRecordSwap;
-
-        /**
-         * Verifies an ObjectRecordSwap message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectRecordAddRow. */
@@ -2878,14 +2158,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectRecordAddRow, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectRecordAddRow message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordAddRow.verify|verify} messages.
-         * @param message ObjectRecordAddRow message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectRecordAddRow, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectRecordAddRow message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2894,22 +2166,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectRecordAddRow;
-
-        /**
-         * Decodes an ObjectRecordAddRow message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectRecordAddRow
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectRecordAddRow;
-
-        /**
-         * Verifies an ObjectRecordAddRow message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectRecordRemove. */
@@ -2959,14 +2215,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectRecordRemove, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectRecordRemove message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordRemove.verify|verify} messages.
-         * @param message ObjectRecordRemove message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectRecordRemove, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectRecordRemove message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -2975,22 +2223,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectRecordRemove;
-
-        /**
-         * Decodes an ObjectRecordRemove message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectRecordRemove
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectRecordRemove;
-
-        /**
-         * Verifies an ObjectRecordRemove message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectPropertyList. */
@@ -3064,14 +2296,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectPropertyList, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectPropertyList message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyList.verify|verify} messages.
-         * @param message ObjectPropertyList message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectPropertyList, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectPropertyList message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3080,22 +2304,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectPropertyList;
-
-        /**
-         * Decodes an ObjectPropertyList message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectPropertyList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectPropertyList;
-
-        /**
-         * Verifies an ObjectPropertyList message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a MultiObjectPropertyList. */
@@ -3133,14 +2341,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IMultiObjectPropertyList, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified MultiObjectPropertyList message, length delimited. Does not implicitly {@link NFMsg.MultiObjectPropertyList.verify|verify} messages.
-         * @param message MultiObjectPropertyList message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IMultiObjectPropertyList, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a MultiObjectPropertyList message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3149,22 +2349,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.MultiObjectPropertyList;
-
-        /**
-         * Decodes a MultiObjectPropertyList message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns MultiObjectPropertyList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.MultiObjectPropertyList;
-
-        /**
-         * Verifies a MultiObjectPropertyList message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ObjectRecordList. */
@@ -3208,14 +2392,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IObjectRecordList, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ObjectRecordList message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordList.verify|verify} messages.
-         * @param message ObjectRecordList message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IObjectRecordList, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ObjectRecordList message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3224,22 +2400,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ObjectRecordList;
-
-        /**
-         * Decodes an ObjectRecordList message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ObjectRecordList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ObjectRecordList;
-
-        /**
-         * Verifies an ObjectRecordList message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a MultiObjectRecordList. */
@@ -3277,14 +2437,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IMultiObjectRecordList, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified MultiObjectRecordList message, length delimited. Does not implicitly {@link NFMsg.MultiObjectRecordList.verify|verify} messages.
-         * @param message MultiObjectRecordList message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IMultiObjectRecordList, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a MultiObjectRecordList message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3293,22 +2445,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.MultiObjectRecordList;
-
-        /**
-         * Decodes a MultiObjectRecordList message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns MultiObjectRecordList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.MultiObjectRecordList;
-
-        /**
-         * Verifies a MultiObjectRecordList message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a MsgBase. */
@@ -3364,14 +2500,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IMsgBase, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified MsgBase message, length delimited. Does not implicitly {@link NFMsg.MsgBase.verify|verify} messages.
-         * @param message MsgBase message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IMsgBase, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a MsgBase message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3380,22 +2508,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.MsgBase;
-
-        /**
-         * Decodes a MsgBase message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns MsgBase
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.MsgBase;
-
-        /**
-         * Verifies a MsgBase message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqCommand. */
@@ -3481,14 +2593,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqCommand, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqCommand message, length delimited. Does not implicitly {@link NFMsg.ReqCommand.verify|verify} messages.
-         * @param message ReqCommand message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqCommand, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqCommand message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3497,22 +2601,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqCommand;
-
-        /**
-         * Decodes a ReqCommand message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqCommand
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqCommand;
-
-        /**
-         * Verifies a ReqCommand message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     namespace ReqCommand {
@@ -3573,14 +2661,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.ITeamInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified TeamInfo message, length delimited. Does not implicitly {@link NFMsg.TeamInfo.verify|verify} messages.
-         * @param message TeamInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.ITeamInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a TeamInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3589,22 +2669,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.TeamInfo;
-
-        /**
-         * Decodes a TeamInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns TeamInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.TeamInfo;
-
-        /**
-         * Verifies a TeamInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a TeammemberInfo. */
@@ -3666,14 +2730,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.ITeammemberInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified TeammemberInfo message, length delimited. Does not implicitly {@link NFMsg.TeammemberInfo.verify|verify} messages.
-         * @param message TeammemberInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.ITeammemberInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a TeammemberInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3682,22 +2738,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.TeammemberInfo;
-
-        /**
-         * Decodes a TeammemberInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns TeammemberInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.TeammemberInfo;
-
-        /**
-         * Verifies a TeammemberInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckCreateTeam. */
@@ -3741,14 +2781,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckCreateTeam, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckCreateTeam message, length delimited. Does not implicitly {@link NFMsg.ReqAckCreateTeam.verify|verify} messages.
-         * @param message ReqAckCreateTeam message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckCreateTeam, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckCreateTeam message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3757,22 +2789,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckCreateTeam;
-
-        /**
-         * Decodes a ReqAckCreateTeam message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckCreateTeam
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckCreateTeam;
-
-        /**
-         * Verifies a ReqAckCreateTeam message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckJoinTeam. */
@@ -3816,14 +2832,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckJoinTeam, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckJoinTeam message, length delimited. Does not implicitly {@link NFMsg.ReqAckJoinTeam.verify|verify} messages.
-         * @param message ReqAckJoinTeam message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckJoinTeam, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckJoinTeam message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3832,22 +2840,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckJoinTeam;
-
-        /**
-         * Decodes a ReqAckJoinTeam message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckJoinTeam
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckJoinTeam;
-
-        /**
-         * Verifies a ReqAckJoinTeam message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckLeaveTeam. */
@@ -3891,14 +2883,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckLeaveTeam, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckLeaveTeam message, length delimited. Does not implicitly {@link NFMsg.ReqAckLeaveTeam.verify|verify} messages.
-         * @param message ReqAckLeaveTeam message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckLeaveTeam, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckLeaveTeam message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3907,22 +2891,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckLeaveTeam;
-
-        /**
-         * Decodes a ReqAckLeaveTeam message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckLeaveTeam
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckLeaveTeam;
-
-        /**
-         * Verifies a ReqAckLeaveTeam message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckOprTeamMember. */
@@ -3978,14 +2946,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckOprTeamMember, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckOprTeamMember message, length delimited. Does not implicitly {@link NFMsg.ReqAckOprTeamMember.verify|verify} messages.
-         * @param message ReqAckOprTeamMember message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckOprTeamMember, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckOprTeamMember message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -3994,22 +2954,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckOprTeamMember;
-
-        /**
-         * Decodes a ReqAckOprTeamMember message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckOprTeamMember
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckOprTeamMember;
-
-        /**
-         * Verifies a ReqAckOprTeamMember message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     namespace ReqAckOprTeamMember {
@@ -4075,14 +3019,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckInviteTeam, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckInviteTeam message, length delimited. Does not implicitly {@link NFMsg.ReqAckInviteTeam.verify|verify} messages.
-         * @param message ReqAckInviteTeam message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckInviteTeam, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckInviteTeam message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -4091,22 +3027,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckInviteTeam;
-
-        /**
-         * Decodes a ReqAckInviteTeam message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckInviteTeam
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckInviteTeam;
-
-        /**
-         * Verifies a ReqAckInviteTeam message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqTeamEnterEctype. */
@@ -4174,14 +3094,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqTeamEnterEctype, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqTeamEnterEctype message, length delimited. Does not implicitly {@link NFMsg.ReqTeamEnterEctype.verify|verify} messages.
-         * @param message ReqTeamEnterEctype message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqTeamEnterEctype, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqTeamEnterEctype message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -4190,22 +3102,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqTeamEnterEctype;
-
-        /**
-         * Decodes a ReqTeamEnterEctype message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqTeamEnterEctype
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqTeamEnterEctype;
-
-        /**
-         * Verifies a ReqTeamEnterEctype message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckTeamEnterEctype. */
@@ -4267,14 +3163,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckTeamEnterEctype, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckTeamEnterEctype message, length delimited. Does not implicitly {@link NFMsg.AckTeamEnterEctype.verify|verify} messages.
-         * @param message AckTeamEnterEctype message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckTeamEnterEctype, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckTeamEnterEctype message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -4283,22 +3171,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckTeamEnterEctype;
-
-        /**
-         * Decodes an AckTeamEnterEctype message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckTeamEnterEctype
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckTeamEnterEctype;
-
-        /**
-         * Verifies an AckTeamEnterEctype message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a GridGuildBaseInfo. */
@@ -4360,14 +3232,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IGridGuildBaseInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified GridGuildBaseInfo message, length delimited. Does not implicitly {@link NFMsg.GridGuildBaseInfo.verify|verify} messages.
-         * @param message GridGuildBaseInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IGridGuildBaseInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a GridGuildBaseInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -4376,22 +3240,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.GridGuildBaseInfo;
-
-        /**
-         * Decodes a GridGuildBaseInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns GridGuildBaseInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.GridGuildBaseInfo;
-
-        /**
-         * Verifies a GridGuildBaseInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqBigMapGridInfo. */
@@ -4429,14 +3277,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqBigMapGridInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqBigMapGridInfo message, length delimited. Does not implicitly {@link NFMsg.ReqBigMapGridInfo.verify|verify} messages.
-         * @param message ReqBigMapGridInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqBigMapGridInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqBigMapGridInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -4445,22 +3285,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqBigMapGridInfo;
-
-        /**
-         * Decodes a ReqBigMapGridInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqBigMapGridInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqBigMapGridInfo;
-
-        /**
-         * Verifies a ReqBigMapGridInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a BigMapGridBaseInfo. */
@@ -4528,14 +3352,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IBigMapGridBaseInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified BigMapGridBaseInfo message, length delimited. Does not implicitly {@link NFMsg.BigMapGridBaseInfo.verify|verify} messages.
-         * @param message BigMapGridBaseInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IBigMapGridBaseInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a BigMapGridBaseInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -4544,22 +3360,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.BigMapGridBaseInfo;
-
-        /**
-         * Decodes a BigMapGridBaseInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BigMapGridBaseInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.BigMapGridBaseInfo;
-
-        /**
-         * Verifies a BigMapGridBaseInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a BigMapLeaveMsg. */
@@ -4621,14 +3421,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IBigMapLeaveMsg, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified BigMapLeaveMsg message, length delimited. Does not implicitly {@link NFMsg.BigMapLeaveMsg.verify|verify} messages.
-         * @param message BigMapLeaveMsg message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IBigMapLeaveMsg, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a BigMapLeaveMsg message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -4637,22 +3429,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.BigMapLeaveMsg;
-
-        /**
-         * Decodes a BigMapLeaveMsg message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BigMapLeaveMsg
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.BigMapLeaveMsg;
-
-        /**
-         * Verifies a BigMapLeaveMsg message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a BigMapWarHistory. */
@@ -4708,14 +3484,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IBigMapWarHistory, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified BigMapWarHistory message, length delimited. Does not implicitly {@link NFMsg.BigMapWarHistory.verify|verify} messages.
-         * @param message BigMapWarHistory message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IBigMapWarHistory, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a BigMapWarHistory message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -4724,22 +3492,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.BigMapWarHistory;
-
-        /**
-         * Decodes a BigMapWarHistory message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BigMapWarHistory
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.BigMapWarHistory;
-
-        /**
-         * Verifies a BigMapWarHistory message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a BigMapGridDetailInfo. */
@@ -4795,14 +3547,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IBigMapGridDetailInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified BigMapGridDetailInfo message, length delimited. Does not implicitly {@link NFMsg.BigMapGridDetailInfo.verify|verify} messages.
-         * @param message BigMapGridDetailInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IBigMapGridDetailInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a BigMapGridDetailInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -4811,22 +3555,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.BigMapGridDetailInfo;
-
-        /**
-         * Decodes a BigMapGridDetailInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BigMapGridDetailInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.BigMapGridDetailInfo;
-
-        /**
-         * Verifies a BigMapGridDetailInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckBigMapGridInfo. */
@@ -4864,14 +3592,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckBigMapGridInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckBigMapGridInfo message, length delimited. Does not implicitly {@link NFMsg.AckBigMapGridInfo.verify|verify} messages.
-         * @param message AckBigMapGridInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckBigMapGridInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckBigMapGridInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -4880,22 +3600,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckBigMapGridInfo;
-
-        /**
-         * Decodes an AckBigMapGridInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckBigMapGridInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckBigMapGridInfo;
-
-        /**
-         * Verifies an AckBigMapGridInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqBigMapInfo. */
@@ -4927,14 +3631,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqBigMapInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqBigMapInfo message, length delimited. Does not implicitly {@link NFMsg.ReqBigMapInfo.verify|verify} messages.
-         * @param message ReqBigMapInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqBigMapInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqBigMapInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -4943,22 +3639,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqBigMapInfo;
-
-        /**
-         * Decodes a ReqBigMapInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqBigMapInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqBigMapInfo;
-
-        /**
-         * Verifies a ReqBigMapInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckBigMapInfo. */
@@ -4996,14 +3676,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckBigMapInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckBigMapInfo message, length delimited. Does not implicitly {@link NFMsg.AckBigMapInfo.verify|verify} messages.
-         * @param message AckBigMapInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckBigMapInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckBigMapInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5012,22 +3684,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckBigMapInfo;
-
-        /**
-         * Decodes an AckBigMapInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckBigMapInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckBigMapInfo;
-
-        /**
-         * Verifies an AckBigMapInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqHoldMapGrid. */
@@ -5071,14 +3727,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqHoldMapGrid, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqHoldMapGrid message, length delimited. Does not implicitly {@link NFMsg.ReqHoldMapGrid.verify|verify} messages.
-         * @param message ReqHoldMapGrid message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqHoldMapGrid, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqHoldMapGrid message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5087,22 +3735,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqHoldMapGrid;
-
-        /**
-         * Decodes a ReqHoldMapGrid message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqHoldMapGrid
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqHoldMapGrid;
-
-        /**
-         * Verifies a ReqHoldMapGrid message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckHoldMapGrid. */
@@ -5134,14 +3766,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckHoldMapGrid, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckHoldMapGrid message, length delimited. Does not implicitly {@link NFMsg.AckHoldMapGrid.verify|verify} messages.
-         * @param message AckHoldMapGrid message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckHoldMapGrid, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckHoldMapGrid message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5150,22 +3774,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckHoldMapGrid;
-
-        /**
-         * Decodes an AckHoldMapGrid message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckHoldMapGrid
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckHoldMapGrid;
-
-        /**
-         * Verifies an AckHoldMapGrid message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqLeaveMapMsg. */
@@ -5209,14 +3817,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqLeaveMapMsg, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqLeaveMapMsg message, length delimited. Does not implicitly {@link NFMsg.ReqLeaveMapMsg.verify|verify} messages.
-         * @param message ReqLeaveMapMsg message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqLeaveMapMsg, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqLeaveMapMsg message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5225,22 +3825,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqLeaveMapMsg;
-
-        /**
-         * Decodes a ReqLeaveMapMsg message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqLeaveMapMsg
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqLeaveMapMsg;
-
-        /**
-         * Verifies a ReqLeaveMapMsg message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckLeaveMapMsg. */
@@ -5272,14 +3856,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckLeaveMapMsg, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckLeaveMapMsg message, length delimited. Does not implicitly {@link NFMsg.AckLeaveMapMsg.verify|verify} messages.
-         * @param message AckLeaveMapMsg message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckLeaveMapMsg, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckLeaveMapMsg message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5288,22 +3864,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckLeaveMapMsg;
-
-        /**
-         * Decodes an AckLeaveMapMsg message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckLeaveMapMsg
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckLeaveMapMsg;
-
-        /**
-         * Verifies an AckLeaveMapMsg message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqGetMapAward. */
@@ -5341,14 +3901,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqGetMapAward, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqGetMapAward message, length delimited. Does not implicitly {@link NFMsg.ReqGetMapAward.verify|verify} messages.
-         * @param message ReqGetMapAward message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqGetMapAward, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqGetMapAward message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5357,22 +3909,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqGetMapAward;
-
-        /**
-         * Decodes a ReqGetMapAward message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqGetMapAward
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqGetMapAward;
-
-        /**
-         * Verifies a ReqGetMapAward message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckGetMapAward. */
@@ -5404,14 +3940,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckGetMapAward, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckGetMapAward message, length delimited. Does not implicitly {@link NFMsg.AckGetMapAward.verify|verify} messages.
-         * @param message AckGetMapAward message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckGetMapAward, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckGetMapAward message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5420,22 +3948,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckGetMapAward;
-
-        /**
-         * Decodes an AckGetMapAward message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckGetMapAward
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckGetMapAward;
-
-        /**
-         * Verifies an AckGetMapAward message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqMapHunting. */
@@ -5473,14 +3985,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqMapHunting, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqMapHunting message, length delimited. Does not implicitly {@link NFMsg.ReqMapHunting.verify|verify} messages.
-         * @param message ReqMapHunting message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqMapHunting, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqMapHunting message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5489,22 +3993,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqMapHunting;
-
-        /**
-         * Decodes a ReqMapHunting message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqMapHunting
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqMapHunting;
-
-        /**
-         * Verifies a ReqMapHunting message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckMapHunting. */
@@ -5536,14 +4024,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckMapHunting, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckMapHunting message, length delimited. Does not implicitly {@link NFMsg.AckMapHunting.verify|verify} messages.
-         * @param message AckMapHunting message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckMapHunting, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckMapHunting message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5552,22 +4032,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckMapHunting;
-
-        /**
-         * Decodes an AckMapHunting message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckMapHunting
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckMapHunting;
-
-        /**
-         * Verifies an AckMapHunting message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqMapKingWar. */
@@ -5605,14 +4069,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqMapKingWar, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqMapKingWar message, length delimited. Does not implicitly {@link NFMsg.ReqMapKingWar.verify|verify} messages.
-         * @param message ReqMapKingWar message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqMapKingWar, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqMapKingWar message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5621,22 +4077,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqMapKingWar;
-
-        /**
-         * Decodes a ReqMapKingWar message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqMapKingWar
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqMapKingWar;
-
-        /**
-         * Verifies a ReqMapKingWar message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckMapKingWar. */
@@ -5674,14 +4114,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckMapKingWar, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckMapKingWar message, length delimited. Does not implicitly {@link NFMsg.AckMapKingWar.verify|verify} messages.
-         * @param message AckMapKingWar message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckMapKingWar, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckMapKingWar message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5690,22 +4122,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckMapKingWar;
-
-        /**
-         * Decodes an AckMapKingWar message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckMapKingWar
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckMapKingWar;
-
-        /**
-         * Verifies an AckMapKingWar message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** EServerState enum. */
@@ -5801,14 +4217,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IServerInfoReport, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ServerInfoReport message, length delimited. Does not implicitly {@link NFMsg.ServerInfoReport.verify|verify} messages.
-         * @param message ServerInfoReport message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IServerInfoReport, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ServerInfoReport message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5817,22 +4225,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ServerInfoReport;
-
-        /**
-         * Decodes a ServerInfoReport message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ServerInfoReport
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ServerInfoReport;
-
-        /**
-         * Verifies a ServerInfoReport message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ServerInfoReportList. */
@@ -5870,14 +4262,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IServerInfoReportList, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ServerInfoReportList message, length delimited. Does not implicitly {@link NFMsg.ServerInfoReportList.verify|verify} messages.
-         * @param message ServerInfoReportList message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IServerInfoReportList, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ServerInfoReportList message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5886,22 +4270,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ServerInfoReportList;
-
-        /**
-         * Decodes a ServerInfoReportList message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ServerInfoReportList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ServerInfoReportList;
-
-        /**
-         * Verifies a ServerInfoReportList message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckEventResult. */
@@ -5951,14 +4319,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckEventResult, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckEventResult message, length delimited. Does not implicitly {@link NFMsg.AckEventResult.verify|verify} messages.
-         * @param message AckEventResult message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckEventResult, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckEventResult message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -5967,22 +4327,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckEventResult;
-
-        /**
-         * Decodes an AckEventResult message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckEventResult
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckEventResult;
-
-        /**
-         * Verifies an AckEventResult message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAccountLogin. */
@@ -6080,14 +4424,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAccountLogin, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAccountLogin message, length delimited. Does not implicitly {@link NFMsg.ReqAccountLogin.verify|verify} messages.
-         * @param message ReqAccountLogin message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAccountLogin, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAccountLogin message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -6096,22 +4432,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAccountLogin;
-
-        /**
-         * Decodes a ReqAccountLogin message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAccountLogin
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAccountLogin;
-
-        /**
-         * Verifies a ReqAccountLogin message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAccountLogout. */
@@ -6155,14 +4475,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAccountLogout, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAccountLogout message, length delimited. Does not implicitly {@link NFMsg.ReqAccountLogout.verify|verify} messages.
-         * @param message ReqAccountLogout message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAccountLogout, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAccountLogout message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -6171,22 +4483,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAccountLogout;
-
-        /**
-         * Decodes a ReqAccountLogout message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAccountLogout
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAccountLogout;
-
-        /**
-         * Verifies a ReqAccountLogout message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ServerInfo. */
@@ -6242,14 +4538,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IServerInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ServerInfo message, length delimited. Does not implicitly {@link NFMsg.ServerInfo.verify|verify} messages.
-         * @param message ServerInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IServerInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ServerInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -6258,22 +4546,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ServerInfo;
-
-        /**
-         * Decodes a ServerInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ServerInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ServerInfo;
-
-        /**
-         * Verifies a ServerInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** ReqServerListType enum. */
@@ -6317,14 +4589,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqServerList, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqServerList message, length delimited. Does not implicitly {@link NFMsg.ReqServerList.verify|verify} messages.
-         * @param message ReqServerList message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqServerList, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqServerList message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -6333,22 +4597,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqServerList;
-
-        /**
-         * Decodes a ReqServerList message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqServerList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqServerList;
-
-        /**
-         * Verifies a ReqServerList message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckServerList. */
@@ -6392,14 +4640,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckServerList, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckServerList message, length delimited. Does not implicitly {@link NFMsg.AckServerList.verify|verify} messages.
-         * @param message AckServerList message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckServerList, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckServerList message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -6408,22 +4648,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckServerList;
-
-        /**
-         * Decodes an AckServerList message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckServerList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckServerList;
-
-        /**
-         * Verifies an AckServerList message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqConnectWorld. */
@@ -6479,14 +4703,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqConnectWorld, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqConnectWorld message, length delimited. Does not implicitly {@link NFMsg.ReqConnectWorld.verify|verify} messages.
-         * @param message ReqConnectWorld message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqConnectWorld, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqConnectWorld message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -6495,22 +4711,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqConnectWorld;
-
-        /**
-         * Decodes a ReqConnectWorld message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqConnectWorld
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqConnectWorld;
-
-        /**
-         * Verifies a ReqConnectWorld message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckConnectWorldResult. */
@@ -6584,14 +4784,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckConnectWorldResult, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckConnectWorldResult message, length delimited. Does not implicitly {@link NFMsg.AckConnectWorldResult.verify|verify} messages.
-         * @param message AckConnectWorldResult message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckConnectWorldResult, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckConnectWorldResult message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -6600,22 +4792,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckConnectWorldResult;
-
-        /**
-         * Decodes an AckConnectWorldResult message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckConnectWorldResult
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckConnectWorldResult;
-
-        /**
-         * Verifies an AckConnectWorldResult message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqSelectServer. */
@@ -6653,14 +4829,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqSelectServer, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqSelectServer message, length delimited. Does not implicitly {@link NFMsg.ReqSelectServer.verify|verify} messages.
-         * @param message ReqSelectServer message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqSelectServer, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqSelectServer message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -6669,22 +4837,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqSelectServer;
-
-        /**
-         * Decodes a ReqSelectServer message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqSelectServer
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqSelectServer;
-
-        /**
-         * Verifies a ReqSelectServer message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqKickFromWorld. */
@@ -6728,14 +4880,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqKickFromWorld, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqKickFromWorld message, length delimited. Does not implicitly {@link NFMsg.ReqKickFromWorld.verify|verify} messages.
-         * @param message ReqKickFromWorld message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqKickFromWorld, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqKickFromWorld message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -6744,22 +4888,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqKickFromWorld;
-
-        /**
-         * Decodes a ReqKickFromWorld message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqKickFromWorld
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqKickFromWorld;
-
-        /**
-         * Verifies a ReqKickFromWorld message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqRoleList. */
@@ -6803,14 +4931,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqRoleList, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqRoleList message, length delimited. Does not implicitly {@link NFMsg.ReqRoleList.verify|verify} messages.
-         * @param message ReqRoleList message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqRoleList, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqRoleList message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -6819,22 +4939,63 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqRoleList;
+    }
+
+    /** Properties of a ReqRoleData. */
+    interface IReqRoleData {
+
+        /** ReqRoleData noob_name */
+        noob_name?: (Uint8Array|null);
+
+        /** ReqRoleData account */
+        account?: (Uint8Array|null);
+
+        /** ReqRoleData role_id */
+        role_id?: (NFMsg.IIdent|null);
+    }
+
+    /** Represents a ReqRoleData. */
+    class ReqRoleData implements IReqRoleData {
 
         /**
-         * Decodes a ReqRoleList message from the specified reader or buffer, length delimited.
+         * Constructs a new ReqRoleData.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: NFMsg.IReqRoleData);
+
+        /** ReqRoleData noob_name. */
+        public noob_name: Uint8Array;
+
+        /** ReqRoleData account. */
+        public account: Uint8Array;
+
+        /** ReqRoleData role_id. */
+        public role_id?: (NFMsg.IIdent|null);
+
+        /**
+         * Creates a new ReqRoleData instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ReqRoleData instance
+         */
+        public static create(properties?: NFMsg.IReqRoleData): NFMsg.ReqRoleData;
+
+        /**
+         * Encodes the specified ReqRoleData message. Does not implicitly {@link NFMsg.ReqRoleData.verify|verify} messages.
+         * @param message ReqRoleData message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: NFMsg.IReqRoleData, writer?: protobuf.Writer): protobuf.Writer;
+
+        /**
+         * Decodes a ReqRoleData message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
-         * @returns ReqRoleList
+         * @param [length] Message length if known beforehand
+         * @returns ReqRoleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqRoleList;
-
-        /**
-         * Verifies a ReqRoleList message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
+        public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqRoleData;
     }
 
     /** Properties of a RoleLiteInfo. */
@@ -6938,14 +5099,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IRoleLiteInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified RoleLiteInfo message, length delimited. Does not implicitly {@link NFMsg.RoleLiteInfo.verify|verify} messages.
-         * @param message RoleLiteInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IRoleLiteInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a RoleLiteInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -6954,22 +5107,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.RoleLiteInfo;
-
-        /**
-         * Decodes a RoleLiteInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns RoleLiteInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.RoleLiteInfo;
-
-        /**
-         * Verifies a RoleLiteInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckRoleLiteInfoList. */
@@ -7013,14 +5150,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckRoleLiteInfoList, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckRoleLiteInfoList message, length delimited. Does not implicitly {@link NFMsg.AckRoleLiteInfoList.verify|verify} messages.
-         * @param message AckRoleLiteInfoList message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckRoleLiteInfoList, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckRoleLiteInfoList message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -7029,22 +5158,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckRoleLiteInfoList;
-
-        /**
-         * Decodes an AckRoleLiteInfoList message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckRoleLiteInfoList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckRoleLiteInfoList;
-
-        /**
-         * Verifies an AckRoleLiteInfoList message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqCreateRole. */
@@ -7112,14 +5225,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqCreateRole, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqCreateRole message, length delimited. Does not implicitly {@link NFMsg.ReqCreateRole.verify|verify} messages.
-         * @param message ReqCreateRole message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqCreateRole, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqCreateRole message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -7128,22 +5233,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqCreateRole;
-
-        /**
-         * Decodes a ReqCreateRole message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqCreateRole
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqCreateRole;
-
-        /**
-         * Verifies a ReqCreateRole message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqDeleteRole. */
@@ -7193,14 +5282,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqDeleteRole, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqDeleteRole message, length delimited. Does not implicitly {@link NFMsg.ReqDeleteRole.verify|verify} messages.
-         * @param message ReqDeleteRole message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqDeleteRole, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqDeleteRole message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -7209,22 +5290,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqDeleteRole;
-
-        /**
-         * Decodes a ReqDeleteRole message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqDeleteRole
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqDeleteRole;
-
-        /**
-         * Verifies a ReqDeleteRole message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqRecoverRole. */
@@ -7274,14 +5339,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqRecoverRole, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqRecoverRole message, length delimited. Does not implicitly {@link NFMsg.ReqRecoverRole.verify|verify} messages.
-         * @param message ReqRecoverRole message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqRecoverRole, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqRecoverRole message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -7290,22 +5347,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqRecoverRole;
-
-        /**
-         * Decodes a ReqRecoverRole message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqRecoverRole
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqRecoverRole;
-
-        /**
-         * Verifies a ReqRecoverRole message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ServerHeartBeat. */
@@ -7343,14 +5384,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IServerHeartBeat, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ServerHeartBeat message, length delimited. Does not implicitly {@link NFMsg.ServerHeartBeat.verify|verify} messages.
-         * @param message ServerHeartBeat message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IServerHeartBeat, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ServerHeartBeat message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -7359,22 +5392,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ServerHeartBeat;
-
-        /**
-         * Decodes a ServerHeartBeat message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ServerHeartBeat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ServerHeartBeat;
-
-        /**
-         * Verifies a ServerHeartBeat message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a RoleOnlineNotify. */
@@ -7430,14 +5447,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IRoleOnlineNotify, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified RoleOnlineNotify message, length delimited. Does not implicitly {@link NFMsg.RoleOnlineNotify.verify|verify} messages.
-         * @param message RoleOnlineNotify message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IRoleOnlineNotify, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a RoleOnlineNotify message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -7446,22 +5455,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.RoleOnlineNotify;
-
-        /**
-         * Decodes a RoleOnlineNotify message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns RoleOnlineNotify
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.RoleOnlineNotify;
-
-        /**
-         * Verifies a RoleOnlineNotify message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a RoleOfflineNotify. */
@@ -7517,14 +5510,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IRoleOfflineNotify, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified RoleOfflineNotify message, length delimited. Does not implicitly {@link NFMsg.RoleOfflineNotify.verify|verify} messages.
-         * @param message RoleOfflineNotify message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IRoleOfflineNotify, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a RoleOfflineNotify message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -7533,22 +5518,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.RoleOfflineNotify;
-
-        /**
-         * Decodes a RoleOfflineNotify message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns RoleOfflineNotify
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.RoleOfflineNotify;
-
-        /**
-         * Verifies a RoleOfflineNotify message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a RoleDataPack. */
@@ -7598,14 +5567,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IRoleDataPack, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified RoleDataPack message, length delimited. Does not implicitly {@link NFMsg.RoleDataPack.verify|verify} messages.
-         * @param message RoleDataPack message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IRoleDataPack, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a RoleDataPack message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -7614,22 +5575,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.RoleDataPack;
-
-        /**
-         * Decodes a RoleDataPack message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns RoleDataPack
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.RoleDataPack;
-
-        /**
-         * Verifies a RoleDataPack message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqEnterGameServer. */
@@ -7685,14 +5630,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqEnterGameServer, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqEnterGameServer message, length delimited. Does not implicitly {@link NFMsg.ReqEnterGameServer.verify|verify} messages.
-         * @param message ReqEnterGameServer message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqEnterGameServer, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqEnterGameServer message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -7701,22 +5638,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqEnterGameServer;
-
-        /**
-         * Decodes a ReqEnterGameServer message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqEnterGameServer
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqEnterGameServer;
-
-        /**
-         * Verifies a ReqEnterGameServer message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckEnterGameSuccess. */
@@ -7754,14 +5675,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckEnterGameSuccess, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckEnterGameSuccess message, length delimited. Does not implicitly {@link NFMsg.ReqAckEnterGameSuccess.verify|verify} messages.
-         * @param message ReqAckEnterGameSuccess message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckEnterGameSuccess, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckEnterGameSuccess message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -7770,22 +5683,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckEnterGameSuccess;
-
-        /**
-         * Decodes a ReqAckEnterGameSuccess message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckEnterGameSuccess
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckEnterGameSuccess;
-
-        /**
-         * Verifies a ReqAckEnterGameSuccess message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqHeartBeat. */
@@ -7823,14 +5720,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqHeartBeat, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqHeartBeat message, length delimited. Does not implicitly {@link NFMsg.ReqHeartBeat.verify|verify} messages.
-         * @param message ReqHeartBeat message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqHeartBeat, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqHeartBeat message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -7839,22 +5728,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqHeartBeat;
-
-        /**
-         * Decodes a ReqHeartBeat message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqHeartBeat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqHeartBeat;
-
-        /**
-         * Verifies a ReqHeartBeat message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqLeaveGameServer. */
@@ -7892,14 +5765,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqLeaveGameServer, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqLeaveGameServer message, length delimited. Does not implicitly {@link NFMsg.ReqLeaveGameServer.verify|verify} messages.
-         * @param message ReqLeaveGameServer message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqLeaveGameServer, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqLeaveGameServer message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -7908,22 +5773,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqLeaveGameServer;
-
-        /**
-         * Decodes a ReqLeaveGameServer message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqLeaveGameServer
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqLeaveGameServer;
-
-        /**
-         * Verifies a ReqLeaveGameServer message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a PlayerEntryInfo. */
@@ -8009,14 +5858,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IPlayerEntryInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified PlayerEntryInfo message, length delimited. Does not implicitly {@link NFMsg.PlayerEntryInfo.verify|verify} messages.
-         * @param message PlayerEntryInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IPlayerEntryInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a PlayerEntryInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -8025,22 +5866,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.PlayerEntryInfo;
-
-        /**
-         * Decodes a PlayerEntryInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns PlayerEntryInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.PlayerEntryInfo;
-
-        /**
-         * Verifies a PlayerEntryInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckPlayerEntryList. */
@@ -8078,14 +5903,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckPlayerEntryList, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckPlayerEntryList message, length delimited. Does not implicitly {@link NFMsg.AckPlayerEntryList.verify|verify} messages.
-         * @param message AckPlayerEntryList message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckPlayerEntryList, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckPlayerEntryList message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -8094,22 +5911,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckPlayerEntryList;
-
-        /**
-         * Decodes an AckPlayerEntryList message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckPlayerEntryList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckPlayerEntryList;
-
-        /**
-         * Verifies an AckPlayerEntryList message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckPlayerLeaveList. */
@@ -8147,14 +5948,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckPlayerLeaveList, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckPlayerLeaveList message, length delimited. Does not implicitly {@link NFMsg.AckPlayerLeaveList.verify|verify} messages.
-         * @param message AckPlayerLeaveList message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckPlayerLeaveList, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckPlayerLeaveList message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -8163,22 +5956,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckPlayerLeaveList;
-
-        /**
-         * Decodes an AckPlayerLeaveList message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckPlayerLeaveList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckPlayerLeaveList;
-
-        /**
-         * Verifies an AckPlayerLeaveList message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckSynData. */
@@ -8240,14 +6017,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckSynData, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckSynData message, length delimited. Does not implicitly {@link NFMsg.ReqAckSynData.verify|verify} messages.
-         * @param message ReqAckSynData message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckSynData, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckSynData message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -8256,22 +6025,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckSynData;
-
-        /**
-         * Decodes a ReqAckSynData message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckSynData
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckSynData;
-
-        /**
-         * Verifies a ReqAckSynData message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     namespace ReqAckSynData {
@@ -8363,14 +6116,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckPlayerMove, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckPlayerMove message, length delimited. Does not implicitly {@link NFMsg.ReqAckPlayerMove.verify|verify} messages.
-         * @param message ReqAckPlayerMove message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckPlayerMove, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckPlayerMove message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -8379,22 +6124,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckPlayerMove;
-
-        /**
-         * Decodes a ReqAckPlayerMove message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckPlayerMove
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckPlayerMove;
-
-        /**
-         * Verifies a ReqAckPlayerMove message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckPlayerChat. */
@@ -8462,14 +6191,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckPlayerChat, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckPlayerChat message, length delimited. Does not implicitly {@link NFMsg.ReqAckPlayerChat.verify|verify} messages.
-         * @param message ReqAckPlayerChat message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckPlayerChat, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckPlayerChat message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -8478,22 +6199,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckPlayerChat;
-
-        /**
-         * Decodes a ReqAckPlayerChat message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckPlayerChat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckPlayerChat;
-
-        /**
-         * Verifies a ReqAckPlayerChat message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     namespace ReqAckPlayerChat {
@@ -8547,14 +6252,6 @@ declare namespace NFMsg {
             public static encode(message: NFMsg.ReqAckPlayerChat.IChatContainer, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Encodes the specified ChatContainer message, length delimited. Does not implicitly {@link NFMsg.ReqAckPlayerChat.ChatContainer.verify|verify} messages.
-             * @param message ChatContainer message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: NFMsg.ReqAckPlayerChat.IChatContainer, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
              * Decodes a ChatContainer message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
@@ -8563,22 +6260,6 @@ declare namespace NFMsg {
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckPlayerChat.ChatContainer;
-
-            /**
-             * Decodes a ChatContainer message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns ChatContainer
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckPlayerChat.ChatContainer;
-
-            /**
-             * Verifies a ChatContainer message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
         }
 
         namespace ChatContainer {
@@ -8638,14 +6319,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IEffectData, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified EffectData message, length delimited. Does not implicitly {@link NFMsg.EffectData.verify|verify} messages.
-         * @param message EffectData message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IEffectData, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an EffectData message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -8654,22 +6327,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.EffectData;
-
-        /**
-         * Decodes an EffectData message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns EffectData
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.EffectData;
-
-        /**
-         * Verifies an EffectData message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     namespace EffectData {
@@ -8737,14 +6394,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckUseSkill, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckUseSkill message, length delimited. Does not implicitly {@link NFMsg.ReqAckUseSkill.verify|verify} messages.
-         * @param message ReqAckUseSkill message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckUseSkill, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckUseSkill message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -8753,22 +6402,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckUseSkill;
-
-        /**
-         * Decodes a ReqAckUseSkill message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckUseSkill
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckUseSkill;
-
-        /**
-         * Verifies a ReqAckUseSkill message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckUseItem. */
@@ -8836,14 +6469,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckUseItem, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckUseItem message, length delimited. Does not implicitly {@link NFMsg.ReqAckUseItem.verify|verify} messages.
-         * @param message ReqAckUseItem message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckUseItem, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckUseItem message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -8852,22 +6477,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckUseItem;
-
-        /**
-         * Decodes a ReqAckUseItem message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckUseItem
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckUseItem;
-
-        /**
-         * Verifies a ReqAckUseItem message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckSwapScene. */
@@ -8941,14 +6550,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckSwapScene, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckSwapScene message, length delimited. Does not implicitly {@link NFMsg.ReqAckSwapScene.verify|verify} messages.
-         * @param message ReqAckSwapScene message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckSwapScene, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckSwapScene message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -8957,22 +6558,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckSwapScene;
-
-        /**
-         * Decodes a ReqAckSwapScene message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckSwapScene
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckSwapScene;
-
-        /**
-         * Verifies a ReqAckSwapScene message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     namespace ReqAckSwapScene {
@@ -9021,14 +6606,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckHomeScene, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckHomeScene message, length delimited. Does not implicitly {@link NFMsg.ReqAckHomeScene.verify|verify} messages.
-         * @param message ReqAckHomeScene message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckHomeScene, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckHomeScene message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9037,22 +6614,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckHomeScene;
-
-        /**
-         * Decodes a ReqAckHomeScene message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckHomeScene
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckHomeScene;
-
-        /**
-         * Verifies a ReqAckHomeScene message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an ItemStruct. */
@@ -9096,14 +6657,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IItemStruct, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ItemStruct message, length delimited. Does not implicitly {@link NFMsg.ItemStruct.verify|verify} messages.
-         * @param message ItemStruct message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IItemStruct, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an ItemStruct message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9112,22 +6665,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ItemStruct;
-
-        /**
-         * Decodes an ItemStruct message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ItemStruct
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ItemStruct;
-
-        /**
-         * Verifies an ItemStruct message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a CurrencyStruct. */
@@ -9171,14 +6708,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.ICurrencyStruct, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified CurrencyStruct message, length delimited. Does not implicitly {@link NFMsg.CurrencyStruct.verify|verify} messages.
-         * @param message CurrencyStruct message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.ICurrencyStruct, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a CurrencyStruct message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9187,22 +6716,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.CurrencyStruct;
-
-        /**
-         * Decodes a CurrencyStruct message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns CurrencyStruct
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.CurrencyStruct;
-
-        /**
-         * Verifies a CurrencyStruct message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckStartBattle. */
@@ -9246,14 +6759,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckStartBattle, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckStartBattle message, length delimited. Does not implicitly {@link NFMsg.ReqAckStartBattle.verify|verify} messages.
-         * @param message ReqAckStartBattle message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckStartBattle, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckStartBattle message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9262,22 +6767,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckStartBattle;
-
-        /**
-         * Decodes a ReqAckStartBattle message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckStartBattle
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckStartBattle;
-
-        /**
-         * Verifies a ReqAckStartBattle message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqEndBattle. */
@@ -9309,14 +6798,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqEndBattle, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqEndBattle message, length delimited. Does not implicitly {@link NFMsg.ReqEndBattle.verify|verify} messages.
-         * @param message ReqEndBattle message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqEndBattle, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqEndBattle message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9325,22 +6806,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqEndBattle;
-
-        /**
-         * Decodes a ReqEndBattle message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqEndBattle
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqEndBattle;
-
-        /**
-         * Verifies a ReqEndBattle message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckRelive. */
@@ -9378,14 +6843,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckRelive, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckRelive message, length delimited. Does not implicitly {@link NFMsg.ReqAckRelive.verify|verify} messages.
-         * @param message ReqAckRelive message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckRelive, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckRelive message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9394,22 +6851,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckRelive;
-
-        /**
-         * Decodes a ReqAckRelive message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckRelive
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckRelive;
-
-        /**
-         * Verifies a ReqAckRelive message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckEndBattle. */
@@ -9477,14 +6918,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckEndBattle, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckEndBattle message, length delimited. Does not implicitly {@link NFMsg.AckEndBattle.verify|verify} messages.
-         * @param message AckEndBattle message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckEndBattle, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckEndBattle message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9493,22 +6926,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckEndBattle;
-
-        /**
-         * Decodes an AckEndBattle message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckEndBattle
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckEndBattle;
-
-        /**
-         * Verifies an AckEndBattle message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqPickDropItem. */
@@ -9546,14 +6963,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqPickDropItem, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqPickDropItem message, length delimited. Does not implicitly {@link NFMsg.ReqPickDropItem.verify|verify} messages.
-         * @param message ReqPickDropItem message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqPickDropItem, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqPickDropItem message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9562,22 +6971,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqPickDropItem;
-
-        /**
-         * Decodes a ReqPickDropItem message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqPickDropItem
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqPickDropItem;
-
-        /**
-         * Verifies a ReqPickDropItem message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAcceptTask. */
@@ -9615,14 +7008,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAcceptTask, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAcceptTask message, length delimited. Does not implicitly {@link NFMsg.ReqAcceptTask.verify|verify} messages.
-         * @param message ReqAcceptTask message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAcceptTask, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAcceptTask message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9631,22 +7016,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAcceptTask;
-
-        /**
-         * Decodes a ReqAcceptTask message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAcceptTask
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAcceptTask;
-
-        /**
-         * Verifies a ReqAcceptTask message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqCompeleteTask. */
@@ -9684,14 +7053,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqCompeleteTask, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqCompeleteTask message, length delimited. Does not implicitly {@link NFMsg.ReqCompeleteTask.verify|verify} messages.
-         * @param message ReqCompeleteTask message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqCompeleteTask, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqCompeleteTask message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9700,22 +7061,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqCompeleteTask;
-
-        /**
-         * Decodes a ReqCompeleteTask message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqCompeleteTask
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqCompeleteTask;
-
-        /**
-         * Verifies a ReqCompeleteTask message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckJoinActivity. */
@@ -9759,14 +7104,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckJoinActivity, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckJoinActivity message, length delimited. Does not implicitly {@link NFMsg.ReqAckJoinActivity.verify|verify} messages.
-         * @param message ReqAckJoinActivity message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckJoinActivity, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckJoinActivity message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9775,22 +7112,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckJoinActivity;
-
-        /**
-         * Decodes a ReqAckJoinActivity message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckJoinActivity
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckJoinActivity;
-
-        /**
-         * Verifies a ReqAckJoinActivity message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     namespace ReqAckJoinActivity {
@@ -9847,14 +7168,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckCreateGuild, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckCreateGuild message, length delimited. Does not implicitly {@link NFMsg.ReqAckCreateGuild.verify|verify} messages.
-         * @param message ReqAckCreateGuild message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckCreateGuild, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckCreateGuild message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9863,22 +7176,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckCreateGuild;
-
-        /**
-         * Decodes a ReqAckCreateGuild message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckCreateGuild
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckCreateGuild;
-
-        /**
-         * Verifies a ReqAckCreateGuild message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqSearchGuild. */
@@ -9916,14 +7213,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqSearchGuild, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqSearchGuild message, length delimited. Does not implicitly {@link NFMsg.ReqSearchGuild.verify|verify} messages.
-         * @param message ReqSearchGuild message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqSearchGuild, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqSearchGuild message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -9932,22 +7221,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqSearchGuild;
-
-        /**
-         * Decodes a ReqSearchGuild message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqSearchGuild
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqSearchGuild;
-
-        /**
-         * Verifies a ReqSearchGuild message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckSearchGuild. */
@@ -9985,14 +7258,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckSearchGuild, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckSearchGuild message, length delimited. Does not implicitly {@link NFMsg.AckSearchGuild.verify|verify} messages.
-         * @param message AckSearchGuild message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckSearchGuild, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckSearchGuild message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -10001,22 +7266,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckSearchGuild;
-
-        /**
-         * Decodes an AckSearchGuild message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckSearchGuild
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckSearchGuild;
-
-        /**
-         * Verifies an AckSearchGuild message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     namespace AckSearchGuild {
@@ -10092,14 +7341,6 @@ declare namespace NFMsg {
             public static encode(message: NFMsg.AckSearchGuild.ISearchGuildObject, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Encodes the specified SearchGuildObject message, length delimited. Does not implicitly {@link NFMsg.AckSearchGuild.SearchGuildObject.verify|verify} messages.
-             * @param message SearchGuildObject message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: NFMsg.AckSearchGuild.ISearchGuildObject, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
              * Decodes a SearchGuildObject message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
@@ -10108,22 +7349,6 @@ declare namespace NFMsg {
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckSearchGuild.SearchGuildObject;
-
-            /**
-             * Decodes a SearchGuildObject message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns SearchGuildObject
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckSearchGuild.SearchGuildObject;
-
-            /**
-             * Verifies a SearchGuildObject message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
         }
     }
 
@@ -10168,14 +7393,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckJoinGuild, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckJoinGuild message, length delimited. Does not implicitly {@link NFMsg.ReqAckJoinGuild.verify|verify} messages.
-         * @param message ReqAckJoinGuild message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckJoinGuild, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckJoinGuild message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -10184,22 +7401,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckJoinGuild;
-
-        /**
-         * Decodes a ReqAckJoinGuild message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckJoinGuild
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckJoinGuild;
-
-        /**
-         * Verifies a ReqAckJoinGuild message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckLeaveGuild. */
@@ -10243,14 +7444,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckLeaveGuild, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckLeaveGuild message, length delimited. Does not implicitly {@link NFMsg.ReqAckLeaveGuild.verify|verify} messages.
-         * @param message ReqAckLeaveGuild message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckLeaveGuild, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckLeaveGuild message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -10259,22 +7452,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckLeaveGuild;
-
-        /**
-         * Decodes a ReqAckLeaveGuild message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckLeaveGuild
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckLeaveGuild;
-
-        /**
-         * Verifies a ReqAckLeaveGuild message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAckOprGuildMember. */
@@ -10324,14 +7501,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAckOprGuildMember, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAckOprGuildMember message, length delimited. Does not implicitly {@link NFMsg.ReqAckOprGuildMember.verify|verify} messages.
-         * @param message ReqAckOprGuildMember message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAckOprGuildMember, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAckOprGuildMember message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -10340,22 +7509,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAckOprGuildMember;
-
-        /**
-         * Decodes a ReqAckOprGuildMember message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAckOprGuildMember
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAckOprGuildMember;
-
-        /**
-         * Verifies a ReqAckOprGuildMember message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     namespace ReqAckOprGuildMember {
@@ -10403,14 +7556,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqEnterGuildEctype, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqEnterGuildEctype message, length delimited. Does not implicitly {@link NFMsg.ReqEnterGuildEctype.verify|verify} messages.
-         * @param message ReqEnterGuildEctype message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqEnterGuildEctype, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqEnterGuildEctype message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -10419,22 +7564,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqEnterGuildEctype;
-
-        /**
-         * Decodes a ReqEnterGuildEctype message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqEnterGuildEctype
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqEnterGuildEctype;
-
-        /**
-         * Verifies a ReqEnterGuildEctype message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqSetFightHero. */
@@ -10478,14 +7607,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqSetFightHero, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqSetFightHero message, length delimited. Does not implicitly {@link NFMsg.ReqSetFightHero.verify|verify} messages.
-         * @param message ReqSetFightHero message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqSetFightHero, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqSetFightHero message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -10494,22 +7615,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqSetFightHero;
-
-        /**
-         * Decodes a ReqSetFightHero message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqSetFightHero
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqSetFightHero;
-
-        /**
-         * Verifies a ReqSetFightHero message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqSwitchFightHero. */
@@ -10547,14 +7652,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqSwitchFightHero, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqSwitchFightHero message, length delimited. Does not implicitly {@link NFMsg.ReqSwitchFightHero.verify|verify} messages.
-         * @param message ReqSwitchFightHero message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqSwitchFightHero, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqSwitchFightHero message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -10563,22 +7660,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqSwitchFightHero;
-
-        /**
-         * Decodes a ReqSwitchFightHero message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqSwitchFightHero
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqSwitchFightHero;
-
-        /**
-         * Verifies a ReqSwitchFightHero message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqBuyItemFromShop. */
@@ -10622,14 +7703,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqBuyItemFromShop, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqBuyItemFromShop message, length delimited. Does not implicitly {@link NFMsg.ReqBuyItemFromShop.verify|verify} messages.
-         * @param message ReqBuyItemFromShop message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqBuyItemFromShop, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqBuyItemFromShop message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -10638,22 +7711,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqBuyItemFromShop;
-
-        /**
-         * Decodes a ReqBuyItemFromShop message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqBuyItemFromShop
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqBuyItemFromShop;
-
-        /**
-         * Verifies a ReqBuyItemFromShop message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqAddGambleValue. */
@@ -10697,14 +7754,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqAddGambleValue, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqAddGambleValue message, length delimited. Does not implicitly {@link NFMsg.ReqAddGambleValue.verify|verify} messages.
-         * @param message ReqAddGambleValue message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqAddGambleValue, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqAddGambleValue message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -10713,22 +7762,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqAddGambleValue;
-
-        /**
-         * Decodes a ReqAddGambleValue message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqAddGambleValue
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqAddGambleValue;
-
-        /**
-         * Verifies a ReqAddGambleValue message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqMiningTitle. */
@@ -10778,14 +7811,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqMiningTitle, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqMiningTitle message, length delimited. Does not implicitly {@link NFMsg.ReqMiningTitle.verify|verify} messages.
-         * @param message ReqMiningTitle message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqMiningTitle, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqMiningTitle message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -10794,22 +7819,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqMiningTitle;
-
-        /**
-         * Decodes a ReqMiningTitle message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqMiningTitle
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqMiningTitle;
-
-        /**
-         * Verifies a ReqMiningTitle message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a TileState. */
@@ -10859,14 +7868,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.ITileState, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified TileState message, length delimited. Does not implicitly {@link NFMsg.TileState.verify|verify} messages.
-         * @param message TileState message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.ITileState, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a TileState message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -10875,22 +7876,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.TileState;
-
-        /**
-         * Decodes a TileState message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns TileState
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.TileState;
-
-        /**
-         * Verifies a TileState message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a TileBuilding. */
@@ -10946,14 +7931,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.ITileBuilding, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified TileBuilding message, length delimited. Does not implicitly {@link NFMsg.TileBuilding.verify|verify} messages.
-         * @param message TileBuilding message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.ITileBuilding, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a TileBuilding message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -10962,22 +7939,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.TileBuilding;
-
-        /**
-         * Decodes a TileBuilding message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns TileBuilding
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.TileBuilding;
-
-        /**
-         * Verifies a TileBuilding message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a TileNPC. */
@@ -11033,14 +7994,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.ITileNPC, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified TileNPC message, length delimited. Does not implicitly {@link NFMsg.TileNPC.verify|verify} messages.
-         * @param message TileNPC message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.ITileNPC, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a TileNPC message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -11049,22 +8002,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.TileNPC;
-
-        /**
-         * Decodes a TileNPC message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns TileNPC
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.TileNPC;
-
-        /**
-         * Verifies a TileNPC message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckMiningTitle. */
@@ -11114,14 +8051,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckMiningTitle, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckMiningTitle message, length delimited. Does not implicitly {@link NFMsg.AckMiningTitle.verify|verify} messages.
-         * @param message AckMiningTitle message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckMiningTitle, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckMiningTitle message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -11130,22 +8059,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckMiningTitle;
-
-        /**
-         * Decodes an AckMiningTitle message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckMiningTitle
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckMiningTitle;
-
-        /**
-         * Verifies an AckMiningTitle message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqSearchOppnent. */
@@ -11183,14 +8096,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqSearchOppnent, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqSearchOppnent message, length delimited. Does not implicitly {@link NFMsg.ReqSearchOppnent.verify|verify} messages.
-         * @param message ReqSearchOppnent message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqSearchOppnent, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqSearchOppnent message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -11199,22 +8104,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqSearchOppnent;
-
-        /**
-         * Decodes a ReqSearchOppnent message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqSearchOppnent
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqSearchOppnent;
-
-        /**
-         * Verifies a ReqSearchOppnent message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckSearchOppnent. */
@@ -11372,14 +8261,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckSearchOppnent, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckSearchOppnent message, length delimited. Does not implicitly {@link NFMsg.AckSearchOppnent.verify|verify} messages.
-         * @param message AckSearchOppnent message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckSearchOppnent, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckSearchOppnent message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -11388,22 +8269,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckSearchOppnent;
-
-        /**
-         * Decodes an AckSearchOppnent message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckSearchOppnent
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckSearchOppnent;
-
-        /**
-         * Verifies an AckSearchOppnent message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqSendMail. */
@@ -11453,14 +8318,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqSendMail, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqSendMail message, length delimited. Does not implicitly {@link NFMsg.ReqSendMail.verify|verify} messages.
-         * @param message ReqSendMail message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqSendMail, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqSendMail message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -11469,22 +8326,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqSendMail;
-
-        /**
-         * Decodes a ReqSendMail message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqSendMail
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqSendMail;
-
-        /**
-         * Verifies a ReqSendMail message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqSwitchServer. */
@@ -11558,14 +8399,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqSwitchServer, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqSwitchServer message, length delimited. Does not implicitly {@link NFMsg.ReqSwitchServer.verify|verify} messages.
-         * @param message ReqSwitchServer message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqSwitchServer, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqSwitchServer message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -11574,22 +8407,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqSwitchServer;
-
-        /**
-         * Decodes a ReqSwitchServer message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqSwitchServer
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqSwitchServer;
-
-        /**
-         * Verifies a ReqSwitchServer message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckSwitchServer. */
@@ -11645,14 +8462,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckSwitchServer, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckSwitchServer message, length delimited. Does not implicitly {@link NFMsg.AckSwitchServer.verify|verify} messages.
-         * @param message AckSwitchServer message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckSwitchServer, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckSwitchServer message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -11661,22 +8470,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckSwitchServer;
-
-        /**
-         * Decodes an AckSwitchServer message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckSwitchServer
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckSwitchServer;
-
-        /**
-         * Verifies an AckSwitchServer message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a PVPRoomInfo. */
@@ -11768,14 +8561,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IPVPRoomInfo, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified PVPRoomInfo message, length delimited. Does not implicitly {@link NFMsg.PVPRoomInfo.verify|verify} messages.
-         * @param message PVPRoomInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IPVPRoomInfo, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a PVPRoomInfo message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -11784,22 +8569,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.PVPRoomInfo;
-
-        /**
-         * Decodes a PVPRoomInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns PVPRoomInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.PVPRoomInfo;
-
-        /**
-         * Verifies a PVPRoomInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqPVPApplyMatch. */
@@ -11861,14 +8630,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqPVPApplyMatch, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqPVPApplyMatch message, length delimited. Does not implicitly {@link NFMsg.ReqPVPApplyMatch.verify|verify} messages.
-         * @param message ReqPVPApplyMatch message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqPVPApplyMatch, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqPVPApplyMatch message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -11877,22 +8638,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqPVPApplyMatch;
-
-        /**
-         * Decodes a ReqPVPApplyMatch message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqPVPApplyMatch
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqPVPApplyMatch;
-
-        /**
-         * Verifies a ReqPVPApplyMatch message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     namespace ReqPVPApplyMatch {
@@ -11957,14 +8702,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckPVPApplyMatch, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckPVPApplyMatch message, length delimited. Does not implicitly {@link NFMsg.AckPVPApplyMatch.verify|verify} messages.
-         * @param message AckPVPApplyMatch message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckPVPApplyMatch, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckPVPApplyMatch message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -11973,22 +8710,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckPVPApplyMatch;
-
-        /**
-         * Decodes an AckPVPApplyMatch message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckPVPApplyMatch
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckPVPApplyMatch;
-
-        /**
-         * Verifies an AckPVPApplyMatch message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a ReqCreatePVPEctype. */
@@ -12032,14 +8753,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IReqCreatePVPEctype, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified ReqCreatePVPEctype message, length delimited. Does not implicitly {@link NFMsg.ReqCreatePVPEctype.verify|verify} messages.
-         * @param message ReqCreatePVPEctype message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IReqCreatePVPEctype, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a ReqCreatePVPEctype message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -12048,22 +8761,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.ReqCreatePVPEctype;
-
-        /**
-         * Decodes a ReqCreatePVPEctype message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns ReqCreatePVPEctype
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.ReqCreatePVPEctype;
-
-        /**
-         * Verifies a ReqCreatePVPEctype message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of an AckCreatePVPEctype. */
@@ -12113,14 +8810,6 @@ declare namespace NFMsg {
         public static encode(message: NFMsg.IAckCreatePVPEctype, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified AckCreatePVPEctype message, length delimited. Does not implicitly {@link NFMsg.AckCreatePVPEctype.verify|verify} messages.
-         * @param message AckCreatePVPEctype message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsg.IAckCreatePVPEctype, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an AckCreatePVPEctype message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -12129,22 +8818,6 @@ declare namespace NFMsg {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsg.AckCreatePVPEctype;
-
-        /**
-         * Decodes an AckCreatePVPEctype message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns AckCreatePVPEctype
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsg.AckCreatePVPEctype;
-
-        /**
-         * Verifies an AckCreatePVPEctype message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 }
 
@@ -12192,14 +8865,6 @@ declare namespace NFMsgBase {
         public static encode(message: NFMsgBase.IIdent, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified Ident message, length delimited. Does not implicitly {@link NFMsgBase.Ident.verify|verify} messages.
-         * @param message Ident message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsgBase.IIdent, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes an Ident message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -12208,22 +8873,6 @@ declare namespace NFMsgBase {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsgBase.Ident;
-
-        /**
-         * Decodes an Ident message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns Ident
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsgBase.Ident;
-
-        /**
-         * Verifies an Ident message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 
     /** Properties of a MsgBase. */
@@ -12279,14 +8928,6 @@ declare namespace NFMsgBase {
         public static encode(message: NFMsgBase.IMsgBase, writer?: protobuf.Writer): protobuf.Writer;
 
         /**
-         * Encodes the specified MsgBase message, length delimited. Does not implicitly {@link NFMsgBase.MsgBase.verify|verify} messages.
-         * @param message MsgBase message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: NFMsgBase.IMsgBase, writer?: protobuf.Writer): protobuf.Writer;
-
-        /**
          * Decodes a MsgBase message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
@@ -12295,21 +8936,5 @@ declare namespace NFMsgBase {
          * @throws {protobuf.util.ProtocolError} If required fields are missing
          */
         public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): NFMsgBase.MsgBase;
-
-        /**
-         * Decodes a MsgBase message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns MsgBase
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): NFMsgBase.MsgBase;
-
-        /**
-         * Verifies a MsgBase message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
     }
 }

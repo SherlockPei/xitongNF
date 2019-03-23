@@ -19,7 +19,7 @@ public:
 	virtual NFCWS * GetNet() = 0;
 	virtual void RemoveReceiveCallBack(const int nMsgID) = 0;
 	template<typename BaseType>
-	void AddReceiveCallBack(const int nMsgID,BaseType* pBaseType, void (BaseType::*handleRecieve)(websocketpp::connection_hdl, const int nMsgID, const char *, const int length))
+	void AddReceiveCallBack(const int nMsgID,BaseType* pBaseType, void (BaseType::*handleRecieve)(websocketpp::connection_hdl, const int nMsgID, const char *, const uint32_t length))
 	{
 		NF_WS_MSG_CALL_BACK functor = std::bind(handleRecieve, pBaseType, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4);
 		NF_WS_MSG_CALL_BACK_PTR functorPtr(new NF_WS_MSG_CALL_BACK(functor));
@@ -27,7 +27,7 @@ public:
 		AddReceiveCallBack(nMsgID,functorPtr);
 	}
 	template<typename BaseType>
-	void AddReceiveCallBack(BaseType* pBaseType, void (BaseType::*handleRecieve)(websocketpp::connection_hdl, const int nMsgID, const char *, const int length))
+	void AddReceiveCallBack(BaseType* pBaseType, void (BaseType::*handleRecieve)(websocketpp::connection_hdl, const int nMsgID, const char *, const uint32_t length))
 	{
 		NF_WS_MSG_CALL_BACK functor = std::bind(handleRecieve, pBaseType, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4);
 		NF_WS_MSG_CALL_BACK_PTR functorPtr(new NF_WS_MSG_CALL_BACK(functor));

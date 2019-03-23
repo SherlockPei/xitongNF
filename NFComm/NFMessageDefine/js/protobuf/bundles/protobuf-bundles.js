@@ -1034,19 +1034,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified Ident message, length delimited. Does not implicitly {@link NFMsg.Ident.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.Ident
-         * @static
-         * @param {NFMsg.IIdent} message Ident message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        Ident.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an Ident message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.Ident
@@ -1076,42 +1063,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an Ident message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.Ident
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.Ident} Ident
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        Ident.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an Ident message.
-         * @function verify
-         * @memberof NFMsg.Ident
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        Ident.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.svrid != null && message.hasOwnProperty("svrid"))
-                if (!$util.isInteger(message.svrid) && !(message.svrid && $util.isInteger(message.svrid.low) && $util.isInteger(message.svrid.high)))
-                    return "svrid: integer|Long expected";
-            if (message.index != null && message.hasOwnProperty("index"))
-                if (!$util.isInteger(message.index) && !(message.index && $util.isInteger(message.index.low) && $util.isInteger(message.index.high)))
-                    return "index: integer|Long expected";
-            return null;
         };
 
         return Ident;
@@ -1190,19 +1141,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified Vector2 message, length delimited. Does not implicitly {@link NFMsg.Vector2.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.Vector2
-         * @static
-         * @param {NFMsg.IVector2} message Vector2 message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        Vector2.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a Vector2 message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.Vector2
@@ -1232,42 +1170,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a Vector2 message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.Vector2
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.Vector2} Vector2
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        Vector2.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a Vector2 message.
-         * @function verify
-         * @memberof NFMsg.Vector2
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        Vector2.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.x != null && message.hasOwnProperty("x"))
-                if (typeof message.x !== "number")
-                    return "x: number expected";
-            if (message.y != null && message.hasOwnProperty("y"))
-                if (typeof message.y !== "number")
-                    return "y: number expected";
-            return null;
         };
 
         return Vector2;
@@ -1357,19 +1259,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified Vector3 message, length delimited. Does not implicitly {@link NFMsg.Vector3.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.Vector3
-         * @static
-         * @param {NFMsg.IVector3} message Vector3 message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        Vector3.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a Vector3 message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.Vector3
@@ -1402,45 +1291,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a Vector3 message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.Vector3
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.Vector3} Vector3
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        Vector3.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a Vector3 message.
-         * @function verify
-         * @memberof NFMsg.Vector3
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        Vector3.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.x != null && message.hasOwnProperty("x"))
-                if (typeof message.x !== "number")
-                    return "x: number expected";
-            if (message.y != null && message.hasOwnProperty("y"))
-                if (typeof message.y !== "number")
-                    return "y: number expected";
-            if (message.z != null && message.hasOwnProperty("z"))
-                if (typeof message.z !== "number")
-                    return "z: number expected";
-            return null;
         };
 
         return Vector3;
@@ -1519,19 +1369,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified PropertyInt message, length delimited. Does not implicitly {@link NFMsg.PropertyInt.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.PropertyInt
-         * @static
-         * @param {NFMsg.IPropertyInt} message PropertyInt message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        PropertyInt.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a PropertyInt message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.PropertyInt
@@ -1561,42 +1398,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a PropertyInt message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.PropertyInt
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.PropertyInt} PropertyInt
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        PropertyInt.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a PropertyInt message.
-         * @function verify
-         * @memberof NFMsg.PropertyInt
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        PropertyInt.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.property_name != null && message.hasOwnProperty("property_name"))
-                if (!(message.property_name && typeof message.property_name.length === "number" || $util.isString(message.property_name)))
-                    return "property_name: buffer expected";
-            if (message.data != null && message.hasOwnProperty("data"))
-                if (!$util.isInteger(message.data) && !(message.data && $util.isInteger(message.data.low) && $util.isInteger(message.data.high)))
-                    return "data: integer|Long expected";
-            return null;
         };
 
         return PropertyInt;
@@ -1675,19 +1476,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified PropertyFloat message, length delimited. Does not implicitly {@link NFMsg.PropertyFloat.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.PropertyFloat
-         * @static
-         * @param {NFMsg.IPropertyFloat} message PropertyFloat message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        PropertyFloat.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a PropertyFloat message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.PropertyFloat
@@ -1717,42 +1505,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a PropertyFloat message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.PropertyFloat
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.PropertyFloat} PropertyFloat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        PropertyFloat.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a PropertyFloat message.
-         * @function verify
-         * @memberof NFMsg.PropertyFloat
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        PropertyFloat.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.property_name != null && message.hasOwnProperty("property_name"))
-                if (!(message.property_name && typeof message.property_name.length === "number" || $util.isString(message.property_name)))
-                    return "property_name: buffer expected";
-            if (message.data != null && message.hasOwnProperty("data"))
-                if (typeof message.data !== "number")
-                    return "data: number expected";
-            return null;
         };
 
         return PropertyFloat;
@@ -1831,19 +1583,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified PropertyString message, length delimited. Does not implicitly {@link NFMsg.PropertyString.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.PropertyString
-         * @static
-         * @param {NFMsg.IPropertyString} message PropertyString message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        PropertyString.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a PropertyString message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.PropertyString
@@ -1873,42 +1612,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a PropertyString message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.PropertyString
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.PropertyString} PropertyString
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        PropertyString.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a PropertyString message.
-         * @function verify
-         * @memberof NFMsg.PropertyString
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        PropertyString.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.property_name != null && message.hasOwnProperty("property_name"))
-                if (!(message.property_name && typeof message.property_name.length === "number" || $util.isString(message.property_name)))
-                    return "property_name: buffer expected";
-            if (message.data != null && message.hasOwnProperty("data"))
-                if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
-                    return "data: buffer expected";
-            return null;
         };
 
         return PropertyString;
@@ -1987,19 +1690,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified PropertyObject message, length delimited. Does not implicitly {@link NFMsg.PropertyObject.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.PropertyObject
-         * @static
-         * @param {NFMsg.IPropertyObject} message PropertyObject message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        PropertyObject.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a PropertyObject message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.PropertyObject
@@ -2029,44 +1719,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a PropertyObject message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.PropertyObject
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.PropertyObject} PropertyObject
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        PropertyObject.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a PropertyObject message.
-         * @function verify
-         * @memberof NFMsg.PropertyObject
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        PropertyObject.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.property_name != null && message.hasOwnProperty("property_name"))
-                if (!(message.property_name && typeof message.property_name.length === "number" || $util.isString(message.property_name)))
-                    return "property_name: buffer expected";
-            if (message.data != null && message.hasOwnProperty("data")) {
-                var error = $root.NFMsg.Ident.verify(message.data);
-                if (error)
-                    return "data." + error;
-            }
-            return null;
         };
 
         return PropertyObject;
@@ -2145,19 +1797,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified PropertyVector2 message, length delimited. Does not implicitly {@link NFMsg.PropertyVector2.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.PropertyVector2
-         * @static
-         * @param {NFMsg.IPropertyVector2} message PropertyVector2 message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        PropertyVector2.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a PropertyVector2 message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.PropertyVector2
@@ -2187,44 +1826,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a PropertyVector2 message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.PropertyVector2
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.PropertyVector2} PropertyVector2
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        PropertyVector2.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a PropertyVector2 message.
-         * @function verify
-         * @memberof NFMsg.PropertyVector2
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        PropertyVector2.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.property_name != null && message.hasOwnProperty("property_name"))
-                if (!(message.property_name && typeof message.property_name.length === "number" || $util.isString(message.property_name)))
-                    return "property_name: buffer expected";
-            if (message.data != null && message.hasOwnProperty("data")) {
-                var error = $root.NFMsg.Vector2.verify(message.data);
-                if (error)
-                    return "data." + error;
-            }
-            return null;
         };
 
         return PropertyVector2;
@@ -2303,19 +1904,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified PropertyVector3 message, length delimited. Does not implicitly {@link NFMsg.PropertyVector3.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.PropertyVector3
-         * @static
-         * @param {NFMsg.IPropertyVector3} message PropertyVector3 message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        PropertyVector3.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a PropertyVector3 message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.PropertyVector3
@@ -2345,44 +1933,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a PropertyVector3 message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.PropertyVector3
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.PropertyVector3} PropertyVector3
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        PropertyVector3.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a PropertyVector3 message.
-         * @function verify
-         * @memberof NFMsg.PropertyVector3
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        PropertyVector3.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.property_name != null && message.hasOwnProperty("property_name"))
-                if (!(message.property_name && typeof message.property_name.length === "number" || $util.isString(message.property_name)))
-                    return "property_name: buffer expected";
-            if (message.data != null && message.hasOwnProperty("data")) {
-                var error = $root.NFMsg.Vector3.verify(message.data);
-                if (error)
-                    return "data." + error;
-            }
-            return null;
         };
 
         return PropertyVector3;
@@ -2472,19 +2022,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified RecordInt message, length delimited. Does not implicitly {@link NFMsg.RecordInt.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.RecordInt
-         * @static
-         * @param {NFMsg.IRecordInt} message RecordInt message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RecordInt.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a RecordInt message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.RecordInt
@@ -2517,45 +2054,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a RecordInt message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.RecordInt
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.RecordInt} RecordInt
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RecordInt.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a RecordInt message.
-         * @function verify
-         * @memberof NFMsg.RecordInt
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        RecordInt.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.row != null && message.hasOwnProperty("row"))
-                if (!$util.isInteger(message.row))
-                    return "row: integer expected";
-            if (message.col != null && message.hasOwnProperty("col"))
-                if (!$util.isInteger(message.col))
-                    return "col: integer expected";
-            if (message.data != null && message.hasOwnProperty("data"))
-                if (!$util.isInteger(message.data) && !(message.data && $util.isInteger(message.data.low) && $util.isInteger(message.data.high)))
-                    return "data: integer|Long expected";
-            return null;
         };
 
         return RecordInt;
@@ -2645,19 +2143,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified RecordFloat message, length delimited. Does not implicitly {@link NFMsg.RecordFloat.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.RecordFloat
-         * @static
-         * @param {NFMsg.IRecordFloat} message RecordFloat message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RecordFloat.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a RecordFloat message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.RecordFloat
@@ -2690,45 +2175,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a RecordFloat message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.RecordFloat
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.RecordFloat} RecordFloat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RecordFloat.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a RecordFloat message.
-         * @function verify
-         * @memberof NFMsg.RecordFloat
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        RecordFloat.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.row != null && message.hasOwnProperty("row"))
-                if (!$util.isInteger(message.row))
-                    return "row: integer expected";
-            if (message.col != null && message.hasOwnProperty("col"))
-                if (!$util.isInteger(message.col))
-                    return "col: integer expected";
-            if (message.data != null && message.hasOwnProperty("data"))
-                if (typeof message.data !== "number")
-                    return "data: number expected";
-            return null;
         };
 
         return RecordFloat;
@@ -2818,19 +2264,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified RecordString message, length delimited. Does not implicitly {@link NFMsg.RecordString.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.RecordString
-         * @static
-         * @param {NFMsg.IRecordString} message RecordString message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RecordString.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a RecordString message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.RecordString
@@ -2863,45 +2296,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a RecordString message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.RecordString
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.RecordString} RecordString
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RecordString.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a RecordString message.
-         * @function verify
-         * @memberof NFMsg.RecordString
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        RecordString.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.row != null && message.hasOwnProperty("row"))
-                if (!$util.isInteger(message.row))
-                    return "row: integer expected";
-            if (message.col != null && message.hasOwnProperty("col"))
-                if (!$util.isInteger(message.col))
-                    return "col: integer expected";
-            if (message.data != null && message.hasOwnProperty("data"))
-                if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
-                    return "data: buffer expected";
-            return null;
         };
 
         return RecordString;
@@ -2991,19 +2385,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified RecordObject message, length delimited. Does not implicitly {@link NFMsg.RecordObject.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.RecordObject
-         * @static
-         * @param {NFMsg.IRecordObject} message RecordObject message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RecordObject.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a RecordObject message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.RecordObject
@@ -3036,47 +2417,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a RecordObject message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.RecordObject
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.RecordObject} RecordObject
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RecordObject.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a RecordObject message.
-         * @function verify
-         * @memberof NFMsg.RecordObject
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        RecordObject.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.row != null && message.hasOwnProperty("row"))
-                if (!$util.isInteger(message.row))
-                    return "row: integer expected";
-            if (message.col != null && message.hasOwnProperty("col"))
-                if (!$util.isInteger(message.col))
-                    return "col: integer expected";
-            if (message.data != null && message.hasOwnProperty("data")) {
-                var error = $root.NFMsg.Ident.verify(message.data);
-                if (error)
-                    return "data." + error;
-            }
-            return null;
         };
 
         return RecordObject;
@@ -3166,19 +2506,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified RecordVector2 message, length delimited. Does not implicitly {@link NFMsg.RecordVector2.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.RecordVector2
-         * @static
-         * @param {NFMsg.IRecordVector2} message RecordVector2 message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RecordVector2.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a RecordVector2 message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.RecordVector2
@@ -3211,47 +2538,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a RecordVector2 message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.RecordVector2
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.RecordVector2} RecordVector2
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RecordVector2.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a RecordVector2 message.
-         * @function verify
-         * @memberof NFMsg.RecordVector2
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        RecordVector2.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.row != null && message.hasOwnProperty("row"))
-                if (!$util.isInteger(message.row))
-                    return "row: integer expected";
-            if (message.col != null && message.hasOwnProperty("col"))
-                if (!$util.isInteger(message.col))
-                    return "col: integer expected";
-            if (message.data != null && message.hasOwnProperty("data")) {
-                var error = $root.NFMsg.Vector2.verify(message.data);
-                if (error)
-                    return "data." + error;
-            }
-            return null;
         };
 
         return RecordVector2;
@@ -3341,19 +2627,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified RecordVector3 message, length delimited. Does not implicitly {@link NFMsg.RecordVector3.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.RecordVector3
-         * @static
-         * @param {NFMsg.IRecordVector3} message RecordVector3 message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RecordVector3.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a RecordVector3 message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.RecordVector3
@@ -3386,47 +2659,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a RecordVector3 message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.RecordVector3
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.RecordVector3} RecordVector3
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RecordVector3.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a RecordVector3 message.
-         * @function verify
-         * @memberof NFMsg.RecordVector3
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        RecordVector3.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.row != null && message.hasOwnProperty("row"))
-                if (!$util.isInteger(message.row))
-                    return "row: integer expected";
-            if (message.col != null && message.hasOwnProperty("col"))
-                if (!$util.isInteger(message.col))
-                    return "col: integer expected";
-            if (message.data != null && message.hasOwnProperty("data")) {
-                var error = $root.NFMsg.Vector3.verify(message.data);
-                if (error)
-                    return "data." + error;
-            }
-            return null;
         };
 
         return RecordVector3;
@@ -3572,19 +2804,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified RecordAddRowStruct message, length delimited. Does not implicitly {@link NFMsg.RecordAddRowStruct.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.RecordAddRowStruct
-         * @static
-         * @param {NFMsg.IRecordAddRowStruct} message RecordAddRowStruct message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RecordAddRowStruct.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a RecordAddRowStruct message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.RecordAddRowStruct
@@ -3641,93 +2860,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a RecordAddRowStruct message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.RecordAddRowStruct
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.RecordAddRowStruct} RecordAddRowStruct
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RecordAddRowStruct.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a RecordAddRowStruct message.
-         * @function verify
-         * @memberof NFMsg.RecordAddRowStruct
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        RecordAddRowStruct.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.row != null && message.hasOwnProperty("row"))
-                if (!$util.isInteger(message.row))
-                    return "row: integer expected";
-            if (message.record_int_list != null && message.hasOwnProperty("record_int_list")) {
-                if (!Array.isArray(message.record_int_list))
-                    return "record_int_list: array expected";
-                for (var i = 0; i < message.record_int_list.length; ++i) {
-                    var error = $root.NFMsg.RecordInt.verify(message.record_int_list[i]);
-                    if (error)
-                        return "record_int_list." + error;
-                }
-            }
-            if (message.record_float_list != null && message.hasOwnProperty("record_float_list")) {
-                if (!Array.isArray(message.record_float_list))
-                    return "record_float_list: array expected";
-                for (var i = 0; i < message.record_float_list.length; ++i) {
-                    var error = $root.NFMsg.RecordFloat.verify(message.record_float_list[i]);
-                    if (error)
-                        return "record_float_list." + error;
-                }
-            }
-            if (message.record_string_list != null && message.hasOwnProperty("record_string_list")) {
-                if (!Array.isArray(message.record_string_list))
-                    return "record_string_list: array expected";
-                for (var i = 0; i < message.record_string_list.length; ++i) {
-                    var error = $root.NFMsg.RecordString.verify(message.record_string_list[i]);
-                    if (error)
-                        return "record_string_list." + error;
-                }
-            }
-            if (message.record_object_list != null && message.hasOwnProperty("record_object_list")) {
-                if (!Array.isArray(message.record_object_list))
-                    return "record_object_list: array expected";
-                for (var i = 0; i < message.record_object_list.length; ++i) {
-                    var error = $root.NFMsg.RecordObject.verify(message.record_object_list[i]);
-                    if (error)
-                        return "record_object_list." + error;
-                }
-            }
-            if (message.record_vector2_list != null && message.hasOwnProperty("record_vector2_list")) {
-                if (!Array.isArray(message.record_vector2_list))
-                    return "record_vector2_list: array expected";
-                for (var i = 0; i < message.record_vector2_list.length; ++i) {
-                    var error = $root.NFMsg.RecordVector2.verify(message.record_vector2_list[i]);
-                    if (error)
-                        return "record_vector2_list." + error;
-                }
-            }
-            if (message.record_vector3_list != null && message.hasOwnProperty("record_vector3_list")) {
-                if (!Array.isArray(message.record_vector3_list))
-                    return "record_vector3_list: array expected";
-                for (var i = 0; i < message.record_vector3_list.length; ++i) {
-                    var error = $root.NFMsg.RecordVector3.verify(message.record_vector3_list[i]);
-                    if (error)
-                        return "record_vector3_list." + error;
-                }
-            }
-            return null;
         };
 
         return RecordAddRowStruct;
@@ -3808,19 +2940,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectRecordBase message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordBase.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectRecordBase
-         * @static
-         * @param {NFMsg.IObjectRecordBase} message ObjectRecordBase message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectRecordBase.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectRecordBase message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectRecordBase
@@ -3852,48 +2971,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectRecordBase message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectRecordBase
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectRecordBase} ObjectRecordBase
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectRecordBase.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectRecordBase message.
-         * @function verify
-         * @memberof NFMsg.ObjectRecordBase
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectRecordBase.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
-                    return "record_name: buffer expected";
-            if (message.row_struct != null && message.hasOwnProperty("row_struct")) {
-                if (!Array.isArray(message.row_struct))
-                    return "row_struct: array expected";
-                for (var i = 0; i < message.row_struct.length; ++i) {
-                    var error = $root.NFMsg.RecordAddRowStruct.verify(message.row_struct[i]);
-                    if (error)
-                        return "row_struct." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectRecordBase;
@@ -3974,19 +3051,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectPropertyInt message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyInt.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectPropertyInt
-         * @static
-         * @param {NFMsg.IObjectPropertyInt} message ObjectPropertyInt message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectPropertyInt.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectPropertyInt message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectPropertyInt
@@ -4018,50 +3082,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectPropertyInt message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectPropertyInt
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectPropertyInt} ObjectPropertyInt
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectPropertyInt.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectPropertyInt message.
-         * @function verify
-         * @memberof NFMsg.ObjectPropertyInt
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectPropertyInt.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.property_list != null && message.hasOwnProperty("property_list")) {
-                if (!Array.isArray(message.property_list))
-                    return "property_list: array expected";
-                for (var i = 0; i < message.property_list.length; ++i) {
-                    var error = $root.NFMsg.PropertyInt.verify(message.property_list[i]);
-                    if (error)
-                        return "property_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectPropertyInt;
@@ -4142,19 +3162,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectPropertyFloat message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyFloat.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectPropertyFloat
-         * @static
-         * @param {NFMsg.IObjectPropertyFloat} message ObjectPropertyFloat message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectPropertyFloat.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectPropertyFloat message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectPropertyFloat
@@ -4186,50 +3193,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectPropertyFloat message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectPropertyFloat
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectPropertyFloat} ObjectPropertyFloat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectPropertyFloat.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectPropertyFloat message.
-         * @function verify
-         * @memberof NFMsg.ObjectPropertyFloat
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectPropertyFloat.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.property_list != null && message.hasOwnProperty("property_list")) {
-                if (!Array.isArray(message.property_list))
-                    return "property_list: array expected";
-                for (var i = 0; i < message.property_list.length; ++i) {
-                    var error = $root.NFMsg.PropertyFloat.verify(message.property_list[i]);
-                    if (error)
-                        return "property_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectPropertyFloat;
@@ -4310,19 +3273,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectPropertyString message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyString.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectPropertyString
-         * @static
-         * @param {NFMsg.IObjectPropertyString} message ObjectPropertyString message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectPropertyString.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectPropertyString message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectPropertyString
@@ -4354,50 +3304,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectPropertyString message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectPropertyString
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectPropertyString} ObjectPropertyString
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectPropertyString.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectPropertyString message.
-         * @function verify
-         * @memberof NFMsg.ObjectPropertyString
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectPropertyString.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.property_list != null && message.hasOwnProperty("property_list")) {
-                if (!Array.isArray(message.property_list))
-                    return "property_list: array expected";
-                for (var i = 0; i < message.property_list.length; ++i) {
-                    var error = $root.NFMsg.PropertyString.verify(message.property_list[i]);
-                    if (error)
-                        return "property_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectPropertyString;
@@ -4478,19 +3384,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectPropertyObject message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyObject.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectPropertyObject
-         * @static
-         * @param {NFMsg.IObjectPropertyObject} message ObjectPropertyObject message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectPropertyObject.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectPropertyObject message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectPropertyObject
@@ -4522,50 +3415,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectPropertyObject message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectPropertyObject
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectPropertyObject} ObjectPropertyObject
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectPropertyObject.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectPropertyObject message.
-         * @function verify
-         * @memberof NFMsg.ObjectPropertyObject
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectPropertyObject.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.property_list != null && message.hasOwnProperty("property_list")) {
-                if (!Array.isArray(message.property_list))
-                    return "property_list: array expected";
-                for (var i = 0; i < message.property_list.length; ++i) {
-                    var error = $root.NFMsg.PropertyObject.verify(message.property_list[i]);
-                    if (error)
-                        return "property_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectPropertyObject;
@@ -4646,19 +3495,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectPropertyVector2 message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyVector2.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectPropertyVector2
-         * @static
-         * @param {NFMsg.IObjectPropertyVector2} message ObjectPropertyVector2 message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectPropertyVector2.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectPropertyVector2 message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectPropertyVector2
@@ -4690,50 +3526,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectPropertyVector2 message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectPropertyVector2
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectPropertyVector2} ObjectPropertyVector2
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectPropertyVector2.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectPropertyVector2 message.
-         * @function verify
-         * @memberof NFMsg.ObjectPropertyVector2
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectPropertyVector2.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.property_list != null && message.hasOwnProperty("property_list")) {
-                if (!Array.isArray(message.property_list))
-                    return "property_list: array expected";
-                for (var i = 0; i < message.property_list.length; ++i) {
-                    var error = $root.NFMsg.PropertyVector2.verify(message.property_list[i]);
-                    if (error)
-                        return "property_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectPropertyVector2;
@@ -4814,19 +3606,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectPropertyVector3 message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyVector3.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectPropertyVector3
-         * @static
-         * @param {NFMsg.IObjectPropertyVector3} message ObjectPropertyVector3 message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectPropertyVector3.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectPropertyVector3 message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectPropertyVector3
@@ -4858,50 +3637,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectPropertyVector3 message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectPropertyVector3
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectPropertyVector3} ObjectPropertyVector3
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectPropertyVector3.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectPropertyVector3 message.
-         * @function verify
-         * @memberof NFMsg.ObjectPropertyVector3
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectPropertyVector3.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.property_list != null && message.hasOwnProperty("property_list")) {
-                if (!Array.isArray(message.property_list))
-                    return "property_list: array expected";
-                for (var i = 0; i < message.property_list.length; ++i) {
-                    var error = $root.NFMsg.PropertyVector3.verify(message.property_list[i]);
-                    if (error)
-                        return "property_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectPropertyVector3;
@@ -4993,19 +3728,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectRecordInt message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordInt.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectRecordInt
-         * @static
-         * @param {NFMsg.IObjectRecordInt} message ObjectRecordInt message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectRecordInt.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectRecordInt message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectRecordInt
@@ -5040,53 +3762,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectRecordInt message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectRecordInt
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectRecordInt} ObjectRecordInt
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectRecordInt.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectRecordInt message.
-         * @function verify
-         * @memberof NFMsg.ObjectRecordInt
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectRecordInt.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
-                    return "record_name: buffer expected";
-            if (message.property_list != null && message.hasOwnProperty("property_list")) {
-                if (!Array.isArray(message.property_list))
-                    return "property_list: array expected";
-                for (var i = 0; i < message.property_list.length; ++i) {
-                    var error = $root.NFMsg.RecordInt.verify(message.property_list[i]);
-                    if (error)
-                        return "property_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectRecordInt;
@@ -5178,19 +3853,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectRecordFloat message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordFloat.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectRecordFloat
-         * @static
-         * @param {NFMsg.IObjectRecordFloat} message ObjectRecordFloat message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectRecordFloat.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectRecordFloat message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectRecordFloat
@@ -5225,53 +3887,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectRecordFloat message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectRecordFloat
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectRecordFloat} ObjectRecordFloat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectRecordFloat.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectRecordFloat message.
-         * @function verify
-         * @memberof NFMsg.ObjectRecordFloat
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectRecordFloat.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
-                    return "record_name: buffer expected";
-            if (message.property_list != null && message.hasOwnProperty("property_list")) {
-                if (!Array.isArray(message.property_list))
-                    return "property_list: array expected";
-                for (var i = 0; i < message.property_list.length; ++i) {
-                    var error = $root.NFMsg.RecordFloat.verify(message.property_list[i]);
-                    if (error)
-                        return "property_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectRecordFloat;
@@ -5363,19 +3978,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectRecordString message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordString.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectRecordString
-         * @static
-         * @param {NFMsg.IObjectRecordString} message ObjectRecordString message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectRecordString.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectRecordString message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectRecordString
@@ -5410,53 +4012,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectRecordString message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectRecordString
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectRecordString} ObjectRecordString
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectRecordString.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectRecordString message.
-         * @function verify
-         * @memberof NFMsg.ObjectRecordString
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectRecordString.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
-                    return "record_name: buffer expected";
-            if (message.property_list != null && message.hasOwnProperty("property_list")) {
-                if (!Array.isArray(message.property_list))
-                    return "property_list: array expected";
-                for (var i = 0; i < message.property_list.length; ++i) {
-                    var error = $root.NFMsg.RecordString.verify(message.property_list[i]);
-                    if (error)
-                        return "property_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectRecordString;
@@ -5548,19 +4103,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectRecordObject message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordObject.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectRecordObject
-         * @static
-         * @param {NFMsg.IObjectRecordObject} message ObjectRecordObject message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectRecordObject.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectRecordObject message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectRecordObject
@@ -5595,53 +4137,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectRecordObject message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectRecordObject
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectRecordObject} ObjectRecordObject
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectRecordObject.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectRecordObject message.
-         * @function verify
-         * @memberof NFMsg.ObjectRecordObject
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectRecordObject.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
-                    return "record_name: buffer expected";
-            if (message.property_list != null && message.hasOwnProperty("property_list")) {
-                if (!Array.isArray(message.property_list))
-                    return "property_list: array expected";
-                for (var i = 0; i < message.property_list.length; ++i) {
-                    var error = $root.NFMsg.RecordObject.verify(message.property_list[i]);
-                    if (error)
-                        return "property_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectRecordObject;
@@ -5733,19 +4228,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectRecordVector2 message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordVector2.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectRecordVector2
-         * @static
-         * @param {NFMsg.IObjectRecordVector2} message ObjectRecordVector2 message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectRecordVector2.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectRecordVector2 message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectRecordVector2
@@ -5780,53 +4262,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectRecordVector2 message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectRecordVector2
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectRecordVector2} ObjectRecordVector2
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectRecordVector2.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectRecordVector2 message.
-         * @function verify
-         * @memberof NFMsg.ObjectRecordVector2
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectRecordVector2.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
-                    return "record_name: buffer expected";
-            if (message.property_list != null && message.hasOwnProperty("property_list")) {
-                if (!Array.isArray(message.property_list))
-                    return "property_list: array expected";
-                for (var i = 0; i < message.property_list.length; ++i) {
-                    var error = $root.NFMsg.RecordVector2.verify(message.property_list[i]);
-                    if (error)
-                        return "property_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectRecordVector2;
@@ -5918,19 +4353,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectRecordVector3 message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordVector3.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectRecordVector3
-         * @static
-         * @param {NFMsg.IObjectRecordVector3} message ObjectRecordVector3 message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectRecordVector3.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectRecordVector3 message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectRecordVector3
@@ -5965,53 +4387,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectRecordVector3 message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectRecordVector3
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectRecordVector3} ObjectRecordVector3
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectRecordVector3.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectRecordVector3 message.
-         * @function verify
-         * @memberof NFMsg.ObjectRecordVector3
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectRecordVector3.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
-                    return "record_name: buffer expected";
-            if (message.property_list != null && message.hasOwnProperty("property_list")) {
-                if (!Array.isArray(message.property_list))
-                    return "property_list: array expected";
-                for (var i = 0; i < message.property_list.length; ++i) {
-                    var error = $root.NFMsg.RecordVector3.verify(message.property_list[i]);
-                    if (error)
-                        return "property_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectRecordVector3;
@@ -6123,19 +4498,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectRecordSwap message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordSwap.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectRecordSwap
-         * @static
-         * @param {NFMsg.IObjectRecordSwap} message ObjectRecordSwap message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectRecordSwap.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectRecordSwap message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectRecordSwap
@@ -6174,53 +4536,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectRecordSwap message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectRecordSwap
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectRecordSwap} ObjectRecordSwap
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectRecordSwap.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectRecordSwap message.
-         * @function verify
-         * @memberof NFMsg.ObjectRecordSwap
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectRecordSwap.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.origin_record_name != null && message.hasOwnProperty("origin_record_name"))
-                if (!(message.origin_record_name && typeof message.origin_record_name.length === "number" || $util.isString(message.origin_record_name)))
-                    return "origin_record_name: buffer expected";
-            if (message.target_record_name != null && message.hasOwnProperty("target_record_name"))
-                if (!(message.target_record_name && typeof message.target_record_name.length === "number" || $util.isString(message.target_record_name)))
-                    return "target_record_name: buffer expected";
-            if (message.row_origin != null && message.hasOwnProperty("row_origin"))
-                if (!$util.isInteger(message.row_origin))
-                    return "row_origin: integer expected";
-            if (message.row_target != null && message.hasOwnProperty("row_target"))
-                if (!$util.isInteger(message.row_target))
-                    return "row_target: integer expected";
-            return null;
         };
 
         return ObjectRecordSwap;
@@ -6312,19 +4627,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectRecordAddRow message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordAddRow.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectRecordAddRow
-         * @static
-         * @param {NFMsg.IObjectRecordAddRow} message ObjectRecordAddRow message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectRecordAddRow.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectRecordAddRow message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectRecordAddRow
@@ -6359,53 +4661,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectRecordAddRow message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectRecordAddRow
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectRecordAddRow} ObjectRecordAddRow
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectRecordAddRow.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectRecordAddRow message.
-         * @function verify
-         * @memberof NFMsg.ObjectRecordAddRow
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectRecordAddRow.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
-                    return "record_name: buffer expected";
-            if (message.row_data != null && message.hasOwnProperty("row_data")) {
-                if (!Array.isArray(message.row_data))
-                    return "row_data: array expected";
-                for (var i = 0; i < message.row_data.length; ++i) {
-                    var error = $root.NFMsg.RecordAddRowStruct.verify(message.row_data[i]);
-                    if (error)
-                        return "row_data." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectRecordAddRow;
@@ -6500,19 +4755,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectRecordRemove message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordRemove.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectRecordRemove
-         * @static
-         * @param {NFMsg.IObjectRecordRemove} message ObjectRecordRemove message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectRecordRemove.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectRecordRemove message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectRecordRemove
@@ -6552,51 +4794,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectRecordRemove message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectRecordRemove
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectRecordRemove} ObjectRecordRemove
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectRecordRemove.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectRecordRemove message.
-         * @function verify
-         * @memberof NFMsg.ObjectRecordRemove
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectRecordRemove.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.record_name != null && message.hasOwnProperty("record_name"))
-                if (!(message.record_name && typeof message.record_name.length === "number" || $util.isString(message.record_name)))
-                    return "record_name: buffer expected";
-            if (message.remove_row != null && message.hasOwnProperty("remove_row")) {
-                if (!Array.isArray(message.remove_row))
-                    return "remove_row: array expected";
-                for (var i = 0; i < message.remove_row.length; ++i)
-                    if (!$util.isInteger(message.remove_row[i]))
-                        return "remove_row: integer[] expected";
-            }
-            return null;
         };
 
         return ObjectRecordRemove;
@@ -6742,19 +4939,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectPropertyList message, length delimited. Does not implicitly {@link NFMsg.ObjectPropertyList.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectPropertyList
-         * @static
-         * @param {NFMsg.IObjectPropertyList} message ObjectPropertyList message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectPropertyList.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectPropertyList message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectPropertyList
@@ -6811,95 +4995,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectPropertyList message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectPropertyList
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectPropertyList} ObjectPropertyList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectPropertyList.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectPropertyList message.
-         * @function verify
-         * @memberof NFMsg.ObjectPropertyList
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectPropertyList.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.property_int_list != null && message.hasOwnProperty("property_int_list")) {
-                if (!Array.isArray(message.property_int_list))
-                    return "property_int_list: array expected";
-                for (var i = 0; i < message.property_int_list.length; ++i) {
-                    var error = $root.NFMsg.PropertyInt.verify(message.property_int_list[i]);
-                    if (error)
-                        return "property_int_list." + error;
-                }
-            }
-            if (message.property_float_list != null && message.hasOwnProperty("property_float_list")) {
-                if (!Array.isArray(message.property_float_list))
-                    return "property_float_list: array expected";
-                for (var i = 0; i < message.property_float_list.length; ++i) {
-                    var error = $root.NFMsg.PropertyFloat.verify(message.property_float_list[i]);
-                    if (error)
-                        return "property_float_list." + error;
-                }
-            }
-            if (message.property_string_list != null && message.hasOwnProperty("property_string_list")) {
-                if (!Array.isArray(message.property_string_list))
-                    return "property_string_list: array expected";
-                for (var i = 0; i < message.property_string_list.length; ++i) {
-                    var error = $root.NFMsg.PropertyString.verify(message.property_string_list[i]);
-                    if (error)
-                        return "property_string_list." + error;
-                }
-            }
-            if (message.property_object_list != null && message.hasOwnProperty("property_object_list")) {
-                if (!Array.isArray(message.property_object_list))
-                    return "property_object_list: array expected";
-                for (var i = 0; i < message.property_object_list.length; ++i) {
-                    var error = $root.NFMsg.PropertyObject.verify(message.property_object_list[i]);
-                    if (error)
-                        return "property_object_list." + error;
-                }
-            }
-            if (message.property_vector2_list != null && message.hasOwnProperty("property_vector2_list")) {
-                if (!Array.isArray(message.property_vector2_list))
-                    return "property_vector2_list: array expected";
-                for (var i = 0; i < message.property_vector2_list.length; ++i) {
-                    var error = $root.NFMsg.PropertyVector2.verify(message.property_vector2_list[i]);
-                    if (error)
-                        return "property_vector2_list." + error;
-                }
-            }
-            if (message.property_vector3_list != null && message.hasOwnProperty("property_vector3_list")) {
-                if (!Array.isArray(message.property_vector3_list))
-                    return "property_vector3_list: array expected";
-                for (var i = 0; i < message.property_vector3_list.length; ++i) {
-                    var error = $root.NFMsg.PropertyVector3.verify(message.property_vector3_list[i]);
-                    if (error)
-                        return "property_vector3_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectPropertyList;
@@ -6969,19 +5064,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified MultiObjectPropertyList message, length delimited. Does not implicitly {@link NFMsg.MultiObjectPropertyList.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.MultiObjectPropertyList
-         * @static
-         * @param {NFMsg.IMultiObjectPropertyList} message MultiObjectPropertyList message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        MultiObjectPropertyList.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a MultiObjectPropertyList message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.MultiObjectPropertyList
@@ -7010,45 +5092,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a MultiObjectPropertyList message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.MultiObjectPropertyList
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.MultiObjectPropertyList} MultiObjectPropertyList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        MultiObjectPropertyList.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a MultiObjectPropertyList message.
-         * @function verify
-         * @memberof NFMsg.MultiObjectPropertyList
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        MultiObjectPropertyList.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.multi_player_property != null && message.hasOwnProperty("multi_player_property")) {
-                if (!Array.isArray(message.multi_player_property))
-                    return "multi_player_property: array expected";
-                for (var i = 0; i < message.multi_player_property.length; ++i) {
-                    var error = $root.NFMsg.ObjectPropertyList.verify(message.multi_player_property[i]);
-                    if (error)
-                        return "multi_player_property." + error;
-                }
-            }
-            return null;
         };
 
         return MultiObjectPropertyList;
@@ -7129,19 +5172,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ObjectRecordList message, length delimited. Does not implicitly {@link NFMsg.ObjectRecordList.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ObjectRecordList
-         * @static
-         * @param {NFMsg.IObjectRecordList} message ObjectRecordList message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ObjectRecordList.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ObjectRecordList message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ObjectRecordList
@@ -7173,50 +5203,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ObjectRecordList message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ObjectRecordList
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ObjectRecordList} ObjectRecordList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ObjectRecordList.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ObjectRecordList message.
-         * @function verify
-         * @memberof NFMsg.ObjectRecordList
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ObjectRecordList.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.record_list != null && message.hasOwnProperty("record_list")) {
-                if (!Array.isArray(message.record_list))
-                    return "record_list: array expected";
-                for (var i = 0; i < message.record_list.length; ++i) {
-                    var error = $root.NFMsg.ObjectRecordBase.verify(message.record_list[i]);
-                    if (error)
-                        return "record_list." + error;
-                }
-            }
-            return null;
         };
 
         return ObjectRecordList;
@@ -7286,19 +5272,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified MultiObjectRecordList message, length delimited. Does not implicitly {@link NFMsg.MultiObjectRecordList.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.MultiObjectRecordList
-         * @static
-         * @param {NFMsg.IMultiObjectRecordList} message MultiObjectRecordList message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        MultiObjectRecordList.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a MultiObjectRecordList message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.MultiObjectRecordList
@@ -7327,45 +5300,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a MultiObjectRecordList message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.MultiObjectRecordList
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.MultiObjectRecordList} MultiObjectRecordList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        MultiObjectRecordList.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a MultiObjectRecordList message.
-         * @function verify
-         * @memberof NFMsg.MultiObjectRecordList
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        MultiObjectRecordList.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.multi_player_record != null && message.hasOwnProperty("multi_player_record")) {
-                if (!Array.isArray(message.multi_player_record))
-                    return "multi_player_record: array expected";
-                for (var i = 0; i < message.multi_player_record.length; ++i) {
-                    var error = $root.NFMsg.ObjectRecordList.verify(message.multi_player_record[i]);
-                    if (error)
-                        return "multi_player_record." + error;
-                }
-            }
-            return null;
         };
 
         return MultiObjectRecordList;
@@ -7468,19 +5402,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified MsgBase message, length delimited. Does not implicitly {@link NFMsg.MsgBase.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.MsgBase
-         * @static
-         * @param {NFMsg.IMsgBase} message MsgBase message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        MsgBase.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a MsgBase message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.MsgBase
@@ -7518,58 +5439,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a MsgBase message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.MsgBase
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.MsgBase} MsgBase
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        MsgBase.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a MsgBase message.
-         * @function verify
-         * @memberof NFMsg.MsgBase
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        MsgBase.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.msg_data != null && message.hasOwnProperty("msg_data"))
-                if (!(message.msg_data && typeof message.msg_data.length === "number" || $util.isString(message.msg_data)))
-                    return "msg_data: buffer expected";
-            if (message.player_Client_list != null && message.hasOwnProperty("player_Client_list")) {
-                if (!Array.isArray(message.player_Client_list))
-                    return "player_Client_list: array expected";
-                for (var i = 0; i < message.player_Client_list.length; ++i) {
-                    var error = $root.NFMsg.Ident.verify(message.player_Client_list[i]);
-                    if (error)
-                        return "player_Client_list." + error;
-                }
-            }
-            if (message.hash_ident != null && message.hasOwnProperty("hash_ident")) {
-                var error = $root.NFMsg.Ident.verify(message.hash_ident);
-                if (error)
-                    return "hash_ident." + error;
-            }
-            return null;
         };
 
         return MsgBase;
@@ -7725,19 +5594,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqCommand message, length delimited. Does not implicitly {@link NFMsg.ReqCommand.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqCommand
-         * @static
-         * @param {NFMsg.IReqCommand} message ReqCommand message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqCommand.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqCommand message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqCommand
@@ -7788,74 +5644,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqCommand message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqCommand
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqCommand} ReqCommand
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqCommand.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqCommand message.
-         * @function verify
-         * @memberof NFMsg.ReqCommand
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqCommand.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.control_id != null && message.hasOwnProperty("control_id")) {
-                var error = $root.NFMsg.Ident.verify(message.control_id);
-                if (error)
-                    return "control_id." + error;
-            }
-            if (message.command_id != null && message.hasOwnProperty("command_id"))
-                switch (message.command_id) {
-                default:
-                    return "command_id: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                    break;
-                }
-            if (message.command_str_value != null && message.hasOwnProperty("command_str_value"))
-                if (!(message.command_str_value && typeof message.command_str_value.length === "number" || $util.isString(message.command_str_value)))
-                    return "command_str_value: buffer expected";
-            if (message.command_value_int != null && message.hasOwnProperty("command_value_int"))
-                if (!$util.isInteger(message.command_value_int) && !(message.command_value_int && $util.isInteger(message.command_value_int.low) && $util.isInteger(message.command_value_int.high)))
-                    return "command_value_int: integer|Long expected";
-            if (message.command_value_float != null && message.hasOwnProperty("command_value_float"))
-                if (typeof message.command_value_float !== "number")
-                    return "command_value_float: number expected";
-            if (message.command_value_str != null && message.hasOwnProperty("command_value_str"))
-                if (!(message.command_value_str && typeof message.command_value_str.length === "number" || $util.isString(message.command_value_str)))
-                    return "command_value_str: buffer expected";
-            if (message.command_value_object != null && message.hasOwnProperty("command_value_object")) {
-                var error = $root.NFMsg.Ident.verify(message.command_value_object);
-                if (error)
-                    return "command_value_object." + error;
-            }
-            if (message.row != null && message.hasOwnProperty("row"))
-                if (!$util.isInteger(message.row))
-                    return "row: integer expected";
-            if (message.col != null && message.hasOwnProperty("col"))
-                if (!$util.isInteger(message.col))
-                    return "col: integer expected";
-            return null;
         };
 
         /**
@@ -7965,19 +5753,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified TeamInfo message, length delimited. Does not implicitly {@link NFMsg.TeamInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.TeamInfo
-         * @static
-         * @param {NFMsg.ITeamInfo} message TeamInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        TeamInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a TeamInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.TeamInfo
@@ -8012,55 +5787,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a TeamInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.TeamInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.TeamInfo} TeamInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        TeamInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a TeamInfo message.
-         * @function verify
-         * @memberof NFMsg.TeamInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        TeamInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.team_id != null && message.hasOwnProperty("team_id")) {
-                var error = $root.NFMsg.Ident.verify(message.team_id);
-                if (error)
-                    return "team_id." + error;
-            }
-            if (message.captain_id != null && message.hasOwnProperty("captain_id")) {
-                var error = $root.NFMsg.Ident.verify(message.captain_id);
-                if (error)
-                    return "captain_id." + error;
-            }
-            if (message.teammemberInfo != null && message.hasOwnProperty("teammemberInfo")) {
-                if (!Array.isArray(message.teammemberInfo))
-                    return "teammemberInfo: array expected";
-                for (var i = 0; i < message.teammemberInfo.length; ++i) {
-                    var error = $root.NFMsg.TeammemberInfo.verify(message.teammemberInfo[i]);
-                    if (error)
-                        return "teammemberInfo." + error;
-                }
-            }
-            return null;
         };
 
         return TeamInfo;
@@ -8172,19 +5898,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified TeammemberInfo message, length delimited. Does not implicitly {@link NFMsg.TeammemberInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.TeammemberInfo
-         * @static
-         * @param {NFMsg.ITeammemberInfo} message TeammemberInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        TeammemberInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a TeammemberInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.TeammemberInfo
@@ -8223,53 +5936,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a TeammemberInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.TeammemberInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.TeammemberInfo} TeammemberInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        TeammemberInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a TeammemberInfo message.
-         * @function verify
-         * @memberof NFMsg.TeammemberInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        TeammemberInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsg.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.name != null && message.hasOwnProperty("name"))
-                if (!$util.isString(message.name))
-                    return "name: string expected";
-            if (message.nLevel != null && message.hasOwnProperty("nLevel"))
-                if (!$util.isInteger(message.nLevel))
-                    return "nLevel: integer expected";
-            if (message.job != null && message.hasOwnProperty("job"))
-                if (!$util.isInteger(message.job))
-                    return "job: integer expected";
-            if (message.HeadIcon != null && message.hasOwnProperty("HeadIcon"))
-                if (!$util.isString(message.HeadIcon))
-                    return "HeadIcon: string expected";
-            return null;
         };
 
         return TeammemberInfo;
@@ -8348,19 +6014,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckCreateTeam message, length delimited. Does not implicitly {@link NFMsg.ReqAckCreateTeam.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckCreateTeam
-         * @static
-         * @param {NFMsg.IReqAckCreateTeam} message ReqAckCreateTeam message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckCreateTeam.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckCreateTeam message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckCreateTeam
@@ -8390,46 +6043,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckCreateTeam message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckCreateTeam
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckCreateTeam} ReqAckCreateTeam
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckCreateTeam.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckCreateTeam message.
-         * @function verify
-         * @memberof NFMsg.ReqAckCreateTeam
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckCreateTeam.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.team_id != null && message.hasOwnProperty("team_id")) {
-                var error = $root.NFMsg.Ident.verify(message.team_id);
-                if (error)
-                    return "team_id." + error;
-            }
-            if (message.xTeamInfo != null && message.hasOwnProperty("xTeamInfo")) {
-                var error = $root.NFMsg.TeamInfo.verify(message.xTeamInfo);
-                if (error)
-                    return "xTeamInfo." + error;
-            }
-            return null;
         };
 
         return ReqAckCreateTeam;
@@ -8508,19 +6121,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckJoinTeam message, length delimited. Does not implicitly {@link NFMsg.ReqAckJoinTeam.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckJoinTeam
-         * @static
-         * @param {NFMsg.IReqAckJoinTeam} message ReqAckJoinTeam message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckJoinTeam.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckJoinTeam message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckJoinTeam
@@ -8550,46 +6150,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckJoinTeam message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckJoinTeam
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckJoinTeam} ReqAckJoinTeam
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckJoinTeam.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckJoinTeam message.
-         * @function verify
-         * @memberof NFMsg.ReqAckJoinTeam
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckJoinTeam.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.team_id != null && message.hasOwnProperty("team_id")) {
-                var error = $root.NFMsg.Ident.verify(message.team_id);
-                if (error)
-                    return "team_id." + error;
-            }
-            if (message.xTeamInfo != null && message.hasOwnProperty("xTeamInfo")) {
-                var error = $root.NFMsg.TeamInfo.verify(message.xTeamInfo);
-                if (error)
-                    return "xTeamInfo." + error;
-            }
-            return null;
         };
 
         return ReqAckJoinTeam;
@@ -8668,19 +6228,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckLeaveTeam message, length delimited. Does not implicitly {@link NFMsg.ReqAckLeaveTeam.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckLeaveTeam
-         * @static
-         * @param {NFMsg.IReqAckLeaveTeam} message ReqAckLeaveTeam message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckLeaveTeam.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckLeaveTeam message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckLeaveTeam
@@ -8710,46 +6257,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckLeaveTeam message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckLeaveTeam
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckLeaveTeam} ReqAckLeaveTeam
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckLeaveTeam.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckLeaveTeam message.
-         * @function verify
-         * @memberof NFMsg.ReqAckLeaveTeam
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckLeaveTeam.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.team_id != null && message.hasOwnProperty("team_id")) {
-                var error = $root.NFMsg.Ident.verify(message.team_id);
-                if (error)
-                    return "team_id." + error;
-            }
-            if (message.xTeamInfo != null && message.hasOwnProperty("xTeamInfo")) {
-                var error = $root.NFMsg.TeamInfo.verify(message.xTeamInfo);
-                if (error)
-                    return "xTeamInfo." + error;
-            }
-            return null;
         };
 
         return ReqAckLeaveTeam;
@@ -8850,19 +6357,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckOprTeamMember message, length delimited. Does not implicitly {@link NFMsg.ReqAckOprTeamMember.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckOprTeamMember
-         * @static
-         * @param {NFMsg.IReqAckOprTeamMember} message ReqAckOprTeamMember message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckOprTeamMember.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckOprTeamMember message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckOprTeamMember
@@ -8898,66 +6392,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckOprTeamMember message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckOprTeamMember
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckOprTeamMember} ReqAckOprTeamMember
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckOprTeamMember.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckOprTeamMember message.
-         * @function verify
-         * @memberof NFMsg.ReqAckOprTeamMember
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckOprTeamMember.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.team_id != null && message.hasOwnProperty("team_id")) {
-                var error = $root.NFMsg.Ident.verify(message.team_id);
-                if (error)
-                    return "team_id." + error;
-            }
-            if (message.member_id != null && message.hasOwnProperty("member_id")) {
-                var error = $root.NFMsg.Ident.verify(message.member_id);
-                if (error)
-                    return "member_id." + error;
-            }
-            if (message.type != null && message.hasOwnProperty("type"))
-                switch (message.type) {
-                default:
-                    return "type: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                    break;
-                }
-            if (message.xTeamInfo != null && message.hasOwnProperty("xTeamInfo")) {
-                var error = $root.NFMsg.TeamInfo.verify(message.xTeamInfo);
-                if (error)
-                    return "xTeamInfo." + error;
-            }
-            return null;
         };
 
         /**
@@ -9075,19 +6509,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckInviteTeam message, length delimited. Does not implicitly {@link NFMsg.ReqAckInviteTeam.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckInviteTeam
-         * @static
-         * @param {NFMsg.IReqAckInviteTeam} message ReqAckInviteTeam message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckInviteTeam.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckInviteTeam message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckInviteTeam
@@ -9120,51 +6541,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckInviteTeam message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckInviteTeam
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckInviteTeam} ReqAckInviteTeam
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckInviteTeam.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckInviteTeam message.
-         * @function verify
-         * @memberof NFMsg.ReqAckInviteTeam
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckInviteTeam.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.team_id != null && message.hasOwnProperty("team_id")) {
-                var error = $root.NFMsg.Ident.verify(message.team_id);
-                if (error)
-                    return "team_id." + error;
-            }
-            if (message.self_id != null && message.hasOwnProperty("self_id")) {
-                var error = $root.NFMsg.Ident.verify(message.self_id);
-                if (error)
-                    return "self_id." + error;
-            }
-            if (message.invite_target_id != null && message.hasOwnProperty("invite_target_id")) {
-                var error = $root.NFMsg.Ident.verify(message.invite_target_id);
-                if (error)
-                    return "invite_target_id." + error;
-            }
-            return null;
         };
 
         return ReqAckInviteTeam;
@@ -9287,19 +6663,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqTeamEnterEctype message, length delimited. Does not implicitly {@link NFMsg.ReqTeamEnterEctype.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqTeamEnterEctype
-         * @static
-         * @param {NFMsg.IReqTeamEnterEctype} message ReqTeamEnterEctype message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqTeamEnterEctype.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqTeamEnterEctype message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqTeamEnterEctype
@@ -9341,58 +6704,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqTeamEnterEctype message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqTeamEnterEctype
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqTeamEnterEctype} ReqTeamEnterEctype
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqTeamEnterEctype.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqTeamEnterEctype message.
-         * @function verify
-         * @memberof NFMsg.ReqTeamEnterEctype
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqTeamEnterEctype.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.team_id != null && message.hasOwnProperty("team_id")) {
-                var error = $root.NFMsg.Ident.verify(message.team_id);
-                if (error)
-                    return "team_id." + error;
-            }
-            if (message.self_id != null && message.hasOwnProperty("self_id")) {
-                var error = $root.NFMsg.Ident.verify(message.self_id);
-                if (error)
-                    return "self_id." + error;
-            }
-            if (message.nEctypeID != null && message.hasOwnProperty("nEctypeID"))
-                if (!$util.isInteger(message.nEctypeID))
-                    return "nEctypeID: integer expected";
-            if (message.nGroupID != null && message.hasOwnProperty("nGroupID"))
-                if (!$util.isInteger(message.nGroupID))
-                    return "nGroupID: integer expected";
-            if (message.nResult != null && message.hasOwnProperty("nResult"))
-                if (!$util.isInteger(message.nResult))
-                    return "nResult: integer expected";
-            if (message.nServerID != null && message.hasOwnProperty("nServerID"))
-                if (!$util.isInteger(message.nServerID))
-                    return "nServerID: integer expected";
-            return null;
         };
 
         return ReqTeamEnterEctype;
@@ -9504,19 +6815,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckTeamEnterEctype message, length delimited. Does not implicitly {@link NFMsg.AckTeamEnterEctype.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckTeamEnterEctype
-         * @static
-         * @param {NFMsg.IAckTeamEnterEctype} message AckTeamEnterEctype message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckTeamEnterEctype.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckTeamEnterEctype message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckTeamEnterEctype
@@ -9555,55 +6853,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckTeamEnterEctype message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckTeamEnterEctype
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckTeamEnterEctype} AckTeamEnterEctype
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckTeamEnterEctype.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckTeamEnterEctype message.
-         * @function verify
-         * @memberof NFMsg.AckTeamEnterEctype
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckTeamEnterEctype.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.team_id != null && message.hasOwnProperty("team_id")) {
-                var error = $root.NFMsg.Ident.verify(message.team_id);
-                if (error)
-                    return "team_id." + error;
-            }
-            if (message.self_id != null && message.hasOwnProperty("self_id")) {
-                var error = $root.NFMsg.Ident.verify(message.self_id);
-                if (error)
-                    return "self_id." + error;
-            }
-            if (message.nEctypeID != null && message.hasOwnProperty("nEctypeID"))
-                if (!$util.isInteger(message.nEctypeID))
-                    return "nEctypeID: integer expected";
-            if (message.nGroupID != null && message.hasOwnProperty("nGroupID"))
-                if (!$util.isInteger(message.nGroupID))
-                    return "nGroupID: integer expected";
-            if (message.nResult != null && message.hasOwnProperty("nResult"))
-                if (!$util.isInteger(message.nResult))
-                    return "nResult: integer expected";
-            return null;
         };
 
         return AckTeamEnterEctype;
@@ -9715,19 +6964,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified GridGuildBaseInfo message, length delimited. Does not implicitly {@link NFMsg.GridGuildBaseInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.GridGuildBaseInfo
-         * @static
-         * @param {NFMsg.IGridGuildBaseInfo} message GridGuildBaseInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        GridGuildBaseInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a GridGuildBaseInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.GridGuildBaseInfo
@@ -9766,53 +7002,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a GridGuildBaseInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.GridGuildBaseInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.GridGuildBaseInfo} GridGuildBaseInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        GridGuildBaseInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a GridGuildBaseInfo message.
-         * @function verify
-         * @memberof NFMsg.GridGuildBaseInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        GridGuildBaseInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.id != null && message.hasOwnProperty("id")) {
-                var error = $root.NFMsg.Ident.verify(message.id);
-                if (error)
-                    return "id." + error;
-            }
-            if (message.level != null && message.hasOwnProperty("level"))
-                if (!$util.isInteger(message.level))
-                    return "level: integer expected";
-            if (message.count != null && message.hasOwnProperty("count"))
-                if (!$util.isInteger(message.count))
-                    return "count: integer expected";
-            if (message.resource != null && message.hasOwnProperty("resource"))
-                if (!$util.isInteger(message.resource))
-                    return "resource: integer expected";
-            if (message.icon != null && message.hasOwnProperty("icon"))
-                if (!(message.icon && typeof message.icon.length === "number" || $util.isString(message.icon)))
-                    return "icon: buffer expected";
-            return null;
         };
 
         return GridGuildBaseInfo;
@@ -9882,19 +7071,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqBigMapGridInfo message, length delimited. Does not implicitly {@link NFMsg.ReqBigMapGridInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqBigMapGridInfo
-         * @static
-         * @param {NFMsg.IReqBigMapGridInfo} message ReqBigMapGridInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqBigMapGridInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqBigMapGridInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqBigMapGridInfo
@@ -9923,43 +7099,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqBigMapGridInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqBigMapGridInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqBigMapGridInfo} ReqBigMapGridInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqBigMapGridInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqBigMapGridInfo message.
-         * @function verify
-         * @memberof NFMsg.ReqBigMapGridInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqBigMapGridInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.map_title_id != null && message.hasOwnProperty("map_title_id")) {
-                if (!Array.isArray(message.map_title_id))
-                    return "map_title_id: array expected";
-                for (var i = 0; i < message.map_title_id.length; ++i)
-                    if (!(message.map_title_id[i] && typeof message.map_title_id[i].length === "number" || $util.isString(message.map_title_id[i])))
-                        return "map_title_id: buffer[] expected";
-            }
-            return null;
         };
 
         return ReqBigMapGridInfo;
@@ -10082,19 +7221,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified BigMapGridBaseInfo message, length delimited. Does not implicitly {@link NFMsg.BigMapGridBaseInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.BigMapGridBaseInfo
-         * @static
-         * @param {NFMsg.IBigMapGridBaseInfo} message BigMapGridBaseInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        BigMapGridBaseInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a BigMapGridBaseInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.BigMapGridBaseInfo
@@ -10136,60 +7262,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a BigMapGridBaseInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.BigMapGridBaseInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.BigMapGridBaseInfo} BigMapGridBaseInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        BigMapGridBaseInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a BigMapGridBaseInfo message.
-         * @function verify
-         * @memberof NFMsg.BigMapGridBaseInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        BigMapGridBaseInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.id != null && message.hasOwnProperty("id"))
-                if (!(message.id && typeof message.id.length === "number" || $util.isString(message.id)))
-                    return "id: buffer expected";
-            if (message.guild_info != null && message.hasOwnProperty("guild_info")) {
-                var error = $root.NFMsg.GridGuildBaseInfo.verify(message.guild_info);
-                if (error)
-                    return "guild_info." + error;
-            }
-            if (message.kingwar_time != null && message.hasOwnProperty("kingwar_time"))
-                if (!$util.isInteger(message.kingwar_time))
-                    return "kingwar_time: integer expected";
-            if (message.kingwarrer != null && message.hasOwnProperty("kingwarrer")) {
-                var error = $root.NFMsg.Ident.verify(message.kingwarrer);
-                if (error)
-                    return "kingwarrer." + error;
-            }
-            if (message.hurting_time != null && message.hasOwnProperty("hurting_time"))
-                if (!$util.isInteger(message.hurting_time))
-                    return "hurting_time: integer expected";
-            if (message.hurter != null && message.hasOwnProperty("hurter")) {
-                var error = $root.NFMsg.Ident.verify(message.hurter);
-                if (error)
-                    return "hurter." + error;
-            }
-            return null;
         };
 
         return BigMapGridBaseInfo;
@@ -10301,19 +7373,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified BigMapLeaveMsg message, length delimited. Does not implicitly {@link NFMsg.BigMapLeaveMsg.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.BigMapLeaveMsg
-         * @static
-         * @param {NFMsg.IBigMapLeaveMsg} message BigMapLeaveMsg message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        BigMapLeaveMsg.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a BigMapLeaveMsg message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.BigMapLeaveMsg
@@ -10352,53 +7411,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a BigMapLeaveMsg message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.BigMapLeaveMsg
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.BigMapLeaveMsg} BigMapLeaveMsg
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        BigMapLeaveMsg.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a BigMapLeaveMsg message.
-         * @function verify
-         * @memberof NFMsg.BigMapLeaveMsg
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        BigMapLeaveMsg.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.owner != null && message.hasOwnProperty("owner")) {
-                var error = $root.NFMsg.Ident.verify(message.owner);
-                if (error)
-                    return "owner." + error;
-            }
-            if (message.owner_name != null && message.hasOwnProperty("owner_name"))
-                if (!(message.owner_name && typeof message.owner_name.length === "number" || $util.isString(message.owner_name)))
-                    return "owner_name: buffer expected";
-            if (message.msg_data != null && message.hasOwnProperty("msg_data"))
-                if (!(message.msg_data && typeof message.msg_data.length === "number" || $util.isString(message.msg_data)))
-                    return "msg_data: buffer expected";
-            if (message.msg_time != null && message.hasOwnProperty("msg_time"))
-                if (!$util.isInteger(message.msg_time))
-                    return "msg_time: integer expected";
-            if (message.owner_level != null && message.hasOwnProperty("owner_level"))
-                if (!$util.isInteger(message.owner_level))
-                    return "owner_level: integer expected";
-            return null;
         };
 
         return BigMapLeaveMsg;
@@ -10499,19 +7511,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified BigMapWarHistory message, length delimited. Does not implicitly {@link NFMsg.BigMapWarHistory.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.BigMapWarHistory
-         * @static
-         * @param {NFMsg.IBigMapWarHistory} message BigMapWarHistory message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        BigMapWarHistory.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a BigMapWarHistory message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.BigMapWarHistory
@@ -10547,54 +7546,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a BigMapWarHistory message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.BigMapWarHistory
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.BigMapWarHistory} BigMapWarHistory
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        BigMapWarHistory.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a BigMapWarHistory message.
-         * @function verify
-         * @memberof NFMsg.BigMapWarHistory
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        BigMapWarHistory.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.red_info != null && message.hasOwnProperty("red_info")) {
-                var error = $root.NFMsg.GridGuildBaseInfo.verify(message.red_info);
-                if (error)
-                    return "red_info." + error;
-            }
-            if (message.blue_info != null && message.hasOwnProperty("blue_info")) {
-                var error = $root.NFMsg.GridGuildBaseInfo.verify(message.blue_info);
-                if (error)
-                    return "blue_info." + error;
-            }
-            if (message.winner_id != null && message.hasOwnProperty("winner_id")) {
-                var error = $root.NFMsg.Ident.verify(message.winner_id);
-                if (error)
-                    return "winner_id." + error;
-            }
-            if (message.war_time != null && message.hasOwnProperty("war_time"))
-                if (!$util.isInteger(message.war_time))
-                    return "war_time: integer expected";
-            return null;
         };
 
         return BigMapWarHistory;
@@ -10701,19 +7652,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified BigMapGridDetailInfo message, length delimited. Does not implicitly {@link NFMsg.BigMapGridDetailInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.BigMapGridDetailInfo
-         * @static
-         * @param {NFMsg.IBigMapGridDetailInfo} message BigMapGridDetailInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        BigMapGridDetailInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a BigMapGridDetailInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.BigMapGridDetailInfo
@@ -10755,68 +7693,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a BigMapGridDetailInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.BigMapGridDetailInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.BigMapGridDetailInfo} BigMapGridDetailInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        BigMapGridDetailInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a BigMapGridDetailInfo message.
-         * @function verify
-         * @memberof NFMsg.BigMapGridDetailInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        BigMapGridDetailInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.grid_base_info != null && message.hasOwnProperty("grid_base_info")) {
-                var error = $root.NFMsg.BigMapGridBaseInfo.verify(message.grid_base_info);
-                if (error)
-                    return "grid_base_info." + error;
-            }
-            if (message.stay_guid_list != null && message.hasOwnProperty("stay_guid_list")) {
-                if (!Array.isArray(message.stay_guid_list))
-                    return "stay_guid_list: array expected";
-                for (var i = 0; i < message.stay_guid_list.length; ++i) {
-                    var error = $root.NFMsg.GridGuildBaseInfo.verify(message.stay_guid_list[i]);
-                    if (error)
-                        return "stay_guid_list." + error;
-                }
-            }
-            if (message.leave_msg != null && message.hasOwnProperty("leave_msg")) {
-                if (!Array.isArray(message.leave_msg))
-                    return "leave_msg: array expected";
-                for (var i = 0; i < message.leave_msg.length; ++i) {
-                    var error = $root.NFMsg.BigMapLeaveMsg.verify(message.leave_msg[i]);
-                    if (error)
-                        return "leave_msg." + error;
-                }
-            }
-            if (message.war_history != null && message.hasOwnProperty("war_history")) {
-                if (!Array.isArray(message.war_history))
-                    return "war_history: array expected";
-                for (var i = 0; i < message.war_history.length; ++i) {
-                    var error = $root.NFMsg.BigMapWarHistory.verify(message.war_history[i]);
-                    if (error)
-                        return "war_history." + error;
-                }
-            }
-            return null;
         };
 
         return BigMapGridDetailInfo;
@@ -10886,19 +7762,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckBigMapGridInfo message, length delimited. Does not implicitly {@link NFMsg.AckBigMapGridInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckBigMapGridInfo
-         * @static
-         * @param {NFMsg.IAckBigMapGridInfo} message AckBigMapGridInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckBigMapGridInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckBigMapGridInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckBigMapGridInfo
@@ -10927,45 +7790,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckBigMapGridInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckBigMapGridInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckBigMapGridInfo} AckBigMapGridInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckBigMapGridInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckBigMapGridInfo message.
-         * @function verify
-         * @memberof NFMsg.AckBigMapGridInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckBigMapGridInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.map_data != null && message.hasOwnProperty("map_data")) {
-                if (!Array.isArray(message.map_data))
-                    return "map_data: array expected";
-                for (var i = 0; i < message.map_data.length; ++i) {
-                    var error = $root.NFMsg.BigMapGridDetailInfo.verify(message.map_data[i]);
-                    if (error)
-                        return "map_data." + error;
-                }
-            }
-            return null;
         };
 
         return AckBigMapGridInfo;
@@ -11022,19 +7846,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqBigMapInfo message, length delimited. Does not implicitly {@link NFMsg.ReqBigMapInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqBigMapInfo
-         * @static
-         * @param {NFMsg.IReqBigMapInfo} message ReqBigMapInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqBigMapInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqBigMapInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqBigMapInfo
@@ -11058,36 +7869,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqBigMapInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqBigMapInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqBigMapInfo} ReqBigMapInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqBigMapInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqBigMapInfo message.
-         * @function verify
-         * @memberof NFMsg.ReqBigMapInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqBigMapInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            return null;
         };
 
         return ReqBigMapInfo;
@@ -11157,19 +7938,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckBigMapInfo message, length delimited. Does not implicitly {@link NFMsg.AckBigMapInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckBigMapInfo
-         * @static
-         * @param {NFMsg.IAckBigMapInfo} message AckBigMapInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckBigMapInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckBigMapInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckBigMapInfo
@@ -11198,45 +7966,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckBigMapInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckBigMapInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckBigMapInfo} AckBigMapInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckBigMapInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckBigMapInfo message.
-         * @function verify
-         * @memberof NFMsg.AckBigMapInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckBigMapInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.grid_base_info != null && message.hasOwnProperty("grid_base_info")) {
-                if (!Array.isArray(message.grid_base_info))
-                    return "grid_base_info: array expected";
-                for (var i = 0; i < message.grid_base_info.length; ++i) {
-                    var error = $root.NFMsg.BigMapGridBaseInfo.verify(message.grid_base_info[i]);
-                    if (error)
-                        return "grid_base_info." + error;
-                }
-            }
-            return null;
         };
 
         return AckBigMapInfo;
@@ -11315,19 +8044,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqHoldMapGrid message, length delimited. Does not implicitly {@link NFMsg.ReqHoldMapGrid.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqHoldMapGrid
-         * @static
-         * @param {NFMsg.IReqHoldMapGrid} message ReqHoldMapGrid message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqHoldMapGrid.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqHoldMapGrid message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqHoldMapGrid
@@ -11357,44 +8073,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqHoldMapGrid message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqHoldMapGrid
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqHoldMapGrid} ReqHoldMapGrid
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqHoldMapGrid.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqHoldMapGrid message.
-         * @function verify
-         * @memberof NFMsg.ReqHoldMapGrid
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqHoldMapGrid.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.map_title_id != null && message.hasOwnProperty("map_title_id"))
-                if (!(message.map_title_id && typeof message.map_title_id.length === "number" || $util.isString(message.map_title_id)))
-                    return "map_title_id: buffer expected";
-            if (message.guild_id != null && message.hasOwnProperty("guild_id")) {
-                var error = $root.NFMsg.Ident.verify(message.guild_id);
-                if (error)
-                    return "guild_id." + error;
-            }
-            return null;
         };
 
         return ReqHoldMapGrid;
@@ -11451,19 +8129,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckHoldMapGrid message, length delimited. Does not implicitly {@link NFMsg.AckHoldMapGrid.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckHoldMapGrid
-         * @static
-         * @param {NFMsg.IAckHoldMapGrid} message AckHoldMapGrid message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckHoldMapGrid.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckHoldMapGrid message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckHoldMapGrid
@@ -11487,36 +8152,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckHoldMapGrid message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckHoldMapGrid
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckHoldMapGrid} AckHoldMapGrid
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckHoldMapGrid.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckHoldMapGrid message.
-         * @function verify
-         * @memberof NFMsg.AckHoldMapGrid
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckHoldMapGrid.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            return null;
         };
 
         return AckHoldMapGrid;
@@ -11595,19 +8230,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqLeaveMapMsg message, length delimited. Does not implicitly {@link NFMsg.ReqLeaveMapMsg.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqLeaveMapMsg
-         * @static
-         * @param {NFMsg.IReqLeaveMapMsg} message ReqLeaveMapMsg message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqLeaveMapMsg.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqLeaveMapMsg message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqLeaveMapMsg
@@ -11637,44 +8259,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqLeaveMapMsg message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqLeaveMapMsg
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqLeaveMapMsg} ReqLeaveMapMsg
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqLeaveMapMsg.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqLeaveMapMsg message.
-         * @function verify
-         * @memberof NFMsg.ReqLeaveMapMsg
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqLeaveMapMsg.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.map_title_id != null && message.hasOwnProperty("map_title_id"))
-                if (!(message.map_title_id && typeof message.map_title_id.length === "number" || $util.isString(message.map_title_id)))
-                    return "map_title_id: buffer expected";
-            if (message.leave_msg != null && message.hasOwnProperty("leave_msg")) {
-                var error = $root.NFMsg.BigMapLeaveMsg.verify(message.leave_msg);
-                if (error)
-                    return "leave_msg." + error;
-            }
-            return null;
         };
 
         return ReqLeaveMapMsg;
@@ -11731,19 +8315,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckLeaveMapMsg message, length delimited. Does not implicitly {@link NFMsg.AckLeaveMapMsg.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckLeaveMapMsg
-         * @static
-         * @param {NFMsg.IAckLeaveMapMsg} message AckLeaveMapMsg message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckLeaveMapMsg.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckLeaveMapMsg message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckLeaveMapMsg
@@ -11767,36 +8338,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckLeaveMapMsg message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckLeaveMapMsg
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckLeaveMapMsg} AckLeaveMapMsg
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckLeaveMapMsg.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckLeaveMapMsg message.
-         * @function verify
-         * @memberof NFMsg.AckLeaveMapMsg
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckLeaveMapMsg.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            return null;
         };
 
         return AckLeaveMapMsg;
@@ -11864,19 +8405,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqGetMapAward message, length delimited. Does not implicitly {@link NFMsg.ReqGetMapAward.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqGetMapAward
-         * @static
-         * @param {NFMsg.IReqGetMapAward} message ReqGetMapAward message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqGetMapAward.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqGetMapAward message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqGetMapAward
@@ -11903,39 +8431,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqGetMapAward message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqGetMapAward
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqGetMapAward} ReqGetMapAward
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqGetMapAward.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqGetMapAward message.
-         * @function verify
-         * @memberof NFMsg.ReqGetMapAward
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqGetMapAward.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.map_title_id != null && message.hasOwnProperty("map_title_id"))
-                if (!(message.map_title_id && typeof message.map_title_id.length === "number" || $util.isString(message.map_title_id)))
-                    return "map_title_id: buffer expected";
-            return null;
         };
 
         return ReqGetMapAward;
@@ -11992,19 +8487,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckGetMapAward message, length delimited. Does not implicitly {@link NFMsg.AckGetMapAward.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckGetMapAward
-         * @static
-         * @param {NFMsg.IAckGetMapAward} message AckGetMapAward message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckGetMapAward.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckGetMapAward message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckGetMapAward
@@ -12028,36 +8510,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckGetMapAward message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckGetMapAward
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckGetMapAward} AckGetMapAward
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckGetMapAward.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckGetMapAward message.
-         * @function verify
-         * @memberof NFMsg.AckGetMapAward
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckGetMapAward.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            return null;
         };
 
         return AckGetMapAward;
@@ -12125,19 +8577,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqMapHunting message, length delimited. Does not implicitly {@link NFMsg.ReqMapHunting.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqMapHunting
-         * @static
-         * @param {NFMsg.IReqMapHunting} message ReqMapHunting message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqMapHunting.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqMapHunting message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqMapHunting
@@ -12164,39 +8603,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqMapHunting message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqMapHunting
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqMapHunting} ReqMapHunting
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqMapHunting.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqMapHunting message.
-         * @function verify
-         * @memberof NFMsg.ReqMapHunting
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqMapHunting.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.map_title_id != null && message.hasOwnProperty("map_title_id"))
-                if (!(message.map_title_id && typeof message.map_title_id.length === "number" || $util.isString(message.map_title_id)))
-                    return "map_title_id: buffer expected";
-            return null;
         };
 
         return ReqMapHunting;
@@ -12253,19 +8659,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckMapHunting message, length delimited. Does not implicitly {@link NFMsg.AckMapHunting.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckMapHunting
-         * @static
-         * @param {NFMsg.IAckMapHunting} message AckMapHunting message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckMapHunting.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckMapHunting message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckMapHunting
@@ -12289,36 +8682,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckMapHunting message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckMapHunting
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckMapHunting} AckMapHunting
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckMapHunting.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckMapHunting message.
-         * @function verify
-         * @memberof NFMsg.AckMapHunting
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckMapHunting.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            return null;
         };
 
         return AckMapHunting;
@@ -12386,19 +8749,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqMapKingWar message, length delimited. Does not implicitly {@link NFMsg.ReqMapKingWar.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqMapKingWar
-         * @static
-         * @param {NFMsg.IReqMapKingWar} message ReqMapKingWar message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqMapKingWar.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqMapKingWar message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqMapKingWar
@@ -12425,39 +8775,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqMapKingWar message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqMapKingWar
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqMapKingWar} ReqMapKingWar
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqMapKingWar.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqMapKingWar message.
-         * @function verify
-         * @memberof NFMsg.ReqMapKingWar
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqMapKingWar.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.map_title != null && message.hasOwnProperty("map_title"))
-                if (!(message.map_title && typeof message.map_title.length === "number" || $util.isString(message.map_title)))
-                    return "map_title: buffer expected";
-            return null;
         };
 
         return ReqMapKingWar;
@@ -12525,19 +8842,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckMapKingWar message, length delimited. Does not implicitly {@link NFMsg.AckMapKingWar.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckMapKingWar
-         * @static
-         * @param {NFMsg.IAckMapKingWar} message AckMapKingWar message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckMapKingWar.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckMapKingWar message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckMapKingWar
@@ -12564,39 +8868,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckMapKingWar message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckMapKingWar
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckMapKingWar} AckMapKingWar
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckMapKingWar.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckMapKingWar message.
-         * @function verify
-         * @memberof NFMsg.AckMapKingWar
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckMapKingWar.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.map_title != null && message.hasOwnProperty("map_title"))
-                if (!(message.map_title && typeof message.map_title.length === "number" || $util.isString(message.map_title)))
-                    return "map_title: buffer expected";
-            return null;
         };
 
         return AckMapKingWar;
@@ -12777,19 +9048,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ServerInfoReport message, length delimited. Does not implicitly {@link NFMsg.ServerInfoReport.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ServerInfoReport
-         * @static
-         * @param {NFMsg.IServerInfoReport} message ServerInfoReport message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ServerInfoReport.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ServerInfoReport message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ServerInfoReport
@@ -12837,68 +9095,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ServerInfoReport message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ServerInfoReport
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ServerInfoReport} ServerInfoReport
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ServerInfoReport.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ServerInfoReport message.
-         * @function verify
-         * @memberof NFMsg.ServerInfoReport
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ServerInfoReport.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.server_id != null && message.hasOwnProperty("server_id"))
-                if (!$util.isInteger(message.server_id))
-                    return "server_id: integer expected";
-            if (message.server_name != null && message.hasOwnProperty("server_name"))
-                if (!(message.server_name && typeof message.server_name.length === "number" || $util.isString(message.server_name)))
-                    return "server_name: buffer expected";
-            if (message.server_ip != null && message.hasOwnProperty("server_ip"))
-                if (!(message.server_ip && typeof message.server_ip.length === "number" || $util.isString(message.server_ip)))
-                    return "server_ip: buffer expected";
-            if (message.server_port != null && message.hasOwnProperty("server_port"))
-                if (!$util.isInteger(message.server_port))
-                    return "server_port: integer expected";
-            if (message.server_max_online != null && message.hasOwnProperty("server_max_online"))
-                if (!$util.isInteger(message.server_max_online))
-                    return "server_max_online: integer expected";
-            if (message.server_cur_count != null && message.hasOwnProperty("server_cur_count"))
-                if (!$util.isInteger(message.server_cur_count))
-                    return "server_cur_count: integer expected";
-            if (message.server_state != null && message.hasOwnProperty("server_state"))
-                switch (message.server_state) {
-                default:
-                    return "server_state: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                    break;
-                }
-            if (message.server_type != null && message.hasOwnProperty("server_type"))
-                if (!$util.isInteger(message.server_type))
-                    return "server_type: integer expected";
-            return null;
         };
 
         return ServerInfoReport;
@@ -12968,19 +9164,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ServerInfoReportList message, length delimited. Does not implicitly {@link NFMsg.ServerInfoReportList.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ServerInfoReportList
-         * @static
-         * @param {NFMsg.IServerInfoReportList} message ServerInfoReportList message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ServerInfoReportList.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ServerInfoReportList message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ServerInfoReportList
@@ -13009,45 +9192,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ServerInfoReportList message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ServerInfoReportList
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ServerInfoReportList} ServerInfoReportList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ServerInfoReportList.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ServerInfoReportList message.
-         * @function verify
-         * @memberof NFMsg.ServerInfoReportList
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ServerInfoReportList.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.server_list != null && message.hasOwnProperty("server_list")) {
-                if (!Array.isArray(message.server_list))
-                    return "server_list: array expected";
-                for (var i = 0; i < message.server_list.length; ++i) {
-                    var error = $root.NFMsg.ServerInfoReport.verify(message.server_list[i]);
-                    if (error)
-                        return "server_list." + error;
-                }
-            }
-            return null;
         };
 
         return ServerInfoReportList;
@@ -13137,19 +9281,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckEventResult message, length delimited. Does not implicitly {@link NFMsg.AckEventResult.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckEventResult
-         * @static
-         * @param {NFMsg.IAckEventResult} message AckEventResult message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckEventResult.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckEventResult message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckEventResult
@@ -13182,100 +9313,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckEventResult message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckEventResult
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckEventResult} AckEventResult
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckEventResult.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckEventResult message.
-         * @function verify
-         * @memberof NFMsg.AckEventResult
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckEventResult.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.event_code != null && message.hasOwnProperty("event_code"))
-                switch (message.event_code) {
-                default:
-                    return "event_code: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                case 110:
-                case 111:
-                case 112:
-                case 113:
-                case 114:
-                case 115:
-                case 116:
-                case 117:
-                case 118:
-                case 119:
-                case 120:
-                case 121:
-                case 122:
-                case 123:
-                case 124:
-                case 125:
-                case 126:
-                case 127:
-                case 128:
-                case 129:
-                case 130:
-                case 131:
-                case 132:
-                case 133:
-                case 134:
-                case 135:
-                case 136:
-                case 137:
-                case 138:
-                case 139:
-                case 140:
-                case 141:
-                case 142:
-                case 143:
-                case 200:
-                case 201:
-                case 202:
-                    break;
-                }
-            if (message.event_object != null && message.hasOwnProperty("event_object")) {
-                var error = $root.NFMsg.Ident.verify(message.event_object);
-                if (error)
-                    return "event_object." + error;
-            }
-            if (message.event_client != null && message.hasOwnProperty("event_client")) {
-                var error = $root.NFMsg.Ident.verify(message.event_client);
-                if (error)
-                    return "event_client." + error;
-            }
-            return null;
         };
 
         return AckEventResult;
@@ -13453,19 +9490,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAccountLogin message, length delimited. Does not implicitly {@link NFMsg.ReqAccountLogin.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAccountLogin
-         * @static
-         * @param {NFMsg.IReqAccountLogin} message ReqAccountLogin message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAccountLogin.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAccountLogin message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAccountLogin
@@ -13522,75 +9546,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAccountLogin message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAccountLogin
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAccountLogin} ReqAccountLogin
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAccountLogin.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAccountLogin message.
-         * @function verify
-         * @memberof NFMsg.ReqAccountLogin
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAccountLogin.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.account != null && message.hasOwnProperty("account"))
-                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
-                    return "account: buffer expected";
-            if (message.password != null && message.hasOwnProperty("password"))
-                if (!(message.password && typeof message.password.length === "number" || $util.isString(message.password)))
-                    return "password: buffer expected";
-            if (message.security_code != null && message.hasOwnProperty("security_code"))
-                if (!(message.security_code && typeof message.security_code.length === "number" || $util.isString(message.security_code)))
-                    return "security_code: buffer expected";
-            if (message.signBuff != null && message.hasOwnProperty("signBuff"))
-                if (!(message.signBuff && typeof message.signBuff.length === "number" || $util.isString(message.signBuff)))
-                    return "signBuff: buffer expected";
-            if (message.clientVersion != null && message.hasOwnProperty("clientVersion"))
-                if (!$util.isInteger(message.clientVersion))
-                    return "clientVersion: integer expected";
-            if (message.loginMode != null && message.hasOwnProperty("loginMode"))
-                switch (message.loginMode) {
-                default:
-                    return "loginMode: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                    break;
-                }
-            if (message.clientIP != null && message.hasOwnProperty("clientIP"))
-                if (!$util.isInteger(message.clientIP))
-                    return "clientIP: integer expected";
-            if (message.clientMAC != null && message.hasOwnProperty("clientMAC"))
-                if (!$util.isInteger(message.clientMAC) && !(message.clientMAC && $util.isInteger(message.clientMAC.low) && $util.isInteger(message.clientMAC.high)))
-                    return "clientMAC: integer|Long expected";
-            if (message.device_info != null && message.hasOwnProperty("device_info"))
-                if (!(message.device_info && typeof message.device_info.length === "number" || $util.isString(message.device_info)))
-                    return "device_info: buffer expected";
-            if (message.extra_info != null && message.hasOwnProperty("extra_info"))
-                if (!(message.extra_info && typeof message.extra_info.length === "number" || $util.isString(message.extra_info)))
-                    return "extra_info: buffer expected";
-            if (message.platform_type != null && message.hasOwnProperty("platform_type"))
-                if (!$util.isInteger(message.platform_type))
-                    return "platform_type: integer expected";
-            return null;
         };
 
         return ReqAccountLogin;
@@ -13669,19 +9624,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAccountLogout message, length delimited. Does not implicitly {@link NFMsg.ReqAccountLogout.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAccountLogout
-         * @static
-         * @param {NFMsg.IReqAccountLogout} message ReqAccountLogout message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAccountLogout.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAccountLogout message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAccountLogout
@@ -13711,42 +9653,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAccountLogout message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAccountLogout
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAccountLogout} ReqAccountLogout
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAccountLogout.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAccountLogout message.
-         * @function verify
-         * @memberof NFMsg.ReqAccountLogout
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAccountLogout.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.account != null && message.hasOwnProperty("account"))
-                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
-                    return "account: buffer expected";
-            if (message.extra_info != null && message.hasOwnProperty("extra_info"))
-                if (!(message.extra_info && typeof message.extra_info.length === "number" || $util.isString(message.extra_info)))
-                    return "extra_info: buffer expected";
-            return null;
         };
 
         return ReqAccountLogout;
@@ -13847,19 +9753,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ServerInfo message, length delimited. Does not implicitly {@link NFMsg.ServerInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ServerInfo
-         * @static
-         * @param {NFMsg.IServerInfo} message ServerInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ServerInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ServerInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ServerInfo
@@ -13895,56 +9788,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ServerInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ServerInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ServerInfo} ServerInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ServerInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ServerInfo message.
-         * @function verify
-         * @memberof NFMsg.ServerInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ServerInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.server_id != null && message.hasOwnProperty("server_id"))
-                if (!$util.isInteger(message.server_id))
-                    return "server_id: integer expected";
-            if (message.name != null && message.hasOwnProperty("name"))
-                if (!(message.name && typeof message.name.length === "number" || $util.isString(message.name)))
-                    return "name: buffer expected";
-            if (message.wait_count != null && message.hasOwnProperty("wait_count"))
-                if (!$util.isInteger(message.wait_count))
-                    return "wait_count: integer expected";
-            if (message.status != null && message.hasOwnProperty("status"))
-                switch (message.status) {
-                default:
-                    return "status: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                    break;
-                }
-            return null;
         };
 
         return ServerInfo;
@@ -14026,19 +9869,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqServerList message, length delimited. Does not implicitly {@link NFMsg.ReqServerList.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqServerList
-         * @static
-         * @param {NFMsg.IReqServerList} message ReqServerList message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqServerList.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqServerList message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqServerList
@@ -14065,44 +9895,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqServerList message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqServerList
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqServerList} ReqServerList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqServerList.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqServerList message.
-         * @function verify
-         * @memberof NFMsg.ReqServerList
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqServerList.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.type != null && message.hasOwnProperty("type"))
-                switch (message.type) {
-                default:
-                    return "type: enum value expected";
-                case 0:
-                case 1:
-                    break;
-                }
-            return null;
         };
 
         return ReqServerList;
@@ -14183,19 +9975,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckServerList message, length delimited. Does not implicitly {@link NFMsg.AckServerList.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckServerList
-         * @static
-         * @param {NFMsg.IAckServerList} message AckServerList message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckServerList.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckServerList message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckServerList
@@ -14227,53 +10006,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckServerList message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckServerList
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckServerList} AckServerList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckServerList.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckServerList message.
-         * @function verify
-         * @memberof NFMsg.AckServerList
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckServerList.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.type != null && message.hasOwnProperty("type"))
-                switch (message.type) {
-                default:
-                    return "type: enum value expected";
-                case 0:
-                case 1:
-                    break;
-                }
-            if (message.info != null && message.hasOwnProperty("info")) {
-                if (!Array.isArray(message.info))
-                    return "info: array expected";
-                for (var i = 0; i < message.info.length; ++i) {
-                    var error = $root.NFMsg.ServerInfo.verify(message.info[i]);
-                    if (error)
-                        return "info." + error;
-                }
-            }
-            return null;
         };
 
         return AckServerList;
@@ -14374,19 +10106,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqConnectWorld message, length delimited. Does not implicitly {@link NFMsg.ReqConnectWorld.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqConnectWorld
-         * @static
-         * @param {NFMsg.IReqConnectWorld} message ReqConnectWorld message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqConnectWorld.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqConnectWorld message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqConnectWorld
@@ -14422,50 +10141,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqConnectWorld message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqConnectWorld
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqConnectWorld} ReqConnectWorld
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqConnectWorld.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqConnectWorld message.
-         * @function verify
-         * @memberof NFMsg.ReqConnectWorld
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqConnectWorld.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.world_id != null && message.hasOwnProperty("world_id"))
-                if (!$util.isInteger(message.world_id))
-                    return "world_id: integer expected";
-            if (message.account != null && message.hasOwnProperty("account"))
-                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
-                    return "account: buffer expected";
-            if (message.sender != null && message.hasOwnProperty("sender")) {
-                var error = $root.NFMsg.Ident.verify(message.sender);
-                if (error)
-                    return "sender." + error;
-            }
-            if (message.login_id != null && message.hasOwnProperty("login_id"))
-                if (!$util.isInteger(message.login_id))
-                    return "login_id: integer expected";
-            return null;
         };
 
         return ReqConnectWorld;
@@ -14599,19 +10274,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckConnectWorldResult message, length delimited. Does not implicitly {@link NFMsg.AckConnectWorldResult.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckConnectWorldResult
-         * @static
-         * @param {NFMsg.IAckConnectWorldResult} message AckConnectWorldResult message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckConnectWorldResult.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckConnectWorldResult message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckConnectWorldResult
@@ -14656,59 +10318,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckConnectWorldResult message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckConnectWorldResult
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckConnectWorldResult} AckConnectWorldResult
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckConnectWorldResult.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckConnectWorldResult message.
-         * @function verify
-         * @memberof NFMsg.AckConnectWorldResult
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckConnectWorldResult.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.world_id != null && message.hasOwnProperty("world_id"))
-                if (!$util.isInteger(message.world_id))
-                    return "world_id: integer expected";
-            if (message.sender != null && message.hasOwnProperty("sender")) {
-                var error = $root.NFMsg.Ident.verify(message.sender);
-                if (error)
-                    return "sender." + error;
-            }
-            if (message.login_id != null && message.hasOwnProperty("login_id"))
-                if (!$util.isInteger(message.login_id))
-                    return "login_id: integer expected";
-            if (message.account != null && message.hasOwnProperty("account"))
-                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
-                    return "account: buffer expected";
-            if (message.world_ip != null && message.hasOwnProperty("world_ip"))
-                if (!(message.world_ip && typeof message.world_ip.length === "number" || $util.isString(message.world_ip)))
-                    return "world_ip: buffer expected";
-            if (message.world_port != null && message.hasOwnProperty("world_port"))
-                if (!$util.isInteger(message.world_port))
-                    return "world_port: integer expected";
-            if (message.world_key != null && message.hasOwnProperty("world_key"))
-                if (!(message.world_key && typeof message.world_key.length === "number" || $util.isString(message.world_key)))
-                    return "world_key: buffer expected";
-            return null;
         };
 
         return AckConnectWorldResult;
@@ -14776,19 +10385,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqSelectServer message, length delimited. Does not implicitly {@link NFMsg.ReqSelectServer.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqSelectServer
-         * @static
-         * @param {NFMsg.IReqSelectServer} message ReqSelectServer message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqSelectServer.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqSelectServer message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqSelectServer
@@ -14815,39 +10411,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqSelectServer message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqSelectServer
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqSelectServer} ReqSelectServer
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqSelectServer.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqSelectServer message.
-         * @function verify
-         * @memberof NFMsg.ReqSelectServer
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqSelectServer.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.world_id != null && message.hasOwnProperty("world_id"))
-                if (!$util.isInteger(message.world_id))
-                    return "world_id: integer expected";
-            return null;
         };
 
         return ReqSelectServer;
@@ -14926,19 +10489,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqKickFromWorld message, length delimited. Does not implicitly {@link NFMsg.ReqKickFromWorld.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqKickFromWorld
-         * @static
-         * @param {NFMsg.IReqKickFromWorld} message ReqKickFromWorld message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqKickFromWorld.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqKickFromWorld message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqKickFromWorld
@@ -14968,42 +10518,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqKickFromWorld message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqKickFromWorld
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqKickFromWorld} ReqKickFromWorld
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqKickFromWorld.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqKickFromWorld message.
-         * @function verify
-         * @memberof NFMsg.ReqKickFromWorld
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqKickFromWorld.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.world_id != null && message.hasOwnProperty("world_id"))
-                if (!$util.isInteger(message.world_id))
-                    return "world_id: integer expected";
-            if (message.account != null && message.hasOwnProperty("account"))
-                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
-                    return "account: buffer expected";
-            return null;
         };
 
         return ReqKickFromWorld;
@@ -15082,19 +10596,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqRoleList message, length delimited. Does not implicitly {@link NFMsg.ReqRoleList.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqRoleList
-         * @static
-         * @param {NFMsg.IReqRoleList} message ReqRoleList message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqRoleList.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqRoleList message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqRoleList
@@ -15126,43 +10627,128 @@ $root.NFMsg = (function() {
             return message;
         };
 
+        return ReqRoleList;
+    })();
+
+    NFMsg.ReqRoleData = (function() {
+
         /**
-         * Decodes a ReqRoleList message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqRoleList
+         * Properties of a ReqRoleData.
+         * @memberof NFMsg
+         * @interface IReqRoleData
+         * @property {Uint8Array|null} [noob_name] ReqRoleData noob_name
+         * @property {Uint8Array|null} [account] ReqRoleData account
+         * @property {NFMsg.IIdent|null} [role_id] ReqRoleData role_id
+         */
+
+        /**
+         * Constructs a new ReqRoleData.
+         * @memberof NFMsg
+         * @classdesc Represents a ReqRoleData.
+         * @implements IReqRoleData
+         * @constructor
+         * @param {NFMsg.IReqRoleData=} [properties] Properties to set
+         */
+        function ReqRoleData(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * ReqRoleData noob_name.
+         * @member {Uint8Array} noob_name
+         * @memberof NFMsg.ReqRoleData
+         * @instance
+         */
+        ReqRoleData.prototype.noob_name = $util.newBuffer([]);
+
+        /**
+         * ReqRoleData account.
+         * @member {Uint8Array} account
+         * @memberof NFMsg.ReqRoleData
+         * @instance
+         */
+        ReqRoleData.prototype.account = $util.newBuffer([]);
+
+        /**
+         * ReqRoleData role_id.
+         * @member {NFMsg.IIdent|null|undefined} role_id
+         * @memberof NFMsg.ReqRoleData
+         * @instance
+         */
+        ReqRoleData.prototype.role_id = null;
+
+        /**
+         * Creates a new ReqRoleData instance using the specified properties.
+         * @function create
+         * @memberof NFMsg.ReqRoleData
+         * @static
+         * @param {NFMsg.IReqRoleData=} [properties] Properties to set
+         * @returns {NFMsg.ReqRoleData} ReqRoleData instance
+         */
+        ReqRoleData.create = function create(properties) {
+            return new ReqRoleData(properties);
+        };
+
+        /**
+         * Encodes the specified ReqRoleData message. Does not implicitly {@link NFMsg.ReqRoleData.verify|verify} messages.
+         * @function encode
+         * @memberof NFMsg.ReqRoleData
+         * @static
+         * @param {NFMsg.IReqRoleData} message ReqRoleData message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ReqRoleData.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.noob_name != null && message.hasOwnProperty("noob_name"))
+                writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.noob_name);
+            if (message.account != null && message.hasOwnProperty("account"))
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.account);
+            if (message.role_id != null && message.hasOwnProperty("role_id"))
+                $root.NFMsg.Ident.encode(message.role_id, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Decodes a ReqRoleData message from the specified reader or buffer.
+         * @function decode
+         * @memberof NFMsg.ReqRoleData
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqRoleList} ReqRoleList
+         * @param {number} [length] Message length if known beforehand
+         * @returns {NFMsg.ReqRoleData} ReqRoleData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ReqRoleList.decodeDelimited = function decodeDelimited(reader) {
+        ReqRoleData.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.NFMsg.ReqRoleData();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.noob_name = reader.bytes();
+                    break;
+                case 2:
+                    message.account = reader.bytes();
+                    break;
+                case 3:
+                    message.role_id = $root.NFMsg.Ident.decode(reader, reader.uint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
         };
 
-        /**
-         * Verifies a ReqRoleList message.
-         * @function verify
-         * @memberof NFMsg.ReqRoleList
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqRoleList.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.game_id != null && message.hasOwnProperty("game_id"))
-                if (!$util.isInteger(message.game_id))
-                    return "game_id: integer expected";
-            if (message.account != null && message.hasOwnProperty("account"))
-                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
-                    return "account: buffer expected";
-            return null;
-        };
-
-        return ReqRoleList;
+        return ReqRoleData;
     })();
 
     NFMsg.RoleLiteInfo = (function() {
@@ -15348,19 +10934,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified RoleLiteInfo message, length delimited. Does not implicitly {@link NFMsg.RoleLiteInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.RoleLiteInfo
-         * @static
-         * @param {NFMsg.IRoleLiteInfo} message RoleLiteInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RoleLiteInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a RoleLiteInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.RoleLiteInfo
@@ -15420,74 +10993,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a RoleLiteInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.RoleLiteInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.RoleLiteInfo} RoleLiteInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RoleLiteInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a RoleLiteInfo message.
-         * @function verify
-         * @memberof NFMsg.RoleLiteInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        RoleLiteInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.id != null && message.hasOwnProperty("id")) {
-                var error = $root.NFMsg.Ident.verify(message.id);
-                if (error)
-                    return "id." + error;
-            }
-            if (message.career != null && message.hasOwnProperty("career"))
-                if (!$util.isInteger(message.career))
-                    return "career: integer expected";
-            if (message.sex != null && message.hasOwnProperty("sex"))
-                if (!$util.isInteger(message.sex))
-                    return "sex: integer expected";
-            if (message.race != null && message.hasOwnProperty("race"))
-                if (!$util.isInteger(message.race))
-                    return "race: integer expected";
-            if (message.noob_name != null && message.hasOwnProperty("noob_name"))
-                if (!(message.noob_name && typeof message.noob_name.length === "number" || $util.isString(message.noob_name)))
-                    return "noob_name: buffer expected";
-            if (message.game_id != null && message.hasOwnProperty("game_id"))
-                if (!$util.isInteger(message.game_id))
-                    return "game_id: integer expected";
-            if (message.role_level != null && message.hasOwnProperty("role_level"))
-                if (!$util.isInteger(message.role_level))
-                    return "role_level: integer expected";
-            if (message.delete_time != null && message.hasOwnProperty("delete_time"))
-                if (!$util.isInteger(message.delete_time))
-                    return "delete_time: integer expected";
-            if (message.reg_time != null && message.hasOwnProperty("reg_time"))
-                if (!$util.isInteger(message.reg_time))
-                    return "reg_time: integer expected";
-            if (message.last_offline_time != null && message.hasOwnProperty("last_offline_time"))
-                if (!$util.isInteger(message.last_offline_time))
-                    return "last_offline_time: integer expected";
-            if (message.last_offline_ip != null && message.hasOwnProperty("last_offline_ip"))
-                if (!$util.isInteger(message.last_offline_ip))
-                    return "last_offline_ip: integer expected";
-            if (message.view_record != null && message.hasOwnProperty("view_record"))
-                if (!(message.view_record && typeof message.view_record.length === "number" || $util.isString(message.view_record)))
-                    return "view_record: buffer expected";
-            return null;
         };
 
         return RoleLiteInfo;
@@ -15568,19 +11073,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckRoleLiteInfoList message, length delimited. Does not implicitly {@link NFMsg.AckRoleLiteInfoList.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckRoleLiteInfoList
-         * @static
-         * @param {NFMsg.IAckRoleLiteInfoList} message AckRoleLiteInfoList message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckRoleLiteInfoList.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckRoleLiteInfoList message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckRoleLiteInfoList
@@ -15612,48 +11104,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckRoleLiteInfoList message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckRoleLiteInfoList
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckRoleLiteInfoList} AckRoleLiteInfoList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckRoleLiteInfoList.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckRoleLiteInfoList message.
-         * @function verify
-         * @memberof NFMsg.AckRoleLiteInfoList
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckRoleLiteInfoList.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.char_data != null && message.hasOwnProperty("char_data")) {
-                if (!Array.isArray(message.char_data))
-                    return "char_data: array expected";
-                for (var i = 0; i < message.char_data.length; ++i) {
-                    var error = $root.NFMsg.RoleLiteInfo.verify(message.char_data[i]);
-                    if (error)
-                        return "char_data." + error;
-                }
-            }
-            if (message.account != null && message.hasOwnProperty("account"))
-                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
-                    return "account: buffer expected";
-            return null;
         };
 
         return AckRoleLiteInfoList;
@@ -15776,19 +11226,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqCreateRole message, length delimited. Does not implicitly {@link NFMsg.ReqCreateRole.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqCreateRole
-         * @static
-         * @param {NFMsg.IReqCreateRole} message ReqCreateRole message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqCreateRole.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqCreateRole message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqCreateRole
@@ -15830,54 +11267,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqCreateRole message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqCreateRole
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqCreateRole} ReqCreateRole
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqCreateRole.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqCreateRole message.
-         * @function verify
-         * @memberof NFMsg.ReqCreateRole
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqCreateRole.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.account != null && message.hasOwnProperty("account"))
-                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
-                    return "account: buffer expected";
-            if (message.career != null && message.hasOwnProperty("career"))
-                if (!$util.isInteger(message.career))
-                    return "career: integer expected";
-            if (message.sex != null && message.hasOwnProperty("sex"))
-                if (!$util.isInteger(message.sex))
-                    return "sex: integer expected";
-            if (message.race != null && message.hasOwnProperty("race"))
-                if (!$util.isInteger(message.race))
-                    return "race: integer expected";
-            if (message.noob_name != null && message.hasOwnProperty("noob_name"))
-                if (!(message.noob_name && typeof message.noob_name.length === "number" || $util.isString(message.noob_name)))
-                    return "noob_name: buffer expected";
-            if (message.game_id != null && message.hasOwnProperty("game_id"))
-                if (!$util.isInteger(message.game_id))
-                    return "game_id: integer expected";
-            return null;
         };
 
         return ReqCreateRole;
@@ -15967,19 +11356,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqDeleteRole message, length delimited. Does not implicitly {@link NFMsg.ReqDeleteRole.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqDeleteRole
-         * @static
-         * @param {NFMsg.IReqDeleteRole} message ReqDeleteRole message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqDeleteRole.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqDeleteRole message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqDeleteRole
@@ -16012,45 +11388,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqDeleteRole message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqDeleteRole
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqDeleteRole} ReqDeleteRole
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqDeleteRole.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqDeleteRole message.
-         * @function verify
-         * @memberof NFMsg.ReqDeleteRole
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqDeleteRole.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.account != null && message.hasOwnProperty("account"))
-                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
-                    return "account: buffer expected";
-            if (message.name != null && message.hasOwnProperty("name"))
-                if (!(message.name && typeof message.name.length === "number" || $util.isString(message.name)))
-                    return "name: buffer expected";
-            if (message.game_id != null && message.hasOwnProperty("game_id"))
-                if (!$util.isInteger(message.game_id))
-                    return "game_id: integer expected";
-            return null;
         };
 
         return ReqDeleteRole;
@@ -16140,19 +11477,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqRecoverRole message, length delimited. Does not implicitly {@link NFMsg.ReqRecoverRole.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqRecoverRole
-         * @static
-         * @param {NFMsg.IReqRecoverRole} message ReqRecoverRole message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqRecoverRole.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqRecoverRole message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqRecoverRole
@@ -16185,45 +11509,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqRecoverRole message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqRecoverRole
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqRecoverRole} ReqRecoverRole
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqRecoverRole.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqRecoverRole message.
-         * @function verify
-         * @memberof NFMsg.ReqRecoverRole
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqRecoverRole.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.account != null && message.hasOwnProperty("account"))
-                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
-                    return "account: buffer expected";
-            if (message.name != null && message.hasOwnProperty("name"))
-                if (!(message.name && typeof message.name.length === "number" || $util.isString(message.name)))
-                    return "name: buffer expected";
-            if (message.game_id != null && message.hasOwnProperty("game_id"))
-                if (!$util.isInteger(message.game_id))
-                    return "game_id: integer expected";
-            return null;
         };
 
         return ReqRecoverRole;
@@ -16291,19 +11576,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ServerHeartBeat message, length delimited. Does not implicitly {@link NFMsg.ServerHeartBeat.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ServerHeartBeat
-         * @static
-         * @param {NFMsg.IServerHeartBeat} message ServerHeartBeat message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ServerHeartBeat.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ServerHeartBeat message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ServerHeartBeat
@@ -16330,39 +11602,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ServerHeartBeat message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ServerHeartBeat
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ServerHeartBeat} ServerHeartBeat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ServerHeartBeat.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ServerHeartBeat message.
-         * @function verify
-         * @memberof NFMsg.ServerHeartBeat
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ServerHeartBeat.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.count != null && message.hasOwnProperty("count"))
-                if (!$util.isInteger(message.count))
-                    return "count: integer expected";
-            return null;
         };
 
         return ServerHeartBeat;
@@ -16463,19 +11702,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified RoleOnlineNotify message, length delimited. Does not implicitly {@link NFMsg.RoleOnlineNotify.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.RoleOnlineNotify
-         * @static
-         * @param {NFMsg.IRoleOnlineNotify} message RoleOnlineNotify message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RoleOnlineNotify.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a RoleOnlineNotify message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.RoleOnlineNotify
@@ -16511,52 +11737,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a RoleOnlineNotify message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.RoleOnlineNotify
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.RoleOnlineNotify} RoleOnlineNotify
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RoleOnlineNotify.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a RoleOnlineNotify message.
-         * @function verify
-         * @memberof NFMsg.RoleOnlineNotify
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        RoleOnlineNotify.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.self != null && message.hasOwnProperty("self")) {
-                var error = $root.NFMsg.Ident.verify(message.self);
-                if (error)
-                    return "self." + error;
-            }
-            if (message.guild != null && message.hasOwnProperty("guild")) {
-                var error = $root.NFMsg.Ident.verify(message.guild);
-                if (error)
-                    return "guild." + error;
-            }
-            if (message.game != null && message.hasOwnProperty("game"))
-                if (!$util.isInteger(message.game))
-                    return "game: integer expected";
-            if (message.proxy != null && message.hasOwnProperty("proxy"))
-                if (!$util.isInteger(message.proxy))
-                    return "proxy: integer expected";
-            return null;
         };
 
         return RoleOnlineNotify;
@@ -16657,19 +11837,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified RoleOfflineNotify message, length delimited. Does not implicitly {@link NFMsg.RoleOfflineNotify.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.RoleOfflineNotify
-         * @static
-         * @param {NFMsg.IRoleOfflineNotify} message RoleOfflineNotify message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RoleOfflineNotify.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a RoleOfflineNotify message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.RoleOfflineNotify
@@ -16705,52 +11872,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a RoleOfflineNotify message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.RoleOfflineNotify
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.RoleOfflineNotify} RoleOfflineNotify
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RoleOfflineNotify.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a RoleOfflineNotify message.
-         * @function verify
-         * @memberof NFMsg.RoleOfflineNotify
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        RoleOfflineNotify.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.self != null && message.hasOwnProperty("self")) {
-                var error = $root.NFMsg.Ident.verify(message.self);
-                if (error)
-                    return "self." + error;
-            }
-            if (message.guild != null && message.hasOwnProperty("guild")) {
-                var error = $root.NFMsg.Ident.verify(message.guild);
-                if (error)
-                    return "guild." + error;
-            }
-            if (message.game != null && message.hasOwnProperty("game"))
-                if (!$util.isInteger(message.game))
-                    return "game: integer expected";
-            if (message.proxy != null && message.hasOwnProperty("proxy"))
-                if (!$util.isInteger(message.proxy))
-                    return "proxy: integer expected";
-            return null;
         };
 
         return RoleOfflineNotify;
@@ -16840,19 +11961,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified RoleDataPack message, length delimited. Does not implicitly {@link NFMsg.RoleDataPack.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.RoleDataPack
-         * @static
-         * @param {NFMsg.IRoleDataPack} message RoleDataPack message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        RoleDataPack.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a RoleDataPack message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.RoleDataPack
@@ -16885,51 +11993,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a RoleDataPack message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.RoleDataPack
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.RoleDataPack} RoleDataPack
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        RoleDataPack.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a RoleDataPack message.
-         * @function verify
-         * @memberof NFMsg.RoleDataPack
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        RoleDataPack.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.id != null && message.hasOwnProperty("id")) {
-                var error = $root.NFMsg.Ident.verify(message.id);
-                if (error)
-                    return "id." + error;
-            }
-            if (message.property != null && message.hasOwnProperty("property")) {
-                var error = $root.NFMsg.ObjectPropertyList.verify(message.property);
-                if (error)
-                    return "property." + error;
-            }
-            if (message.record != null && message.hasOwnProperty("record")) {
-                var error = $root.NFMsg.ObjectRecordList.verify(message.record);
-                if (error)
-                    return "record." + error;
-            }
-            return null;
         };
 
         return RoleDataPack;
@@ -17030,19 +12093,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqEnterGameServer message, length delimited. Does not implicitly {@link NFMsg.ReqEnterGameServer.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqEnterGameServer
-         * @static
-         * @param {NFMsg.IReqEnterGameServer} message ReqEnterGameServer message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqEnterGameServer.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqEnterGameServer message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqEnterGameServer
@@ -17078,50 +12128,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqEnterGameServer message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqEnterGameServer
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqEnterGameServer} ReqEnterGameServer
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqEnterGameServer.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqEnterGameServer message.
-         * @function verify
-         * @memberof NFMsg.ReqEnterGameServer
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqEnterGameServer.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.id != null && message.hasOwnProperty("id")) {
-                var error = $root.NFMsg.Ident.verify(message.id);
-                if (error)
-                    return "id." + error;
-            }
-            if (message.account != null && message.hasOwnProperty("account"))
-                if (!(message.account && typeof message.account.length === "number" || $util.isString(message.account)))
-                    return "account: buffer expected";
-            if (message.game_id != null && message.hasOwnProperty("game_id"))
-                if (!$util.isInteger(message.game_id))
-                    return "game_id: integer expected";
-            if (message.name != null && message.hasOwnProperty("name"))
-                if (!(message.name && typeof message.name.length === "number" || $util.isString(message.name)))
-                    return "name: buffer expected";
-            return null;
         };
 
         return ReqEnterGameServer;
@@ -17189,19 +12195,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckEnterGameSuccess message, length delimited. Does not implicitly {@link NFMsg.ReqAckEnterGameSuccess.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckEnterGameSuccess
-         * @static
-         * @param {NFMsg.IReqAckEnterGameSuccess} message ReqAckEnterGameSuccess message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckEnterGameSuccess.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckEnterGameSuccess message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckEnterGameSuccess
@@ -17228,39 +12221,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckEnterGameSuccess message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckEnterGameSuccess
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckEnterGameSuccess} ReqAckEnterGameSuccess
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckEnterGameSuccess.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckEnterGameSuccess message.
-         * @function verify
-         * @memberof NFMsg.ReqAckEnterGameSuccess
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckEnterGameSuccess.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.arg != null && message.hasOwnProperty("arg"))
-                if (!$util.isInteger(message.arg))
-                    return "arg: integer expected";
-            return null;
         };
 
         return ReqAckEnterGameSuccess;
@@ -17328,19 +12288,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqHeartBeat message, length delimited. Does not implicitly {@link NFMsg.ReqHeartBeat.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqHeartBeat
-         * @static
-         * @param {NFMsg.IReqHeartBeat} message ReqHeartBeat message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqHeartBeat.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqHeartBeat message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqHeartBeat
@@ -17367,39 +12314,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqHeartBeat message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqHeartBeat
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqHeartBeat} ReqHeartBeat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqHeartBeat.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqHeartBeat message.
-         * @function verify
-         * @memberof NFMsg.ReqHeartBeat
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqHeartBeat.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.arg != null && message.hasOwnProperty("arg"))
-                if (!$util.isInteger(message.arg))
-                    return "arg: integer expected";
-            return null;
         };
 
         return ReqHeartBeat;
@@ -17467,19 +12381,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqLeaveGameServer message, length delimited. Does not implicitly {@link NFMsg.ReqLeaveGameServer.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqLeaveGameServer
-         * @static
-         * @param {NFMsg.IReqLeaveGameServer} message ReqLeaveGameServer message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqLeaveGameServer.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqLeaveGameServer message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqLeaveGameServer
@@ -17506,39 +12407,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqLeaveGameServer message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqLeaveGameServer
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqLeaveGameServer} ReqLeaveGameServer
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqLeaveGameServer.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqLeaveGameServer message.
-         * @function verify
-         * @memberof NFMsg.ReqLeaveGameServer
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqLeaveGameServer.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.arg != null && message.hasOwnProperty("arg"))
-                if (!$util.isInteger(message.arg))
-                    return "arg: integer expected";
-            return null;
         };
 
         return ReqLeaveGameServer;
@@ -17694,19 +12562,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified PlayerEntryInfo message, length delimited. Does not implicitly {@link NFMsg.PlayerEntryInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.PlayerEntryInfo
-         * @static
-         * @param {NFMsg.IPlayerEntryInfo} message PlayerEntryInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        PlayerEntryInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a PlayerEntryInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.PlayerEntryInfo
@@ -17757,65 +12612,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a PlayerEntryInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.PlayerEntryInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.PlayerEntryInfo} PlayerEntryInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        PlayerEntryInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a PlayerEntryInfo message.
-         * @function verify
-         * @memberof NFMsg.PlayerEntryInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        PlayerEntryInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.object_guid != null && message.hasOwnProperty("object_guid")) {
-                var error = $root.NFMsg.Ident.verify(message.object_guid);
-                if (error)
-                    return "object_guid." + error;
-            }
-            if (message.x != null && message.hasOwnProperty("x"))
-                if (typeof message.x !== "number")
-                    return "x: number expected";
-            if (message.y != null && message.hasOwnProperty("y"))
-                if (typeof message.y !== "number")
-                    return "y: number expected";
-            if (message.z != null && message.hasOwnProperty("z"))
-                if (typeof message.z !== "number")
-                    return "z: number expected";
-            if (message.career_type != null && message.hasOwnProperty("career_type"))
-                if (!$util.isInteger(message.career_type))
-                    return "career_type: integer expected";
-            if (message.player_state != null && message.hasOwnProperty("player_state"))
-                if (!$util.isInteger(message.player_state))
-                    return "player_state: integer expected";
-            if (message.config_id != null && message.hasOwnProperty("config_id"))
-                if (!(message.config_id && typeof message.config_id.length === "number" || $util.isString(message.config_id)))
-                    return "config_id: buffer expected";
-            if (message.scene_id != null && message.hasOwnProperty("scene_id"))
-                if (!$util.isInteger(message.scene_id))
-                    return "scene_id: integer expected";
-            if (message.class_id != null && message.hasOwnProperty("class_id"))
-                if (!(message.class_id && typeof message.class_id.length === "number" || $util.isString(message.class_id)))
-                    return "class_id: buffer expected";
-            return null;
         };
 
         return PlayerEntryInfo;
@@ -17885,19 +12681,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckPlayerEntryList message, length delimited. Does not implicitly {@link NFMsg.AckPlayerEntryList.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckPlayerEntryList
-         * @static
-         * @param {NFMsg.IAckPlayerEntryList} message AckPlayerEntryList message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckPlayerEntryList.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckPlayerEntryList message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckPlayerEntryList
@@ -17926,45 +12709,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckPlayerEntryList message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckPlayerEntryList
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckPlayerEntryList} AckPlayerEntryList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckPlayerEntryList.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckPlayerEntryList message.
-         * @function verify
-         * @memberof NFMsg.AckPlayerEntryList
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckPlayerEntryList.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.object_list != null && message.hasOwnProperty("object_list")) {
-                if (!Array.isArray(message.object_list))
-                    return "object_list: array expected";
-                for (var i = 0; i < message.object_list.length; ++i) {
-                    var error = $root.NFMsg.PlayerEntryInfo.verify(message.object_list[i]);
-                    if (error)
-                        return "object_list." + error;
-                }
-            }
-            return null;
         };
 
         return AckPlayerEntryList;
@@ -18034,19 +12778,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckPlayerLeaveList message, length delimited. Does not implicitly {@link NFMsg.AckPlayerLeaveList.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckPlayerLeaveList
-         * @static
-         * @param {NFMsg.IAckPlayerLeaveList} message AckPlayerLeaveList message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckPlayerLeaveList.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckPlayerLeaveList message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckPlayerLeaveList
@@ -18075,45 +12806,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckPlayerLeaveList message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckPlayerLeaveList
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckPlayerLeaveList} AckPlayerLeaveList
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckPlayerLeaveList.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckPlayerLeaveList message.
-         * @function verify
-         * @memberof NFMsg.AckPlayerLeaveList
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckPlayerLeaveList.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.object_list != null && message.hasOwnProperty("object_list")) {
-                if (!Array.isArray(message.object_list))
-                    return "object_list: array expected";
-                for (var i = 0; i < message.object_list.length; ++i) {
-                    var error = $root.NFMsg.Ident.verify(message.object_list[i]);
-                    if (error)
-                        return "object_list." + error;
-                }
-            }
-            return null;
         };
 
         return AckPlayerLeaveList;
@@ -18227,19 +12919,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckSynData message, length delimited. Does not implicitly {@link NFMsg.ReqAckSynData.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckSynData
-         * @static
-         * @param {NFMsg.IReqAckSynData} message ReqAckSynData message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckSynData.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckSynData message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckSynData
@@ -18280,71 +12959,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckSynData message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckSynData
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckSynData} ReqAckSynData
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckSynData.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckSynData message.
-         * @function verify
-         * @memberof NFMsg.ReqAckSynData
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckSynData.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.syser != null && message.hasOwnProperty("syser")) {
-                var error = $root.NFMsg.Ident.verify(message.syser);
-                if (error)
-                    return "syser." + error;
-            }
-            if (message.object_list != null && message.hasOwnProperty("object_list")) {
-                if (!Array.isArray(message.object_list))
-                    return "object_list: array expected";
-                for (var i = 0; i < message.object_list.length; ++i) {
-                    var error = $root.NFMsg.Ident.verify(message.object_list[i]);
-                    if (error)
-                        return "object_list." + error;
-                }
-            }
-            if (message.data != null && message.hasOwnProperty("data"))
-                if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
-                    return "data: buffer expected";
-            if (message.syn_type != null && message.hasOwnProperty("syn_type"))
-                switch (message.syn_type) {
-                default:
-                    return "syn_type: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                    break;
-                }
-            if (message.msg_id != null && message.hasOwnProperty("msg_id"))
-                switch (message.msg_id) {
-                default:
-                    return "msg_id: enum value expected";
-                case 0:
-                    break;
-                }
-            return null;
         };
 
         /**
@@ -18515,19 +13129,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckPlayerMove message, length delimited. Does not implicitly {@link NFMsg.ReqAckPlayerMove.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckPlayerMove
-         * @static
-         * @param {NFMsg.IReqAckPlayerMove} message ReqAckPlayerMove message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckPlayerMove.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckPlayerMove message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckPlayerMove
@@ -18581,80 +13182,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckPlayerMove message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckPlayerMove
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckPlayerMove} ReqAckPlayerMove
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckPlayerMove.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckPlayerMove message.
-         * @function verify
-         * @memberof NFMsg.ReqAckPlayerMove
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckPlayerMove.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.mover != null && message.hasOwnProperty("mover")) {
-                var error = $root.NFMsg.Ident.verify(message.mover);
-                if (error)
-                    return "mover." + error;
-            }
-            if (message.moveType != null && message.hasOwnProperty("moveType"))
-                if (!$util.isInteger(message.moveType))
-                    return "moveType: integer expected";
-            if (message.speed != null && message.hasOwnProperty("speed"))
-                if (typeof message.speed !== "number")
-                    return "speed: number expected";
-            if (message.time != null && message.hasOwnProperty("time"))
-                if (!$util.isInteger(message.time))
-                    return "time: integer expected";
-            if (message.lastState != null && message.hasOwnProperty("lastState"))
-                if (!$util.isInteger(message.lastState))
-                    return "lastState: integer expected";
-            if (message.target_pos != null && message.hasOwnProperty("target_pos")) {
-                if (!Array.isArray(message.target_pos))
-                    return "target_pos: array expected";
-                for (var i = 0; i < message.target_pos.length; ++i) {
-                    var error = $root.NFMsg.Vector3.verify(message.target_pos[i]);
-                    if (error)
-                        return "target_pos." + error;
-                }
-            }
-            if (message.source_pos != null && message.hasOwnProperty("source_pos")) {
-                if (!Array.isArray(message.source_pos))
-                    return "source_pos: array expected";
-                for (var i = 0; i < message.source_pos.length; ++i) {
-                    var error = $root.NFMsg.Vector3.verify(message.source_pos[i]);
-                    if (error)
-                        return "source_pos." + error;
-                }
-            }
-            if (message.move_direction != null && message.hasOwnProperty("move_direction")) {
-                if (!Array.isArray(message.move_direction))
-                    return "move_direction: array expected";
-                for (var i = 0; i < message.move_direction.length; ++i) {
-                    var error = $root.NFMsg.Vector3.verify(message.move_direction[i]);
-                    if (error)
-                        return "move_direction." + error;
-                }
-            }
-            return null;
         };
 
         return ReqAckPlayerMove;
@@ -18779,19 +13306,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckPlayerChat message, length delimited. Does not implicitly {@link NFMsg.ReqAckPlayerChat.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckPlayerChat
-         * @static
-         * @param {NFMsg.IReqAckPlayerChat} message ReqAckPlayerChat message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckPlayerChat.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckPlayerChat message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckPlayerChat
@@ -18835,71 +13349,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckPlayerChat message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckPlayerChat
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckPlayerChat} ReqAckPlayerChat
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckPlayerChat.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckPlayerChat message.
-         * @function verify
-         * @memberof NFMsg.ReqAckPlayerChat
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckPlayerChat.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.chat_id != null && message.hasOwnProperty("chat_id")) {
-                var error = $root.NFMsg.Ident.verify(message.chat_id);
-                if (error)
-                    return "chat_id." + error;
-            }
-            if (message.chat_type != null && message.hasOwnProperty("chat_type"))
-                switch (message.chat_type) {
-                default:
-                    return "chat_type: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                    break;
-                }
-            if (message.chat_info != null && message.hasOwnProperty("chat_info"))
-                if (!(message.chat_info && typeof message.chat_info.length === "number" || $util.isString(message.chat_info)))
-                    return "chat_info: buffer expected";
-            if (message.chat_name != null && message.hasOwnProperty("chat_name"))
-                if (!(message.chat_name && typeof message.chat_name.length === "number" || $util.isString(message.chat_name)))
-                    return "chat_name: buffer expected";
-            if (message.target_id != null && message.hasOwnProperty("target_id")) {
-                var error = $root.NFMsg.Ident.verify(message.target_id);
-                if (error)
-                    return "target_id." + error;
-            }
-            if (message.Container_data != null && message.hasOwnProperty("Container_data")) {
-                if (!Array.isArray(message.Container_data))
-                    return "Container_data: array expected";
-                for (var i = 0; i < message.Container_data.length; ++i) {
-                    var error = $root.NFMsg.ReqAckPlayerChat.ChatContainer.verify(message.Container_data[i]);
-                    if (error)
-                        return "Container_data." + error;
-                }
-            }
-            return null;
         };
 
         /**
@@ -18993,19 +13442,6 @@ $root.NFMsg = (function() {
             };
 
             /**
-             * Encodes the specified ChatContainer message, length delimited. Does not implicitly {@link NFMsg.ReqAckPlayerChat.ChatContainer.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof NFMsg.ReqAckPlayerChat.ChatContainer
-             * @static
-             * @param {NFMsg.ReqAckPlayerChat.IChatContainer} message ChatContainer message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            ChatContainer.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
              * Decodes a ChatContainer message from the specified reader or buffer.
              * @function decode
              * @memberof NFMsg.ReqAckPlayerChat.ChatContainer
@@ -19035,42 +13471,6 @@ $root.NFMsg = (function() {
                     }
                 }
                 return message;
-            };
-
-            /**
-             * Decodes a ChatContainer message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof NFMsg.ReqAckPlayerChat.ChatContainer
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {NFMsg.ReqAckPlayerChat.ChatContainer} ChatContainer
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            ChatContainer.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a ChatContainer message.
-             * @function verify
-             * @memberof NFMsg.ReqAckPlayerChat.ChatContainer
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            ChatContainer.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.ConTainerType != null && message.hasOwnProperty("ConTainerType"))
-                    if (!$util.isInteger(message.ConTainerType))
-                        return "ConTainerType: integer expected";
-                if (message.data_info != null && message.hasOwnProperty("data_info"))
-                    if (!(message.data_info && typeof message.data_info.length === "number" || $util.isString(message.data_info)))
-                        return "data_info: buffer expected";
-                return null;
             };
 
             /**
@@ -19177,19 +13577,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified EffectData message, length delimited. Does not implicitly {@link NFMsg.EffectData.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.EffectData
-         * @static
-         * @param {NFMsg.IEffectData} message EffectData message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        EffectData.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an EffectData message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.EffectData
@@ -19222,55 +13609,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an EffectData message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.EffectData
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.EffectData} EffectData
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        EffectData.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an EffectData message.
-         * @function verify
-         * @memberof NFMsg.EffectData
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        EffectData.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.effect_ident != null && message.hasOwnProperty("effect_ident")) {
-                var error = $root.NFMsg.Ident.verify(message.effect_ident);
-                if (error)
-                    return "effect_ident." + error;
-            }
-            if (message.effect_value != null && message.hasOwnProperty("effect_value"))
-                if (!$util.isInteger(message.effect_value))
-                    return "effect_value: integer expected";
-            if (message.effect_rlt != null && message.hasOwnProperty("effect_rlt"))
-                switch (message.effect_rlt) {
-                default:
-                    return "effect_rlt: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                    break;
-                }
-            return null;
         };
 
         /**
@@ -19393,19 +13731,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckUseSkill message, length delimited. Does not implicitly {@link NFMsg.ReqAckUseSkill.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckUseSkill
-         * @static
-         * @param {NFMsg.IReqAckUseSkill} message ReqAckUseSkill message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckUseSkill.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckUseSkill message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckUseSkill
@@ -19443,56 +13768,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckUseSkill message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckUseSkill
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckUseSkill} ReqAckUseSkill
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckUseSkill.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckUseSkill message.
-         * @function verify
-         * @memberof NFMsg.ReqAckUseSkill
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckUseSkill.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.user != null && message.hasOwnProperty("user")) {
-                var error = $root.NFMsg.Ident.verify(message.user);
-                if (error)
-                    return "user." + error;
-            }
-            if (message.skill_id != null && message.hasOwnProperty("skill_id"))
-                if (!(message.skill_id && typeof message.skill_id.length === "number" || $util.isString(message.skill_id)))
-                    return "skill_id: buffer expected";
-            if (message.use_index != null && message.hasOwnProperty("use_index"))
-                if (!$util.isInteger(message.use_index))
-                    return "use_index: integer expected";
-            if (message.effect_data != null && message.hasOwnProperty("effect_data")) {
-                if (!Array.isArray(message.effect_data))
-                    return "effect_data: array expected";
-                for (var i = 0; i < message.effect_data.length; ++i) {
-                    var error = $root.NFMsg.EffectData.verify(message.effect_data[i]);
-                    if (error)
-                        return "effect_data." + error;
-                }
-            }
-            return null;
         };
 
         return ReqAckUseSkill;
@@ -19617,19 +13892,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckUseItem message, length delimited. Does not implicitly {@link NFMsg.ReqAckUseItem.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckUseItem
-         * @static
-         * @param {NFMsg.IReqAckUseItem} message ReqAckUseItem message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckUseItem.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckUseItem message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckUseItem
@@ -19673,70 +13935,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckUseItem message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckUseItem
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckUseItem} ReqAckUseItem
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckUseItem.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckUseItem message.
-         * @function verify
-         * @memberof NFMsg.ReqAckUseItem
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckUseItem.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.user != null && message.hasOwnProperty("user")) {
-                var error = $root.NFMsg.Ident.verify(message.user);
-                if (error)
-                    return "user." + error;
-            }
-            if (message.item_guid != null && message.hasOwnProperty("item_guid")) {
-                var error = $root.NFMsg.Ident.verify(message.item_guid);
-                if (error)
-                    return "item_guid." + error;
-            }
-            if (message.effect_data != null && message.hasOwnProperty("effect_data")) {
-                if (!Array.isArray(message.effect_data))
-                    return "effect_data: array expected";
-                for (var i = 0; i < message.effect_data.length; ++i) {
-                    var error = $root.NFMsg.EffectData.verify(message.effect_data[i]);
-                    if (error)
-                        return "effect_data." + error;
-                }
-            }
-            if (message.item != null && message.hasOwnProperty("item")) {
-                var error = $root.NFMsg.ItemStruct.verify(message.item);
-                if (error)
-                    return "item." + error;
-            }
-            if (message.targetid != null && message.hasOwnProperty("targetid")) {
-                var error = $root.NFMsg.Ident.verify(message.targetid);
-                if (error)
-                    return "targetid." + error;
-            }
-            if (message.position != null && message.hasOwnProperty("position")) {
-                var error = $root.NFMsg.Vector3.verify(message.position);
-                if (error)
-                    return "position." + error;
-            }
-            return null;
         };
 
         return ReqAckUseItem;
@@ -19870,19 +14068,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckSwapScene message, length delimited. Does not implicitly {@link NFMsg.ReqAckSwapScene.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckSwapScene
-         * @static
-         * @param {NFMsg.IReqAckSwapScene} message ReqAckSwapScene message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckSwapScene.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckSwapScene message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckSwapScene
@@ -19927,64 +14112,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckSwapScene message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckSwapScene
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckSwapScene} ReqAckSwapScene
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckSwapScene.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckSwapScene message.
-         * @function verify
-         * @memberof NFMsg.ReqAckSwapScene
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckSwapScene.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.transfer_type != null && message.hasOwnProperty("transfer_type"))
-                switch (message.transfer_type) {
-                default:
-                    return "transfer_type: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                    break;
-                }
-            if (message.scene_id != null && message.hasOwnProperty("scene_id"))
-                if (!$util.isInteger(message.scene_id))
-                    return "scene_id: integer expected";
-            if (message.line_id != null && message.hasOwnProperty("line_id"))
-                if (!$util.isInteger(message.line_id))
-                    return "line_id: integer expected";
-            if (message.x != null && message.hasOwnProperty("x"))
-                if (typeof message.x !== "number")
-                    return "x: number expected";
-            if (message.y != null && message.hasOwnProperty("y"))
-                if (typeof message.y !== "number")
-                    return "y: number expected";
-            if (message.z != null && message.hasOwnProperty("z"))
-                if (typeof message.z !== "number")
-                    return "z: number expected";
-            if (message.data != null && message.hasOwnProperty("data"))
-                if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
-                    return "data: buffer expected";
-            return null;
         };
 
         /**
@@ -20070,19 +14197,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckHomeScene message, length delimited. Does not implicitly {@link NFMsg.ReqAckHomeScene.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckHomeScene
-         * @static
-         * @param {NFMsg.IReqAckHomeScene} message ReqAckHomeScene message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckHomeScene.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckHomeScene message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckHomeScene
@@ -20109,39 +14223,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckHomeScene message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckHomeScene
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckHomeScene} ReqAckHomeScene
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckHomeScene.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckHomeScene message.
-         * @function verify
-         * @memberof NFMsg.ReqAckHomeScene
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckHomeScene.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.data != null && message.hasOwnProperty("data"))
-                if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
-                    return "data: buffer expected";
-            return null;
         };
 
         return ReqAckHomeScene;
@@ -20220,19 +14301,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ItemStruct message, length delimited. Does not implicitly {@link NFMsg.ItemStruct.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ItemStruct
-         * @static
-         * @param {NFMsg.IItemStruct} message ItemStruct message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ItemStruct.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an ItemStruct message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ItemStruct
@@ -20262,42 +14330,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an ItemStruct message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ItemStruct
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ItemStruct} ItemStruct
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ItemStruct.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an ItemStruct message.
-         * @function verify
-         * @memberof NFMsg.ItemStruct
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ItemStruct.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.item_id != null && message.hasOwnProperty("item_id"))
-                if (!(message.item_id && typeof message.item_id.length === "number" || $util.isString(message.item_id)))
-                    return "item_id: buffer expected";
-            if (message.item_count != null && message.hasOwnProperty("item_count"))
-                if (!$util.isInteger(message.item_count))
-                    return "item_count: integer expected";
-            return null;
         };
 
         return ItemStruct;
@@ -20376,19 +14408,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified CurrencyStruct message, length delimited. Does not implicitly {@link NFMsg.CurrencyStruct.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.CurrencyStruct
-         * @static
-         * @param {NFMsg.ICurrencyStruct} message CurrencyStruct message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        CurrencyStruct.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a CurrencyStruct message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.CurrencyStruct
@@ -20418,42 +14437,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a CurrencyStruct message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.CurrencyStruct
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.CurrencyStruct} CurrencyStruct
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        CurrencyStruct.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a CurrencyStruct message.
-         * @function verify
-         * @memberof NFMsg.CurrencyStruct
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        CurrencyStruct.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.currency_type != null && message.hasOwnProperty("currency_type"))
-                if (!$util.isInteger(message.currency_type))
-                    return "currency_type: integer expected";
-            if (message.currency_count != null && message.hasOwnProperty("currency_count"))
-                if (!$util.isInteger(message.currency_count))
-                    return "currency_count: integer expected";
-            return null;
         };
 
         return CurrencyStruct;
@@ -20532,19 +14515,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckStartBattle message, length delimited. Does not implicitly {@link NFMsg.ReqAckStartBattle.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckStartBattle
-         * @static
-         * @param {NFMsg.IReqAckStartBattle} message ReqAckStartBattle message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckStartBattle.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckStartBattle message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckStartBattle
@@ -20574,42 +14544,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckStartBattle message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckStartBattle
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckStartBattle} ReqAckStartBattle
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckStartBattle.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckStartBattle message.
-         * @function verify
-         * @memberof NFMsg.ReqAckStartBattle
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckStartBattle.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.gold != null && message.hasOwnProperty("gold"))
-                if (!$util.isInteger(message.gold))
-                    return "gold: integer expected";
-            if (message.diamond != null && message.hasOwnProperty("diamond"))
-                if (!$util.isInteger(message.diamond))
-                    return "diamond: integer expected";
-            return null;
         };
 
         return ReqAckStartBattle;
@@ -20666,19 +14600,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqEndBattle message, length delimited. Does not implicitly {@link NFMsg.ReqEndBattle.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqEndBattle
-         * @static
-         * @param {NFMsg.IReqEndBattle} message ReqEndBattle message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqEndBattle.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqEndBattle message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqEndBattle
@@ -20702,36 +14623,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqEndBattle message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqEndBattle
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqEndBattle} ReqEndBattle
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqEndBattle.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqEndBattle message.
-         * @function verify
-         * @memberof NFMsg.ReqEndBattle
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqEndBattle.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            return null;
         };
 
         return ReqEndBattle;
@@ -20799,19 +14690,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckRelive message, length delimited. Does not implicitly {@link NFMsg.ReqAckRelive.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckRelive
-         * @static
-         * @param {NFMsg.IReqAckRelive} message ReqAckRelive message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckRelive.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckRelive message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckRelive
@@ -20838,39 +14716,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckRelive message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckRelive
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckRelive} ReqAckRelive
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckRelive.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckRelive message.
-         * @function verify
-         * @memberof NFMsg.ReqAckRelive
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckRelive.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.diamond != null && message.hasOwnProperty("diamond"))
-                if (!$util.isInteger(message.diamond))
-                    return "diamond: integer expected";
-            return null;
         };
 
         return ReqAckRelive;
@@ -20995,19 +14840,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckEndBattle message, length delimited. Does not implicitly {@link NFMsg.AckEndBattle.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckEndBattle
-         * @static
-         * @param {NFMsg.IAckEndBattle} message AckEndBattle message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckEndBattle.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckEndBattle message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckEndBattle
@@ -21051,60 +14883,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckEndBattle message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckEndBattle
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckEndBattle} AckEndBattle
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckEndBattle.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckEndBattle message.
-         * @function verify
-         * @memberof NFMsg.AckEndBattle
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckEndBattle.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.win != null && message.hasOwnProperty("win"))
-                if (!$util.isInteger(message.win))
-                    return "win: integer expected";
-            if (message.star != null && message.hasOwnProperty("star"))
-                if (!$util.isInteger(message.star))
-                    return "star: integer expected";
-            if (message.gold != null && message.hasOwnProperty("gold"))
-                if (!$util.isInteger(message.gold))
-                    return "gold: integer expected";
-            if (message.exp != null && message.hasOwnProperty("exp"))
-                if (!$util.isInteger(message.exp))
-                    return "exp: integer expected";
-            if (message.diamond != null && message.hasOwnProperty("diamond"))
-                if (!$util.isInteger(message.diamond))
-                    return "diamond: integer expected";
-            if (message.item_list != null && message.hasOwnProperty("item_list")) {
-                if (!Array.isArray(message.item_list))
-                    return "item_list: array expected";
-                for (var i = 0; i < message.item_list.length; ++i) {
-                    var error = $root.NFMsg.ItemStruct.verify(message.item_list[i]);
-                    if (error)
-                        return "item_list." + error;
-                }
-            }
-            return null;
         };
 
         return AckEndBattle;
@@ -21172,19 +14950,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqPickDropItem message, length delimited. Does not implicitly {@link NFMsg.ReqPickDropItem.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqPickDropItem
-         * @static
-         * @param {NFMsg.IReqPickDropItem} message ReqPickDropItem message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqPickDropItem.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqPickDropItem message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqPickDropItem
@@ -21211,41 +14976,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqPickDropItem message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqPickDropItem
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqPickDropItem} ReqPickDropItem
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqPickDropItem.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqPickDropItem message.
-         * @function verify
-         * @memberof NFMsg.ReqPickDropItem
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqPickDropItem.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.item_guid != null && message.hasOwnProperty("item_guid")) {
-                var error = $root.NFMsg.Ident.verify(message.item_guid);
-                if (error)
-                    return "item_guid." + error;
-            }
-            return null;
         };
 
         return ReqPickDropItem;
@@ -21313,19 +15043,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAcceptTask message, length delimited. Does not implicitly {@link NFMsg.ReqAcceptTask.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAcceptTask
-         * @static
-         * @param {NFMsg.IReqAcceptTask} message ReqAcceptTask message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAcceptTask.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAcceptTask message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAcceptTask
@@ -21352,39 +15069,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAcceptTask message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAcceptTask
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAcceptTask} ReqAcceptTask
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAcceptTask.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAcceptTask message.
-         * @function verify
-         * @memberof NFMsg.ReqAcceptTask
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAcceptTask.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.task_id != null && message.hasOwnProperty("task_id"))
-                if (!(message.task_id && typeof message.task_id.length === "number" || $util.isString(message.task_id)))
-                    return "task_id: buffer expected";
-            return null;
         };
 
         return ReqAcceptTask;
@@ -21452,19 +15136,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqCompeleteTask message, length delimited. Does not implicitly {@link NFMsg.ReqCompeleteTask.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqCompeleteTask
-         * @static
-         * @param {NFMsg.IReqCompeleteTask} message ReqCompeleteTask message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqCompeleteTask.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqCompeleteTask message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqCompeleteTask
@@ -21491,39 +15162,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqCompeleteTask message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqCompeleteTask
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqCompeleteTask} ReqCompeleteTask
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqCompeleteTask.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqCompeleteTask message.
-         * @function verify
-         * @memberof NFMsg.ReqCompeleteTask
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqCompeleteTask.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.task_id != null && message.hasOwnProperty("task_id"))
-                if (!(message.task_id && typeof message.task_id.length === "number" || $util.isString(message.task_id)))
-                    return "task_id: buffer expected";
-            return null;
         };
 
         return ReqCompeleteTask;
@@ -21602,19 +15240,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckJoinActivity message, length delimited. Does not implicitly {@link NFMsg.ReqAckJoinActivity.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckJoinActivity
-         * @static
-         * @param {NFMsg.IReqAckJoinActivity} message ReqAckJoinActivity message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckJoinActivity.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckJoinActivity message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckJoinActivity
@@ -21644,50 +15269,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckJoinActivity message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckJoinActivity
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckJoinActivity} ReqAckJoinActivity
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckJoinActivity.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckJoinActivity message.
-         * @function verify
-         * @memberof NFMsg.ReqAckJoinActivity
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckJoinActivity.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.activity_type != null && message.hasOwnProperty("activity_type"))
-                switch (message.activity_type) {
-                default:
-                    return "activity_type: enum value expected";
-                case 0:
-                    break;
-                }
-            if (message.sub_activity_type != null && message.hasOwnProperty("sub_activity_type"))
-                switch (message.sub_activity_type) {
-                default:
-                    return "sub_activity_type: enum value expected";
-                case 0:
-                    break;
-                }
-            return null;
         };
 
         /**
@@ -21790,19 +15371,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckCreateGuild message, length delimited. Does not implicitly {@link NFMsg.ReqAckCreateGuild.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckCreateGuild
-         * @static
-         * @param {NFMsg.IReqAckCreateGuild} message ReqAckCreateGuild message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckCreateGuild.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckCreateGuild message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckCreateGuild
@@ -21832,44 +15400,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckCreateGuild message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckCreateGuild
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckCreateGuild} ReqAckCreateGuild
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckCreateGuild.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckCreateGuild message.
-         * @function verify
-         * @memberof NFMsg.ReqAckCreateGuild
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckCreateGuild.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.guild_id != null && message.hasOwnProperty("guild_id")) {
-                var error = $root.NFMsg.Ident.verify(message.guild_id);
-                if (error)
-                    return "guild_id." + error;
-            }
-            if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                if (!(message.guild_name && typeof message.guild_name.length === "number" || $util.isString(message.guild_name)))
-                    return "guild_name: buffer expected";
-            return null;
         };
 
         return ReqAckCreateGuild;
@@ -21937,19 +15467,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqSearchGuild message, length delimited. Does not implicitly {@link NFMsg.ReqSearchGuild.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqSearchGuild
-         * @static
-         * @param {NFMsg.IReqSearchGuild} message ReqSearchGuild message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqSearchGuild.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqSearchGuild message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqSearchGuild
@@ -21976,39 +15493,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqSearchGuild message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqSearchGuild
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqSearchGuild} ReqSearchGuild
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqSearchGuild.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqSearchGuild message.
-         * @function verify
-         * @memberof NFMsg.ReqSearchGuild
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqSearchGuild.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                if (!(message.guild_name && typeof message.guild_name.length === "number" || $util.isString(message.guild_name)))
-                    return "guild_name: buffer expected";
-            return null;
         };
 
         return ReqSearchGuild;
@@ -22078,19 +15562,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckSearchGuild message, length delimited. Does not implicitly {@link NFMsg.AckSearchGuild.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckSearchGuild
-         * @static
-         * @param {NFMsg.IAckSearchGuild} message AckSearchGuild message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckSearchGuild.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckSearchGuild message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckSearchGuild
@@ -22119,45 +15590,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckSearchGuild message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckSearchGuild
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckSearchGuild} AckSearchGuild
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckSearchGuild.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckSearchGuild message.
-         * @function verify
-         * @memberof NFMsg.AckSearchGuild
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckSearchGuild.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.guild_list != null && message.hasOwnProperty("guild_list")) {
-                if (!Array.isArray(message.guild_list))
-                    return "guild_list: array expected";
-                for (var i = 0; i < message.guild_list.length; ++i) {
-                    var error = $root.NFMsg.AckSearchGuild.SearchGuildObject.verify(message.guild_list[i]);
-                    if (error)
-                        return "guild_list." + error;
-                }
-            }
-            return null;
         };
 
         AckSearchGuild.SearchGuildObject = (function() {
@@ -22288,19 +15720,6 @@ $root.NFMsg = (function() {
             };
 
             /**
-             * Encodes the specified SearchGuildObject message, length delimited. Does not implicitly {@link NFMsg.AckSearchGuild.SearchGuildObject.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof NFMsg.AckSearchGuild.SearchGuildObject
-             * @static
-             * @param {NFMsg.AckSearchGuild.ISearchGuildObject} message SearchGuildObject message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            SearchGuildObject.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
              * Decodes a SearchGuildObject message from the specified reader or buffer.
              * @function decode
              * @memberof NFMsg.AckSearchGuild.SearchGuildObject
@@ -22345,59 +15764,6 @@ $root.NFMsg = (function() {
                     }
                 }
                 return message;
-            };
-
-            /**
-             * Decodes a SearchGuildObject message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof NFMsg.AckSearchGuild.SearchGuildObject
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {NFMsg.AckSearchGuild.SearchGuildObject} SearchGuildObject
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            SearchGuildObject.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a SearchGuildObject message.
-             * @function verify
-             * @memberof NFMsg.AckSearchGuild.SearchGuildObject
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            SearchGuildObject.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.guild_ID != null && message.hasOwnProperty("guild_ID")) {
-                    var error = $root.NFMsg.Ident.verify(message.guild_ID);
-                    if (error)
-                        return "guild_ID." + error;
-                }
-                if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                    if (!(message.guild_name && typeof message.guild_name.length === "number" || $util.isString(message.guild_name)))
-                        return "guild_name: buffer expected";
-                if (message.guild_icon != null && message.hasOwnProperty("guild_icon"))
-                    if (!(message.guild_icon && typeof message.guild_icon.length === "number" || $util.isString(message.guild_icon)))
-                        return "guild_icon: buffer expected";
-                if (message.guild_member_count != null && message.hasOwnProperty("guild_member_count"))
-                    if (!$util.isInteger(message.guild_member_count))
-                        return "guild_member_count: integer expected";
-                if (message.guild_member_max_count != null && message.hasOwnProperty("guild_member_max_count"))
-                    if (!$util.isInteger(message.guild_member_max_count))
-                        return "guild_member_max_count: integer expected";
-                if (message.guild_honor != null && message.hasOwnProperty("guild_honor"))
-                    if (!$util.isInteger(message.guild_honor))
-                        return "guild_honor: integer expected";
-                if (message.guild_rank != null && message.hasOwnProperty("guild_rank"))
-                    if (!$util.isInteger(message.guild_rank))
-                        return "guild_rank: integer expected";
-                return null;
             };
 
             return SearchGuildObject;
@@ -22479,19 +15845,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckJoinGuild message, length delimited. Does not implicitly {@link NFMsg.ReqAckJoinGuild.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckJoinGuild
-         * @static
-         * @param {NFMsg.IReqAckJoinGuild} message ReqAckJoinGuild message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckJoinGuild.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckJoinGuild message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckJoinGuild
@@ -22521,44 +15874,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckJoinGuild message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckJoinGuild
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckJoinGuild} ReqAckJoinGuild
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckJoinGuild.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckJoinGuild message.
-         * @function verify
-         * @memberof NFMsg.ReqAckJoinGuild
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckJoinGuild.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.guild_id != null && message.hasOwnProperty("guild_id")) {
-                var error = $root.NFMsg.Ident.verify(message.guild_id);
-                if (error)
-                    return "guild_id." + error;
-            }
-            if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                if (!(message.guild_name && typeof message.guild_name.length === "number" || $util.isString(message.guild_name)))
-                    return "guild_name: buffer expected";
-            return null;
         };
 
         return ReqAckJoinGuild;
@@ -22637,19 +15952,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckLeaveGuild message, length delimited. Does not implicitly {@link NFMsg.ReqAckLeaveGuild.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckLeaveGuild
-         * @static
-         * @param {NFMsg.IReqAckLeaveGuild} message ReqAckLeaveGuild message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckLeaveGuild.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckLeaveGuild message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckLeaveGuild
@@ -22679,44 +15981,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckLeaveGuild message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckLeaveGuild
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckLeaveGuild} ReqAckLeaveGuild
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckLeaveGuild.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckLeaveGuild message.
-         * @function verify
-         * @memberof NFMsg.ReqAckLeaveGuild
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckLeaveGuild.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.guild_id != null && message.hasOwnProperty("guild_id")) {
-                var error = $root.NFMsg.Ident.verify(message.guild_id);
-                if (error)
-                    return "guild_id." + error;
-            }
-            if (message.guild_name != null && message.hasOwnProperty("guild_name"))
-                if (!(message.guild_name && typeof message.guild_name.length === "number" || $util.isString(message.guild_name)))
-                    return "guild_name: buffer expected";
-            return null;
         };
 
         return ReqAckLeaveGuild;
@@ -22806,19 +16070,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAckOprGuildMember message, length delimited. Does not implicitly {@link NFMsg.ReqAckOprGuildMember.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAckOprGuildMember
-         * @static
-         * @param {NFMsg.IReqAckOprGuildMember} message ReqAckOprGuildMember message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAckOprGuildMember.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAckOprGuildMember message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAckOprGuildMember
@@ -22851,55 +16102,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAckOprGuildMember message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAckOprGuildMember
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAckOprGuildMember} ReqAckOprGuildMember
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAckOprGuildMember.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAckOprGuildMember message.
-         * @function verify
-         * @memberof NFMsg.ReqAckOprGuildMember
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAckOprGuildMember.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.guild_id != null && message.hasOwnProperty("guild_id")) {
-                var error = $root.NFMsg.Ident.verify(message.guild_id);
-                if (error)
-                    return "guild_id." + error;
-            }
-            if (message.member_id != null && message.hasOwnProperty("member_id")) {
-                var error = $root.NFMsg.Ident.verify(message.member_id);
-                if (error)
-                    return "member_id." + error;
-            }
-            if (message.type != null && message.hasOwnProperty("type"))
-                switch (message.type) {
-                default:
-                    return "type: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                    break;
-                }
-            return null;
         };
 
         /**
@@ -22983,19 +16185,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqEnterGuildEctype message, length delimited. Does not implicitly {@link NFMsg.ReqEnterGuildEctype.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqEnterGuildEctype
-         * @static
-         * @param {NFMsg.IReqEnterGuildEctype} message ReqEnterGuildEctype message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqEnterGuildEctype.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqEnterGuildEctype message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqEnterGuildEctype
@@ -23022,41 +16211,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqEnterGuildEctype message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqEnterGuildEctype
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqEnterGuildEctype} ReqEnterGuildEctype
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqEnterGuildEctype.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqEnterGuildEctype message.
-         * @function verify
-         * @memberof NFMsg.ReqEnterGuildEctype
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqEnterGuildEctype.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.guild_id != null && message.hasOwnProperty("guild_id")) {
-                var error = $root.NFMsg.Ident.verify(message.guild_id);
-                if (error)
-                    return "guild_id." + error;
-            }
-            return null;
         };
 
         return ReqEnterGuildEctype;
@@ -23135,19 +16289,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqSetFightHero message, length delimited. Does not implicitly {@link NFMsg.ReqSetFightHero.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqSetFightHero
-         * @static
-         * @param {NFMsg.IReqSetFightHero} message ReqSetFightHero message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqSetFightHero.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqSetFightHero message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqSetFightHero
@@ -23177,44 +16318,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqSetFightHero message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqSetFightHero
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqSetFightHero} ReqSetFightHero
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqSetFightHero.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqSetFightHero message.
-         * @function verify
-         * @memberof NFMsg.ReqSetFightHero
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqSetFightHero.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.Heroid != null && message.hasOwnProperty("Heroid")) {
-                var error = $root.NFMsg.Ident.verify(message.Heroid);
-                if (error)
-                    return "Heroid." + error;
-            }
-            if (message.Set != null && message.hasOwnProperty("Set"))
-                if (!$util.isInteger(message.Set))
-                    return "Set: integer expected";
-            return null;
         };
 
         return ReqSetFightHero;
@@ -23282,19 +16385,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqSwitchFightHero message, length delimited. Does not implicitly {@link NFMsg.ReqSwitchFightHero.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqSwitchFightHero
-         * @static
-         * @param {NFMsg.IReqSwitchFightHero} message ReqSwitchFightHero message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqSwitchFightHero.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqSwitchFightHero message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqSwitchFightHero
@@ -23321,41 +16411,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqSwitchFightHero message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqSwitchFightHero
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqSwitchFightHero} ReqSwitchFightHero
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqSwitchFightHero.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqSwitchFightHero message.
-         * @function verify
-         * @memberof NFMsg.ReqSwitchFightHero
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqSwitchFightHero.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.Heroid != null && message.hasOwnProperty("Heroid")) {
-                var error = $root.NFMsg.Ident.verify(message.Heroid);
-                if (error)
-                    return "Heroid." + error;
-            }
-            return null;
         };
 
         return ReqSwitchFightHero;
@@ -23434,19 +16489,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqBuyItemFromShop message, length delimited. Does not implicitly {@link NFMsg.ReqBuyItemFromShop.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqBuyItemFromShop
-         * @static
-         * @param {NFMsg.IReqBuyItemFromShop} message ReqBuyItemFromShop message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqBuyItemFromShop.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqBuyItemFromShop message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqBuyItemFromShop
@@ -23476,42 +16518,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqBuyItemFromShop message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqBuyItemFromShop
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqBuyItemFromShop} ReqBuyItemFromShop
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqBuyItemFromShop.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqBuyItemFromShop message.
-         * @function verify
-         * @memberof NFMsg.ReqBuyItemFromShop
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqBuyItemFromShop.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.itemID != null && message.hasOwnProperty("itemID"))
-                if (!(message.itemID && typeof message.itemID.length === "number" || $util.isString(message.itemID)))
-                    return "itemID: buffer expected";
-            if (message.count != null && message.hasOwnProperty("count"))
-                if (!$util.isInteger(message.count))
-                    return "count: integer expected";
-            return null;
         };
 
         return ReqBuyItemFromShop;
@@ -23590,19 +16596,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqAddGambleValue message, length delimited. Does not implicitly {@link NFMsg.ReqAddGambleValue.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqAddGambleValue
-         * @static
-         * @param {NFMsg.IReqAddGambleValue} message ReqAddGambleValue message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqAddGambleValue.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqAddGambleValue message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqAddGambleValue
@@ -23632,42 +16625,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqAddGambleValue message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqAddGambleValue
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqAddGambleValue} ReqAddGambleValue
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqAddGambleValue.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqAddGambleValue message.
-         * @function verify
-         * @memberof NFMsg.ReqAddGambleValue
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqAddGambleValue.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.property != null && message.hasOwnProperty("property"))
-                if (!(message.property && typeof message.property.length === "number" || $util.isString(message.property)))
-                    return "property: buffer expected";
-            if (message.number != null && message.hasOwnProperty("number"))
-                if (!$util.isInteger(message.number))
-                    return "number: integer expected";
-            return null;
         };
 
         return ReqAddGambleValue;
@@ -23757,19 +16714,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqMiningTitle message, length delimited. Does not implicitly {@link NFMsg.ReqMiningTitle.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqMiningTitle
-         * @static
-         * @param {NFMsg.IReqMiningTitle} message ReqMiningTitle message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqMiningTitle.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqMiningTitle message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqMiningTitle
@@ -23802,45 +16746,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqMiningTitle message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqMiningTitle
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqMiningTitle} ReqMiningTitle
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqMiningTitle.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqMiningTitle message.
-         * @function verify
-         * @memberof NFMsg.ReqMiningTitle
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqMiningTitle.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.x != null && message.hasOwnProperty("x"))
-                if (!$util.isInteger(message.x))
-                    return "x: integer expected";
-            if (message.y != null && message.hasOwnProperty("y"))
-                if (!$util.isInteger(message.y))
-                    return "y: integer expected";
-            if (message.opr != null && message.hasOwnProperty("opr"))
-                if (!$util.isInteger(message.opr))
-                    return "opr: integer expected";
-            return null;
         };
 
         return ReqMiningTitle;
@@ -23930,19 +16835,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified TileState message, length delimited. Does not implicitly {@link NFMsg.TileState.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.TileState
-         * @static
-         * @param {NFMsg.ITileState} message TileState message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        TileState.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a TileState message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.TileState
@@ -23975,45 +16867,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a TileState message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.TileState
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.TileState} TileState
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        TileState.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a TileState message.
-         * @function verify
-         * @memberof NFMsg.TileState
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        TileState.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.x != null && message.hasOwnProperty("x"))
-                if (!$util.isInteger(message.x))
-                    return "x: integer expected";
-            if (message.y != null && message.hasOwnProperty("y"))
-                if (!$util.isInteger(message.y))
-                    return "y: integer expected";
-            if (message.opr != null && message.hasOwnProperty("opr"))
-                if (!$util.isInteger(message.opr))
-                    return "opr: integer expected";
-            return null;
         };
 
         return TileState;
@@ -24114,19 +16967,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified TileBuilding message, length delimited. Does not implicitly {@link NFMsg.TileBuilding.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.TileBuilding
-         * @static
-         * @param {NFMsg.ITileBuilding} message TileBuilding message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        TileBuilding.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a TileBuilding message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.TileBuilding
@@ -24162,50 +17002,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a TileBuilding message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.TileBuilding
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.TileBuilding} TileBuilding
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        TileBuilding.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a TileBuilding message.
-         * @function verify
-         * @memberof NFMsg.TileBuilding
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        TileBuilding.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.x != null && message.hasOwnProperty("x"))
-                if (!$util.isInteger(message.x))
-                    return "x: integer expected";
-            if (message.y != null && message.hasOwnProperty("y"))
-                if (!$util.isInteger(message.y))
-                    return "y: integer expected";
-            if (message.configID != null && message.hasOwnProperty("configID"))
-                if (!(message.configID && typeof message.configID.length === "number" || $util.isString(message.configID)))
-                    return "configID: buffer expected";
-            if (message.guid != null && message.hasOwnProperty("guid")) {
-                var error = $root.NFMsg.Ident.verify(message.guid);
-                if (error)
-                    return "guid." + error;
-            }
-            return null;
         };
 
         return TileBuilding;
@@ -24306,19 +17102,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified TileNPC message, length delimited. Does not implicitly {@link NFMsg.TileNPC.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.TileNPC
-         * @static
-         * @param {NFMsg.ITileNPC} message TileNPC message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        TileNPC.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a TileNPC message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.TileNPC
@@ -24354,50 +17137,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a TileNPC message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.TileNPC
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.TileNPC} TileNPC
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        TileNPC.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a TileNPC message.
-         * @function verify
-         * @memberof NFMsg.TileNPC
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        TileNPC.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.x != null && message.hasOwnProperty("x"))
-                if (!$util.isInteger(message.x))
-                    return "x: integer expected";
-            if (message.y != null && message.hasOwnProperty("y"))
-                if (!$util.isInteger(message.y))
-                    return "y: integer expected";
-            if (message.configID != null && message.hasOwnProperty("configID"))
-                if (!(message.configID && typeof message.configID.length === "number" || $util.isString(message.configID)))
-                    return "configID: buffer expected";
-            if (message.guid != null && message.hasOwnProperty("guid")) {
-                var error = $root.NFMsg.Ident.verify(message.guid);
-                if (error)
-                    return "guid." + error;
-            }
-            return null;
         };
 
         return TileNPC;
@@ -24493,19 +17232,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckMiningTitle message, length delimited. Does not implicitly {@link NFMsg.AckMiningTitle.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckMiningTitle
-         * @static
-         * @param {NFMsg.IAckMiningTitle} message AckMiningTitle message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckMiningTitle.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckMiningTitle message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckMiningTitle
@@ -24544,63 +17270,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckMiningTitle message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckMiningTitle
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckMiningTitle} AckMiningTitle
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckMiningTitle.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckMiningTitle message.
-         * @function verify
-         * @memberof NFMsg.AckMiningTitle
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckMiningTitle.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.tile != null && message.hasOwnProperty("tile")) {
-                if (!Array.isArray(message.tile))
-                    return "tile: array expected";
-                for (var i = 0; i < message.tile.length; ++i) {
-                    var error = $root.NFMsg.TileState.verify(message.tile[i]);
-                    if (error)
-                        return "tile." + error;
-                }
-            }
-            if (message.building != null && message.hasOwnProperty("building")) {
-                if (!Array.isArray(message.building))
-                    return "building: array expected";
-                for (var i = 0; i < message.building.length; ++i) {
-                    var error = $root.NFMsg.TileBuilding.verify(message.building[i]);
-                    if (error)
-                        return "building." + error;
-                }
-            }
-            if (message.npc != null && message.hasOwnProperty("npc")) {
-                if (!Array.isArray(message.npc))
-                    return "npc: array expected";
-                for (var i = 0; i < message.npc.length; ++i) {
-                    var error = $root.NFMsg.TileNPC.verify(message.npc[i]);
-                    if (error)
-                        return "npc." + error;
-                }
-            }
-            return null;
         };
 
         return AckMiningTitle;
@@ -24668,19 +17337,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqSearchOppnent message, length delimited. Does not implicitly {@link NFMsg.ReqSearchOppnent.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqSearchOppnent
-         * @static
-         * @param {NFMsg.IReqSearchOppnent} message ReqSearchOppnent message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqSearchOppnent.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqSearchOppnent message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqSearchOppnent
@@ -24707,39 +17363,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqSearchOppnent message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqSearchOppnent
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqSearchOppnent} ReqSearchOppnent
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqSearchOppnent.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqSearchOppnent message.
-         * @function verify
-         * @memberof NFMsg.ReqSearchOppnent
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqSearchOppnent.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.self_scene != null && message.hasOwnProperty("self_scene"))
-                if (!$util.isInteger(message.self_scene))
-                    return "self_scene: integer expected";
-            return null;
         };
 
         return ReqSearchOppnent;
@@ -25027,19 +17650,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckSearchOppnent message, length delimited. Does not implicitly {@link NFMsg.AckSearchOppnent.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckSearchOppnent
-         * @static
-         * @param {NFMsg.IAckSearchOppnent} message AckSearchOppnent message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckSearchOppnent.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckSearchOppnent message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckSearchOppnent
@@ -25126,115 +17736,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckSearchOppnent message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckSearchOppnent
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckSearchOppnent} AckSearchOppnent
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckSearchOppnent.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckSearchOppnent message.
-         * @function verify
-         * @memberof NFMsg.AckSearchOppnent
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckSearchOppnent.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.scene_id != null && message.hasOwnProperty("scene_id"))
-                if (!$util.isInteger(message.scene_id))
-                    return "scene_id: integer expected";
-            if (message.gold != null && message.hasOwnProperty("gold"))
-                if (!$util.isInteger(message.gold))
-                    return "gold: integer expected";
-            if (message.diamond != null && message.hasOwnProperty("diamond"))
-                if (!$util.isInteger(message.diamond))
-                    return "diamond: integer expected";
-            if (message.level != null && message.hasOwnProperty("level"))
-                if (!$util.isInteger(message.level))
-                    return "level: integer expected";
-            if (message.cup != null && message.hasOwnProperty("cup"))
-                if (!$util.isInteger(message.cup))
-                    return "cup: integer expected";
-            if (message.name != null && message.hasOwnProperty("name"))
-                if (!(message.name && typeof message.name.length === "number" || $util.isString(message.name)))
-                    return "name: buffer expected";
-            if (message.head != null && message.hasOwnProperty("head"))
-                if (!(message.head && typeof message.head.length === "number" || $util.isString(message.head)))
-                    return "head: buffer expected";
-            if (message.hero_cnf1 != null && message.hasOwnProperty("hero_cnf1"))
-                if (!(message.hero_cnf1 && typeof message.hero_cnf1.length === "number" || $util.isString(message.hero_cnf1)))
-                    return "hero_cnf1: buffer expected";
-            if (message.hero_star1 != null && message.hasOwnProperty("hero_star1"))
-                if (!$util.isInteger(message.hero_star1))
-                    return "hero_star1: integer expected";
-            if (message.hero_cnf2 != null && message.hasOwnProperty("hero_cnf2"))
-                if (!(message.hero_cnf2 && typeof message.hero_cnf2.length === "number" || $util.isString(message.hero_cnf2)))
-                    return "hero_cnf2: buffer expected";
-            if (message.hero_star2 != null && message.hasOwnProperty("hero_star2"))
-                if (!$util.isInteger(message.hero_star2))
-                    return "hero_star2: integer expected";
-            if (message.hero_cnf3 != null && message.hasOwnProperty("hero_cnf3"))
-                if (!(message.hero_cnf3 && typeof message.hero_cnf3.length === "number" || $util.isString(message.hero_cnf3)))
-                    return "hero_cnf3: buffer expected";
-            if (message.hero_star3 != null && message.hasOwnProperty("hero_star3"))
-                if (!$util.isInteger(message.hero_star3))
-                    return "hero_star3: integer expected";
-            if (message.hero_id1 != null && message.hasOwnProperty("hero_id1")) {
-                var error = $root.NFMsg.Ident.verify(message.hero_id1);
-                if (error)
-                    return "hero_id1." + error;
-            }
-            if (message.hero_id2 != null && message.hasOwnProperty("hero_id2")) {
-                var error = $root.NFMsg.Ident.verify(message.hero_id2);
-                if (error)
-                    return "hero_id2." + error;
-            }
-            if (message.hero_id3 != null && message.hasOwnProperty("hero_id3")) {
-                var error = $root.NFMsg.Ident.verify(message.hero_id3);
-                if (error)
-                    return "hero_id3." + error;
-            }
-            if (message.hero_pos1 != null && message.hasOwnProperty("hero_pos1")) {
-                var error = $root.NFMsg.Vector3.verify(message.hero_pos1);
-                if (error)
-                    return "hero_pos1." + error;
-            }
-            if (message.hero_pos2 != null && message.hasOwnProperty("hero_pos2")) {
-                var error = $root.NFMsg.Vector3.verify(message.hero_pos2);
-                if (error)
-                    return "hero_pos2." + error;
-            }
-            if (message.hero_pos3 != null && message.hasOwnProperty("hero_pos3")) {
-                var error = $root.NFMsg.Vector3.verify(message.hero_pos3);
-                if (error)
-                    return "hero_pos3." + error;
-            }
-            if (message.title != null && message.hasOwnProperty("title")) {
-                var error = $root.NFMsg.AckMiningTitle.verify(message.title);
-                if (error)
-                    return "title." + error;
-            }
-            if (message.opponent != null && message.hasOwnProperty("opponent")) {
-                var error = $root.NFMsg.Ident.verify(message.opponent);
-                if (error)
-                    return "opponent." + error;
-            }
-            return null;
         };
 
         return AckSearchOppnent;
@@ -25328,19 +17829,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqSendMail message, length delimited. Does not implicitly {@link NFMsg.ReqSendMail.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqSendMail
-         * @static
-         * @param {NFMsg.IReqSendMail} message ReqSendMail message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqSendMail.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqSendMail message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqSendMail
@@ -25377,59 +17865,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqSendMail message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqSendMail
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqSendMail} ReqSendMail
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqSendMail.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqSendMail message.
-         * @function verify
-         * @memberof NFMsg.ReqSendMail
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqSendMail.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.reciever != null && message.hasOwnProperty("reciever")) {
-                var error = $root.NFMsg.Ident.verify(message.reciever);
-                if (error)
-                    return "reciever." + error;
-            }
-            if (message.item_list != null && message.hasOwnProperty("item_list")) {
-                if (!Array.isArray(message.item_list))
-                    return "item_list: array expected";
-                for (var i = 0; i < message.item_list.length; ++i) {
-                    var error = $root.NFMsg.ItemStruct.verify(message.item_list[i]);
-                    if (error)
-                        return "item_list." + error;
-                }
-            }
-            if (message.currency_list != null && message.hasOwnProperty("currency_list")) {
-                if (!Array.isArray(message.currency_list))
-                    return "currency_list: array expected";
-                for (var i = 0; i < message.currency_list.length; ++i) {
-                    var error = $root.NFMsg.CurrencyStruct.verify(message.currency_list[i]);
-                    if (error)
-                        return "currency_list." + error;
-                }
-            }
-            return null;
         };
 
         return ReqSendMail;
@@ -25563,19 +17998,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqSwitchServer message, length delimited. Does not implicitly {@link NFMsg.ReqSwitchServer.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqSwitchServer
-         * @static
-         * @param {NFMsg.IReqSwitchServer} message ReqSwitchServer message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqSwitchServer.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqSwitchServer message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqSwitchServer
@@ -25620,61 +18042,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqSwitchServer message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqSwitchServer
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqSwitchServer} ReqSwitchServer
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqSwitchServer.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqSwitchServer message.
-         * @function verify
-         * @memberof NFMsg.ReqSwitchServer
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqSwitchServer.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.selfid != null && message.hasOwnProperty("selfid")) {
-                var error = $root.NFMsg.Ident.verify(message.selfid);
-                if (error)
-                    return "selfid." + error;
-            }
-            if (message.self_serverid != null && message.hasOwnProperty("self_serverid"))
-                if (!$util.isInteger(message.self_serverid) && !(message.self_serverid && $util.isInteger(message.self_serverid.low) && $util.isInteger(message.self_serverid.high)))
-                    return "self_serverid: integer|Long expected";
-            if (message.target_serverid != null && message.hasOwnProperty("target_serverid"))
-                if (!$util.isInteger(message.target_serverid) && !(message.target_serverid && $util.isInteger(message.target_serverid.low) && $util.isInteger(message.target_serverid.high)))
-                    return "target_serverid: integer|Long expected";
-            if (message.gate_serverid != null && message.hasOwnProperty("gate_serverid"))
-                if (!$util.isInteger(message.gate_serverid) && !(message.gate_serverid && $util.isInteger(message.gate_serverid.low) && $util.isInteger(message.gate_serverid.high)))
-                    return "gate_serverid: integer|Long expected";
-            if (message.SceneID != null && message.hasOwnProperty("SceneID"))
-                if (!$util.isInteger(message.SceneID) && !(message.SceneID && $util.isInteger(message.SceneID.low) && $util.isInteger(message.SceneID.high)))
-                    return "SceneID: integer|Long expected";
-            if (message.client_id != null && message.hasOwnProperty("client_id")) {
-                var error = $root.NFMsg.Ident.verify(message.client_id);
-                if (error)
-                    return "client_id." + error;
-            }
-            if (message.groupID != null && message.hasOwnProperty("groupID"))
-                if (!$util.isInteger(message.groupID) && !(message.groupID && $util.isInteger(message.groupID.low) && $util.isInteger(message.groupID.high)))
-                    return "groupID: integer|Long expected";
-            return null;
         };
 
         return ReqSwitchServer;
@@ -25775,19 +18142,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckSwitchServer message, length delimited. Does not implicitly {@link NFMsg.AckSwitchServer.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckSwitchServer
-         * @static
-         * @param {NFMsg.IAckSwitchServer} message AckSwitchServer message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckSwitchServer.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckSwitchServer message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckSwitchServer
@@ -25823,50 +18177,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckSwitchServer message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckSwitchServer
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckSwitchServer} AckSwitchServer
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckSwitchServer.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckSwitchServer message.
-         * @function verify
-         * @memberof NFMsg.AckSwitchServer
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckSwitchServer.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.selfid != null && message.hasOwnProperty("selfid")) {
-                var error = $root.NFMsg.Ident.verify(message.selfid);
-                if (error)
-                    return "selfid." + error;
-            }
-            if (message.self_serverid != null && message.hasOwnProperty("self_serverid"))
-                if (!$util.isInteger(message.self_serverid) && !(message.self_serverid && $util.isInteger(message.self_serverid.low) && $util.isInteger(message.self_serverid.high)))
-                    return "self_serverid: integer|Long expected";
-            if (message.target_serverid != null && message.hasOwnProperty("target_serverid"))
-                if (!$util.isInteger(message.target_serverid) && !(message.target_serverid && $util.isInteger(message.target_serverid.low) && $util.isInteger(message.target_serverid.high)))
-                    return "target_serverid: integer|Long expected";
-            if (message.gate_serverid != null && message.hasOwnProperty("gate_serverid"))
-                if (!$util.isInteger(message.gate_serverid) && !(message.gate_serverid && $util.isInteger(message.gate_serverid.low) && $util.isInteger(message.gate_serverid.high)))
-                    return "gate_serverid: integer|Long expected";
-            return null;
         };
 
         return AckSwitchServer;
@@ -26037,19 +18347,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified PVPRoomInfo message, length delimited. Does not implicitly {@link NFMsg.PVPRoomInfo.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.PVPRoomInfo
-         * @static
-         * @param {NFMsg.IPVPRoomInfo} message PVPRoomInfo message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        PVPRoomInfo.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a PVPRoomInfo message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.PVPRoomInfo
@@ -26107,80 +18404,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a PVPRoomInfo message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.PVPRoomInfo
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.PVPRoomInfo} PVPRoomInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        PVPRoomInfo.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a PVPRoomInfo message.
-         * @function verify
-         * @memberof NFMsg.PVPRoomInfo
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        PVPRoomInfo.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.nCellStatus != null && message.hasOwnProperty("nCellStatus"))
-                if (!$util.isInteger(message.nCellStatus))
-                    return "nCellStatus: integer expected";
-            if (message.RoomID != null && message.hasOwnProperty("RoomID")) {
-                var error = $root.NFMsg.Ident.verify(message.RoomID);
-                if (error)
-                    return "RoomID." + error;
-            }
-            if (message.nPVPMode != null && message.hasOwnProperty("nPVPMode"))
-                if (!$util.isInteger(message.nPVPMode))
-                    return "nPVPMode: integer expected";
-            if (message.nPVPGrade != null && message.hasOwnProperty("nPVPGrade"))
-                if (!$util.isInteger(message.nPVPGrade))
-                    return "nPVPGrade: integer expected";
-            if (message.MaxPalyer != null && message.hasOwnProperty("MaxPalyer"))
-                if (!$util.isInteger(message.MaxPalyer))
-                    return "MaxPalyer: integer expected";
-            if (message.xRedPlayer != null && message.hasOwnProperty("xRedPlayer")) {
-                if (!Array.isArray(message.xRedPlayer))
-                    return "xRedPlayer: array expected";
-                for (var i = 0; i < message.xRedPlayer.length; ++i) {
-                    var error = $root.NFMsg.Ident.verify(message.xRedPlayer[i]);
-                    if (error)
-                        return "xRedPlayer." + error;
-                }
-            }
-            if (message.xBluePlayer != null && message.hasOwnProperty("xBluePlayer")) {
-                if (!Array.isArray(message.xBluePlayer))
-                    return "xBluePlayer: array expected";
-                for (var i = 0; i < message.xBluePlayer.length; ++i) {
-                    var error = $root.NFMsg.Ident.verify(message.xBluePlayer[i]);
-                    if (error)
-                        return "xBluePlayer." + error;
-                }
-            }
-            if (message.serverid != null && message.hasOwnProperty("serverid"))
-                if (!$util.isInteger(message.serverid) && !(message.serverid && $util.isInteger(message.serverid.low) && $util.isInteger(message.serverid.high)))
-                    return "serverid: integer|Long expected";
-            if (message.SceneID != null && message.hasOwnProperty("SceneID"))
-                if (!$util.isInteger(message.SceneID) && !(message.SceneID && $util.isInteger(message.SceneID.low) && $util.isInteger(message.SceneID.high)))
-                    return "SceneID: integer|Long expected";
-            if (message.groupID != null && message.hasOwnProperty("groupID"))
-                if (!$util.isInteger(message.groupID) && !(message.groupID && $util.isInteger(message.groupID.low) && $util.isInteger(message.groupID.high)))
-                    return "groupID: integer|Long expected";
-            return null;
         };
 
         return PVPRoomInfo;
@@ -26292,19 +18515,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqPVPApplyMatch message, length delimited. Does not implicitly {@link NFMsg.ReqPVPApplyMatch.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqPVPApplyMatch
-         * @static
-         * @param {NFMsg.IReqPVPApplyMatch} message ReqPVPApplyMatch message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqPVPApplyMatch.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqPVPApplyMatch message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqPVPApplyMatch
@@ -26343,55 +18553,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqPVPApplyMatch message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqPVPApplyMatch
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqPVPApplyMatch} ReqPVPApplyMatch
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqPVPApplyMatch.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqPVPApplyMatch message.
-         * @function verify
-         * @memberof NFMsg.ReqPVPApplyMatch
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqPVPApplyMatch.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.self_id != null && message.hasOwnProperty("self_id")) {
-                var error = $root.NFMsg.Ident.verify(message.self_id);
-                if (error)
-                    return "self_id." + error;
-            }
-            if (message.nPVPMode != null && message.hasOwnProperty("nPVPMode"))
-                if (!$util.isInteger(message.nPVPMode))
-                    return "nPVPMode: integer expected";
-            if (message.score != null && message.hasOwnProperty("score"))
-                if (!$util.isInteger(message.score) && !(message.score && $util.isInteger(message.score.low) && $util.isInteger(message.score.high)))
-                    return "score: integer|Long expected";
-            if (message.ApplyType != null && message.hasOwnProperty("ApplyType"))
-                if (!$util.isInteger(message.ApplyType))
-                    return "ApplyType: integer expected";
-            if (message.team_id != null && message.hasOwnProperty("team_id")) {
-                var error = $root.NFMsg.Ident.verify(message.team_id);
-                if (error)
-                    return "team_id." + error;
-            }
-            return null;
         };
 
         /**
@@ -26506,19 +18667,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckPVPApplyMatch message, length delimited. Does not implicitly {@link NFMsg.AckPVPApplyMatch.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckPVPApplyMatch
-         * @static
-         * @param {NFMsg.IAckPVPApplyMatch} message AckPVPApplyMatch message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckPVPApplyMatch.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckPVPApplyMatch message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckPVPApplyMatch
@@ -26554,52 +18702,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckPVPApplyMatch message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckPVPApplyMatch
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckPVPApplyMatch} AckPVPApplyMatch
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckPVPApplyMatch.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckPVPApplyMatch message.
-         * @function verify
-         * @memberof NFMsg.AckPVPApplyMatch
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckPVPApplyMatch.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.self_id != null && message.hasOwnProperty("self_id")) {
-                var error = $root.NFMsg.Ident.verify(message.self_id);
-                if (error)
-                    return "self_id." + error;
-            }
-            if (message.xRoomInfo != null && message.hasOwnProperty("xRoomInfo")) {
-                var error = $root.NFMsg.PVPRoomInfo.verify(message.xRoomInfo);
-                if (error)
-                    return "xRoomInfo." + error;
-            }
-            if (message.ApplyType != null && message.hasOwnProperty("ApplyType"))
-                if (!$util.isInteger(message.ApplyType))
-                    return "ApplyType: integer expected";
-            if (message.nResult != null && message.hasOwnProperty("nResult"))
-                if (!$util.isInteger(message.nResult))
-                    return "nResult: integer expected";
-            return null;
         };
 
         return AckPVPApplyMatch;
@@ -26678,19 +18780,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified ReqCreatePVPEctype message, length delimited. Does not implicitly {@link NFMsg.ReqCreatePVPEctype.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.ReqCreatePVPEctype
-         * @static
-         * @param {NFMsg.IReqCreatePVPEctype} message ReqCreatePVPEctype message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        ReqCreatePVPEctype.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a ReqCreatePVPEctype message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.ReqCreatePVPEctype
@@ -26720,46 +18809,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a ReqCreatePVPEctype message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.ReqCreatePVPEctype
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.ReqCreatePVPEctype} ReqCreatePVPEctype
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        ReqCreatePVPEctype.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a ReqCreatePVPEctype message.
-         * @function verify
-         * @memberof NFMsg.ReqCreatePVPEctype
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        ReqCreatePVPEctype.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.self_id != null && message.hasOwnProperty("self_id")) {
-                var error = $root.NFMsg.Ident.verify(message.self_id);
-                if (error)
-                    return "self_id." + error;
-            }
-            if (message.xRoomInfo != null && message.hasOwnProperty("xRoomInfo")) {
-                var error = $root.NFMsg.PVPRoomInfo.verify(message.xRoomInfo);
-                if (error)
-                    return "xRoomInfo." + error;
-            }
-            return null;
         };
 
         return ReqCreatePVPEctype;
@@ -26849,19 +18898,6 @@ $root.NFMsg = (function() {
         };
 
         /**
-         * Encodes the specified AckCreatePVPEctype message, length delimited. Does not implicitly {@link NFMsg.AckCreatePVPEctype.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsg.AckCreatePVPEctype
-         * @static
-         * @param {NFMsg.IAckCreatePVPEctype} message AckCreatePVPEctype message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AckCreatePVPEctype.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an AckCreatePVPEctype message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsg.AckCreatePVPEctype
@@ -26894,49 +18930,6 @@ $root.NFMsg = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an AckCreatePVPEctype message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsg.AckCreatePVPEctype
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsg.AckCreatePVPEctype} AckCreatePVPEctype
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AckCreatePVPEctype.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an AckCreatePVPEctype message.
-         * @function verify
-         * @memberof NFMsg.AckCreatePVPEctype
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AckCreatePVPEctype.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.self_id != null && message.hasOwnProperty("self_id")) {
-                var error = $root.NFMsg.Ident.verify(message.self_id);
-                if (error)
-                    return "self_id." + error;
-            }
-            if (message.xRoomInfo != null && message.hasOwnProperty("xRoomInfo")) {
-                var error = $root.NFMsg.PVPRoomInfo.verify(message.xRoomInfo);
-                if (error)
-                    return "xRoomInfo." + error;
-            }
-            if (message.ApplyType != null && message.hasOwnProperty("ApplyType"))
-                if (!$util.isInteger(message.ApplyType))
-                    return "ApplyType: integer expected";
-            return null;
         };
 
         return AckCreatePVPEctype;
@@ -27027,19 +19020,6 @@ $root.NFMsgBase = (function() {
         };
 
         /**
-         * Encodes the specified Ident message, length delimited. Does not implicitly {@link NFMsgBase.Ident.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsgBase.Ident
-         * @static
-         * @param {NFMsgBase.IIdent} message Ident message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        Ident.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes an Ident message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsgBase.Ident
@@ -27069,42 +19049,6 @@ $root.NFMsgBase = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes an Ident message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsgBase.Ident
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsgBase.Ident} Ident
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        Ident.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an Ident message.
-         * @function verify
-         * @memberof NFMsgBase.Ident
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        Ident.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.svrid != null && message.hasOwnProperty("svrid"))
-                if (!$util.isInteger(message.svrid) && !(message.svrid && $util.isInteger(message.svrid.low) && $util.isInteger(message.svrid.high)))
-                    return "svrid: integer|Long expected";
-            if (message.index != null && message.hasOwnProperty("index"))
-                if (!$util.isInteger(message.index) && !(message.index && $util.isInteger(message.index.low) && $util.isInteger(message.index.high)))
-                    return "index: integer|Long expected";
-            return null;
         };
 
         return Ident;
@@ -27207,19 +19151,6 @@ $root.NFMsgBase = (function() {
         };
 
         /**
-         * Encodes the specified MsgBase message, length delimited. Does not implicitly {@link NFMsgBase.MsgBase.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof NFMsgBase.MsgBase
-         * @static
-         * @param {NFMsgBase.IMsgBase} message MsgBase message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        MsgBase.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
          * Decodes a MsgBase message from the specified reader or buffer.
          * @function decode
          * @memberof NFMsgBase.MsgBase
@@ -27257,58 +19188,6 @@ $root.NFMsgBase = (function() {
                 }
             }
             return message;
-        };
-
-        /**
-         * Decodes a MsgBase message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof NFMsgBase.MsgBase
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {NFMsgBase.MsgBase} MsgBase
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        MsgBase.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a MsgBase message.
-         * @function verify
-         * @memberof NFMsgBase.MsgBase
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        MsgBase.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.player_id != null && message.hasOwnProperty("player_id")) {
-                var error = $root.NFMsgBase.Ident.verify(message.player_id);
-                if (error)
-                    return "player_id." + error;
-            }
-            if (message.msg_data != null && message.hasOwnProperty("msg_data"))
-                if (!(message.msg_data && typeof message.msg_data.length === "number" || $util.isString(message.msg_data)))
-                    return "msg_data: buffer expected";
-            if (message.player_Client_list != null && message.hasOwnProperty("player_Client_list")) {
-                if (!Array.isArray(message.player_Client_list))
-                    return "player_Client_list: array expected";
-                for (var i = 0; i < message.player_Client_list.length; ++i) {
-                    var error = $root.NFMsgBase.Ident.verify(message.player_Client_list[i]);
-                    if (error)
-                        return "player_Client_list." + error;
-                }
-            }
-            if (message.hash_ident != null && message.hasOwnProperty("hash_ident")) {
-                var error = $root.NFMsgBase.Ident.verify(message.hash_ident);
-                if (error)
-                    return "hash_ident." + error;
-            }
-            return null;
         };
 
         return MsgBase;

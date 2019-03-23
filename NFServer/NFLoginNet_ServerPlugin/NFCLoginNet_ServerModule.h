@@ -71,9 +71,10 @@ protected:
     void OnClientDisconnect(const NFSOCK nAddress);
     void OnClientConnected(const NFSOCK nAddress);
 
+	void OnClientDisconnectWS(websocketpp::connection_hdl nAddress);
+
     void OnLoginProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
-	void OnSelectWorldProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const int nLen);
-	void OnWSLoginProcess(websocketpp::connection_hdl, const int nMsgID, const char* msg, const int nLen);
+	void OnSelectWorldProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char * msg, const uint32_t nLen);
     void OnSelectWorldProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
     void OnViewWorldProcess(const NFSOCK nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen);
 
@@ -86,7 +87,7 @@ protected:
 protected:
     void SynWorldToClient(const NFSOCK nFD);
 
-	void OnViewWorldProcessWS(websocketpp::connection_hdl hdl, const int nMsgID, const char * msg, const int nLen);
+	void OnViewWorldProcessWS(websocketpp::connection_hdl hdl, const int nMsgID, const char * msg, const uint32_t nLen);
 
     NFMapEx<NFGUID, NFSOCK> mxClientIdent;
 	NFMapEx<NFGUID, websocketpp::connection_hdl> mxClientIdentWS;

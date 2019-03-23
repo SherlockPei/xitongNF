@@ -188,7 +188,7 @@ class NFCWS : public NFIWS
 public:
     template<typename BaseType>
     NFCWS(BaseType* pBaseType,
-          void (BaseType::*handleRecieve)(websocketpp::connection_hdl, const int ,const char *, const int nLen),
+          void (BaseType::*handleRecieve)(websocketpp::connection_hdl, const int ,const char *, const uint32_t nLen),
           void (BaseType::*handleEvent)(websocketpp::connection_hdl, NF_WS_EVENT)
     )
     {

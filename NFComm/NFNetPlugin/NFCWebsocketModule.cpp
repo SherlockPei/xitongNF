@@ -103,7 +103,7 @@ bool NFCWebsocketModule::SendMsgToClient(const int nMsgID, const char * msg, con
 
 
 void NFCWebsocketModule::OnWebsocketMessage(websocketpp::connection_hdl hd, const int nMsgID,const char * strPayload,
-	const int length)
+	const uint32_t length)
 {
 
 	std::map<int, std::list<NF_WS_MSG_CALL_BACK_PTR>>::iterator it = mxReceiveCallBack.find(nMsgID);

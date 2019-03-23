@@ -961,14 +961,14 @@ NFGUID NFCKernelModule::CreateGUID()
 
 
 	//value = time << 16;
-	value = time * 1000000;
+	value = time * 100;
 
 
 	//value |= nGUIDIndex++;
 	value += nGUIDIndex++;
 
 	//if (sequence_ == 0x7FFF)
-	if (nGUIDIndex == 999999)
+	if (nGUIDIndex == 99)
 	{
 		nGUIDIndex = 0;
 	}

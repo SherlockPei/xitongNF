@@ -41,7 +41,7 @@ bool NFCLoginLogicModule::Shut()
 {
     return true;
 }
-void NFCLoginLogicModule::OnLoginProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char* msg, const int nLen)
+void NFCLoginLogicModule::OnLoginProcessWS(websocketpp::connection_hdl nSockIndex, const int nMsgID, const char* msg, const uint32_t nLen)
 {
 	NFGUID nPlayerID;
 	NFMsg::ReqAccountLogin xMsg;

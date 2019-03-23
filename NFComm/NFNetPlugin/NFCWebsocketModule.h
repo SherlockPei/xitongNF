@@ -61,7 +61,7 @@ private:
 
 	virtual void SetEventCallBack(NF_WS_EVENT_CALL_BACK_PTR functorPtr) override;
 
-	void OnWebsocketMessage(websocketpp::connection_hdl, const int nMsgID,const char *, const int length);
+	void OnWebsocketMessage(websocketpp::connection_hdl, const int nMsgID,const char *, const uint32_t length);
 
 	void OnWebsocketEvent(websocketpp::connection_hdl, NF_WS_EVENT);
 	int DeCode(const char* strData, const uint32_t unAllLen, NFCMsgHead& xHead)

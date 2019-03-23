@@ -96,7 +96,7 @@ enum NF_WS_MSG_DATA_TYPE
 };
 
 
-typedef std::function<void(websocketpp::connection_hdl, const int nMsgID,const char *, const int nLength)> NF_WS_MSG_CALL_BACK;
+typedef std::function<void(websocketpp::connection_hdl, const int nMsgID,const char *, const uint32_t nLength)> NF_WS_MSG_CALL_BACK;
 typedef std::shared_ptr<NF_WS_MSG_CALL_BACK> NF_WS_MSG_CALL_BACK_PTR;
 
 typedef std::function<void(websocketpp::connection_hdl, NF_WS_EVENT)> NF_WS_EVENT_CALL_BACK;

@@ -94,7 +94,9 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="NFCCommonRedisModule.h" />
     <ClInclude Include="NFCLoginLogicModule.h" />
+    <ClInclude Include="NFCPlayerRedisModule.h" />
     <ClInclude Include="NFLoginLogicPlugin.h" />
   </ItemGroup>
   <ItemGroup>
@@ -106,7 +108,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="NFCCommonRedisModule.cpp" />
     <ClCompile Include="NFCLoginLogicModule.cpp" />
+    <ClCompile Include="NFCPlayerRedisModule.cpp" />
     <ClCompile Include="NFLoginLogicPlugin.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
