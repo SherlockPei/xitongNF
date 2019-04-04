@@ -216,6 +216,10 @@ void NFCWS::CloseObject(websocketpp::connection_hdl hd, NF_WS_CLOSE_CODE nCloseC
 
 void NFCWS::OnMessageHandler(websocketpp::connection_hdl hd, NFWebSockConf::message_ptr msg)
 {
+	if (msg->get_payload().compare("ping")==0) {
+		m_EndPoint.send(hd, "pong", 4, (websocketpp::frame::opcode::value) TEXT);
+		return;
+	}
     auto pObject = GetNetObject(hd);
     if (!pObject)
     {

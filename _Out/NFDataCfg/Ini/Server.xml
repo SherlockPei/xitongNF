@@ -1,5 +1,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <XML>
+	<Object Id="LoginServer_2" Area="1" CpuCount="1" IP="127.0.0.1" MaxOnline="5000" Name="LoginServer" Port="14002" ServerID="41" Type="4" WebPort="4002" />
+
 	<Object Id="DBServer_1" Area="1" CpuCount="1" IP="127.0.0.1" MaxOnline="5000" Name="DBServer" Port="18001" ServerID="8" Type="8" WebPort="0" />
 	<Object Id="GameServer_1" Area="1" CpuCount="1" IP="127.0.0.1" MaxOnline="5000" Name="GameServer" Port="16001" ServerID="6" Type="6" WebPort="0" />
 	<Object Id="LoginServer_1" Area="1" CpuCount="1" IP="127.0.0.1" MaxOnline="5000" Name="LoginServer" Port="14001" ServerID="4" Type="4" WebPort="4001" />
